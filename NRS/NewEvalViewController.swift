@@ -8,13 +8,22 @@
 
 import UIKit
 
-class NewEvalViewController: UIViewController {
+class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerViewDelegate {
 
     @IBOutlet var backgroundImageView:UIImageView!
+    @IBOutlet weak var versionPicker: UIPickerView!
+    let pickerData = ["Version 1", "Version 2", "Version 3"]
+    
+    
     var blurEffectView:UIVisualEffectView?
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.versionPicker.delegate = self
+        self.versionPicker.dataSource = self
         
         backgroundImageView.image = UIImage(named: "cloudNRSred")
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
@@ -26,6 +35,25 @@ class NewEvalViewController: UIViewController {
         self.navigationController?.view.backgroundColor = UIColor.clearColor()
     
         
+    }
+    
+    //picker delegate methods
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        let titleData = pickerData[row]
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
+        return myTitle
     }
 
     override func didReceiveMemoryWarning() {

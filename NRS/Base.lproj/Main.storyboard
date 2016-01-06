@@ -120,6 +120,15 @@
                                     <navigationItem title="New Evaluation" id="nnZ-8G-HCp"/>
                                 </items>
                             </navigationBar>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2L-xy-w6F">
+                                <rect key="frame" x="140" y="269" width="320" height="216"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="xiX-LP-0LT" id="LVp-8C-ys5"/>
+                                    <outlet property="delegate" destination="xiX-LP-0LT" id="vyi-po-YCD"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -132,12 +141,15 @@
                             <constraint firstItem="6jS-fG-fOK" firstAttribute="top" secondItem="9Nu-TR-smq" secondAttribute="top" id="ZoM-D7-F0x"/>
                             <constraint firstItem="Bzy-eX-rkk" firstAttribute="top" secondItem="SDg-yN-9l2" secondAttribute="bottom" id="a9X-ck-iKn"/>
                             <constraint firstItem="ViZ-jj-LEK" firstAttribute="centerX" secondItem="9Nu-TR-smq" secondAttribute="centerX" id="cm6-LU-m9T"/>
+                            <constraint firstItem="L2L-xy-w6F" firstAttribute="centerX" secondItem="9Nu-TR-smq" secondAttribute="centerX" id="i0s-TW-I3Z"/>
                             <constraint firstItem="Bzy-eX-rkk" firstAttribute="centerX" secondItem="9Nu-TR-smq" secondAttribute="centerX" id="j2b-Kw-Oc2"/>
+                            <constraint firstItem="L2L-xy-w6F" firstAttribute="top" secondItem="ViZ-jj-LEK" secondAttribute="bottom" constant="70" id="s3v-gx-e0g"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Nut-Gk-muZ"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="6jS-fG-fOK" id="2tk-ik-0S0"/>
+                        <outlet property="versionPicker" destination="L2L-xy-w6F" id="K3r-r7-dBV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvk-hT-ple" userLabel="First Responder" sceneMemberID="firstResponder"/>
