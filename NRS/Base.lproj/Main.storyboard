@@ -73,7 +73,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CDF-SD-KQ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-33" y="361"/>
+            <point key="canvasLocation" x="-361" y="61"/>
+        </scene>
+        <!--NewEval-->
+        <scene sceneID="cRN-jv-YPw">
+            <objects>
+                <viewController title="NewEval" id="xiX-LP-0LT" customClass="NewEvalViewController" customModule="NRS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SDg-yN-9l2"/>
+                        <viewControllerLayoutGuide type="bottom" id="rOH-I3-KZH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Nu-TR-smq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPH-Zd-HUY">
+                                <rect key="frame" x="284" y="275" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="newEvalView" destination="9Nu-TR-smq" id="pSy-Sd-ijs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mvk-hT-ple" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="506" y="61"/>
         </scene>
     </scenes>
 </document>

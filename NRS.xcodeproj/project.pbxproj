@@ -14,6 +14,7 @@
 		A89952301C3C976E0023373D /* NRSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899522F1C3C976E0023373D /* NRSTests.swift */; };
 		A899523B1C3C976E0023373D /* NRSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899523A1C3C976E0023373D /* NRSUITests.swift */; };
 		A899524B1C3CADAB0023373D /* NewEvalSelectSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899524A1C3CADAB0023373D /* NewEvalSelectSessionViewController.swift */; };
+		A8D392881C3CCCC1000B4125 /* NewEvalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D392871C3CCCC1000B4125 /* NewEvalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		A899523A1C3C976E0023373D /* NRSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRSUITests.swift; sourceTree = "<group>"; };
 		A899523C1C3C976E0023373D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A899524A1C3CADAB0023373D /* NewEvalSelectSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEvalSelectSessionViewController.swift; sourceTree = "<group>"; };
+		A8D392871C3CCCC1000B4125 /* NewEvalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEvalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				A899521A1C3C976E0023373D /* AppDelegate.swift */,
 				A899524A1C3CADAB0023373D /* NewEvalSelectSessionViewController.swift */,
 				A899521E1C3C976E0023373D /* Main.storyboard */,
+				A8D392871C3CCCC1000B4125 /* NewEvalViewController.swift */,
 				A89952211C3C976E0023373D /* Assets.xcassets */,
 				A89952231C3C976E0023373D /* LaunchScreen.storyboard */,
 				A89952261C3C976E0023373D /* Info.plist */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A899524B1C3CADAB0023373D /* NewEvalSelectSessionViewController.swift in Sources */,
+				A8D392881C3CCCC1000B4125 /* NewEvalViewController.swift in Sources */,
 				A899521B1C3C976E0023373D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,6 +491,7 @@
 				A89952411C3C976E0023373D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A89952421C3C976E0023373D /* Build configuration list for PBXNativeTarget "NRSTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +500,7 @@
 				A89952441C3C976E0023373D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A89952451C3C976E0023373D /* Build configuration list for PBXNativeTarget "NRSUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +509,7 @@
 				A89952471C3C976E0023373D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
