@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--NewEvalSelectSession-->
@@ -18,17 +19,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BSa-wz-QXp">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="601" height="600"/>
                                 <animations/>
                             </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mp9-gU-Ty6">
+                                <rect key="frame" x="172" y="254" width="257" height="29"/>
+                                <animations/>
+                                <segments>
+                                    <segment title="New Evaluation"/>
+                                    <segment title="Existing Evaluation"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </segmentedControl>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="BSa-wz-QXp" secondAttribute="trailing" id="3ln-bn-t3V"/>
-                            <constraint firstItem="BSa-wz-QXp" firstAttribute="leading" secondItem="ONE-Nf-TUz" secondAttribute="leading" id="8DY-vr-pb9"/>
-                            <constraint firstItem="BSa-wz-QXp" firstAttribute="bottom" secondItem="ihk-BC-K4W" secondAttribute="top" id="Cnw-fO-Be7"/>
-                            <constraint firstItem="BSa-wz-QXp" firstAttribute="top" secondItem="ONE-Nf-TUz" secondAttribute="top" id="kb7-v0-1CM"/>
+                            <constraint firstItem="ihk-BC-K4W" firstAttribute="top" secondItem="BSa-wz-QXp" secondAttribute="bottom" id="C6I-wS-vU3"/>
+                            <constraint firstItem="ihk-BC-K4W" firstAttribute="top" secondItem="mp9-gU-Ty6" secondAttribute="bottom" constant="318" id="GnS-m9-fpa"/>
+                            <constraint firstItem="mp9-gU-Ty6" firstAttribute="centerX" secondItem="BSa-wz-QXp" secondAttribute="centerX" id="Xgg-iY-Eo8"/>
+                            <constraint firstItem="BSa-wz-QXp" firstAttribute="leading" secondItem="ONE-Nf-TUz" secondAttribute="leading" id="cNG-Dh-HYI"/>
+                            <constraint firstItem="BSa-wz-QXp" firstAttribute="top" secondItem="ONE-Nf-TUz" secondAttribute="topMargin" id="kL3-kB-h18"/>
+                            <constraint firstItem="BSa-wz-QXp" firstAttribute="centerX" secondItem="ONE-Nf-TUz" secondAttribute="centerX" id="o8k-0c-aPw"/>
                         </constraints>
                     </view>
                     <connections>
