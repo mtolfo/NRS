@@ -10,13 +10,22 @@ import UIKit
 
 class NewEvalViewController: UIViewController {
 
-    @IBOutlet var newEvalView: UIView!
-    
+    @IBOutlet var backgroundImageView:UIImageView!
+    var blurEffectView:UIVisualEffectView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        backgroundImageView.image = UIImage(named: "cloudNRSred")
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView?.frame = view.bounds
+        backgroundImageView.addSubview(blurEffectView!)
+        self.navigationController?.navigationBar.translucent = true
+        self.navigationController?.navigationBar.opaque = true
+        self.navigationController?.view.backgroundColor = UIColor.clearColor()
+    
+        
     }
 
     override func didReceiveMemoryWarning() {
