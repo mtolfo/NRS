@@ -15,8 +15,9 @@ class Version
     var version = ""
     
     
-    init (version: String)
+    init (versionId: String, version: String)
     {
+        self.versionId = versionId
         self.version = version
     }
 }

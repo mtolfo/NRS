@@ -12,7 +12,11 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
 
     @IBOutlet var backgroundImageView:UIImageView!
     @IBOutlet weak var versionPicker: UIPickerView!
-    let pickerData = ["Version 1", "Version 2", "Version 3"]
+    //let pickerData = ["Version 1", "Version 2", "Version 3"]
+    
+    let versionPickerData = [Version(versionId: "14V3", version: "2014 V3"),
+        Version(versionId: "15V1", version: "2015 V1"),
+        Version (versionId: "15V2", version: "2015 V2")]
     
     
     var blurEffectView:UIVisualEffectView?
@@ -43,15 +47,21 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
+        //return pickerData.count
+        return versionPickerData.count
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
+        //return pickerData[row]
+        return versionPickerData[row].version
     }
     
     func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let titleData = pickerData[row]
+        //let titleData = pickerData[row]
+        //let myTitle = NSAttributedString(string: titleData, attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
+        //return myTitle
+        
+        let titleData = versionPickerData[row].version
         let myTitle = NSAttributedString(string: titleData, attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
         return myTitle
     }
