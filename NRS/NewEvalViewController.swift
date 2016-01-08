@@ -12,8 +12,9 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
 
     @IBOutlet var backgroundImageView:UIImageView!
     @IBOutlet weak var versionPicker: UIPickerView!
-    //let pickerData = ["Version 1", "Version 2", "Version 3"]
     
+    //using the Version.swift class to populate the array. Probably
+    //should create a property for this class
     let versionPickerData = [Version(versionId: "14V3", version: "2014 V3"),
         Version(versionId: "15V1", version: "2015 V1"),
         Version (versionId: "15V2", version: "2015 V2")]

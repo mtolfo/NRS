@@ -114,7 +114,7 @@
                                 </connections>
                             </pickerView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ViZ-jj-LEK">
-                                <rect key="frame" x="156" y="173" width="289" height="30"/>
+                                <rect key="frame" x="156" y="173" width="289" height="29.5"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ViZ-jj-LEK" secondAttribute="height" multiplier="49:4" constant="-60.125" id="Ccb-mS-ccM"/>
@@ -139,18 +139,27 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Version" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xg2-8a-efS">
+                                <rect key="frame" x="241" y="247" width="119.5" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8da-uZ-mS4" firstAttribute="trailing" secondItem="6jS-fG-fOK" secondAttribute="trailing" id="359-av-DLQ"/>
                             <constraint firstItem="8da-uZ-mS4" firstAttribute="top" secondItem="6jS-fG-fOK" secondAttribute="top" constant="20" id="8cI-95-t91"/>
+                            <constraint firstItem="Xg2-8a-efS" firstAttribute="centerX" secondItem="ViZ-jj-LEK" secondAttribute="centerX" id="BDf-0n-WSU"/>
                             <constraint firstItem="ViZ-jj-LEK" firstAttribute="top" secondItem="SDg-yN-9l2" secondAttribute="bottom" constant="153" id="C2p-Af-wP1"/>
                             <constraint firstItem="6jS-fG-fOK" firstAttribute="leading" secondItem="9Nu-TR-smq" secondAttribute="leading" id="HYZ-FU-qTW"/>
                             <constraint firstItem="6jS-fG-fOK" firstAttribute="bottom" secondItem="rOH-I3-KZH" secondAttribute="top" id="KS8-AT-iop"/>
                             <constraint firstAttribute="trailing" secondItem="6jS-fG-fOK" secondAttribute="trailing" id="N6S-Fz-Jr7"/>
                             <constraint firstItem="6jS-fG-fOK" firstAttribute="top" secondItem="9Nu-TR-smq" secondAttribute="top" id="ZoM-D7-F0x"/>
                             <constraint firstItem="ViZ-jj-LEK" firstAttribute="centerX" secondItem="9Nu-TR-smq" secondAttribute="centerX" constant="0.5" id="cm6-LU-m9T"/>
+                            <constraint firstItem="Xg2-8a-efS" firstAttribute="top" secondItem="ViZ-jj-LEK" secondAttribute="bottom" constant="46" id="gkk-Lj-9zz"/>
                             <constraint firstItem="L2L-xy-w6F" firstAttribute="centerX" secondItem="9Nu-TR-smq" secondAttribute="centerX" id="i0s-TW-I3Z"/>
                             <constraint firstItem="8da-uZ-mS4" firstAttribute="leading" secondItem="6jS-fG-fOK" secondAttribute="leading" id="liI-lX-3Zk"/>
                             <constraint firstItem="L2L-xy-w6F" firstAttribute="top" secondItem="ViZ-jj-LEK" secondAttribute="bottom" constant="67.5" id="s3v-gx-e0g"/>
