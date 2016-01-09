@@ -18,11 +18,15 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     let versionPickerData = [Version(versionId: "14V3", version: "2014 V3"),
         Version(versionId: "15V1", version: "2015 V1"),
         Version (versionId: "15V2", version: "2015 V2")]
+    //var versionDataStoreFromVC: VersionDataStore!
+    //let newEvalVersionDataStore = VersionDataStore.init()
+    //let newEvalVersionDataStore = VersionDataStore()
+    
     
     
     var blurEffectView:UIVisualEffectView?
     
-    
+    //to fix the label size use label.adjustsFontSizeToFitWidth
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +42,8 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         self.navigationController?.navigationBar.translucent = true
         self.navigationController?.navigationBar.opaque = true
         self.navigationController?.view.backgroundColor = UIColor.clearColor()
+        
+        
     
         
     }
@@ -50,18 +56,28 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
         return versionPickerData.count
+        //return newEvalVersionDataStore.allVersions.count
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         return versionPickerData[row].version
+        //return newEvalVersionDataStore.allVersions[row].version
     }
     
     func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         
+        
         let titleData = versionPickerData[row].version
         let myTitle = NSAttributedString(string: titleData, attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
         return myTitle
+
+        
+        /* // using class
+        let titleData = newEvalVersionDataStore.allVersions[row].version
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
+        return myTitle
+        */
     }
 
     override func didReceiveMemoryWarning() {

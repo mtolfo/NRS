@@ -15,8 +15,17 @@ class VersionDataStore
     
     func  createVersion() -> Version
     {
-        let newVersion = Version()
+        let newVersion = Version(random: false)
         allVersions.append(newVersion)
         return newVersion
+    }
+    
+    
+    init()
+    {
+        for _ in 0..<4
+        {
+            createVersion()
+        }
     }
 }

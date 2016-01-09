@@ -53,7 +53,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="xiX-LP-0LT" kind="showDetail" id="RdM-RQ-jrf"/>
+                                            <segue destination="xiX-LP-0LT" kind="show" id="RdM-RQ-jrf"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNP-XI-AXm">

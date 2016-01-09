@@ -12,9 +12,6 @@ class NewEvalSelectSessionViewController: UIViewController
 {
     @IBOutlet var backgroundImagView:UIImageView!
     var blurEffectView:UIVisualEffectView?
-
-   
-    
     
     override func viewDidLoad()
        {

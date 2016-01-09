@@ -14,8 +14,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+    {
         // Override point for customization after application launch.
+        
+        /*
+        //Create the VersionDataStore
+        let versionDataStore = VersionDataStore()
+        let versionController = window!.rootViewController as! NewEvalViewController
+        versionController.versionDataStoreFromVC = versionDataStore
+*/
+        //var vc = NewEvalViewController
+        
         return true
     }
 
