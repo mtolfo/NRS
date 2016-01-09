@@ -124,6 +124,9 @@
                                     <segment title="Previous NRS version"/>
                                 </segments>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="segmentControlIndexChanged:" destination="xiX-LP-0LT" eventType="valueChanged" id="K9q-Ts-GT6"/>
+                                </connections>
                             </segmentedControl>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8da-uZ-mS4">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
@@ -168,7 +171,9 @@
                     <navigationItem key="navigationItem" id="Nut-Gk-muZ"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="6jS-fG-fOK" id="2tk-ik-0S0"/>
+                        <outlet property="currentVersionLabel" destination="Xg2-8a-efS" id="xCX-tt-8T2"/>
                         <outlet property="versionPicker" destination="L2L-xy-w6F" id="K3r-r7-dBV"/>
+                        <outlet property="versionSegmentedControl" destination="ViZ-jj-LEK" id="iJg-sy-QRP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvk-hT-ple" userLabel="First Responder" sceneMemberID="firstResponder"/>

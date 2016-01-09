@@ -13,6 +13,23 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     @IBOutlet var backgroundImageView:UIImageView!
     @IBOutlet weak var versionPicker: UIPickerView!
     
+    @IBOutlet weak var versionSegmentedControl: UISegmentedControl!
+    
+    @IBOutlet weak var currentVersionLabel: UILabel!
+    @IBAction func segmentControlIndexChanged(sender: AnyObject)
+    {
+        switch (versionSegmentedControl.selectedSegmentIndex)
+        {
+        case 0:
+            versionPicker.hidden = true
+            currentVersionLabel.hidden = false
+        case 1:
+            versionPicker.hidden = false
+            currentVersionLabel.hidden = true
+        default:
+            break
+        }
+    }
     //using the Version.swift class to populate the array. Probably
     //should create a property for this class
     let versionPickerData = [Version(versionId: "14V3", version: "2014 V3"),
@@ -42,6 +59,9 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         self.navigationController?.navigationBar.translucent = true
         self.navigationController?.navigationBar.opaque = true
         self.navigationController?.view.backgroundColor = UIColor.clearColor()
+        
+        self.versionSegmentedControl.selectedSegmentIndex = 0
+        self.versionPicker.hidden = true
         
         
     
