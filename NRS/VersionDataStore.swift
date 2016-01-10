@@ -11,6 +11,7 @@ import UIKit
 
 class VersionDataStore
 {
+    /*
     var allVersions = [Version]()
     
     func  createVersion() -> Version
@@ -28,4 +29,5 @@ class VersionDataStore
             createVersion()
         }
     }
+*/
 }

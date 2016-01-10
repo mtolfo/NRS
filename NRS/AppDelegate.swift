@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
         // Override point for customization after application launch.
+        Parse.setApplicationId("8GHxOMlkKMCocLGdE4b8ByDgXbjuba1S37lpv2rl", clientKey: "o9zUbquqAg0i19kPSLNT6wn1GkhjW1P8vQv6Gbof")
         
         /*
         //Create the VersionDataStore

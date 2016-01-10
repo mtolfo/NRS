@@ -8,14 +8,15 @@
 
 import UIKit
 
-class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerViewDelegate {
+class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerViewDelegate
+{
+    private var versionsArray = [Version]()
 
     @IBOutlet var backgroundImageView:UIImageView!
     @IBOutlet weak var versionPicker: UIPickerView!
-    
     @IBOutlet weak var versionSegmentedControl: UISegmentedControl!
-    
     @IBOutlet weak var currentVersionLabel: UILabel!
+    
     @IBAction func segmentControlIndexChanged(sender: AnyObject)
     {
         switch (versionSegmentedControl.selectedSegmentIndex)
@@ -26,15 +27,16 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         case 1:
             versionPicker.hidden = false
             currentVersionLabel.hidden = true
+            loadVersionsFromParse()
         default:
             break
         }
     }
     //using the Version.swift class to populate the array. Probably
     //should create a property for this class
-    let versionPickerData = [Version(versionId: "14V3", version: "2014 V3"),
+    /*let versionPickerData = [Version(versionId: "14V3", version: "2014 V3"),
         Version(versionId: "15V1", version: "2015 V1"),
-        Version (versionId: "15V2", version: "2015 V2")]
+        Version (versionId: "15V2", version: "2015 V2")]*/
     //var versionDataStoreFromVC: VersionDataStore!
     //let newEvalVersionDataStore = VersionDataStore.init()
     //let newEvalVersionDataStore = VersionDataStore()
@@ -63,10 +65,138 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         self.versionSegmentedControl.selectedSegmentIndex = 0
         self.versionPicker.hidden = true
         
+        self.currentVersionLabel.text = "I am the current version"
+        self.currentVersionLabel.adjustsFontSizeToFitWidth = true
         
+        loadVersionsFromParse()
+    }
     
+    //using parse documentation
+    func loadVersionsFromParse()
+    {
+        
+        let query = PFQuery(className: "Version")
+        query.findObjectsInBackgroundWithBlock { (objects:[PFObject]?, error: NSError?) -> Void in
+            if error == nil
+            {
+                print("Successfully retrieved \(objects!.count) versions.")
+                
+                if let objects = objects
+                {
+                    for object in objects
+                    {
+                        print(object.objectId)
+                        let versionObject = Version(pfObject: object)
+                        print(versionObject.version)
+                        print(versionObject.isCurrentVersion)
+                        self.versionsArray.append(versionObject)
+                    }
+                }
+                else
+                {
+                    print ("Error: \(error!) \(error!.userInfo)")
+                }
+                
+                for versionElement in self.versionsArray
+                {
+                    print (versionElement.version)
+                }
+            }
+        }
+        versionPicker.reloadAllComponents()
+    }
+    
+    /*
+    //Create an empty array
+    var myArray: [String] = [String]()
+    
+    //Get the data from the PFQuery class
+    var query = PFQuery(className: "ClassName")
+    query.findObjectsInBackgroundWithBlock{
+    (objects: [AnyObject]?, error: NSError?) -> Void in
+    if error == nil {
+    if let objects = objects as? [PFObject] {
+    for object in objects {
+    
+    //For each object in the class object, append it to myArray
+    self.myArray.append(object.objectForKey("ClassNameObject") as! String)
+    
+    }
+    
+    }
+    } else {
+    println("\(error?.userInfo)")
+    }
+    }
+*/
+
+/*
+//using appcoda and some blogs
+    func loadVersionsFromParse()
+    {
+        versionsArray.removeAll(keepCapacity: true)
+        let query = PFQuery(className: "Version")
+        
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if let error = error
+            {
+                print ("Error: \(error) \(error.userInfo)")
+                return
+            }
+            
+            if error ==  nil
+            {
+                for object in objects!
+                {
+                    let version = Version(pfObject: object)
+                    self.versionsArray.append(version)
+                }
+            }
+        }
+        self.versionPicker.reloadAllComponents()
         
     }
+*/
+        
+        /*
+        versionsArray.removeAll(keepCapacity: true)
+        
+        //pull data from Parse
+        let query = PFQuery(className: "Version")
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if let error = error
+            {
+                print("Error: \(error) \(error.userInfo)")
+                return
+            }
+            
+            if let objects = objects
+            {
+                for object in objects.enumerate()
+                {
+                    let version = Version(pfObject: object)
+                    self.versionsArray.append(version)
+                }
+            }
+            return versionArray
+            
+        
+            if let objects = objects
+            {
+            
+                for (index, object) in objects.enumerate()
+                {
+                    //convert PFObject into Trip object
+                    let version = Version(pfObject: object)
+                    self.versionsArray.append(version)
+                    
+                    let indexPath = NSIndexPath(forRow: index, inSection: 0)
+                }
+                */
+                //versionsArray = [objects valueForKey:,@ "version"]
+                
+    
+
     
     //picker delegate methods
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -75,22 +205,31 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
-        return versionPickerData.count
+        return self.versionsArray.count
+        //return versionPickerData.count
         //return newEvalVersionDataStore.allVersions.count
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
-        return versionPickerData[row].version
+        return self.versionsArray[row].version
+        //return versionPickerData[row].version
         //return newEvalVersionDataStore.allVersions[row].version
     }
     
     func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         
+        let titleData = self.versionsArray[row].version
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
+        return myTitle
         
+        
+        /*
+        // using hard coded version array
         let titleData = versionPickerData[row].version
         let myTitle = NSAttributedString(string: titleData, attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
         return myTitle
+        */
 
         
         /* // using class

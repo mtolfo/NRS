@@ -11,17 +11,35 @@ import UIKit
 
 class Version:NSObject
 {
-    var versionId: String
-    var version: String
+    var versionId = ""
+    var version = ""
+    var isCurrentVersion = false
     
-    init (versionId: String, version: String)
+    init (versionId: String, version: String, isCurrentVersion: Bool)
     {
         self.versionId = versionId
         self.version = version
+        self.isCurrentVersion = isCurrentVersion
         super.init()
     }
     
+    init(pfObject: PFObject)
+    {
+        self.versionId = pfObject.objectId!
+        self.version = pfObject["version"] as! String
+        self.isCurrentVersion = pfObject["isCurrentVersion"] as! Bool
+    }
     
+    func toPFObject() -> PFObject
+    {
+        let versionObject = PFObject(className: "Version")
+        versionObject.objectId = versionId
+        versionObject["version"] = version
+        versionObject["isCurrentVersion"] = isCurrentVersion
+        return versionObject
+    }
+    
+    /*
     convenience init(random: Bool = false)
     {
         let versionsCI = ["2014 Version 3", "2015 Version 1", "2015 Version 2"]
@@ -47,5 +65,6 @@ class Version:NSObject
             
         }
     }
+*/
 }
 
