@@ -11,11 +11,15 @@ import UIKit
 class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerViewDelegate
 {
     private var versionsArray = [Version]()
-
+    
+    var blurEffectView:UIVisualEffectView?
+    
     @IBOutlet var backgroundImageView:UIImageView!
     @IBOutlet weak var versionPicker: UIPickerView!
     @IBOutlet weak var versionSegmentedControl: UISegmentedControl!
     @IBOutlet weak var currentVersionLabel: UILabel!
+    
+    
     
     @IBAction func segmentControlIndexChanged(sender: AnyObject)
     {
@@ -25,25 +29,18 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
             versionPicker.hidden = true
             currentVersionLabel.hidden = false
         case 1:
+            print ("From segmented control")
             versionPicker.hidden = false
             currentVersionLabel.hidden = true
             loadVersionsFromParse()
+            versionArrayCheck()
+            //versionPicker.reloadAllComponents()
         default:
             break
         }
     }
-    //using the Version.swift class to populate the array. Probably
-    //should create a property for this class
-    /*let versionPickerData = [Version(versionId: "14V3", version: "2014 V3"),
-        Version(versionId: "15V1", version: "2015 V1"),
-        Version (versionId: "15V2", version: "2015 V2")]*/
-    //var versionDataStoreFromVC: VersionDataStore!
-    //let newEvalVersionDataStore = VersionDataStore.init()
-    //let newEvalVersionDataStore = VersionDataStore()
     
     
-    
-    var blurEffectView:UIVisualEffectView?
     
     //to fix the label size use label.adjustsFontSizeToFitWidth
     
@@ -68,13 +65,14 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         self.currentVersionLabel.text = "I am the current version"
         self.currentVersionLabel.adjustsFontSizeToFitWidth = true
         
-        loadVersionsFromParse()
+        print("In viewDidLoad")
+        //loadVersionsFromParse()
+        //versionArrayCheck()
     }
     
     //using parse documentation
     func loadVersionsFromParse()
     {
-        
         let query = PFQuery(className: "Version")
         query.findObjectsInBackgroundWithBlock { (objects:[PFObject]?, error: NSError?) -> Void in
             if error == nil
@@ -85,10 +83,10 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
                 {
                     for object in objects
                     {
-                        print(object.objectId)
+                        //print(object.objectId)
                         let versionObject = Version(pfObject: object)
                         print(versionObject.version)
-                        print(versionObject.isCurrentVersion)
+                        //print(versionObject.isCurrentVersion)
                         self.versionsArray.append(versionObject)
                     }
                 }
@@ -96,107 +94,25 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
                 {
                     print ("Error: \(error!) \(error!.userInfo)")
                 }
-                
-                for versionElement in self.versionsArray
-                {
-                    print (versionElement.version)
-                }
             }
         }
         versionPicker.reloadAllComponents()
     }
     
-    /*
-    //Create an empty array
-    var myArray: [String] = [String]()
-    
-    //Get the data from the PFQuery class
-    var query = PFQuery(className: "ClassName")
-    query.findObjectsInBackgroundWithBlock{
-    (objects: [AnyObject]?, error: NSError?) -> Void in
-    if error == nil {
-    if let objects = objects as? [PFObject] {
-    for object in objects {
-    
-    //For each object in the class object, append it to myArray
-    self.myArray.append(object.objectForKey("ClassNameObject") as! String)
-    
-    }
-    
-    }
-    } else {
-    println("\(error?.userInfo)")
-    }
-    }
-*/
-
-/*
-//using appcoda and some blogs
-    func loadVersionsFromParse()
+    func versionArrayCheck()
     {
-        versionsArray.removeAll(keepCapacity: true)
-        let query = PFQuery(className: "Version")
-        
-        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
-            if let error = error
-            {
-                print ("Error: \(error) \(error.userInfo)")
-                return
-            }
-            
-            if error ==  nil
-            {
-                for object in objects!
-                {
-                    let version = Version(pfObject: object)
-                    self.versionsArray.append(version)
-                }
-            }
+        print ("Version Array Check")
+        for versionElement in self.versionsArray
+        {
+            print (versionElement.version)
         }
-        self.versionPicker.reloadAllComponents()
-        
     }
-*/
-        
-        /*
-        versionsArray.removeAll(keepCapacity: true)
-        
-        //pull data from Parse
-        let query = PFQuery(className: "Version")
-        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
-            if let error = error
-            {
-                print("Error: \(error) \(error.userInfo)")
-                return
-            }
-            
-            if let objects = objects
-            {
-                for object in objects.enumerate()
-                {
-                    let version = Version(pfObject: object)
-                    self.versionsArray.append(version)
-                }
-            }
-            return versionArray
-            
-        
-            if let objects = objects
-            {
-            
-                for (index, object) in objects.enumerate()
-                {
-                    //convert PFObject into Trip object
-                    let version = Version(pfObject: object)
-                    self.versionsArray.append(version)
-                    
-                    let indexPath = NSIndexPath(forRow: index, inSection: 0)
-                }
-                */
-                //versionsArray = [objects valueForKey:,@ "version"]
-                
     
-
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     
     //picker delegate methods
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -204,17 +120,12 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     }
     
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
+       
         return self.versionsArray.count
-        //return versionPickerData.count
-        //return newEvalVersionDataStore.allVersions.count
     }
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
         return self.versionsArray[row].version
-        //return versionPickerData[row].version
-        //return newEvalVersionDataStore.allVersions[row].version
     }
     
     func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
@@ -222,27 +133,8 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         let titleData = self.versionsArray[row].version
         let myTitle = NSAttributedString(string: titleData, attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
         return myTitle
-        
-        
-        /*
-        // using hard coded version array
-        let titleData = versionPickerData[row].version
-        let myTitle = NSAttributedString(string: titleData, attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
-        return myTitle
-        */
-
-        
-        /* // using class
-        let titleData = newEvalVersionDataStore.allVersions[row].version
-        let myTitle = NSAttributedString(string: titleData, attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
-        return myTitle
-        */
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
 
     /*
