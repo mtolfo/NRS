@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         versionController.versionDataStoreFromVC = versionDataStore
 */
         //var vc = NewEvalViewController
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        UINavigationBar.appearance().shadowImage = UIImage()
         
         return true
     }
