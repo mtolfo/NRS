@@ -54,10 +54,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
         blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView?.frame = view.bounds
-        backgroundImageView.addSubview(blurEffectView!)
-        self.navigationController?.navigationBar.translucent = true
-        self.navigationController?.navigationBar.opaque = true
-        self.navigationController?.view.backgroundColor = UIColor.clearColor()
+        backgroundImageView.addSubview(blurEffectView!)//       
         
         self.versionSegmentedControl.selectedSegmentIndex = 0
         self.versionPicker.hidden = true

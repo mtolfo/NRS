@@ -29,7 +29,6 @@
 		A899523B1C3C976E0023373D /* NRSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899523A1C3C976E0023373D /* NRSUITests.swift */; };
 		A899524B1C3CADAB0023373D /* NewEvalSelectSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899524A1C3CADAB0023373D /* NewEvalSelectSessionViewController.swift */; };
 		A8A5E62B1C3FF653002D7A10 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A5E62A1C3FF653002D7A10 /* Version.swift */; };
-		A8A5E62D1C40697E002D7A10 /* VersionDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A5E62C1C40697E002D7A10 /* VersionDataStore.swift */; };
 		A8D392881C3CCCC1000B4125 /* NewEvalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D392871C3CCCC1000B4125 /* NewEvalViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,7 +79,6 @@
 		A899523C1C3C976E0023373D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A899524A1C3CADAB0023373D /* NewEvalSelectSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEvalSelectSessionViewController.swift; sourceTree = "<group>"; };
 		A8A5E62A1C3FF653002D7A10 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
-		A8A5E62C1C40697E002D7A10 /* VersionDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionDataStore.swift; sourceTree = "<group>"; };
 		A8D392871C3CCCC1000B4125 /* NewEvalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEvalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,7 +168,6 @@
 				A899524A1C3CADAB0023373D /* NewEvalSelectSessionViewController.swift */,
 				A899521E1C3C976E0023373D /* Main.storyboard */,
 				A8A5E62A1C3FF653002D7A10 /* Version.swift */,
-				A8A5E62C1C40697E002D7A10 /* VersionDataStore.swift */,
 				A8D392871C3CCCC1000B4125 /* NewEvalViewController.swift */,
 				A86F697B1C49400F00C402AB /* SessionInputViewController.swift */,
 				A89952211C3C976E0023373D /* Assets.xcassets */,
@@ -337,7 +334,6 @@
 				A8D392881C3CCCC1000B4125 /* NewEvalViewController.swift in Sources */,
 				A86F697C1C49400F00C402AB /* SessionInputViewController.swift in Sources */,
 				A8A5E62B1C3FF653002D7A10 /* Version.swift in Sources */,
-				A8A5E62D1C40697E002D7A10 /* VersionDataStore.swift in Sources */,
 				A899521B1C3C976E0023373D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

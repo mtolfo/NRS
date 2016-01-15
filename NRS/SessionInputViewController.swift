@@ -11,7 +11,21 @@ import UIKit
 class SessionInputViewController: UIViewController
 {
     @IBOutlet var backgroundImageView:UIImageView!
+    @IBOutlet weak var sessionTextField: UITextField!
+
+    @IBOutlet weak var sessionUsedLabel: UILabel!
+   
+    
     var blurEffectView:UIVisualEffectView!
+    
+    
+    @IBAction func sessionEnteredButtonClick(sender: AnyObject)
+    {
+        //add session to Parse 
+        
+        //go to the appropriate view controller
+        sessionUsedLabel.text = "Session used: \(sessionTextField.text!)"
+    }
 
     override func viewDidLoad()
     {
