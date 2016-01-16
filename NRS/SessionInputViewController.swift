@@ -8,8 +8,6 @@
 
 import UIKit
 
-//THIS IS A TEST FOR THE NEW BRANCH
-
 class SessionInputViewController: UIViewController
 {
     @IBOutlet var backgroundImageView:UIImageView!

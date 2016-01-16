@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A86F697C1C49400F00C402AB /* SessionInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86F697B1C49400F00C402AB /* SessionInputViewController.swift */; };
+		A86F697E1C4AF25400C402AB /* SubphaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86F697D1C4AF25400C402AB /* SubphaseViewController.swift */; };
 		A889D0941C41EBFF005DB665 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A889D0921C41EBFF005DB665 /* Bolts.framework */; };
 		A889D0951C41EBFF005DB665 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A889D0931C41EBFF005DB665 /* Parse.framework */; };
 		A889D0A11C41EC78005DB665 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A889D0961C41EC78005DB665 /* AudioToolbox.framework */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		A86F697B1C49400F00C402AB /* SessionInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionInputViewController.swift; sourceTree = "<group>"; };
+		A86F697D1C4AF25400C402AB /* SubphaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubphaseViewController.swift; sourceTree = "<group>"; };
 		A889D0921C41EBFF005DB665 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A889D0931C41EBFF005DB665 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A889D0961C41EC78005DB665 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -166,6 +168,7 @@
 				A889D0911C41EBF2005DB665 /* Parse */,
 				A899521A1C3C976E0023373D /* AppDelegate.swift */,
 				A899524A1C3CADAB0023373D /* NewEvalSelectSessionViewController.swift */,
+				A86F697D1C4AF25400C402AB /* SubphaseViewController.swift */,
 				A899521E1C3C976E0023373D /* Main.storyboard */,
 				A8A5E62A1C3FF653002D7A10 /* Version.swift */,
 				A8D392871C3CCCC1000B4125 /* NewEvalViewController.swift */,
@@ -335,6 +338,7 @@
 				A86F697C1C49400F00C402AB /* SessionInputViewController.swift in Sources */,
 				A8A5E62B1C3FF653002D7A10 /* Version.swift in Sources */,
 				A899521B1C3C976E0023373D /* AppDelegate.swift in Sources */,
+				A86F697E1C4AF25400C402AB /* SubphaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

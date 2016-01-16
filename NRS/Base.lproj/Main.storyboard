@@ -154,6 +154,7 @@
                                 </state>
                                 <connections>
                                     <action selector="sessionEnteredButtonClick:" destination="Gdp-15-g88" eventType="touchUpInside" id="khc-OD-k7E"/>
+                                    <segue destination="qZp-9i-Sta" kind="show" id="gC6-Xg-m2J"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eX-jH-PKV">
@@ -187,7 +188,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gG2-Hk-KCk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="467" y="349"/>
+            <point key="canvasLocation" x="472" y="530"/>
+        </scene>
+        <!--Subphase -->
+        <scene sceneID="XLy-Kc-UVz">
+            <objects>
+                <viewController title="Subphase " id="qZp-9i-Sta" customClass="SubphaseViewController" customModule="NRS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BcR-0P-Wz9"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bmc-tX-c8B"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TdK-HD-WQ8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ijd-Sh-Bs6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1130" y="530"/>
         </scene>
         <!--NewEval-->
         <scene sceneID="cRN-jv-YPw">
