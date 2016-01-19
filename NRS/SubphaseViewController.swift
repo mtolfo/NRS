@@ -17,6 +17,7 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
 //    var isAble = false //Can the patient execute this description
     
     @IBOutlet weak var subphaseCollectionView: UICollectionView!
+    private var subphaseArray = [Subphase]()
     private var subphases =
         [Subphase(subphaseName: "Sit", descriptionId: "1A", description: "Unable to maintain proper posture of trunk.", isDefaultSelection: false, isAble: false),
         Subphase(subphaseName: "Sit", descriptionId: "1B", description: "Able to both attain sitting with appropraite posture of trunk and postion of trunk and position of pelvis & maintain this for approx. one min.", isDefaultSelection: false, isAble: false),
@@ -50,7 +51,7 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! SubPhaseCollectionViewCell
         
         //configure cell
-        cell.descriptionLabel.text = subphases[indexPath.row].descriptionId
+        cell.descriptionLabel.text = subphases[indexPath.row].description
         
         //apply round corner
         cell.layer.cornerRadius = 4.0

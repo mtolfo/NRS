@@ -25,4 +25,22 @@ class Subphase
         self.isDefaultSelection = isDefaultSelection
         self.isAble = isAble
     }
+    
+    init(pfObject: PFObject)
+    {
+        self.descriptionId = pfObject["desciptionId"] as! String
+        self.description = pfObject["description"] as! String
+        self.isDefaultSelection = pfObject["isDefault"] as! Bool
+        self.isAble = pfObject["isAble"] as! Bool
+    }
+    
+    func toPFObject() -> PFObject
+    {
+        let subphaseObject = PFObject(className: "Subphase")
+        subphaseObject["descriptionId"] = descriptionId
+        subphaseObject["description"] = description
+        subphaseObject["isDefault"] = isDefaultSelection
+        subphaseObject["isAble"] = isAble
+        return subphaseObject
+    }
 }
