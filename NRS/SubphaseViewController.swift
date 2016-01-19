@@ -65,6 +65,7 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         //configure cell
         //cell.descriptionLabel.text = subphases[indexPath.row].description
         cell.descriptionLabel.text = subphaseArray[indexPath.row].description
+        cell.descriptionIdLabel.text = subphaseArray[indexPath.row].descriptionId
         
         //apply round corner
         cell.layer.cornerRadius = 4.0
