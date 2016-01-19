@@ -28,7 +28,7 @@ class Subphase
     
     init(pfObject: PFObject)
     {
-        self.descriptionId = pfObject["desciptionId"] as! String
+        self.descriptionId = pfObject["descriptionId"] as! String
         self.description = pfObject["description"] as! String
         self.isDefaultSelection = pfObject["isDefault"] as! Bool
         self.isAble = pfObject["isAble"] as! Bool
