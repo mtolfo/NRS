@@ -23,6 +23,14 @@ class NewEvalSelectSessionViewController: UIViewController
         blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView?.frame = view.bounds
         backgroundImagView.addSubview(blurEffectView!)
+        
+//        // to handle iPhone 4s screen size
+//        if UIScreen.mainScreen().bounds.size.height == 480.0
+//        {
+//            let flowLayout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+//            flowLayout.itemSize = CGSizeMake(250.0, 300.0)
+//        }
+
     }
     
     override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?)

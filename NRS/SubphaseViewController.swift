@@ -62,11 +62,27 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! SubPhaseCollectionViewCell
         
+        //configure text
+        let paragraphStyle = NSMutableParagraphStyle()
+        //let tempString = subphaseArray[indexPath.row].description
+        //paragraphStyle.headIndent = 20
+        paragraphStyle.firstLineHeadIndent = 20.0
+        
+        let attributes = [NSParagraphStyleAttributeName: paragraphStyle]
+        
         //configure cell
         //cell.descriptionLabel.text = subphases[indexPath.row].description
         cell.descriptionLabel.text = subphaseArray[indexPath.row].description
         cell.descriptionIdLabel.text = subphaseArray[indexPath.row].descriptionId
         
+        let label = NSAttributedString(string: cell.descriptionLabel.text!, attributes: attributes)
+        
+        cell.descriptionLabel.attributedText = label
+        //cell.descriptionLabel.sizeToFit()
+                
+
+        
+
         //apply round corner
         cell.layer.cornerRadius = 4.0
         return cell
