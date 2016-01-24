@@ -13,6 +13,8 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     private var versionsArray = [Version]()
     private var previousVersionsArray = [String]()
     private var currentVersion: String?
+    private var selectedPreviousVersion: String?
+    private var selectedVersionAfterDoneButtonClick = ""
     var currentObject: PFObject?
     
     var blurEffectView:UIVisualEffectView?
@@ -21,6 +23,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     @IBOutlet weak var versionPicker: UIPickerView!
     @IBOutlet weak var versionSegmentedControl: UISegmentedControl!
     @IBOutlet weak var currentVersionLabel: UILabel!
+    @IBOutlet weak var newEvalDoneButton: UIButton!
     
 
     
@@ -37,12 +40,24 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
             self.versionPicker.hidden = false
             self.currentVersionLabel.hidden = true
             getPreviousVersionsFromArray()
+            
+            //this is to initialize picker default in case no selection is made in the picker
+            self.selectedPreviousVersion = self.previousVersionsArray[0]
+            
             versionPicker.reloadAllComponents()
         default:
             break
         }
+        self.newEvalDoneButton.hidden = false
     }
     
+    @IBAction func doneButtonClicked(sender: AnyObject) {
+        self.selectedVersionAfterDoneButtonClick = getSelectedVersion()
+        print("This is the slected version \(self.selectedVersionAfterDoneButtonClick)")
+        
+        //TODO: Create a new row in Sessions table with the selected version. At this point we know this 
+        //is a new eval with a new session.
+    }
     
     
     //to fix the label size use label.adjustsFontSizeToFitWidth
@@ -61,20 +76,13 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
         blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView?.frame = view.bounds
-        backgroundImageView.addSubview(blurEffectView!)//       
-        
-        
-        
-        
+        backgroundImageView.addSubview(blurEffectView!)
         
         self.versionSegmentedControl.selectedSegmentIndex = -1
         self.versionPicker.hidden = true
         self.currentVersionLabel.adjustsFontSizeToFitWidth = true
-        
-        print("In viewDidLoad")
-        
+        self.newEvalDoneButton.hidden = true
     }
-    
     
     func loadCurrentVersionFromParse()
     {
@@ -196,28 +204,43 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     
     func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         
-//        let titleData = self.versionsArray[row].version
-//        let myTitle = NSAttributedString(string: titleData, attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
-//        return myTitle
-        
+        //words in picker view have a white color
         let titleData = self.previousVersionsArray[row]
         let myTitle = NSAttributedString(string: titleData, attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
         return myTitle
         
     }
-
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        // Pass the selected object to the new view controller.
+        self.selectedPreviousVersion = self.previousVersionsArray[self.versionPicker.selectedRowInComponent(0)]
     }
-*/
-    
 
+    func getSelectedVersion() -> String
+    {
+        var selectedVersion = ""
+        
+        switch (self.versionSegmentedControl.selectedSegmentIndex)
+        {
+        case 0:
+            selectedVersion = self.currentVersionLabel.text!
+        case 1: //self.selectedPrevious version comes from pickerView didSelectRow delegate
+            selectedVersion = self.selectedPreviousVersion!
+        default:
+            break
+        }
+        return selectedVersion
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showNewEvalSubphases"
+        {
+            let destinationController = segue.destinationViewController as! SubphaseViewController
+            destinationController.destinationTempString = "This is the passed data."
+            
+            destinationController.navigationItem.title = "New Eval \(selectedVersionAfterDoneButtonClick)"
+        }
+    }
+
+   
 }

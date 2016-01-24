@@ -13,6 +13,7 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     @IBOutlet weak var subphaseCollectionView: UICollectionView!
     private var subphaseArray = [Subphase]()
+    var destinationTempString = ""
     
     func loadSubphasesFromParse()
     {
@@ -48,6 +49,7 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
 
         // Do any additional setup after loading the view.
         loadSubphasesFromParse()
+        print(destinationTempString)
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {

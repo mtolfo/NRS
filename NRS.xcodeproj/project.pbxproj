@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A80AD05D1C54304A00AB70ED /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A80AD05B1C54304A00AB70ED /* Bolts.framework */; };
+		A80AD05E1C54304A00AB70ED /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A80AD05C1C54304A00AB70ED /* Parse.framework */; };
 		A86F697C1C49400F00C402AB /* SessionInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86F697B1C49400F00C402AB /* SessionInputViewController.swift */; };
 		A86F697E1C4AF25400C402AB /* SubphaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86F697D1C4AF25400C402AB /* SubphaseViewController.swift */; };
 		A86F69801C4DAA0000C402AB /* SubPhaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86F697F1C4DAA0000C402AB /* SubPhaseCollectionViewCell.swift */; };
@@ -53,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A80AD05B1C54304A00AB70ED /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		A80AD05C1C54304A00AB70ED /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A86F697B1C49400F00C402AB /* SessionInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionInputViewController.swift; sourceTree = "<group>"; };
 		A86F697D1C4AF25400C402AB /* SubphaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubphaseViewController.swift; sourceTree = "<group>"; };
 		A86F697F1C4DAA0000C402AB /* SubPhaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubPhaseCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -97,6 +101,7 @@
 				A889D0A21C41EC78005DB665 /* CFNetwork.framework in Frameworks */,
 				A889D0A31C41EC78005DB665 /* CoreGraphics.framework in Frameworks */,
 				A889D0A41C41EC78005DB665 /* CoreLocation.framework in Frameworks */,
+				A80AD05E1C54304A00AB70ED /* Parse.framework in Frameworks */,
 				A889D0A51C41EC78005DB665 /* libsqlite3.tbd in Frameworks */,
 				A889D0A61C41EC78005DB665 /* libz.tbd in Frameworks */,
 				A889D0A71C41EC78005DB665 /* MobileCoreServices.framework in Frameworks */,
@@ -106,6 +111,7 @@
 				A889D0AB1C41EC78005DB665 /* SystemConfiguration.framework in Frameworks */,
 				A889D0951C41EBFF005DB665 /* Parse.framework in Frameworks */,
 				A889D0941C41EBFF005DB665 /* Bolts.framework in Frameworks */,
+				A80AD05D1C54304A00AB70ED /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +145,8 @@
 		A889D0911C41EBF2005DB665 /* Parse */ = {
 			isa = PBXGroup;
 			children = (
+				A80AD05B1C54304A00AB70ED /* Bolts.framework */,
+				A80AD05C1C54304A00AB70ED /* Parse.framework */,
 				A889D0961C41EC78005DB665 /* AudioToolbox.framework */,
 				A889D0971C41EC78005DB665 /* CFNetwork.framework */,
 				A889D0981C41EC78005DB665 /* CoreGraphics.framework */,
