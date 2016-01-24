@@ -25,8 +25,6 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     @IBOutlet weak var currentVersionLabel: UILabel!
     @IBOutlet weak var newEvalDoneButton: UIButton!
     
-
-    
     @IBAction func segmentControlIndexChanged(sender: AnyObject)
     {
         switch (versionSegmentedControl.selectedSegmentIndex)
@@ -113,8 +111,10 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         let filteredArray = self.versionsArray.filter({$0.isCurrentVersion == true})
         for element in filteredArray
         {
-            print(element.version)
-            self.currentVersion = element.version
+            
+            let formattedStartDate = NSDateFormatter.localizedStringFromDate(element.startDate, dateStyle: .ShortStyle, timeStyle: .NoStyle)
+            print("\(element.version) \(formattedStartDate)")
+            self.currentVersion = "\(element.version): \(formattedStartDate) - Today"
         }
         
     }
@@ -127,7 +127,10 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         let filteredArray = self.versionsArray.filter({$0.isCurrentVersion ==  false})
         for element in filteredArray
         {
-            self.previousVersionsArray.append(element.version)
+            
+            let formattedStartDate = NSDateFormatter.localizedStringFromDate(element.startDate, dateStyle: .ShortStyle, timeStyle: .NoStyle)
+            let formattedEndDate = NSDateFormatter.localizedStringFromDate(element.endDate, dateStyle: .ShortStyle, timeStyle: .NoStyle)
+            self.previousVersionsArray.append("\(element.version): \(formattedStartDate) - \(formattedEndDate)")
         }
     }
     
@@ -148,6 +151,8 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
                         //print(object.objectId)
                         let versionObject = Version(pfObject: object)
                         print(versionObject.version)
+                        print(versionObject.startDate)
+                        print(versionObject.endDate)
                         //print(versionObject.isCurrentVersion)
                         self.versionsArray.append(versionObject)
                     }
@@ -167,7 +172,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         print ("Version Array Check")
         for versionElement in self.versionsArray
         {
-            print (versionElement.version)
+            print (versionElement.version, " ", versionElement.startDate)
         }
     }
     
@@ -202,14 +207,25 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         return self.previousVersionsArray[row]
     }
     
-    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        
-        //words in picker view have a white color
+    /* better memory management version
+     change attributes of the text in the picker */
+    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView {
+        var pickerLabel = view as! UILabel!
+        if view == nil {  //if no label there yet
+            pickerLabel = UILabel()}
+//            //color the label's background
+//            let hue = CGFloat(row)/CGFloat(self.previousVersionsArray.count)
+//            pickerLabel.backgroundColor = UIColor(hue: hue, saturation: 1.0, brightness: 1.0, alpha: 1.0)
+//        }
         let titleData = self.previousVersionsArray[row]
-        let myTitle = NSAttributedString(string: titleData, attributes: [NSForegroundColorAttributeName: UIColor.whiteColor()])
-        return myTitle
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 16.0)!,NSForegroundColorAttributeName:UIColor.whiteColor()])
+        pickerLabel!.attributedText = myTitle
+        pickerLabel!.textAlignment = .Center
+        
+        return pickerLabel
         
     }
+
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         

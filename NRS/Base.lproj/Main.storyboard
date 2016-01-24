@@ -45,7 +45,7 @@
                                 <animations/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="dMg-oG-rGp">
-                                <rect key="frame" x="169" y="294" width="263" height="30"/>
+                                <rect key="frame" x="155" y="294" width="290" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afb-0v-ObS">
                                         <rect key="frame" x="0.0" y="0.0" width="105" height="30"/>
@@ -58,9 +58,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNP-XI-AXm">
-                                        <rect key="frame" x="135" y="0.0" width="128" height="30"/>
+                                        <rect key="frame" x="135" y="0.0" width="155" height="30"/>
                                         <animations/>
-                                        <state key="normal" title="Existing Evaluation">
+                                        <state key="normal" title="In-Progress Evaluation">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -133,10 +133,10 @@
             </objects>
             <point key="canvasLocation" x="467" y="-429"/>
         </scene>
-        <!--Session-->
+        <!--In Progress Evaluation-->
         <scene sceneID="9qp-1m-h1K">
             <objects>
-                <viewController title="Session" id="Gdp-15-g88" customClass="SessionInputViewController" customModule="NRS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="In Progress Evaluation" id="Gdp-15-g88" customClass="SessionInputViewController" customModule="NRS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MWm-LL-Dxe"/>
                         <viewControllerLayoutGuide type="bottom" id="csO-zA-BSU"/>
@@ -150,10 +150,10 @@
                                 <animations/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gqh-6c-JqR">
-                                <rect key="frame" x="237" y="275" width="127" height="51"/>
+                                <rect key="frame" x="183.5" y="275" width="233" height="51"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Amx-Ub-fFd">
-                                        <rect key="frame" x="0.0" y="0.0" width="127" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter in progress evaluation ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Amx-Ub-fFd">
+                                        <rect key="frame" x="0.0" y="0.0" width="233" height="21"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="8we-vL-mV2"/>
@@ -162,8 +162,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Session ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CWP-ty-fkL">
-                                        <rect key="frame" x="0.0" y="21" width="127" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Evaluation ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CWP-ty-fkL">
+                                        <rect key="frame" x="0.0" y="21" width="233" height="30"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -188,7 +188,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7C6-Os-mxk">
-                                <rect key="frame" x="282" y="391" width="37" height="30"/>
+                                <rect key="frame" x="281" y="391" width="37" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -199,7 +199,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eX-jH-PKV">
-                                <rect key="frame" x="279" y="449" width="42" height="21"/>
+                                <rect key="frame" x="279" y="449" width="42" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
