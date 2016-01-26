@@ -10,6 +10,7 @@ import UIKit
 
 class SessionInputViewController: UIViewController
 {
+    private var sessionArray = [Session]()
     @IBOutlet var backgroundImageView:UIImageView!
     @IBOutlet weak var sessionTextField: UITextField!
 
@@ -21,10 +22,59 @@ class SessionInputViewController: UIViewController
     
     @IBAction func sessionEnteredButtonClick(sender: AnyObject)
     {
+        print("HELLO")
         //add session to Parse 
+        loadSessionFromParse()
         
         //go to the appropriate view controller
-        sessionUsedLabel.text = "Session used: \(sessionTextField.text!)"
+        //sessionUsedLabel.text = "Session used: \(sessionArray[0].sessionId)"
+    }
+    
+    // loads the session from user input into an array
+    func loadSessionFromParse()
+    {
+        let query = PFQuery(className: "Session")
+        query.whereKey("objectId", equalTo: sessionTextField.text!)
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if error == nil
+            {
+                if let objects = objects
+                {
+                    for object in objects
+                    {
+                        let sessionObject = Session(pfObject: object)
+                        print("Printing session ID: \(sessionObject.sessionId)")
+                        self.sessionArray.append(sessionObject)
+                    }
+                }
+            }
+            else
+            {
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
+//        
+//        if error == nil
+//            {
+//                print("Successfully retrieved \(objects!.count) versions.")
+//                
+//                if let objects = objects
+//                {
+//                    for object in objects
+//                    {
+//                        //print(object.objectId)
+//                        let versionObject = Version(pfObject: object)
+//                        print(versionObject.version)
+//                        print(versionObject.startDate)
+//                        print(versionObject.endDate)
+//                        //print(versionObject.isCurrentVersion)
+//                        self.versionsArray.append(versionObject)
+//                    }
+//                }
+//                else
+//                {
+//                    print ("Error: \(error!) \(error!.userInfo)")
+//                }
     }
 
     override func viewDidLoad()

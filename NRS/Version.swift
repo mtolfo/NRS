@@ -17,6 +17,7 @@ class Version:NSObject
     var startDate = NSDate()
     var endDate = NSDate()
     
+    
     init (versionId: String, version: String, isCurrentVersion: Bool, startDate: NSDate, endDate: NSDate)
     {
         self.versionId = versionId
@@ -26,6 +27,7 @@ class Version:NSObject
         self.endDate = endDate
         super.init()
     }
+
     
     init(pfObject: PFObject)
     {

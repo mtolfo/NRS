@@ -36,7 +36,8 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
             self.currentVersionLabel.hidden = false
             getCurrentVersionFromArray()
             let formattedStartDate = formatDates(self.currentVersionArray[0].startDate, endDate: self.currentVersionArray[0].endDate)
-            self.currentVersionLabel.text = "\(self.currentVersionArray[0].version): \(formattedStartDate.startDateString)"
+
+            self.currentVersionLabel.text = "\(self.currentVersionArray[0].version): \(formattedStartDate.startDateString)-Today"
         case 1:
             self.versionPicker.hidden = false
             self.currentVersionLabel.hidden = true
@@ -72,7 +73,18 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
 //                // There was a problem, check error.description
 //            }
 //        }
-        
+        let session = PFObject(className: "Session")
+        session["version"] = self.selectedVersionAfterDoneButtonClick
+        session.saveInBackgroundWithBlock { (success:Bool, error: NSError?) -> Void in
+            if (error == nil)
+            {
+                print("Session with version saved!")
+            }
+            else
+            {
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
     }
     
     
@@ -84,6 +96,8 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         loadAllVersionsFromParse()
 
         self.currentVersionLabel.text = self.currentVersion
+//        getCurrentVersionFromArray()
+//        self.currentVersionLabel.text = self.currentVersionArray[0].version
         
         self.versionPicker.delegate = self
         self.versionPicker.dataSource = self
@@ -119,6 +133,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
 
     func getPreviousVersionsFromArray()
     {
+        previousVersionArray.removeAll()
         let filteredArray = self.versionsArray.filter({$0.isCurrentVersion == false})
         for element in filteredArray
         {
@@ -208,7 +223,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
             pickerLabel = UILabel()}
         let formattedDate = formatDates(self.previousVersionArray[row].startDate, endDate:self.previousVersionArray[row].endDate)
         
-        let titleData = "\(self.previousVersionArray[row].version): \(formattedDate.startDateString) \(formattedDate.endDateString)"
+        let titleData = "\(self.previousVersionArray[row].version): \(formattedDate.startDateString)-\(formattedDate.endDateString)"
         let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 16.0)!,NSForegroundColorAttributeName:UIColor.whiteColor()])
         pickerLabel!.attributedText = myTitle
         pickerLabel!.textAlignment = .Center
@@ -230,7 +245,8 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         switch (self.versionSegmentedControl.selectedSegmentIndex)
         {
         case 0:
-            selectedVersion = self.currentVersionLabel.text!
+//            selectedVersion = self.currentVersionLabel.text!
+            selectedVersion = self.currentVersionArray[0].version
         case 1: //self.selectedPrevious version comes from pickerView didSelectRow delegate
             selectedVersion = self.selectedPreviousVersion!
         default:
