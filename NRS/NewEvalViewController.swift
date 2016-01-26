@@ -11,8 +11,9 @@ import UIKit
 class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerViewDelegate
 {
     private var versionsArray = [Version]()
-    private var previousVersionsArray = [String]()
+    private var previousVersionsArrayString = [String]()
     private var currentVersionArray = [Version]()
+    private var previousVersionArray = [Version]()
     private var currentVersion: String?
     private var selectedPreviousVersion: String?
     private var selectedVersionAfterDoneButtonClick = ""
@@ -42,7 +43,8 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
             getPreviousVersionsFromArray()
             
             //this is to initialize picker default in case no selection is made in the picker
-            self.selectedPreviousVersion = self.previousVersionsArray[0]
+            //self.selectedPreviousVersion = self.previousVersionsArrayString[0]
+            self.selectedPreviousVersion = self.previousVersionArray[0].version
             
             versionPicker.reloadAllComponents()
         default:
@@ -135,6 +137,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     
     // get previous versions from the initiallized array so
     // we don't have to do another load from Parse
+    /*
     func getPreviousVersionsFromArray()
     {
         self.previousVersionsArray.removeAll()
@@ -145,6 +148,15 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
             let formattedStartDate = NSDateFormatter.localizedStringFromDate(element.startDate, dateStyle: .ShortStyle, timeStyle: .NoStyle)
             let formattedEndDate = NSDateFormatter.localizedStringFromDate(element.endDate, dateStyle: .ShortStyle, timeStyle: .NoStyle)
             self.previousVersionsArray.append("\(element.version): \(formattedStartDate) - \(formattedEndDate)")
+        }
+    }
+*/
+    func getPreviousVersionsFromArray()
+    {
+        let filteredArray = self.versionsArray.filter({$0.isCurrentVersion == false})
+        for element in filteredArray
+        {
+            previousVersionArray.append(element)
         }
     }
     
@@ -206,7 +218,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     func previousVersionsArrayCheck()
     {
         print("Previous Versions Array Check")
-        for element in self.previousVersionsArray
+        for element in self.previousVersionsArrayString
         {
             print(element)
         }
@@ -226,13 +238,22 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
        
 //        return self.versionsArray.count
-        return self.previousVersionsArray.count
+//        return self.previousVersionsArrayString.count
+        return self.previousVersionArray.count
     }
     
+    /*
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
 //        return self.versionsArray[row].version
-        return self.previousVersionsArray[row]
+//        return self.previousVersionsArrayString[row]
+        
+//        let formattedStartDate = formatDates(self.previousVersionArray[row].startDate, endDate:self.previousVersionArray[row].endDate)
+//        return formattedStartDate.startDateString
+
+        
+        return self.previousVersionArray[row].version
     }
+*/
     
     /* better memory management version
      change attributes of the text in the picker */
@@ -244,7 +265,11 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
 //            let hue = CGFloat(row)/CGFloat(self.previousVersionsArray.count)
 //            pickerLabel.backgroundColor = UIColor(hue: hue, saturation: 1.0, brightness: 1.0, alpha: 1.0)
 //        }
-        let titleData = self.previousVersionsArray[row]
+//        let titleData = self.previousVersionsArrayString[row]
+        let formattedDate = formatDates(self.previousVersionArray[row].startDate, endDate:self.previousVersionArray[row].endDate)
+        
+//        let titleData = self.previousVersionArray[row].version
+        let titleData = "\(self.previousVersionArray[row].version): \(formattedDate.startDateString) \(formattedDate.endDateString)"
         let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Helvetica Neue", size: 16.0)!,NSForegroundColorAttributeName:UIColor.whiteColor()])
         pickerLabel!.attributedText = myTitle
         pickerLabel!.textAlignment = .Center
@@ -256,13 +281,16 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        self.selectedPreviousVersion = self.previousVersionsArray[self.versionPicker.selectedRowInComponent(0)]
+//        self.selectedPreviousVersion = self.previousVersionsArrayString[self.versionPicker.selectedRowInComponent(0)]
+        self.selectedPreviousVersion = self.previousVersionArray[self.versionPicker.selectedRowInComponent(0)].version
     }
     
     /* Returns a string for output for the currentLabel text or the text in the UIPicker. Currently
         not something that can be saved to the database becuase the version and the date must be seperate
 
     */
+    
+    // to be used in the Done button
     func getSelectedVersion() -> String
     {
         var selectedVersion = ""
@@ -273,6 +301,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
             selectedVersion = self.currentVersionLabel.text!
         case 1: //self.selectedPrevious version comes from pickerView didSelectRow delegate
             selectedVersion = self.selectedPreviousVersion!
+//            selectedVersion = self.selectedPreviousVersion
         default:
             break
         }
