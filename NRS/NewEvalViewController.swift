@@ -12,6 +12,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
 {
     private var versionsArray = [Version]()
     private var previousVersionsArray = [String]()
+    private var currentVersionArray = [Version]()
     private var currentVersion: String?
     private var selectedPreviousVersion: String?
     private var selectedVersionAfterDoneButtonClick = ""
@@ -33,7 +34,8 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
             self.versionPicker.hidden = true
             self.currentVersionLabel.hidden = false
             getCurrentVersionFromArray()
-            self.currentVersionLabel.text = self.currentVersion
+            let formattedStartDate = formatDates(self.currentVersionArray[0].startDate, endDate: self.currentVersionArray[0].endDate)
+            self.currentVersionLabel.text = "\(self.currentVersionArray[0].version): \(formattedStartDate.startDateString)"
         case 1:
             self.versionPicker.hidden = false
             self.currentVersionLabel.hidden = true
@@ -49,12 +51,27 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         self.newEvalDoneButton.hidden = false
     }
     
-    @IBAction func doneButtonClicked(sender: AnyObject) {
+    @IBAction func doneButtonClicked(sender: AnyObject)
+    {
         self.selectedVersionAfterDoneButtonClick = getSelectedVersion()
         print("This is the slected version \(self.selectedVersionAfterDoneButtonClick)")
         
         //TODO: Create a new row in Sessions table with the selected version. At this point we know this 
         //is a new eval with a new session.
+        
+//        var gameScore = PFObject(className:"GameScore")
+//        gameScore["score"] = 1337
+//        gameScore["playerName"] = "Sean Plott"
+//        gameScore["cheatMode"] = false
+//        gameScore.saveInBackgroundWithBlock {
+//            (success: Bool, error: NSError?) -> Void in
+//            if (success) {
+//                // The object has been saved.
+//            } else {
+//                // There was a problem, check error.description
+//            }
+//        }
+        
     }
     
     
@@ -63,7 +80,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadVersionsFromParse()
+        loadAllVersionsFromParse()
 
         self.currentVersionLabel.text = self.currentVersion
         
@@ -82,28 +99,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         self.newEvalDoneButton.hidden = true
     }
     
-    func loadCurrentVersionFromParse()
-    {
-        //self.versionsArray.removeAll()
-        let query = PFQuery(className: "Version")
-        query.whereKey("isCurrentVersion", equalTo: true)
-        query.findObjectsInBackgroundWithBlock { (objects:[PFObject]?, error: NSError?) -> Void in
-            if error == nil
-            {
-                print("Successfully retrieved \(objects!.count) versions.")
-                for object in objects!
-                {
-                    self.currentObject = object
-                }
-                //self.currentVersionLabel.text = self.currentObject?.valueForKey("isCurrentVersion") as? String
-                //print (self.currentObject?["version"] as? String)
-                //self.currentVersionLabel.text = self.currentObject!["version"] as? String
-                self.currentVersion = self.currentObject!["version"] as? String
-                print ("Using: \(self.currentObject?.valueForKey("version") as? String)")
-            }
-        }
-    }
-    
+    /*
     // get current version from the initiallized array so 
     // we don't have to do another load from Parse
     func getCurrentVersionFromArray()
@@ -117,6 +113,24 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
             self.currentVersion = "\(element.version): \(formattedStartDate) - Today"
         }
         
+    }
+*/
+    
+    //NEW BRANCH: 
+    func getCurrentVersionFromArray()
+    {
+        let filteredArray = self.versionsArray.filter({$0.isCurrentVersion == true})
+        if filteredArray.count > 1
+        {
+            let alertController = UIAlertController(title: "Current Version Message", message:
+                "More than one current version exists in database. Talk to administrator.", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+        for element in filteredArray
+        {
+            currentVersionArray.append(element)
+        }
     }
     
     // get previous versions from the initiallized array so
@@ -134,9 +148,22 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         }
     }
     
+//    func printDate(date: NSDate, format: String = "YY/MM/dd") -> String {
+//        let dateFormatter = NSDateFormatter()
+//        dateFormatter.dateFormat = format
+//        return dateFormatter.stringFromDate(date)
+//    }
+    func formatDates(startDate: NSDate, endDate: NSDate) -> (startDateString:String, endDateString: String)
+    {
+        let startDateFormatter = NSDateFormatter.localizedStringFromDate(startDate, dateStyle: .ShortStyle, timeStyle: .NoStyle)
+        let endDateFormatter = NSDateFormatter.localizedStringFromDate(endDate, dateStyle: .ShortStyle, timeStyle: .NoStyle)
+        
+        return (startDateFormatter, endDateFormatter)
+    }
+    
     
     //using parse documentation
-    func loadVersionsFromParse()
+    func loadAllVersionsFromParse()
     {
         let query = PFQuery(className: "Version")
         query.findObjectsInBackgroundWithBlock { (objects:[PFObject]?, error: NSError?) -> Void in
@@ -231,7 +258,11 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         
         self.selectedPreviousVersion = self.previousVersionsArray[self.versionPicker.selectedRowInComponent(0)]
     }
+    
+    /* Returns a string for output for the currentLabel text or the text in the UIPicker. Currently
+        not something that can be saved to the database becuase the version and the date must be seperate
 
+    */
     func getSelectedVersion() -> String
     {
         var selectedVersion = ""
