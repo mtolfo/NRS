@@ -17,6 +17,8 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     private var currentVersion: String?
     private var selectedPreviousVersion: String?
     private var selectedVersionAfterDoneButtonClick = ""
+    private var phaseItem = ""
+    
     var currentObject: PFObject?
     
     var blurEffectView:UIVisualEffectView?
@@ -52,6 +54,8 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         }
         self.newEvalDoneButton.hidden = false
     }
+    
+    
     
     @IBAction func doneButtonClicked(sender: AnyObject)
     {

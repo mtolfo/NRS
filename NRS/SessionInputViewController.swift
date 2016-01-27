@@ -53,28 +53,6 @@ class SessionInputViewController: UIViewController
                 print("Error: \(error!) \(error!.userInfo)")
             }
         }
-//        
-//        if error == nil
-//            {
-//                print("Successfully retrieved \(objects!.count) versions.")
-//                
-//                if let objects = objects
-//                {
-//                    for object in objects
-//                    {
-//                        //print(object.objectId)
-//                        let versionObject = Version(pfObject: object)
-//                        print(versionObject.version)
-//                        print(versionObject.startDate)
-//                        print(versionObject.endDate)
-//                        //print(versionObject.isCurrentVersion)
-//                        self.versionsArray.append(versionObject)
-//                    }
-//                }
-//                else
-//                {
-//                    print ("Error: \(error!) \(error!.userInfo)")
-//                }
     }
 
     override func viewDidLoad()
