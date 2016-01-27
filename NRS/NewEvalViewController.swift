@@ -17,7 +17,8 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     private var currentVersion: String?
     private var selectedPreviousVersion: String?
     private var selectedVersionAfterDoneButtonClick = ""
-    private var phaseItem = ""
+    private var phaseItemArray = [PhaseItem]()
+    private var startingPhaseItem = ""
     
     var currentObject: PFObject?
     
@@ -55,28 +56,16 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         self.newEvalDoneButton.hidden = false
     }
     
-    
-    
     @IBAction func doneButtonClicked(sender: AnyObject)
     {
         self.selectedVersionAfterDoneButtonClick = getSelectedVersion()
+        self.startingPhaseItem = getStartingPhaseItemFromArray()
         print("This is the slected version \(self.selectedVersionAfterDoneButtonClick)")
+        print ("This is the starting phase item \(self.startingPhaseItem)")
         
-        //TODO: Create a new row in Sessions table with the selected version. At this point we know this 
+        //Create a new row in Sessions table with the selected version. At this point we know this
         //is a new eval with a new session.
         
-//        var gameScore = PFObject(className:"GameScore")
-//        gameScore["score"] = 1337
-//        gameScore["playerName"] = "Sean Plott"
-//        gameScore["cheatMode"] = false
-//        gameScore.saveInBackgroundWithBlock {
-//            (success: Bool, error: NSError?) -> Void in
-//            if (success) {
-//                // The object has been saved.
-//            } else {
-//                // There was a problem, check error.description
-//            }
-//        }
         let session = PFObject(className: "Session")
         session["version"] = self.selectedVersionAfterDoneButtonClick
         session.saveInBackgroundWithBlock { (success:Bool, error: NSError?) -> Void in
@@ -98,6 +87,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         super.viewDidLoad()
         
         loadAllVersionsFromParse()
+        loadPhaseItemsFromParse()
 
         self.currentVersionLabel.text = self.currentVersion
 //        getCurrentVersionFromArray()
@@ -145,6 +135,12 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         }
     }
     
+    func getStartingPhaseItemFromArray() -> String
+    {
+        let filteredArray = self.phaseItemArray.filter({$0.phaseOrder == 1})
+        return filteredArray[0].phaseItem
+    }
+    
     func formatDates(startDate: NSDate, endDate: NSDate) -> (startDateString:String, endDateString: String)
     {
         let startDateFormatter = NSDateFormatter.localizedStringFromDate(startDate, dateStyle: .ShortStyle, timeStyle: .NoStyle)
@@ -152,7 +148,6 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         
         return (startDateFormatter, endDateFormatter)
     }
-    
     
     //using parse documentation
     func loadAllVersionsFromParse()
@@ -185,6 +180,27 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         versionPicker.reloadAllComponents()
     }
     
+    func loadPhaseItemsFromParse()
+    {
+        let query = PFQuery(className: "Phase_Items")
+        query.findObjectsInBackgroundWithBlock { (objects:[PFObject]?, error:NSError?) -> Void in
+            if error ==  nil
+            {
+                if let objects = objects
+                {
+                    for object in objects
+                    {
+                        let phaseItemObject = PhaseItem(pfObject: object)
+                        self.phaseItemArray.append(phaseItemObject)
+                    }
+                }
+                else
+                {
+                    print ("Error: \(error!) \(error!.userInfo)")
+                }
+            }
+        }
+    }
     
     func versionArrayCheck()
     {
@@ -263,9 +279,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         if segue.identifier == "showNewEvalSubphases"
         {
             let destinationController = segue.destinationViewController as! SubphaseViewController
-            destinationController.destinationTempString = "This is the passed data."
-            
-            destinationController.navigationItem.title = "New Eval \(selectedVersionAfterDoneButtonClick)"
+            destinationController.navigationItem.title = "\(self.startingPhaseItem): \(self.selectedVersionAfterDoneButtonClick)"
         }
     }
 
