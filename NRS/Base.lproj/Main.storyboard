@@ -150,7 +150,7 @@
                                 <animations/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gqh-6c-JqR">
-                                <rect key="frame" x="183.5" y="275" width="233" height="51"/>
+                                <rect key="frame" x="184" y="275" width="233" height="51"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter in progress evaluation ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Amx-Ub-fFd">
                                         <rect key="frame" x="0.0" y="0.0" width="233" height="21"/>
@@ -188,7 +188,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7C6-Os-mxk">
-                                <rect key="frame" x="281" y="391" width="37" height="30"/>
+                                <rect key="frame" x="282" y="391" width="37" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -205,6 +205,16 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xax-8H-WVQ">
+                                <rect key="frame" x="214.5" y="477" width="171" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Show Completed Phases">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="MeY-4n-mMC" kind="show" id="FCt-uJ-qHa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -222,9 +232,11 @@
                             <constraint firstItem="7C6-Os-mxk" firstAttribute="centerX" secondItem="gqh-6c-JqR" secondAttribute="centerX" id="cjS-Y2-etx"/>
                             <constraint firstAttribute="trailing" secondItem="4jf-CG-qco" secondAttribute="trailing" id="ebC-GN-lxE"/>
                             <constraint firstItem="4jf-CG-qco" firstAttribute="bottom" secondItem="csO-zA-BSU" secondAttribute="top" id="f28-QL-Pfh"/>
+                            <constraint firstItem="xax-8H-WVQ" firstAttribute="centerX" secondItem="fGK-gX-R6U" secondAttribute="centerX" id="fWb-z5-VOC"/>
                             <constraint firstItem="0eX-jH-PKV" firstAttribute="top" secondItem="7C6-Os-mxk" secondAttribute="bottom" constant="28" id="jfS-Cu-Esc">
                                 <variation key="heightClass=compact" constant="47"/>
                             </constraint>
+                            <constraint firstItem="csO-zA-BSU" firstAttribute="top" secondItem="xax-8H-WVQ" secondAttribute="bottom" constant="93" id="tmv-f3-jhs"/>
                             <constraint firstItem="4jf-CG-qco" firstAttribute="leading" secondItem="fGK-gX-R6U" secondAttribute="leading" id="xTo-NP-P6h"/>
                         </constraints>
                         <variation key="default">
@@ -247,6 +259,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gG2-Hk-KCk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="472" y="530"/>
+        </scene>
+        <!--Phase View Controller-->
+        <scene sceneID="ssn-t6-Hnc">
+            <objects>
+                <viewController id="MeY-4n-mMC" customClass="PhaseViewController" customModule="NRS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DfL-Df-EHR"/>
+                        <viewControllerLayoutGuide type="bottom" id="c5f-0z-i54"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="T8e-My-zRE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x6S-SL-uBh">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="PYX-6k-qjg" style="IBUITableViewCellStyleDefault" id="AJi-o3-5I0">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AJi-o3-5I0" id="RJ4-IN-rbE">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PYX-6k-qjg">
+                                                    <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="MeY-4n-mMC" id="BgC-1z-Tnl"/>
+                                    <outlet property="delegate" destination="MeY-4n-mMC" id="bzM-6a-xko"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="x6S-SL-uBh" firstAttribute="top" secondItem="DfL-Df-EHR" secondAttribute="bottom" constant="-64" id="5VC-I8-jCX"/>
+                            <constraint firstItem="c5f-0z-i54" firstAttribute="top" secondItem="x6S-SL-uBh" secondAttribute="bottom" id="AZ5-Ug-qNJ"/>
+                            <constraint firstItem="x6S-SL-uBh" firstAttribute="leading" secondItem="T8e-My-zRE" secondAttribute="leadingMargin" constant="-20" id="fwU-f5-uuF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="x6S-SL-uBh" secondAttribute="trailing" constant="-20" id="kXW-pC-f4N"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p1G-8H-gHa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="467" y="1312"/>
         </scene>
         <!--Phase Item-->
         <scene sceneID="XLy-Kc-UVz">
@@ -607,6 +677,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xCI-E7-eTL"/>
+        <segue reference="gC6-Xg-m2J"/>
     </inferredMetricsTieBreakers>
 </document>

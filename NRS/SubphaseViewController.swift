@@ -20,7 +20,7 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         subphaseArray.removeAll()
         subphaseCollectionView.reloadData()
         
-        let query = PFQuery(className: "Sit") //or whatever is passed in segue or default
+        let query = PFQuery(className: "Sit") //or whatever is passed in segue or default from PhaseViewController
         query.cachePolicy = PFCachePolicy.NetworkElseCache
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             if let error = error {
@@ -35,6 +35,7 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
                     let subphaseObject = Subphase(pfObject: object)
                     self.subphaseArray.append(subphaseObject)
                     
+                    //Should I move the following two lines. This function is only to load the objects into the array
                     let indexPath = NSIndexPath(forRow: index, inSection: 0)
                     self.subphaseCollectionView.insertItemsAtIndexPaths([indexPath])
                 }
