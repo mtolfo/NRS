@@ -195,7 +195,7 @@
                                 </state>
                                 <connections>
                                     <action selector="sessionEnteredButtonClick:" destination="Gdp-15-g88" eventType="touchUpInside" id="khc-OD-k7E"/>
-                                    <segue destination="qZp-9i-Sta" kind="show" identifier="showExistingEvalSubphases" id="gC6-Xg-m2J"/>
+                                    <segue destination="MeY-4n-mMC" kind="show" identifier="showInProgressPhases" id="TGc-n3-7N9"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eX-jH-PKV">
@@ -211,9 +211,6 @@
                                 <state key="normal" title="Show Completed Phases">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="MeY-4n-mMC" kind="show" id="FCt-uJ-qHa"/>
-                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -676,7 +673,4 @@
             <point key="canvasLocation" x="-345" y="-429"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="gC6-Xg-m2J"/>
-    </inferredMetricsTieBreakers>
 </document>

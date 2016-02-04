@@ -11,9 +11,23 @@ import UIKit
 class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
     var restaurantName = ["Cafe Deadend", "Homei", "Teakha", "Cafe Loisl", "Petite Oyster"]
+    
+    var phaseScore:Score!
+    var phaseScoreArray:[String]?
+    
+    func createPhaseScoreArray ()
+    {
+        
+        phaseScoreArray = [phaseScore.scoreId!, phaseScore.sit!, phaseScore.reverseSitUp!]
+        //print("Printing elements in phaseScore object: \(phaseScore.scoreId) \(phaseScore.sit) \(phaseScore.reverseSitUp)")
+        print("Printing elements in phaseScore object: \(phaseScore.scoreId) \(phaseScore.sit) \(phaseScore.reverseSitUp)")
+        
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        createPhaseScoreArray()
 
         // Do any additional setup after loading the view.
     }
@@ -24,7 +38,9 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restaurantName.count;
+        //return restaurantName.count;
+        //print("Count: \(self.phaseScoreArray.count)")
+        return self.phaseScoreArray!.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -32,7 +48,8 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
         
         //Configure the cell
-        cell.textLabel?.text = restaurantName[indexPath.row]
+        //cell.textLabel?.text = restaurantName[indexPath.row]
+        cell.textLabel?.text = self.phaseScoreArray![indexPath.row]
         
         return cell
     }

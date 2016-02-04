@@ -78,6 +78,10 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
                 print("Error: \(error!) \(error!.userInfo)")
             }
         }
+        
+        //create a new Score session in database
+        let noScore = ""
+        let scoreSession = Score(scoreIdInit: noScore, sitInit: noScore, reverseSitUpInit: noScore, sitUpInit: noScore, trunkExtensionInSittingInit: noScore, overheadPressInit: noScore, forwardReachAndGraspInit: noScore, doorPullAndOpenInit: noScore, canOpenAndManipulationInit: noScore, sitToStandInit: noScore, standInit: noScore, walkingInit: noScore, standAdaptabilityInit: noScore, stepRetrainingInit: noScore, stepAdaptabilityInit: noScore)
     }
     
     
@@ -135,6 +139,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         }
     }
     
+    //returns the phase item that has a phaseOrder of 1. This will be the default phase item for any new evaluation
     func getStartingPhaseItemFromArray() -> String
     {
         let filteredArray = self.phaseItemArray.filter({$0.phaseOrder == 1})
