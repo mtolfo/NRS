@@ -6,6 +6,8 @@
 //  Copyright © 2016 tolfosoftware. All rights reserved.
 //
 
+//this pulls from database object named "Phase_Items". 
+//TODO: Maybe rename the database object to "Phases"
 import Foundation
 import UIKit
 

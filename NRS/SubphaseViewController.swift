@@ -6,20 +6,22 @@
 //  Copyright © 2016 tolfosoftware. All rights reserved.
 //
 
+//This is the collection view controller for the new eval
 import UIKit
 
 class SubphaseViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource
 {
     
     @IBOutlet weak var subphaseCollectionView: UICollectionView!
-    private var subphaseArray = [Subphase]()
+    private var phaseItemArray = [Subphase]() //TODO: rename this model to PhaseItem.swift
     var destinationTempString = ""
     
-    func loadSubphasesFromParse()
+    func loadPhaseItemsFromDatabase()
     {
-        subphaseArray.removeAll()
+        phaseItemArray.removeAll()
         subphaseCollectionView.reloadData()
         
+        //pass in the class name of the Phase Name object in database (Sit, Stand, Sit Up...)
         let query = PFQuery(className: "Sit") //or whatever is passed in segue or default from PhaseViewController
         query.cachePolicy = PFCachePolicy.NetworkElseCache
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
@@ -33,7 +35,7 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
                 {
                     //convert PFObject into Subphase Object
                     let subphaseObject = Subphase(pfObject: object)
-                    self.subphaseArray.append(subphaseObject)
+                    self.phaseItemArray.append(subphaseObject)
                     
                     //Should I move the following two lines. This function is only to load the objects into the array
                     let indexPath = NSIndexPath(forRow: index, inSection: 0)
@@ -49,7 +51,7 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         self.view.backgroundColor = UIColor.redColor()
 
         // Do any additional setup after loading the view.
-        loadSubphasesFromParse()
+        loadPhaseItemsFromDatabase()
         print(destinationTempString)
     }
     
@@ -59,7 +61,7 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //return subphases.count
-        return subphaseArray.count
+        return phaseItemArray.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -75,8 +77,8 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         //configure cell
         //cell.descriptionLabel.text = subphases[indexPath.row].description
-        cell.descriptionLabel.text = subphaseArray[indexPath.row].description
-        cell.descriptionIdLabel.text = subphaseArray[indexPath.row].descriptionId
+        cell.descriptionLabel.text = phaseItemArray[indexPath.row].description
+        cell.descriptionIdLabel.text = phaseItemArray[indexPath.row].descriptionId
         
         let label = NSAttributedString(string: cell.descriptionLabel.text!, attributes: attributes)
         
