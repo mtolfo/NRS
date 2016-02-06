@@ -82,6 +82,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         //create a new Score session in database
         let noScore = ""
         let scoreSession = Score(/*scoreIdInit: noScore, */sitInit: noScore, reverseSitUpInit: noScore, sitUpInit: noScore, trunkExtensionInSittingInit: noScore, overheadPressInit: noScore, forwardReachAndGraspInit: noScore, doorPullAndOpenInit: noScore, canOpenAndManipulationInit: noScore, sitToStandInit: noScore, standInit: noScore, walkingInit: noScore, standAdaptabilityInit: noScore, stepRetrainingInit: noScore, stepAdaptabilityInit: noScore, versionInit: self.selectedVersionAfterDoneButtonClick)
+        
         scoreSession.toPfObject().saveInBackgroundWithBlock { (success:Bool, error: NSError?) -> Void in
             if (error == nil)
             {
