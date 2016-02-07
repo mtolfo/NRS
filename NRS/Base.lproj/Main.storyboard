@@ -274,25 +274,43 @@
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="PYX-6k-qjg" style="IBUITableViewCellStyleDefault" id="AJi-o3-5I0">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="AJi-o3-5I0" customClass="PhaseTableViewCell" customModule="NRS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AJi-o3-5I0" id="RJ4-IN-rbE">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PYX-6k-qjg">
-                                                    <rect key="frame" x="15" y="0.0" width="570" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phase" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNE-es-Uut">
+                                                    <rect key="frame" x="33" y="11" width="47" height="21"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9AN-4Q-Sh3">
+                                                    <rect key="frame" x="516" y="11" width="45" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="9AN-4Q-Sh3" firstAttribute="top" secondItem="RJ4-IN-rbE" secondAttribute="topMargin" constant="3" id="4uc-j7-hNK"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="9AN-4Q-Sh3" secondAttribute="bottom" constant="3.5" id="H2Y-Hq-983"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="9AN-4Q-Sh3" secondAttribute="trailing" constant="31" id="KwW-IK-owx"/>
+                                                <constraint firstItem="cNE-es-Uut" firstAttribute="leading" secondItem="RJ4-IN-rbE" secondAttribute="leadingMargin" constant="25" id="UQB-iP-p0t"/>
+                                                <constraint firstItem="cNE-es-Uut" firstAttribute="top" secondItem="RJ4-IN-rbE" secondAttribute="topMargin" constant="3" id="gGh-GZ-LCk"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="cNE-es-Uut" secondAttribute="bottom" constant="3.5" id="hpp-73-DzI"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <outlet property="phaseName" destination="cNE-es-Uut" id="WiW-IU-z2I"/>
+                                            <outlet property="phaseScore" destination="9AN-4Q-Sh3" id="UPW-hU-tCA"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

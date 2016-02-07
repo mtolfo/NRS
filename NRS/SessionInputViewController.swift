@@ -18,7 +18,6 @@ class SessionInputViewController: UIViewController
 
     @IBOutlet weak var sessionUsedLabel: UILabel!
    
-    
     var blurEffectView:UIVisualEffectView!
     
     

@@ -13,6 +13,7 @@
 		A80D5B171C585B6A004EE98C /* PhaseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80D5B161C585B6A004EE98C /* PhaseItem.swift */; };
 		A80D5B1A1C5875F4004EE98C /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80D5B191C5875F4004EE98C /* Score.swift */; };
 		A80D5B1E1C618485004EE98C /* PhaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80D5B1D1C618485004EE98C /* PhaseViewController.swift */; };
+		A814B8D11C66868300E20A35 /* PhaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A814B8D01C66868300E20A35 /* PhaseTableViewCell.swift */; };
 		A86F697C1C49400F00C402AB /* SessionInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86F697B1C49400F00C402AB /* SessionInputViewController.swift */; };
 		A86F697E1C4AF25400C402AB /* SubphaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86F697D1C4AF25400C402AB /* SubphaseViewController.swift */; };
 		A86F69801C4DAA0000C402AB /* SubPhaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86F697F1C4DAA0000C402AB /* SubPhaseCollectionViewCell.swift */; };
@@ -65,6 +66,7 @@
 		A80D5B161C585B6A004EE98C /* PhaseItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhaseItem.swift; sourceTree = "<group>"; };
 		A80D5B191C5875F4004EE98C /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		A80D5B1D1C618485004EE98C /* PhaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhaseViewController.swift; path = ../PhaseViewController.swift; sourceTree = "<group>"; };
+		A814B8D01C66868300E20A35 /* PhaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhaseTableViewCell.swift; sourceTree = "<group>"; };
 		A86F697B1C49400F00C402AB /* SessionInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionInputViewController.swift; sourceTree = "<group>"; };
 		A86F697D1C4AF25400C402AB /* SubphaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubphaseViewController.swift; sourceTree = "<group>"; };
 		A86F697F1C4DAA0000C402AB /* SubPhaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubPhaseCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 		A80D5B131C572A68004EE98C /* Session */ = {
 			isa = PBXGroup;
 			children = (
+				A814B8D01C66868300E20A35 /* PhaseTableViewCell.swift */,
 				A80D5B1D1C618485004EE98C /* PhaseViewController.swift */,
 				A86F697B1C49400F00C402AB /* SessionInputViewController.swift */,
 			);
@@ -393,6 +396,7 @@
 				A86F697E1C4AF25400C402AB /* SubphaseViewController.swift in Sources */,
 				A80D5B1E1C618485004EE98C /* PhaseViewController.swift in Sources */,
 				A80D5B171C585B6A004EE98C /* PhaseItem.swift in Sources */,
+				A814B8D11C66868300E20A35 /* PhaseTableViewCell.swift in Sources */,
 				A80D5B1A1C5875F4004EE98C /* Score.swift in Sources */,
 				A80D5B151C572B6B004EE98C /* Session.swift in Sources */,
 			);

@@ -65,21 +65,22 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         
         //Create a new row in Sessions table with the selected version. At this point we know this
         //is a new eval with a new session.
+        // 2/7/15 Don't need to create a new Session in Sessions table. We need to create 
+        // a new session in score
+//        let session = PFObject(className: "Session")
+//        session["version"] = self.selectedVersionAfterDoneButtonClick
+//        session.saveInBackgroundWithBlock { (success:Bool, error: NSError?) -> Void in
+//            if (error == nil)
+//            {
+//                print("Session with version saved!")
+//            }
+//            else
+//            {
+//                print("Error: \(error!) \(error!.userInfo)")
+//            }
+//        }
         
-        let session = PFObject(className: "Session")
-        session["version"] = self.selectedVersionAfterDoneButtonClick
-        session.saveInBackgroundWithBlock { (success:Bool, error: NSError?) -> Void in
-            if (error == nil)
-            {
-                print("Session with version saved!")
-            }
-            else
-            {
-                print("Error: \(error!) \(error!.userInfo)")
-            }
-        }
-        
-        //create a new Score session in database
+        //create a new Score session in database. Don't need to put a new session in the Sessions table.
         let noScore = ""
         let scoreSession = Score(/*scoreIdInit: noScore, */sitInit: noScore, reverseSitUpInit: noScore, sitUpInit: noScore, trunkExtensionInSittingInit: noScore, overheadPressInit: noScore, forwardReachAndGraspInit: noScore, doorPullAndOpenInit: noScore, canOpenAndManipulationInit: noScore, sitToStandInit: noScore, standInit: noScore, walkingInit: noScore, standAdaptabilityInit: noScore, stepRetrainingInit: noScore, stepAdaptabilityInit: noScore, versionInit: self.selectedVersionAfterDoneButtonClick)
         
