@@ -310,6 +310,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         {
             let destinationController = segue.destinationViewController as! SubphaseViewController
             destinationController.navigationItem.title = "\(self.startingPhaseItem): \(self.selectedVersionAfterDoneButtonClick)"
+            destinationController.phaseNameFromSegue = self.startingPhaseItem
         }
     }
 

@@ -11,6 +11,9 @@ import UIKit
 
 class SubphaseViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource
 {
+    var phaseNameFromSegue:String?
+    
+    
     
     @IBOutlet weak var subphaseCollectionView: UICollectionView!
     private var phaseItemArray = [Subphase]() //TODO: rename this model to PhaseItem.swift
@@ -22,7 +25,8 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         subphaseCollectionView.reloadData()
         
         //pass in the class name of the Phase Name object in database (Sit, Stand, Sit Up...)
-        let query = PFQuery(className: "Sit") //or whatever is passed in segue or default from PhaseViewController
+        let query = PFQuery(className: phaseNameFromSegue!) //or whatever is passed in segue or default from PhaseViewController
+        //let query = PFQuery(className: "Sit")
         query.cachePolicy = PFCachePolicy.NetworkElseCache
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             if let error = error {

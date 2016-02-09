@@ -21,23 +21,24 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     // FIXME: Phase Item names should be pulled from database
     //The names of the Phases need to be pulled from the database to prevent future refactorings in the event the name of the phase changes. In which case, a simple change to the database will make all of the changes.
+    // TODO: Need to use underscore here and need a new piece in the array that shows the name for the tableView. Reverse_Sit_up databaseName, Reverse Sit Up tableViewName
     enum PhaseName: String
     {
         case scoreId
         case sit = "Sit"
-        case reverseSitUp = "Reverse Sit Up"
-        case sitUp = "Sit Up"
-        case trunkExtensionInSitting = "Trunk Extension In Sitting"
-        case overheadPress = "Overhead Press"
+        case reverseSitUp = "Reverse_Sit_up"
+        case sitUp = "Sit_up"
+        case trunkExtensionInSitting = "Trunk_Extension_in_Sitting"
+        case overheadPress = "Overhead_Press"
         case forwardReachAndGrasp = "Forward Reach and Grasp"
-        case doorAndPull = "Door Pull and Open"
-        case canOpenAndManipulate = "Can Open and Manipulation"
-        case sitToStand = "Sit to Stand"
+        case doorAndPull = "Door_Pull_and_Open"
+        case canOpenAndManipulate = "Can_Open_and_Manipulation"
+        case sitToStand = "Sit_to_Stand"
         case stand = "Stand"
         case walking = "Walking"
-        case standAdaptability = "Stand Adaptability"
-        case stepRetraining = "Step Retraining"
-        case stepAdaptability = "Step Adaptability"
+        case standAdaptability = "Stand_Adaptability"
+        case stepRetraining = "Step_Retraining"
+        case stepAdaptability = "Step_Adaptability"
     }
     
     //FIXME: -Will need this if pulling phase item names from database
@@ -153,6 +154,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
             {
                 let destinationController = segue.destinationViewController as! SubphaseViewController
                 destinationController.navigationItem.title = self.phaseStructArray[indexpath.row].phaseName
+                destinationController.phaseNameFromSegue = self.phaseStructArray[indexpath.row].phaseName
 //                destinationController.phaseStructFromSegue.phaseName = self.phaseStructArray[indexpath.row].phaseName
 //                destinationController.phaseStructFromSegue.phaseScore = self.phaseStructArray[indexpath.row].phaseScore
             }
