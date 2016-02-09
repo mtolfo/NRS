@@ -311,7 +311,7 @@
                                         <connections>
                                             <outlet property="phaseName" destination="cNE-es-Uut" id="WiW-IU-z2I"/>
                                             <outlet property="phaseScore" destination="9AN-4Q-Sh3" id="UPW-hU-tCA"/>
-                                            <segue destination="97W-j7-dPd" kind="show" identifier="showSubphaseDetailFromTableView" id="Ox0-SL-TpW"/>
+                                            <segue destination="qZp-9i-Sta" kind="show" identifier="showSubphaseDetailFromTableView" id="SZW-FV-s8R"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -697,6 +697,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ox0-SL-TpW"/>
+        <segue reference="SZW-FV-s8R"/>
     </inferredMetricsTieBreakers>
 </document>

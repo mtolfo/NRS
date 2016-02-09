@@ -151,12 +151,13 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         {
             if let indexpath = tableView.indexPathForSelectedRow
             {
-                let destinationController = segue.destinationViewController as! SubPhaseDetailViewController
+                let destinationController = segue.destinationViewController as! SubphaseViewController
                 destinationController.navigationItem.title = self.phaseStructArray[indexpath.row].phaseName
 //                destinationController.phaseStructFromSegue.phaseName = self.phaseStructArray[indexpath.row].phaseName
 //                destinationController.phaseStructFromSegue.phaseScore = self.phaseStructArray[indexpath.row].phaseScore
             }
         }
+        
         
 //        if segue.identifier == "showRestaurantDetail" {
 //            if let indexPath = tableView.indexPathForSelectedRow {
