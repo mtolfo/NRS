@@ -40,6 +40,7 @@
 		A899524B1C3CADAB0023373D /* NewEvalSelectSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899524A1C3CADAB0023373D /* NewEvalSelectSessionViewController.swift */; };
 		A89EF5F11C6988AE0098CDBB /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89EF5EF1C6988AE0098CDBB /* Bolts.framework */; };
 		A89EF5F21C6988AE0098CDBB /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89EF5F01C6988AE0098CDBB /* Parse.framework */; };
+		A89EF5F41C6997A30098CDBB /* SubPhaseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89EF5F31C6997A30098CDBB /* SubPhaseDetailViewController.swift */; };
 		A8A5E62B1C3FF653002D7A10 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A5E62A1C3FF653002D7A10 /* Version.swift */; };
 		A8D392881C3CCCC1000B4125 /* NewEvalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D392871C3CCCC1000B4125 /* NewEvalViewController.swift */; };
 /* End PBXBuildFile section */
@@ -102,6 +103,7 @@
 		A899524A1C3CADAB0023373D /* NewEvalSelectSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEvalSelectSessionViewController.swift; sourceTree = "<group>"; };
 		A89EF5EF1C6988AE0098CDBB /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A89EF5F01C6988AE0098CDBB /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		A89EF5F31C6997A30098CDBB /* SubPhaseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubPhaseDetailViewController.swift; sourceTree = "<group>"; };
 		A8A5E62A1C3FF653002D7A10 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		A8D392871C3CCCC1000B4125 /* NewEvalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEvalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,6 +155,7 @@
 			children = (
 				A814B8D01C66868300E20A35 /* PhaseTableViewCell.swift */,
 				A80D5B1D1C618485004EE98C /* PhaseViewController.swift */,
+				A89EF5F31C6997A30098CDBB /* SubPhaseDetailViewController.swift */,
 				A86F697B1C49400F00C402AB /* SessionInputViewController.swift */,
 			);
 			name = Session;
@@ -406,6 +409,7 @@
 				A80D5B171C585B6A004EE98C /* PhaseItem.swift in Sources */,
 				A814B8D11C66868300E20A35 /* PhaseTableViewCell.swift in Sources */,
 				A80D5B1A1C5875F4004EE98C /* Score.swift in Sources */,
+				A89EF5F41C6997A30098CDBB /* SubPhaseDetailViewController.swift in Sources */,
 				A80D5B151C572B6B004EE98C /* Session.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

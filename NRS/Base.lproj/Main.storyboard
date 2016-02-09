@@ -311,6 +311,7 @@
                                         <connections>
                                             <outlet property="phaseName" destination="cNE-es-Uut" id="WiW-IU-z2I"/>
                                             <outlet property="phaseScore" destination="9AN-4Q-Sh3" id="UPW-hU-tCA"/>
+                                            <segue destination="97W-j7-dPd" kind="show" identifier="showSubphaseDetailFromTableView" id="Ox0-SL-TpW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -330,10 +331,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="In Progress Phase Items" id="1TU-6e-Eh6"/>
+                    <connections>
+                        <outlet property="tableView" destination="x6S-SL-uBh" id="9zs-wN-qyY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p1G-8H-gHa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="467" y="1312"/>
+            <point key="canvasLocation" x="1152" y="1323"/>
         </scene>
         <!--Phase Item-->
         <scene sceneID="XLy-Kc-UVz">
@@ -466,7 +470,7 @@
                                         <connections>
                                             <outlet property="descriptionIdLabel" destination="t2d-po-2GP" id="RzG-jE-Ezs"/>
                                             <outlet property="descriptionLabel" destination="sx4-7N-o01" id="PTy-2n-IKd"/>
-                                            <segue destination="97W-j7-dPd" kind="show" id="upe-EF-Pqf"/>
+                                            <segue destination="97W-j7-dPd" kind="show" identifier="showSubphaseDetailFromCollectionView" id="upe-EF-Pqf"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -532,7 +536,7 @@
         <!--Subphase Detail-->
         <scene sceneID="5lM-em-4I9">
             <objects>
-                <viewController title="Subphase Detail" id="97W-j7-dPd" sceneMemberID="viewController">
+                <viewController title="Subphase Detail" id="97W-j7-dPd" customClass="SubPhaseDetailViewController" customModule="NRS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fKN-OE-vj2"/>
                         <viewControllerLayoutGuide type="bottom" id="Sk8-gF-gDG"/>
@@ -692,4 +696,7 @@
             <point key="canvasLocation" x="-345" y="-429"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ox0-SL-TpW"/>
+    </inferredMetricsTieBreakers>
 </document>
