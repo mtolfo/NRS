@@ -45,6 +45,11 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.hidesBarsOnSwipe = true
+    }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()

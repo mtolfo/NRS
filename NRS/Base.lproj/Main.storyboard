@@ -54,7 +54,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="xiX-LP-0LT" kind="show" id="va6-9P-Jvq"/>
+                                            <segue destination="xiX-LP-0LT" kind="show" identifier="showNewEvalPickVersionScreen" id="va6-9P-Jvq"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNP-XI-AXm">
@@ -124,7 +124,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Eval" id="Gcz-9O-zOO"/>
+                    <navigationItem key="navigationItem" id="Gcz-9O-zOO"/>
                     <connections>
                         <outlet property="backgroundImagView" destination="BSa-wz-QXp" id="pFq-Ug-rLc"/>
                     </connections>
@@ -247,6 +247,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="In Progress Evaluation" id="Blo-gG-6ja"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="4jf-CG-qco" id="PNn-NU-Hqo"/>
                         <outlet property="sessionTextField" destination="CWP-ty-fkL" id="gAZ-uw-Ra6"/>
@@ -257,7 +258,7 @@
             </objects>
             <point key="canvasLocation" x="472" y="530"/>
         </scene>
-        <!--Phase View Controller-->
+        <!--In Progress Phase Items-->
         <scene sceneID="ssn-t6-Hnc">
             <objects>
                 <viewController id="MeY-4n-mMC" customClass="PhaseViewController" customModule="NRS" customModuleProvider="target" sceneMemberID="viewController">
@@ -285,14 +286,14 @@
                                                     <rect key="frame" x="33" y="11" width="47" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9AN-4Q-Sh3">
                                                     <rect key="frame" x="516" y="11" width="45" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -328,6 +329,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="x6S-SL-uBh" secondAttribute="trailing" constant="-20" id="kXW-pC-f4N"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="In Progress Phase Items" id="1TU-6e-Eh6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p1G-8H-gHa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -570,10 +572,10 @@
             </objects>
             <point key="canvasLocation" x="1885" y="530"/>
         </scene>
-        <!--NewEval-->
+        <!--New Evaluation-->
         <scene sceneID="cRN-jv-YPw">
             <objects>
-                <viewController title="NewEval" id="xiX-LP-0LT" customClass="NewEvalViewController" customModule="NRS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="New Evaluation" id="xiX-LP-0LT" customClass="NewEvalViewController" customModule="NRS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SDg-yN-9l2"/>
                         <viewControllerLayoutGuide type="bottom" id="rOH-I3-KZH"/>
@@ -652,8 +654,7 @@
                             </constraint>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Version" id="Nut-Gk-muZ"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationItem key="navigationItem" title="New Evaluation" id="Nut-Gk-muZ"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="6jS-fG-fOK" id="2tk-ik-0S0"/>
                         <outlet property="currentVersionLabel" destination="Xg2-8a-efS" id="xCX-tt-8T2"/>
