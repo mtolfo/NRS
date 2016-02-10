@@ -15,11 +15,13 @@ class PhaseItem:NSObject
 {
     var phaseItem = ""
     var phaseOrder:Int = 0
+    var phaseDatabaseName = ""
     
-    init (phaseItemInit: String, phaseOrderInit: Int)
+    init (phaseItemInit: String, phaseOrderInit: Int, phaseDatabaseNameInit: String)
     {
         self.phaseItem = phaseItemInit
         self.phaseOrder = phaseOrderInit
+        self.phaseDatabaseName = phaseDatabaseNameInit
         super.init()
     }
     
@@ -27,6 +29,7 @@ class PhaseItem:NSObject
     {
         self.phaseItem = pfObject["phaseItem"] as! String
         self.phaseOrder = pfObject["phaseOrder"] as! Int
+        self.phaseDatabaseName = pfObject["phaseDatabaseName"] as! String
     }
     
     func toPFObject() -> PFObject
@@ -34,6 +37,7 @@ class PhaseItem:NSObject
         let phaseItemObject = PFObject(className: "Phase_Items")
         phaseItemObject["phaseItem"] = phaseItem
         phaseItemObject["phaseOrder"] = phaseOrder
+        phaseItemObject["phaseDatabasename"] = phaseDatabaseName
         return phaseItemObject
     }
 }

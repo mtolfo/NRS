@@ -30,6 +30,7 @@ class SessionInputViewController: UIViewController
     
     //place all of the scores into an array
     //Should we filter first? Then function is less general.
+    //Loading scores now in order to have a validation for user input
     func loadScoresFromDatabase()
     {
         print ("in loadScoresFromDatabase()")

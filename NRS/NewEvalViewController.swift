@@ -18,7 +18,9 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     private var selectedPreviousVersion: String?
     private var selectedVersionAfterDoneButtonClick = ""
     private var phaseItemArray = [PhaseItem]()
-    private var startingPhaseItem = ""
+    //private var startingPhaseItemDatabaseName = ""
+    private var startingPhaseItemName = (databaseName: "", regularName: "")
+    
     
     var currentObject: PFObject?
     
@@ -29,6 +31,8 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     @IBOutlet weak var versionSegmentedControl: UISegmentedControl!
     @IBOutlet weak var currentVersionLabel: UILabel!
     @IBOutlet weak var newEvalDoneButton: UIButton!
+    
+    
     
     @IBAction func segmentControlIndexChanged(sender: AnyObject)
     {
@@ -59,9 +63,10 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     @IBAction func doneButtonClicked(sender: AnyObject)
     {
         self.selectedVersionAfterDoneButtonClick = getSelectedVersion()
-        self.startingPhaseItem = getStartingPhaseItemFromArray()
-        print("This is the slected version \(self.selectedVersionAfterDoneButtonClick)")
-        print ("This is the starting phase item \(self.startingPhaseItem)")
+        //self.startingPhaseItemDatabaseName = getStartingPhaseItemFromArray()
+        self.startingPhaseItemName = getStartingPhaseItem()
+        //print("This is the slected version \(self.selectedVersionAfterDoneButtonClick)")
+        //print ("This is the starting phase item \(self.startingPhaseItemDatabaseName)")
         
         //Create a new row in Sessions table with the selected version. At this point we know this
         //is a new eval with a new session.
@@ -168,7 +173,21 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     func getStartingPhaseItemFromArray() -> String
     {
         let filteredArray = self.phaseItemArray.filter({$0.phaseOrder == 1})
-        return filteredArray[0].phaseItem
+        return filteredArray[0].phaseDatabaseName
+    }
+    
+    func getStartingPhaseItem() -> (databaseName: String, regularName: String)
+    {
+        let filteredArray = self.phaseItemArray.filter({$0.phaseOrder == 1})
+        return (filteredArray[0].phaseDatabaseName, filteredArray[0].phaseItem)
+    }
+    
+    func AddAndSubtractTenFromNumber(number: Int) -> (small: Int, large: Int)
+    {
+        let smallResult = (number - 10)
+        let largeResult = (number + 10)
+        
+        return (smallResult, largeResult)
     }
     
     func formatDates(startDate: NSDate, endDate: NSDate) -> (startDateString:String, endDateString: String)
@@ -309,8 +328,11 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         if segue.identifier == "showNewEvalSubphases"
         {
             let destinationController = segue.destinationViewController as! SubphaseViewController
-            destinationController.navigationItem.title = "\(self.startingPhaseItem): \(self.selectedVersionAfterDoneButtonClick)"
-            destinationController.phaseNameFromSegue = self.startingPhaseItem
+            //destinationController.navigationItem.title = "\(self.startingPhaseItemDatabaseName): \(self.selectedVersionAfterDoneButtonClick)"
+            destinationController.navigationItem.title = "\(self.startingPhaseItemName.regularName)"
+            //TODO: self.startingPhaseItem should be the database name
+            //destinationController.phaseNameFromSegue = self.startingPhaseItemDatabaseName
+            destinationController.phaseNameFromSegue = self.startingPhaseItemName.databaseName
         }
     }
 

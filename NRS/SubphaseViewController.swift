@@ -26,7 +26,6 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         //pass in the class name of the Phase Name object in database (Sit, Stand, Sit Up...)
         let query = PFQuery(className: phaseNameFromSegue!) //or whatever is passed in segue or default from PhaseViewController
-        //let query = PFQuery(className: "Sit")
         query.cachePolicy = PFCachePolicy.NetworkElseCache
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             if let error = error {
