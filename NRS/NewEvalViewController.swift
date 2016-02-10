@@ -130,12 +130,6 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         self.versionPicker.delegate = self
         self.versionPicker.dataSource = self
         
-        backgroundImageView.image = UIImage(named: "cloudNRSred")
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-        blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView?.frame = view.bounds
-        backgroundImageView.addSubview(blurEffectView!)
-        
         self.versionSegmentedControl.selectedSegmentIndex = -1
         self.versionPicker.hidden = true
         self.currentVersionLabel.adjustsFontSizeToFitWidth = true

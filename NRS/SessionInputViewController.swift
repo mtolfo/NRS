@@ -115,11 +115,6 @@ class SessionInputViewController: UIViewController
         loadScoresFromDatabase()
 
         // Do any additional setup after loading the view.
-        backgroundImageView.image = UIImage(named: "cloudNRSred")
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-        blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView?.frame = view.bounds
-        backgroundImageView.addSubview(blurEffectView!)
     }
 
     override func didReceiveMemoryWarning() {

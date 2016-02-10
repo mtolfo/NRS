@@ -16,13 +16,14 @@ class NewEvalSelectSessionViewController: UIViewController
     override func viewDidLoad()
        {
         super.viewDidLoad()
-
+        
+        // TODO - Delete this blur effect stuff if we don't need it
         // Do any additional setup after loading the view.
-        backgroundImagView.image = UIImage(named: "cloudNRSred")
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-        blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView?.frame = view.bounds
-        backgroundImagView.addSubview(blurEffectView!)
+//        backgroundImagView.image = UIImage(named: "cloudNRSred")
+//        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+//        blurEffectView = UIVisualEffectView(effect: blurEffect)
+//        blurEffectView?.frame = view.bounds
+//        backgroundImagView.addSubview(blurEffectView!)
         
 //        // to handle iPhone 4s screen size
 //        if UIScreen.mainScreen().bounds.size.height == 480.0

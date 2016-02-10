@@ -61,32 +61,6 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         case stepAdaptability = "Step Adaptability"
     }
     
-    //FIXME: -Will need this if pulling phase item names from database
-//    func loadPhaseItemsFromDatabase()
-//    {
-//        print ("Loading phase items from database")
-//        let query = PFQuery(className: "Phase_Items")
-//        query.orderByAscending("phaseOrder")
-//        query.findObjectsInBackgroundWithBlock { (objects:[PFObject]?, error:NSError?) -> Void in
-//            if error ==  nil
-//            {
-//                if let objects = objects
-//                {
-//                    for object in objects
-//                    {
-//                        let phaseItemObject = PhaseItem(pfObject: object)
-//                        self.phaseItemArray.append(phaseItemObject)
-//                        print(phaseItemObject.phaseItem)
-//                    }
-//                }
-//                else
-//                {
-//                    print ("Error: \(error!) \(error!.userInfo)")
-//                }
-//            }
-//        }
-//    }
-    
     struct Phase
     {
         var phaseName:String?
@@ -162,9 +136,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         navigationController?.hidesBarsOnSwipe = true
     }
     
-    
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
@@ -177,21 +149,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
                 let destinationController = segue.destinationViewController as! SubphaseViewController
                 destinationController.navigationItem.title = self.phaseStructArray[indexpath.row].phaseName
                 destinationController.phaseNameFromSegue = self.phaseStructArray[indexpath.row].phaseDatabaseName
-//                destinationController.phaseStructFromSegue.phaseName = self.phaseStructArray[indexpath.row].phaseName
-//                destinationController.phaseStructFromSegue.phaseScore = self.phaseStructArray[indexpath.row].phaseScore
             }
         }
-        
-        
-//        if segue.identifier == "showRestaurantDetail" {
-//            if let indexPath = tableView.indexPathForSelectedRow {
-//            let destinationController = segue.destinationViewController as!
-//            RestaurantDetailViewController
-//            destinationController.restaurantImage =
-//            restaurantImages[indexPath.row]
-//            }
-//        }
     }
-    
-
 }
