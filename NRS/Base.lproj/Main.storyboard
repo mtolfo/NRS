@@ -492,7 +492,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yko-ga-nX5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yko-ga-nX5">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -643,6 +643,14 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="ableButton" destination="I5P-nN-5iI" id="Ydp-Rt-g79"/>
+                        <outlet property="manualButton" destination="JsD-XK-rjs" id="hjY-Rz-2rM"/>
+                        <outlet property="playVideoButton" destination="YeL-XT-VNu" id="92g-ww-V1i"/>
+                        <outlet property="subPhaseDescriptionLabel" destination="yko-ga-nX5" id="UhR-gT-Lgj"/>
+                        <outlet property="unableButton" destination="ukj-98-1Ns" id="q4h-ac-Kmx"/>
+                        <outlet property="verbalInstructionLabel" destination="mOM-gr-Vrq" id="Zs7-qA-utK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gd-7r-8Dj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

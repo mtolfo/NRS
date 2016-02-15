@@ -13,6 +13,14 @@ class SubPhaseDetailViewController: UIViewController
     var phaseStructFromSegue:PhaseFromSegue!
     var subPhaseFromSegue:Subphase!
     
+    @IBOutlet weak var verbalInstructionLabel: UILabel!
+    @IBOutlet weak var subPhaseDescriptionLabel: UILabel!
+    @IBOutlet weak var unableButton: UIButton!
+    @IBOutlet weak var ableButton: UIButton!
+    @IBOutlet weak var manualButton: UIButton!
+    @IBOutlet weak var playVideoButton: UIButton!
+    
+    
     struct PhaseFromSegue
     {
         var phaseName:String?
@@ -34,7 +42,51 @@ class SubPhaseDetailViewController: UIViewController
         //print("\(phaseStructFromSegue.phaseName) \(phaseStructFromSegue.phaseScore)")
         print("Subphase Description \(subPhaseFromSegue.description)")
         self.navigationItem.title = subPhaseFromSegue.descriptionId
+        self.subPhaseDescriptionLabel.text = subPhaseFromSegue.description
     }
+    
+//    func loadScoresFromDatabase()
+//    {
+//        print ("in loadScoresFromDatabase()")
+//        let query = PFQuery(className: "Scores")
+//        //query.whereKey("objectId", equalTo: "PjotGycNtZ")
+//        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+//            if error == nil
+//            {
+//                if let objects = objects
+//                {
+//                    for object in objects
+//                    {
+//                        let scoreObject = Score(pfObject: object)
+//                        self.scoreArray.append(scoreObject)
+//                        print(scoreObject.reverseSitUp)
+//                    }
+//                }
+//            }
+//            else
+//            {
+//                print("Error: \(error!) \(error!.userInfo)")
+//            }
+//        }
+//    }
+    
+    func loadVerbalInstructionsFromDatabase()
+    {
+        let query = PFQuery(className: "PhaseItem_Verbal_Instructions")
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if error == nil
+            {
+                if let objects = objects
+                {
+                    for object in objects
+                    {
+                        
+                    }
+                }
+            }
+        }
+    }
+
     
     
 
