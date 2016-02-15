@@ -92,10 +92,7 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         cell.descriptionLabel.attributedText = label
         //cell.descriptionLabel.sizeToFit()
-                
-
         
-
         //apply round corner
         cell.layer.cornerRadius = 4.0
         return cell
@@ -109,14 +106,42 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        //pass the selected PhaseItemArray to a Subphase Object
+        //pass the database name so we can get the verbal instructions
+        
+        if segue.identifier == "showSubphaseDetailFromCollectionView"
+        {
+            if let indexPaths = subphaseCollectionView.indexPathsForSelectedItems()
+            {
+                let destinationViewController = segue.destinationViewController as! SubPhaseDetailViewController
+                destinationViewController.subPhaseFromSegue = phaseItemArray[indexPaths[0].row]
+                subphaseCollectionView.deselectItemAtIndexPath(indexPaths[0], animated: false)
+            }
+        }
+        
+        //        if segue.identifier == "showRecipePhoto" {
+//        if let indexPaths = collectionView?.indexPathsForSelectedItems() {
+//            let destinationViewController = segue.destinationViewController as!
+//            UINavigationController
+//            let photoViewController =
+//            destinationViewController.viewControllers[0] as! PhotoViewController
+//            photoViewController.imageName = recipeImages[indexPaths[0].row]
+//            collectionView?.deselectItemAtIndexPath(indexPaths[0], animated:
+//            false)
+//        }
+//    }
+        
+        
     }
-    */
+    
 
 }

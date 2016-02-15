@@ -11,6 +11,7 @@ import UIKit
 class SubPhaseDetailViewController: UIViewController
 {
     var phaseStructFromSegue:PhaseFromSegue!
+    var subPhaseFromSegue:Subphase!
     
     struct PhaseFromSegue
     {
@@ -29,8 +30,10 @@ class SubPhaseDetailViewController: UIViewController
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print("From table view segue")
+        //print("From table view segue")
         //print("\(phaseStructFromSegue.phaseName) \(phaseStructFromSegue.phaseScore)")
+        print("Subphase Description \(subPhaseFromSegue.description)")
+        self.navigationItem.title = subPhaseFromSegue.descriptionId
     }
     
     
