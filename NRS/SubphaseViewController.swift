@@ -11,6 +11,7 @@ import UIKit
 
 class SubphaseViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource
 {
+    //TODO: phaseNameFromSegue is the phaseDatabaseName. Should refactor to change name.
     var phaseNameFromSegue:String?
     
     
@@ -124,6 +125,7 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
             {
                 let destinationViewController = segue.destinationViewController as! SubPhaseDetailViewController
                 destinationViewController.subPhaseFromSegue = phaseItemArray[indexPaths[0].row]
+                destinationViewController.phaseDatabaseNameFromSegue = self.phaseNameFromSegue
                 subphaseCollectionView.deselectItemAtIndexPath(indexPaths[0], animated: false)
             }
         }

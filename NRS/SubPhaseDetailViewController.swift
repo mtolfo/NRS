@@ -10,8 +10,11 @@ import UIKit
 
 class SubPhaseDetailViewController: UIViewController
 {
-    var phaseStructFromSegue:PhaseFromSegue!
+    //var phaseStructFromSegue:PhaseFromSegue!
     var subPhaseFromSegue:Subphase!
+    var phaseDatabaseNameFromSegue:String?
+    var verbalInstructionArray = [VerbalInstruction]()
+   
     
     @IBOutlet weak var verbalInstructionLabel: UILabel!
     @IBOutlet weak var subPhaseDescriptionLabel: UILabel!
@@ -19,60 +22,36 @@ class SubPhaseDetailViewController: UIViewController
     @IBOutlet weak var ableButton: UIButton!
     @IBOutlet weak var manualButton: UIButton!
     @IBOutlet weak var playVideoButton: UIButton!
-    
-    
-    struct PhaseFromSegue
-    {
-        var phaseName:String?
-        var phaseScore:String?
-        
-        init(phaseNameInput: String?, phaseScoreInput: String?)
-        {
-            phaseName = phaseNameInput
-            phaseScore = phaseScoreInput
-        }
-    }
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        //print("From table view segue")
-        //print("\(phaseStructFromSegue.phaseName) \(phaseStructFromSegue.phaseScore)")
-        print("Subphase Description \(subPhaseFromSegue.description)")
+        self.loadVerbalInstructionsFromDatabase()
+        self.verbalInstructionLabel.text = getVerbalInstructionFromArray()
+        
         self.navigationItem.title = subPhaseFromSegue.descriptionId
         self.subPhaseDescriptionLabel.text = subPhaseFromSegue.description
     }
     
-//    func loadScoresFromDatabase()
-//    {
-//        print ("in loadScoresFromDatabase()")
-//        let query = PFQuery(className: "Scores")
-//        //query.whereKey("objectId", equalTo: "PjotGycNtZ")
-//        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
-//            if error == nil
-//            {
-//                if let objects = objects
-//                {
-//                    for object in objects
-//                    {
-//                        let scoreObject = Score(pfObject: object)
-//                        self.scoreArray.append(scoreObject)
-//                        print(scoreObject.reverseSitUp)
-//                    }
-//                }
-//            }
-//            else
-//            {
-//                print("Error: \(error!) \(error!.userInfo)")
-//            }
-//        }
-//    }
+    func checkVerbalInstructionArray()
+    {
+        print ("In check verbal instruction array")
+        for element in self.verbalInstructionArray
+        {
+            print (element.verbalInstruction)
+        }
+    }
+    
+    func getVerbalInstructionFromArray() -> String
+    {
+        let filteredArray = self.verbalInstructionArray.filter({$0.phaseDatabaseName == self.phaseDatabaseNameFromSegue})
+        return filteredArray[0].verbalInstruction
+    }
     
     func loadVerbalInstructionsFromDatabase()
     {
         let query = PFQuery(className: "PhaseItem_Verbal_Instructions")
+        query.whereKey("phaseDatabaseName", equalTo:self.phaseDatabaseNameFromSegue!)
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             if error == nil
             {
@@ -80,17 +59,20 @@ class SubPhaseDetailViewController: UIViewController
                 {
                     for object in objects
                     {
-                        
+                        let verbalInstructionObject = VerbalInstruction(pfObject: object)
+                        self.verbalInstructionArray.append(verbalInstructionObject)
                     }
                 }
+            }
+            else
+            {
+                print("Error: \(error!) \(error!.userInfo)")
             }
         }
     }
 
-    
-    
-
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -105,5 +87,5 @@ class SubPhaseDetailViewController: UIViewController
         // Pass the selected object to the new view controller.
     }
     */
-
-}
+    
+    }
