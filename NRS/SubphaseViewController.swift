@@ -15,6 +15,7 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
     var phaseNameFromSegue:String?
     var sessionIdFromSegue:String?
     var destinationTempString = ""
+    //var sessionIdToPass:String?
     private var phaseItemArray = [Subphase]() //TODO: rename this model to PhaseItem.swift
     private var verbalInstructionArray = [VerbalInstruction]()
     private var verbalInstructionString = ""
@@ -34,6 +35,7 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         // Do any additional setup after loading the view.
         loadPhaseItemsFromDatabase()
         loadVerbalInstructionsFromDatabase()
+        //sessionIdToPass = sessionIdFromSegue
     }
 
     func loadPhaseItemsFromDatabase()
@@ -152,6 +154,8 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
                 destinationViewController.subPhaseFromSegue = phaseItemArray[indexPaths[0].row]
                 destinationViewController.phaseDatabaseNameFromSegue = self.phaseNameFromSegue
                 destinationViewController.verbalInstructionFromSegue = self.getVerbalInstructionFromArray()
+                destinationViewController.sessionIdFromSegue = self.sessionIdFromSegue
+//                print("IN COLLECTION VIEW: \(self.sessionIdToPass)")
                 subphaseCollectionView.deselectItemAtIndexPath(indexPaths[0], animated: false)
             }
         }

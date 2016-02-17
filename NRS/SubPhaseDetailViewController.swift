@@ -15,6 +15,7 @@ class SubPhaseDetailViewController: UIViewController
     var phaseDatabaseNameFromSegue:String?
     var verbalInstructionArray = [VerbalInstruction]()
     var verbalInstructionFromSegue:String?
+    var sessionIdFromSegue:String?
    
     
     @IBOutlet weak var verbalInstructionLabel: UILabel!
@@ -27,6 +28,7 @@ class SubPhaseDetailViewController: UIViewController
     @IBAction func manualButtonPressed(sender: AnyObject)
     {
         print("HELLO MANUAL BUTTON")
+        print("Session Id: \(self.sessionIdFromSegue)")
     }
     override func viewDidLoad()
     {

@@ -20,9 +20,12 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     private var phaseItemArray = [PhaseItem]()
     //private var startingPhaseItemDatabaseName = ""
     private var startingPhaseItemName = (databaseName: "", regularName: "")
+    private var sessionId = ""
+    private var temp = ""
     
     
     var currentObject: PFObject?
+    var newEvalScoreSessionPfObject:PFObject?
     
     var blurEffectView:UIVisualEffectView?
     
@@ -31,8 +34,6 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     @IBOutlet weak var versionSegmentedControl: UISegmentedControl!
     @IBOutlet weak var currentVersionLabel: UILabel!
     @IBOutlet weak var newEvalDoneButton: UIButton!
-    
-    
     
     @IBAction func segmentControlIndexChanged(sender: AnyObject)
     {
@@ -63,55 +64,27 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     @IBAction func doneButtonClicked(sender: AnyObject)
     {
         self.selectedVersionAfterDoneButtonClick = getSelectedVersion()
-        //self.startingPhaseItemDatabaseName = getStartingPhaseItemFromArray()
         self.startingPhaseItemName = getStartingPhaseItem()
-        //print("This is the slected version \(self.selectedVersionAfterDoneButtonClick)")
-        //print ("This is the starting phase item \(self.startingPhaseItemDatabaseName)")
-        
-        //Create a new row in Sessions table with the selected version. At this point we know this
-        //is a new eval with a new session.
-        // 2/7/15 Don't need to create a new Session in Sessions table. We need to create 
-        // a new session in score
-//        let session = PFObject(className: "Session")
-//        session["version"] = self.selectedVersionAfterDoneButtonClick
-//        session.saveInBackgroundWithBlock { (success:Bool, error: NSError?) -> Void in
-//            if (error == nil)
-//            {
-//                print("Session with version saved!")
-//            }
-//            else
-//            {
-//                print("Error: \(error!) \(error!.userInfo)")
-//            }
-//        }
         
         //create a new Score session in database. Don't need to put a new session in the Sessions table.
         let noScore = ""
         let scoreSession = Score(/*scoreIdInit: noScore, */sitInit: noScore, reverseSitUpInit: noScore, sitUpInit: noScore, trunkExtensionInSittingInit: noScore, overheadPressInit: noScore, forwardReachAndGraspInit: noScore, doorPullAndOpenInit: noScore, canOpenAndManipulationInit: noScore, sitToStandInit: noScore, standInit: noScore, walkingInit: noScore, standAdaptabilityInit: noScore, stepRetrainingInit: noScore, stepAdaptabilityInit: noScore, versionInit: self.selectedVersionAfterDoneButtonClick)
         
-        scoreSession.toPfObject().saveInBackgroundWithBlock { (success:Bool, error: NSError?) -> Void in
+        newEvalScoreSessionPfObject = scoreSession.toPfObject()
+        newEvalScoreSessionPfObject!.saveInBackgroundWithBlock { (success:Bool, error: NSError?) -> Void in
             if (error == nil)
             {
                 print("Score with session saved!")
+                //print("Just created session Id: \(self.newEvalScoreSessionPfObject!.objectId)")
+                //self.sessionId = (self.newEvalScoreSessionPfObject?.objectId)!
+                self.sessionId = self.newEvalScoreSessionPfObject!.objectId!
+                print("Just created session Id: \(self.sessionId)")
             }
             else
             {
                 print("Error: \(error!) \(error!.userInfo)")
             }
         }
-
-        
-        // Update the trip on Parse
-//        trips[indexPath.row].toPFObject().saveInBackgroundWithBlock({ (success, error) -> Void in
-//            if (success) {
-//                print("Successfully updated the trip")
-//            }
-//            else
-//            {
-//                print("Error: \(error?.description)")
-//            }
-//        })
-
     }
     
     
@@ -318,17 +291,19 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         return selectedVersion
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        
         if segue.identifier == "showNewEvalSubphases"
         {
             let destinationController = segue.destinationViewController as! SubphaseViewController
-            //destinationController.navigationItem.title = "\(self.startingPhaseItemDatabaseName): \(self.selectedVersionAfterDoneButtonClick)"
             destinationController.navigationItem.title = "\(self.startingPhaseItemName.regularName)"
             //TODO: self.startingPhaseItem should be the database name
-            //destinationController.phaseNameFromSegue = self.startingPhaseItemDatabaseName
             destinationController.phaseNameFromSegue = self.startingPhaseItemName.databaseName
+//            destinationController.sessionIdFromSegue = self.sessionId
+//            print("SEGUE: \(self.sessionId)")
+            //let subPhaseDetailDestinationController = segue.destinationViewController as! SubPhaseDetailViewController
+            //subPhaseDetailDestinationController.sessionIdFromSegue = self.sessionId
         }
     }
-
-   
 }

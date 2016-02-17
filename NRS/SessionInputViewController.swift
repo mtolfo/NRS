@@ -145,7 +145,7 @@ class SessionInputViewController: UIViewController
             //print("In Segue: \(destinationController.phaseScore)")
         }
     }
-    
+    //PjotGycNtZ
     //validation to prevent segue
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool
     {
