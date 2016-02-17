@@ -68,7 +68,7 @@ class Score: NSObject
     
     init (pfObject:PFObject)
     {
-        self.scoreId = pfObject.objectId!
+        self.scoreId = pfObject.objectId! //this is the "Session Id"
         self.sit = pfObject["sit"] as! String
         self.reverseSitUp = pfObject["reverseSitUp"] as! String
         self.sitUp = pfObject["sitUp"] as! String
@@ -84,7 +84,8 @@ class Score: NSObject
         self.stepRetraining = pfObject["stepRetraining"] as! String
         self.stepAdaptability = pfObject["stepAdaptability"] as! String
     }
-
+    
+    //create a Score row. No need for the objectId which is alsow the sessionId
     func toPfObject() -> PFObject
     {
         let scoreObject = PFObject(className: "Scores")

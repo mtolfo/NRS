@@ -66,30 +66,32 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         var phaseName:String?
         var phaseScore:String?
         var phaseDatabaseName:String?
+        var phaseScoreId:String?
         
-        init(phaseDatabaseNameInput: String?, phaseScoreInput: String?, phaseNameInput: String?)
+        init(phaseDatabaseNameInput: String?, phaseScoreInput: String?, phaseNameInput: String?, phaseScoreIdInput:String?)
         {
             phaseName = phaseNameInput
             phaseScore = phaseScoreInput
             phaseDatabaseName = phaseDatabaseNameInput
+            phaseScoreId = phaseScoreIdInput
         }
     }
     
     func createArrayOfPhases()
     {
-            phaseStructArray = [Phase(phaseDatabaseNameInput: PhaseDatabaseName.sit.rawValue, phaseScoreInput: phaseScore.sit, phaseNameInput: PhaseName.sit.rawValue),
-            Phase(phaseDatabaseNameInput: PhaseDatabaseName.reverseSitUp.rawValue, phaseScoreInput: phaseScore.reverseSitUp, phaseNameInput: PhaseName.reverseSitUp.rawValue),
-            Phase(phaseDatabaseNameInput: PhaseDatabaseName.trunkExtensionInSitting.rawValue, phaseScoreInput: phaseScore.trunkExtensionInSitting, phaseNameInput: PhaseName.trunkExtensionInSitting.rawValue),
-            Phase(phaseDatabaseNameInput: PhaseDatabaseName.overheadPress.rawValue, phaseScoreInput: phaseScore.overheadPress, phaseNameInput: PhaseName.overheadPress.rawValue),
-            Phase(phaseDatabaseNameInput: PhaseDatabaseName.forwardReachAndGrasp.rawValue, phaseScoreInput: phaseScore.forwardReachAndGrasp, phaseNameInput: PhaseName.forwardReachAndGrasp.rawValue),
-            Phase(phaseDatabaseNameInput: PhaseDatabaseName.doorAndPull.rawValue, phaseScoreInput: phaseScore.doorPullAndOpen, phaseNameInput: PhaseName.doorAndPull.rawValue),
-            Phase(phaseDatabaseNameInput: PhaseDatabaseName.canOpenAndManipulate.rawValue, phaseScoreInput: phaseScore.canOpenAndManipulation, phaseNameInput: PhaseName.canOpenAndManipulate.rawValue),
-            Phase(phaseDatabaseNameInput: PhaseDatabaseName.sitToStand.rawValue, phaseScoreInput: phaseScore.sitToStand, phaseNameInput: PhaseName.sitToStand.rawValue),
-            Phase(phaseDatabaseNameInput: PhaseDatabaseName.stand.rawValue, phaseScoreInput: phaseScore.stand, phaseNameInput: PhaseName.stand.rawValue),
-            Phase(phaseDatabaseNameInput: PhaseDatabaseName.walking.rawValue, phaseScoreInput: phaseScore.walking, phaseNameInput: PhaseName.walking.rawValue),
-            Phase(phaseDatabaseNameInput: PhaseDatabaseName.standAdaptability.rawValue, phaseScoreInput: phaseScore.standAdaptability, phaseNameInput: PhaseName.standAdaptability.rawValue),
-            Phase(phaseDatabaseNameInput: PhaseDatabaseName.stepRetraining.rawValue, phaseScoreInput: phaseScore.stepRetraining, phaseNameInput: PhaseName.stepRetraining.rawValue),
-            Phase(phaseDatabaseNameInput: PhaseDatabaseName.stepAdaptability.rawValue, phaseScoreInput: phaseScore.stepAdaptability, phaseNameInput: PhaseName.stepAdaptability.rawValue)]
+            phaseStructArray = [Phase(phaseDatabaseNameInput: PhaseDatabaseName.sit.rawValue, phaseScoreInput: phaseScore.sit, phaseNameInput: PhaseName.sit.rawValue, phaseScoreIdInput: phaseScore.scoreId),
+            Phase(phaseDatabaseNameInput: PhaseDatabaseName.reverseSitUp.rawValue, phaseScoreInput: phaseScore.reverseSitUp, phaseNameInput: PhaseName.reverseSitUp.rawValue, phaseScoreIdInput: phaseScore.scoreId),
+            Phase(phaseDatabaseNameInput: PhaseDatabaseName.trunkExtensionInSitting.rawValue, phaseScoreInput: phaseScore.trunkExtensionInSitting, phaseNameInput: PhaseName.trunkExtensionInSitting.rawValue, phaseScoreIdInput: phaseScore.scoreId),
+            Phase(phaseDatabaseNameInput: PhaseDatabaseName.overheadPress.rawValue, phaseScoreInput: phaseScore.overheadPress, phaseNameInput: PhaseName.overheadPress.rawValue, phaseScoreIdInput: phaseScore.scoreId),
+            Phase(phaseDatabaseNameInput: PhaseDatabaseName.forwardReachAndGrasp.rawValue, phaseScoreInput: phaseScore.forwardReachAndGrasp, phaseNameInput: PhaseName.forwardReachAndGrasp.rawValue, phaseScoreIdInput: phaseScore.scoreId),
+            Phase(phaseDatabaseNameInput: PhaseDatabaseName.doorAndPull.rawValue, phaseScoreInput: phaseScore.doorPullAndOpen, phaseNameInput: PhaseName.doorAndPull.rawValue, phaseScoreIdInput: phaseScore.scoreId),
+            Phase(phaseDatabaseNameInput: PhaseDatabaseName.canOpenAndManipulate.rawValue, phaseScoreInput: phaseScore.canOpenAndManipulation, phaseNameInput: PhaseName.canOpenAndManipulate.rawValue, phaseScoreIdInput: phaseScore.scoreId),
+            Phase(phaseDatabaseNameInput: PhaseDatabaseName.sitToStand.rawValue, phaseScoreInput: phaseScore.sitToStand, phaseNameInput: PhaseName.sitToStand.rawValue, phaseScoreIdInput: phaseScore.scoreId),
+            Phase(phaseDatabaseNameInput: PhaseDatabaseName.stand.rawValue, phaseScoreInput: phaseScore.stand, phaseNameInput: PhaseName.stand.rawValue, phaseScoreIdInput: phaseScore.scoreId),
+            Phase(phaseDatabaseNameInput: PhaseDatabaseName.walking.rawValue, phaseScoreInput: phaseScore.walking, phaseNameInput: PhaseName.walking.rawValue, phaseScoreIdInput: phaseScore.scoreId),
+            Phase(phaseDatabaseNameInput: PhaseDatabaseName.standAdaptability.rawValue, phaseScoreInput: phaseScore.standAdaptability, phaseNameInput: PhaseName.standAdaptability.rawValue, phaseScoreIdInput: phaseScore.scoreId),
+            Phase(phaseDatabaseNameInput: PhaseDatabaseName.stepRetraining.rawValue, phaseScoreInput: phaseScore.stepRetraining, phaseNameInput: PhaseName.stepRetraining.rawValue, phaseScoreIdInput: phaseScore.scoreId),
+            Phase(phaseDatabaseNameInput: PhaseDatabaseName.stepAdaptability.rawValue, phaseScoreInput: phaseScore.stepAdaptability, phaseNameInput: PhaseName.stepAdaptability.rawValue, phaseScoreIdInput: phaseScore.scoreId)]
     }
     
 
@@ -149,6 +151,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
                 let destinationController = segue.destinationViewController as! SubphaseViewController
                 destinationController.navigationItem.title = self.phaseStructArray[indexpath.row].phaseName
                 destinationController.phaseNameFromSegue = self.phaseStructArray[indexpath.row].phaseDatabaseName
+                destinationController.sessionIdFromSegue = self.phaseStructArray[indexpath.row].phaseScoreId
             }
         }
     }

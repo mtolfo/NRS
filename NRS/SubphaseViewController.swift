@@ -13,6 +13,7 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
 {
     //TODO: phaseNameFromSegue is the phaseDatabaseName. Should refactor to change name.
     var phaseNameFromSegue:String?
+    var sessionIdFromSegue:String?
     var destinationTempString = ""
     private var phaseItemArray = [Subphase]() //TODO: rename this model to PhaseItem.swift
     private var verbalInstructionArray = [VerbalInstruction]()
@@ -92,7 +93,6 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         return filteredArray[0].verbalInstruction
     }
 
-    
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
