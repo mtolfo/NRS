@@ -48,7 +48,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         case sit = "Sit"
         case reverseSitUp = "Reverse Sit up"
         case sitUp = "Sit up"
-        case trunkExtensionInSitting = "Trunk_Extension in Sitting"
+        case trunkExtensionInSitting = "Trunk Extension in Sitting"
         case overheadPress = "Overhead Press"
         case forwardReachAndGrasp = "Forward Reach and Grasp"
         case doorAndPull = "Door Pull and Open"

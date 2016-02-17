@@ -14,6 +14,7 @@ class SubPhaseDetailViewController: UIViewController
     var subPhaseFromSegue:Subphase!
     var phaseDatabaseNameFromSegue:String?
     var verbalInstructionArray = [VerbalInstruction]()
+    var verbalInstructionFromSegue:String?
    
     
     @IBOutlet weak var verbalInstructionLabel: UILabel!
@@ -23,54 +24,19 @@ class SubPhaseDetailViewController: UIViewController
     @IBOutlet weak var manualButton: UIButton!
     @IBOutlet weak var playVideoButton: UIButton!
 
+    @IBAction func manualButtonPressed(sender: AnyObject)
+    {
+        print("HELLO MANUAL BUTTON")
+    }
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.loadVerbalInstructionsFromDatabase()
-        self.verbalInstructionLabel.text = getVerbalInstructionFromArray()
-        
         self.navigationItem.title = subPhaseFromSegue.descriptionId
+        self.verbalInstructionLabel.text = verbalInstructionFromSegue
         self.subPhaseDescriptionLabel.text = subPhaseFromSegue.description
     }
     
-    func checkVerbalInstructionArray()
-    {
-        print ("In check verbal instruction array")
-        for element in self.verbalInstructionArray
-        {
-            print (element.verbalInstruction)
-        }
-    }
-    
-    func getVerbalInstructionFromArray() -> String
-    {
-        let filteredArray = self.verbalInstructionArray.filter({$0.phaseDatabaseName == self.phaseDatabaseNameFromSegue})
-        return filteredArray[0].verbalInstruction
-    }
-    
-    func loadVerbalInstructionsFromDatabase()
-    {
-        let query = PFQuery(className: "PhaseItem_Verbal_Instructions")
-        query.whereKey("phaseDatabaseName", equalTo:self.phaseDatabaseNameFromSegue!)
-        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
-            if error == nil
-            {
-                if let objects = objects
-                {
-                    for object in objects
-                    {
-                        let verbalInstructionObject = VerbalInstruction(pfObject: object)
-                        self.verbalInstructionArray.append(verbalInstructionObject)
-                    }
-                }
-            }
-            else
-            {
-                print("Error: \(error!) \(error!.userInfo)")
-            }
-        }
-    }
-
+   
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()

@@ -13,13 +13,28 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
 {
     //TODO: phaseNameFromSegue is the phaseDatabaseName. Should refactor to change name.
     var phaseNameFromSegue:String?
-    
-    
+    var destinationTempString = ""
+    private var phaseItemArray = [Subphase]() //TODO: rename this model to PhaseItem.swift
+    private var verbalInstructionArray = [VerbalInstruction]()
+    private var verbalInstructionString = ""
     
     @IBOutlet weak var subphaseCollectionView: UICollectionView!
-    private var phaseItemArray = [Subphase]() //TODO: rename this model to PhaseItem.swift
-    var destinationTempString = ""
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        navigationController?.hidesBarsOnSwipe = true
+    }
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        self.view.backgroundColor = UIColor.redColor()
+        
+        // Do any additional setup after loading the view.
+        loadPhaseItemsFromDatabase()
+        loadVerbalInstructionsFromDatabase()
+    }
+
     func loadPhaseItemsFromDatabase()
     {
         phaseItemArray.removeAll()
@@ -49,20 +64,34 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         }
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        navigationController?.hidesBarsOnSwipe = true
+    func loadVerbalInstructionsFromDatabase()
+    {
+        let query = PFQuery(className: "PhaseItem_Verbal_Instructions")
+        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+            if error == nil
+            {
+                if let objects = objects
+                {
+                    for object in objects
+                    {
+                        let verbalInstructionObject = VerbalInstruction(pfObject: object)
+                        self.verbalInstructionArray.append(verbalInstructionObject)
+                    }
+                }
+            }
+            else
+            {
+                print("Error: \(error!) \(error!.userInfo)")
+            }
+        }
     }
     
-    override func viewDidLoad()
+    func getVerbalInstructionFromArray() -> String
     {
-        super.viewDidLoad()
-        self.view.backgroundColor = UIColor.redColor()
-
-        // Do any additional setup after loading the view.
-        loadPhaseItemsFromDatabase()
-        print(destinationTempString)
+        let filteredArray = self.verbalInstructionArray.filter({$0.phaseDatabaseName == self.phaseNameFromSegue})
+        return filteredArray[0].verbalInstruction
     }
+
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -104,10 +133,6 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
-
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -126,21 +151,11 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
                 let destinationViewController = segue.destinationViewController as! SubPhaseDetailViewController
                 destinationViewController.subPhaseFromSegue = phaseItemArray[indexPaths[0].row]
                 destinationViewController.phaseDatabaseNameFromSegue = self.phaseNameFromSegue
+                destinationViewController.verbalInstructionFromSegue = self.getVerbalInstructionFromArray()
                 subphaseCollectionView.deselectItemAtIndexPath(indexPaths[0], animated: false)
             }
         }
         
-        //        if segue.identifier == "showRecipePhoto" {
-//        if let indexPaths = collectionView?.indexPathsForSelectedItems() {
-//            let destinationViewController = segue.destinationViewController as!
-//            UINavigationController
-//            let photoViewController =
-//            destinationViewController.viewControllers[0] as! PhotoViewController
-//            photoViewController.imageName = recipeImages[indexPaths[0].row]
-//            collectionView?.deselectItemAtIndexPath(indexPaths[0], animated:
-//            false)
-//        }
-//    }
         
         
     }
