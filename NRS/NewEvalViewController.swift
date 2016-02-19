@@ -65,27 +65,31 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     {
         self.selectedVersionAfterDoneButtonClick = getSelectedVersion()
         self.startingPhaseItemName = getStartingPhaseItem()
-        
-        //create a new Score session in database. Don't need to put a new session in the Sessions table.
+        self.createNewEvalScoreSession()
+    }
+    
+    func createNewEvalScoreSession()
+    {
         let noScore = ""
         let scoreSession = Score(/*scoreIdInit: noScore, */sitInit: noScore, reverseSitUpInit: noScore, sitUpInit: noScore, trunkExtensionInSittingInit: noScore, overheadPressInit: noScore, forwardReachAndGraspInit: noScore, doorPullAndOpenInit: noScore, canOpenAndManipulationInit: noScore, sitToStandInit: noScore, standInit: noScore, walkingInit: noScore, standAdaptabilityInit: noScore, stepRetrainingInit: noScore, stepAdaptabilityInit: noScore, versionInit: self.selectedVersionAfterDoneButtonClick)
         
-        newEvalScoreSessionPfObject = scoreSession.toPfObject()
-        newEvalScoreSessionPfObject!.saveInBackgroundWithBlock { (success:Bool, error: NSError?) -> Void in
+        self.newEvalScoreSessionPfObject = scoreSession.toPfObject()
+        self.newEvalScoreSessionPfObject!.saveInBackgroundWithBlock({ (success:Bool, error:NSError?) -> Void in
             if (error == nil)
             {
-                print("Score with session saved!")
-                //print("Just created session Id: \(self.newEvalScoreSessionPfObject!.objectId)")
-                //self.sessionId = (self.newEvalScoreSessionPfObject?.objectId)!
-                self.sessionId = self.newEvalScoreSessionPfObject!.objectId!
-                print("Just created session Id: \(self.sessionId)")
+                print ("BEGIN generate object id")
+                print("New Score with session saved: \(self.newEvalScoreSessionPfObject?.objectId as String!)")
+                self.performSegueWithIdentifier("showNewEvalSubphases", sender: self.newEvalScoreSessionPfObject)
+                print ("END generate object id")
             }
             else
             {
                 print("Error: \(error!) \(error!.userInfo)")
             }
-        }
+            
+        })
     }
+
     
     
     //to fix the label size use label.adjustsFontSizeToFitWidth
@@ -300,10 +304,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
             destinationController.navigationItem.title = "\(self.startingPhaseItemName.regularName)"
             //TODO: self.startingPhaseItem should be the database name
             destinationController.phaseNameFromSegue = self.startingPhaseItemName.databaseName
-//            destinationController.sessionIdFromSegue = self.sessionId
-//            print("SEGUE: \(self.sessionId)")
-            //let subPhaseDetailDestinationController = segue.destinationViewController as! SubPhaseDetailViewController
-            //subPhaseDetailDestinationController.sessionIdFromSegue = self.sessionId
+            destinationController.sessionIdFromSegue = self.newEvalScoreSessionPfObject?.objectId as String!
         }
     }
 }
