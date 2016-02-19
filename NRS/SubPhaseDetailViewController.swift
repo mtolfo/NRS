@@ -8,7 +8,9 @@
 
 import UIKit
 
-class SubPhaseDetailViewController: UIViewController
+
+
+class SubPhaseDetailViewController: UIViewController, NewEvalVcDelegate
 {
     //var phaseStructFromSegue:PhaseFromSegue!
     var subPhaseFromSegue:Subphase!
@@ -16,7 +18,7 @@ class SubPhaseDetailViewController: UIViewController
     var verbalInstructionArray = [VerbalInstruction]()
     var verbalInstructionFromSegue:String?
     var sessionIdFromSegue:String?
-   
+       
     
     @IBOutlet weak var verbalInstructionLabel: UILabel!
     @IBOutlet weak var subPhaseDescriptionLabel: UILabel!
@@ -29,6 +31,8 @@ class SubPhaseDetailViewController: UIViewController
     {
         print("HELLO MANUAL BUTTON")
         print("Session Id: \(self.sessionIdFromSegue)")
+        
+        
     }
     override func viewDidLoad()
     {
@@ -36,6 +40,7 @@ class SubPhaseDetailViewController: UIViewController
         self.navigationItem.title = subPhaseFromSegue.descriptionId
         self.verbalInstructionLabel.text = verbalInstructionFromSegue
         self.subPhaseDescriptionLabel.text = subPhaseFromSegue.description
+        
     }
     
    
@@ -43,6 +48,14 @@ class SubPhaseDetailViewController: UIViewController
     {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: NewEvalVcDelegate
+    func newEvalVcDidTouchDoneButton(controller: NewEvalViewController, objectId: String)
+    {
+        performSegueWithIdentifier("showSubphaseDetailFromCollectionView", sender: nil)
+        self.sessionIdFromSegue = objectId
+        print("In SubPhaseDetailViewController: \(self.sessionIdFromSegue)")
     }
     
 

@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol NewEvalVcDelegate: class
+{
+    func newEvalVcDidTouchDoneButton(controller: NewEvalViewController, objectId: String)
+}
+
 class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerViewDelegate
 {
     private var versionsArray = [Version]()
@@ -24,6 +29,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     private var temp = ""
     
     
+    
     var currentObject: PFObject?
     var newEvalScoreSessionPfObject:PFObject?
     
@@ -34,6 +40,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     @IBOutlet weak var versionSegmentedControl: UISegmentedControl!
     @IBOutlet weak var currentVersionLabel: UILabel!
     @IBOutlet weak var newEvalDoneButton: UIButton!
+    weak var delegate: NewEvalVcDelegate?
     
     @IBAction func segmentControlIndexChanged(sender: AnyObject)
     {
@@ -63,9 +70,25 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     
     @IBAction func doneButtonClicked(sender: AnyObject)
     {
+        print("BEGIN doneButtonClicked")
         self.selectedVersionAfterDoneButtonClick = getSelectedVersion()
         self.startingPhaseItemName = getStartingPhaseItem()
         self.createNewEvalScoreSession()
+        
+        //using delegate to pass the object id
+        delegate?.newEvalVcDidTouchDoneButton(self, objectId: self.newEvalScoreSessionPfObject?.objectId as String!)
+        print("END doneButtonClicked")
+    }
+    
+    func saveInBackground()
+    {
+        
+        let noScore = ""
+        let scoreSession = Score(/*scoreIdInit: noScore, */sitInit: noScore, reverseSitUpInit: noScore, sitUpInit: noScore, trunkExtensionInSittingInit: noScore, overheadPressInit: noScore, forwardReachAndGraspInit: noScore, doorPullAndOpenInit: noScore, canOpenAndManipulationInit: noScore, sitToStandInit: noScore, standInit: noScore, walkingInit: noScore, standAdaptabilityInit: noScore, stepRetrainingInit: noScore, stepAdaptabilityInit: noScore, versionInit: self.selectedVersionAfterDoneButtonClick)
+        
+        self.newEvalScoreSessionPfObject = scoreSession.toPfObject()
+
+        self.newEvalScoreSessionPfObject?.saveInBackground()
     }
     
     func createNewEvalScoreSession()
@@ -79,7 +102,10 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
             {
                 print ("BEGIN generate object id")
                 print("New Score with session saved: \(self.newEvalScoreSessionPfObject?.objectId as String!)")
-                self.performSegueWithIdentifier("showNewEvalSubphases", sender: self.newEvalScoreSessionPfObject)
+                //self.performSegueWithIdentifier("showNewEvalSubphases", sender: self.newEvalScoreSessionPfObject)
+                //using delegate to pass the object id
+                //self.delegate?.newEvalVcDidTouchDoneButton(self, objectId: self.newEvalScoreSessionPfObject?.objectId as String!)
+                print ("Generated object id for delegate")
                 print ("END generate object id")
             }
             else
@@ -90,8 +116,6 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         })
     }
 
-    
-    
     //to fix the label size use label.adjustsFontSizeToFitWidth
     
     override func viewDidLoad() {
@@ -297,6 +321,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
+        print ("BEGIN prepareForSegue")
         
         if segue.identifier == "showNewEvalSubphases"
         {
@@ -304,7 +329,8 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
             destinationController.navigationItem.title = "\(self.startingPhaseItemName.regularName)"
             //TODO: self.startingPhaseItem should be the database name
             destinationController.phaseNameFromSegue = self.startingPhaseItemName.databaseName
-            destinationController.sessionIdFromSegue = self.newEvalScoreSessionPfObject?.objectId as String!
+            //destinationController.sessionIdFromSegue = self.newEvalScoreSessionPfObject?.objectId as String!
         }
+        print ("END prepareForSegue")
     }
 }
