@@ -8,6 +8,14 @@
 
 import UIKit
 
+protocol NewEvalViewControllerDelegate
+{
+    func getNewEvalSessionId(sessionId:String)
+}
+
+
+
+
 class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerViewDelegate
 {
     private var versionsArray = [Version]()
@@ -22,6 +30,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     private var startingPhaseItemName = (databaseName: "", regularName: "")
     private var sessionId = ""
     private var temp = ""
+    //var newEvalVcDelegate:NewEvalViewControllerDelegate? = nil
     
     
     var currentObject: PFObject?
@@ -79,8 +88,16 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
             {
                 print ("BEGIN generate object id")
                 print("New Score with session saved: \(self.newEvalScoreSessionPfObject?.objectId as String!)")
-                self.performSegueWithIdentifier("showNewEvalSubphases", sender: self.newEvalScoreSessionPfObject)
+                //self.performSegueWithIdentifier("showNewEvalSubphases", sender: self.newEvalScoreSessionPfObject)
+//                if self.newEvalVcDelegate != nil
+//                {
+//                    self.newEvalVcDelegate?.getNewEvalSessionId(self.newEvalScoreSessionPfObject?.objectId as String!)
+//                }
+                NewEvalSessionId.sharedInstance.sessionId = self.newEvalScoreSessionPfObject?.objectId as String!
+                
+                
                 print ("END generate object id")
+                
             }
             else
             {
@@ -88,6 +105,17 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
             }
             
         })
+    }
+    
+    func tempCreateNewEvalScoreSession()
+    {
+        
+        let noScore = ""
+        let scoreSession = Score(/*scoreIdInit: noScore, */sitInit: noScore, reverseSitUpInit: noScore, sitUpInit: noScore, trunkExtensionInSittingInit: noScore, overheadPressInit: noScore, forwardReachAndGraspInit: noScore, doorPullAndOpenInit: noScore, canOpenAndManipulationInit: noScore, sitToStandInit: noScore, standInit: noScore, walkingInit: noScore, standAdaptabilityInit: noScore, stepRetrainingInit: noScore, stepAdaptabilityInit: noScore, versionInit: self.selectedVersionAfterDoneButtonClick)
+        
+        self.newEvalScoreSessionPfObject = scoreSession.toPfObject()
+        
+        
     }
 
     
@@ -304,7 +332,11 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
             destinationController.navigationItem.title = "\(self.startingPhaseItemName.regularName)"
             //TODO: self.startingPhaseItem should be the database name
             destinationController.phaseNameFromSegue = self.startingPhaseItemName.databaseName
-            destinationController.sessionIdFromSegue = self.newEvalScoreSessionPfObject?.objectId as String!
+            //destinationController.sessionIdFromSegue = self.newEvalScoreSessionPfObject?.objectId as String!
+            
+            
+            
+            
         }
     }
 }

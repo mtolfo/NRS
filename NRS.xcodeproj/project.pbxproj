@@ -17,6 +17,9 @@
 		A82B16121C7217FD0095CE2B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A82B16101C7217FD0095CE2B /* Bolts.framework */; };
 		A82B16131C7217FD0095CE2B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A82B16111C7217FD0095CE2B /* Parse.framework */; };
 		A82B16151C725D980095CE2B /* VerbalInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82B16141C725D980095CE2B /* VerbalInstruction.swift */; };
+		A84C59351C7A115600D02C11 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84C59331C7A115500D02C11 /* Bolts.framework */; };
+		A84C59361C7A115600D02C11 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84C59341C7A115500D02C11 /* Parse.framework */; };
+		A84C59381C7A5ED700D02C11 /* NewEvalSessionId.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C59371C7A5ED700D02C11 /* NewEvalSessionId.swift */; };
 		A8697EB31C7401E900CAC63D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8697EB11C7401E900CAC63D /* Bolts.framework */; };
 		A8697EB41C7401E900CAC63D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8697EB21C7401E900CAC63D /* Parse.framework */; };
 		A8697EB71C76E15A00CAC63D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8697EB51C76E15A00CAC63D /* Bolts.framework */; };
@@ -80,6 +83,9 @@
 		A82B16101C7217FD0095CE2B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A82B16111C7217FD0095CE2B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A82B16141C725D980095CE2B /* VerbalInstruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerbalInstruction.swift; sourceTree = "<group>"; };
+		A84C59331C7A115500D02C11 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		A84C59341C7A115500D02C11 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		A84C59371C7A5ED700D02C11 /* NewEvalSessionId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEvalSessionId.swift; sourceTree = "<group>"; };
 		A8697EB11C7401E900CAC63D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A8697EB21C7401E900CAC63D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A8697EB51C76E15A00CAC63D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -142,9 +148,11 @@
 				A889D0AA1C41EC78005DB665 /* StoreKit.framework in Frameworks */,
 				A889D0AB1C41EC78005DB665 /* SystemConfiguration.framework in Frameworks */,
 				A82B16131C7217FD0095CE2B /* Parse.framework in Frameworks */,
+				A84C59351C7A115600D02C11 /* Bolts.framework in Frameworks */,
 				A889D0951C41EBFF005DB665 /* Parse.framework in Frameworks */,
 				A8697EB81C76E15A00CAC63D /* Parse.framework in Frameworks */,
 				A8697EB31C7401E900CAC63D /* Bolts.framework in Frameworks */,
+				A84C59361C7A115600D02C11 /* Parse.framework in Frameworks */,
 				A889D0941C41EBFF005DB665 /* Bolts.framework in Frameworks */,
 				A82B16121C7217FD0095CE2B /* Bolts.framework in Frameworks */,
 				A8697EB71C76E15A00CAC63D /* Bolts.framework in Frameworks */,
@@ -206,6 +214,8 @@
 		A889D0911C41EBF2005DB665 /* Parse */ = {
 			isa = PBXGroup;
 			children = (
+				A84C59331C7A115500D02C11 /* Bolts.framework */,
+				A84C59341C7A115500D02C11 /* Parse.framework */,
 				A8697EB51C76E15A00CAC63D /* Bolts.framework */,
 				A8697EB61C76E15A00CAC63D /* Parse.framework */,
 				A8697EB11C7401E900CAC63D /* Bolts.framework */,
@@ -261,6 +271,7 @@
 				A899521E1C3C976E0023373D /* Main.storyboard */,
 				A899524A1C3CADAB0023373D /* NewEvalSelectSessionViewController.swift */,
 				A8D392871C3CCCC1000B4125 /* NewEvalViewController.swift */,
+				A84C59371C7A5ED700D02C11 /* NewEvalSessionId.swift */,
 				A80D5B131C572A68004EE98C /* Session */,
 				A86F69831C4DB04F00C402AB /* Subphase */,
 				A89952211C3C976E0023373D /* Assets.xcassets */,
@@ -428,6 +439,7 @@
 				A899524B1C3CADAB0023373D /* NewEvalSelectSessionViewController.swift in Sources */,
 				A8D392881C3CCCC1000B4125 /* NewEvalViewController.swift in Sources */,
 				A86F697C1C49400F00C402AB /* SessionInputViewController.swift in Sources */,
+				A84C59381C7A5ED700D02C11 /* NewEvalSessionId.swift in Sources */,
 				A86F69821C4DADD400C402AB /* Subphase.swift in Sources */,
 				A8A5E62B1C3FF653002D7A10 /* Version.swift in Sources */,
 				A899521B1C3C976E0023373D /* AppDelegate.swift in Sources */,

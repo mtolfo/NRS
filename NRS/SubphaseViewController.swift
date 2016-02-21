@@ -9,7 +9,7 @@
 //This is the collection view controller for the new eval
 import UIKit
 
-class SubphaseViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource
+class SubphaseViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, NewEvalViewControllerDelegate
 {
     //TODO: phaseNameFromSegue is the phaseDatabaseName. Should refactor to change name.
     var phaseNameFromSegue:String?
@@ -25,6 +25,10 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         navigationController?.hidesBarsOnSwipe = true
+    }
+    
+    func getNewEvalSessionId(sessionId: String) {
+        self.sessionIdFromSegue = sessionId
     }
     
     override func viewDidLoad()

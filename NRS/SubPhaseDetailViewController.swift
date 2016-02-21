@@ -10,7 +10,6 @@ import UIKit
 
 class SubPhaseDetailViewController: UIViewController
 {
-    //var phaseStructFromSegue:PhaseFromSegue!
     var subPhaseFromSegue:Subphase!
     var phaseDatabaseNameFromSegue:String?
     var verbalInstructionArray = [VerbalInstruction]()
@@ -28,14 +27,18 @@ class SubPhaseDetailViewController: UIViewController
     @IBAction func manualButtonPressed(sender: AnyObject)
     {
         print("HELLO MANUAL BUTTON")
+        
         print("Session Id: \(self.sessionIdFromSegue)")
+        
     }
+
     override func viewDidLoad()
     {
         super.viewDidLoad()
         self.navigationItem.title = subPhaseFromSegue.descriptionId
         self.verbalInstructionLabel.text = verbalInstructionFromSegue
         self.subPhaseDescriptionLabel.text = subPhaseFromSegue.description
+        self.sessionIdFromSegue = NewEvalSessionId.sharedInstance.sessionId
     }
     
    
