@@ -20,7 +20,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBOutlet weak var tableView: UITableView!
     
-    // FIXME: Phase Item names should be pulled from database
+    // TODO: Phase Item names should be pulled from database
     //The names of the Phases need to be pulled from the database to prevent future refactorings in the event the name of the phase changes. In which case, a simple change to the database will make all of the changes.
     // TODO: Need to use underscore here and need a new piece in the array that shows the name for the tableView. Reverse_Sit_up databaseName, Reverse Sit Up tableViewName
     enum PhaseDatabaseName: String

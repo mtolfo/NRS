@@ -88,11 +88,9 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
             {
                 print ("BEGIN generate object id")
                 print("New Score with session saved: \(self.newEvalScoreSessionPfObject?.objectId as String!)")
-                //self.performSegueWithIdentifier("showNewEvalSubphases", sender: self.newEvalScoreSessionPfObject)
-//                if self.newEvalVcDelegate != nil
-//                {
-//                    self.newEvalVcDelegate?.getNewEvalSessionId(self.newEvalScoreSessionPfObject?.objectId as String!)
-//                }
+                
+                //using singleton to use in subphase detail view controller because I cannot pass the
+                //object id through the segue AFTER this code block completes. 
                 NewEvalSessionId.sharedInstance.sessionId = self.newEvalScoreSessionPfObject?.objectId as String!
                 
                 

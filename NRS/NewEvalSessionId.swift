@@ -6,6 +6,7 @@
 //  Copyright © 2016 tolfosoftware. All rights reserved.
 //
 
+//singletone to get a handle on the new eval session ID
 import Foundation
 
 class NewEvalSessionId
@@ -24,21 +25,4 @@ class NewEvalSessionId
     var sessionId = ""
 }
 
-//class TheOneAndOnlyKraken {
-//    static let sharedInstance = TheOneAndOnlyKraken()
-//    private init() {} //This prevents others from using the default '()' initializer for this class.
-//}
 
-//class Example {
-//    class var sharedInstance : Example
-//    {
-//        struct Singleton
-//        {
-//            static let instance = Example()
-//        }
-//        return Singleton.instance
-//    }
-//    
-//    var number = 0
-//}
-//

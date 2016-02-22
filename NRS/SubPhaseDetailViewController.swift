@@ -11,6 +11,7 @@ import UIKit
 class SubPhaseDetailViewController: UIViewController
 {
     var subPhaseFromSegue:Subphase!
+    var scoreObjectFromDatabase:Score!
     var phaseDatabaseNameFromSegue:String?
     var verbalInstructionArray = [VerbalInstruction]()
     var verbalInstructionFromSegue:String?
@@ -29,6 +30,8 @@ class SubPhaseDetailViewController: UIViewController
         print("HELLO MANUAL BUTTON")
         
         print("Session Id: \(self.sessionIdFromSegue)")
+        scoreObjectFromDatabase = getScoreObectFromDatabase(self.sessionIdFromSegue!)
+        print ("Score object from database: \(scoreObjectFromDatabase.stand)") //gettin nil here for same reason as before, block not executed yet
         
     }
 
@@ -38,7 +41,35 @@ class SubPhaseDetailViewController: UIViewController
         self.navigationItem.title = subPhaseFromSegue.descriptionId
         self.verbalInstructionLabel.text = verbalInstructionFromSegue
         self.subPhaseDescriptionLabel.text = subPhaseFromSegue.description
-        self.sessionIdFromSegue = NewEvalSessionId.sharedInstance.sessionId
+        
+        // if the session id is not coming from the in progress screen the use the singleton for the session id
+        if (self.sessionIdFromSegue ==  nil)
+        {
+            self.sessionIdFromSegue = NewEvalSessionId.sharedInstance.sessionId
+        }
+        
+        
+    
+    }
+    
+    func getScoreObectFromDatabase(sessionIdInput:String) -> Score!
+    {
+        var scoreObject:Score!
+        
+        let query = PFQuery(className: "Scores")
+        query.whereKey("objectId", equalTo: sessionIdInput)
+        query.getFirstObjectInBackgroundWithBlock {
+            (object: PFObject?, error: NSError?) -> Void in
+            if error != nil || object == nil {
+                print("The getFirstObject request failed.")
+            } else {
+                // The find succeeded.
+                print("Successfully retrieved the object.")
+                scoreObject = Score(pfObject: object!)
+                print ("scoreObject.scoreId from getScoreObjectFromDatabase \(scoreObject.scoreId)")
+            }
+        }
+        return scoreObject
     }
     
    

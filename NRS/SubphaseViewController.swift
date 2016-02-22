@@ -40,6 +40,7 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         loadPhaseItemsFromDatabase()
         loadVerbalInstructionsFromDatabase()
         //sessionIdToPass = sessionIdFromSegue
+        
     }
 
     func loadPhaseItemsFromDatabase()
