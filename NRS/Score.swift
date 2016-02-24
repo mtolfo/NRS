@@ -71,20 +71,20 @@ class Score: NSObject
     init (pfObject:PFObject)
     {
         self.scoreId = pfObject.objectId! //this is the "Session Id"
-        self.sit = pfObject["sit"] as! String
-        self.reverseSitUp = pfObject["reverseSitUp"] as! String
-        self.sitUp = pfObject["sitUp"] as! String
-        self.trunkExtensionInSitting = pfObject["trunkExtensionInSitting"] as! String
-        self.overheadPress = pfObject["overheadPress"] as! String
-        self.forwardReachAndGrasp = pfObject["forwardReachAndGrasp"] as! String
-        self.doorPullAndOpen = pfObject["doorPullAndOpen"] as! String
-        self.canOpenAndManipulation = pfObject["canOpenAndManipulation"] as! String
-        self.sitToStand = pfObject["sitToStand"] as! String
-        self.stand = pfObject["stand"] as! String
-        self.walking = pfObject["walking"] as! String
-        self.standAdaptability = pfObject["standAdaptability"] as! String
-        self.stepRetraining = pfObject["stepRetraining"] as! String
-        self.stepAdaptability = pfObject["stepAdaptability"] as! String
+        self.sit = pfObject["Sit"] as! String
+        self.reverseSitUp = pfObject["Reverse_Sit_up"] as! String
+        self.sitUp = pfObject["Sit_up"] as! String
+        self.trunkExtensionInSitting = pfObject["Trunk_Extension_in_Sitting"] as! String
+        self.overheadPress = pfObject["Overhead_Press"] as! String
+        self.forwardReachAndGrasp = pfObject["Forward_Reach_and_Grasp"] as! String
+        self.doorPullAndOpen = pfObject["Door_Pull_and_Open"] as! String
+        self.canOpenAndManipulation = pfObject["Can_Open_and_Manipulation"] as! String
+        self.sitToStand = pfObject["Sit_to_Stand"] as! String
+        self.stand = pfObject["Stand"] as! String
+        self.walking = pfObject["Walking"] as! String
+        self.standAdaptability = pfObject["Stand_Adaptability"] as! String
+        self.stepRetraining = pfObject["Step_Retraining"] as! String
+        self.stepAdaptability = pfObject["Step_Adaptability"] as! String
     }
     
     //create a Score row. No need for the objectId which is alsow the sessionId
@@ -92,20 +92,20 @@ class Score: NSObject
     {
         let scoreObject = PFObject(className: "Scores")
         //scoreObject["scoreId"] = scoreId
-        scoreObject["sit"] = sit
-        scoreObject["reverseSitUp"] = reverseSitUp
-        scoreObject["sitUp"] = sitUp
-        scoreObject["trunkExtensionInSitting"] = trunkExtensionInSitting
-        scoreObject["overheadPress"] = overheadPress
-        scoreObject["forwardReachAndGrasp"] = forwardReachAndGrasp
-        scoreObject["doorPullAndOpen"] = doorPullAndOpen
-        scoreObject["canOpenAndManipulation"] = canOpenAndManipulation
-        scoreObject["sitToStand"] = sitToStand
-        scoreObject["stand"] = stand
-        scoreObject["walking"] = walking
-        scoreObject["standAdaptability"] = standAdaptability
-        scoreObject["stepRetraining"] = stepRetraining
-        scoreObject["stepAdaptability"] = stepAdaptability
+        scoreObject["Sit"] = sit
+        scoreObject["Reverse_Sit_up"] = reverseSitUp
+        scoreObject["Sit_up"] = sitUp
+        scoreObject["Trunk_Extension_in_Sitting"] = trunkExtensionInSitting
+        scoreObject["Overhead_Press"] = overheadPress
+        scoreObject["Forward_Reach_and_Grasp"] = forwardReachAndGrasp
+        scoreObject["Door_Pull_and_Open"] = doorPullAndOpen
+        scoreObject["Can_Open_and_Manipulation"] = canOpenAndManipulation
+        scoreObject["Sit_to_Stand"] = sitToStand
+        scoreObject["Stand"] = stand
+        scoreObject["Walking"] = walking
+        scoreObject["Stand_Adaptability"] = standAdaptability
+        scoreObject["Step_Retraining"] = stepRetraining
+        scoreObject["Step_Adaptability"] = stepAdaptability
         scoreObject["version"] = version
         return scoreObject
     }

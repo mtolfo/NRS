@@ -94,12 +94,25 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
             Phase(phaseDatabaseNameInput: PhaseDatabaseName.stepAdaptability.rawValue, phaseScoreInput: phaseScore.stepAdaptability, phaseNameInput: PhaseName.stepAdaptability.rawValue, phaseScoreIdInput: phaseScore.scoreId)]
     }
     
+    func do_table_refresh() {
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            
+            self.tableView.reloadData()
+            return
+            
+        }
+        
+    }
+    
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.tableView.reloadData()
+        //self.tableView.reloadData()
         createArrayOfPhases()
+        do_table_refresh()
+        //h2C2x4Jq7A
 
         // Do any additional setup after loading the view.
     }
