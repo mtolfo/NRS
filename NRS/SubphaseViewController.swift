@@ -99,6 +99,12 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         let filteredArray = self.verbalInstructionArray.filter({$0.phaseDatabaseName == self.phaseNameFromSegue})
         return filteredArray[0].verbalInstruction
     }
+    
+    func getVerbalInstructionObjectFromArray() -> VerbalInstruction
+    {
+        let filteredArray = self.verbalInstructionArray.filter({$0.phaseDatabaseName == self.phaseNameFromSegue})
+        return filteredArray[0]
+    }
 
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -155,12 +161,17 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         {
             if let indexPaths = subphaseCollectionView.indexPathsForSelectedItems()
             {
+                
                 let destinationViewController = segue.destinationViewController as! SubPhaseDetailViewController
                 destinationViewController.subPhaseFromSegue = phaseItemArray[indexPaths[0].row]
                 destinationViewController.phaseDatabaseNameFromSegue = self.phaseNameFromSegue
                 destinationViewController.verbalInstructionFromSegue = self.getVerbalInstructionFromArray()
                 destinationViewController.sessionIdFromSegue = self.sessionIdFromSegue
 //                print("IN COLLECTION VIEW: \(self.sessionIdToPass)")
+                
+                //passing the verbal instuctions object to the detail view controller
+                destinationViewController.verbalInstructionObjectFromSegue = self.getVerbalInstructionObjectFromArray()
+                    //self.verbalInstructionArray.filter({$0.phaseDatabaseName == self.phaseNameFromSegue})
                 subphaseCollectionView.deselectItemAtIndexPath(indexPaths[0], animated: false)
             }
         }

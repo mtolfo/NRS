@@ -45,6 +45,8 @@ class Score: NSObject
     var stepAdaptability = ""
     var version = ""
     
+//    7DFJDjDChM
+    
     init(/*scoreIdInit: String,*/ sitInit: String, reverseSitUpInit: String, sitUpInit: String, trunkExtensionInSittingInit: String, overheadPressInit: String, forwardReachAndGraspInit: String, doorPullAndOpenInit: String, canOpenAndManipulationInit:String, sitToStandInit: String, standInit: String, walkingInit: String, standAdaptabilityInit: String, stepRetrainingInit: String, stepAdaptabilityInit: String, versionInit: String)
     {
         //self.scoreId = scoreIdInit

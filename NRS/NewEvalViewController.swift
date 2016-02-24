@@ -74,6 +74,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     {
         self.selectedVersionAfterDoneButtonClick = getSelectedVersion()
         self.startingPhaseItemName = getStartingPhaseItem()
+        print ("In NewEvalViewController self.startingPhaseitemName \(self.startingPhaseItemName)")
         self.createNewEvalScoreSession()
     }
     

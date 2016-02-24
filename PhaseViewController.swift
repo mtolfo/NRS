@@ -95,8 +95,10 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
+        self.tableView.reloadData()
         createArrayOfPhases()
 
         // Do any additional setup after loading the view.
