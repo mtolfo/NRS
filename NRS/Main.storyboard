@@ -243,7 +243,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="x6S-SL-uBh" secondAttribute="trailing" constant="-20" id="kXW-pC-f4N"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="In Progress Phase Items" id="1TU-6e-Eh6"/>
+                    <navigationItem key="navigationItem" title="In Progress Phase Items" id="1TU-6e-Eh6">
+                        <barButtonItem key="rightBarButtonItem" title="Refresh" id="41U-uI-hbF">
+                            <connections>
+                                <action selector="didClickRefreshButton:" destination="MeY-4n-mMC" id="cqB-XN-0wu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="x6S-SL-uBh" id="9zs-wN-qyY"/>
                     </connections>
@@ -520,6 +526,9 @@
                                 <state key="normal" title="UNABLE">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="unableButtonClicked:" destination="97W-j7-dPd" eventType="touchUpInside" id="T5L-kT-ORM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5P-nN-5iI">
                                 <rect key="frame" x="99" y="0.0" width="59" height="30"/>
@@ -527,6 +536,9 @@
                                 <state key="normal" title="ABLE">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="ableButtonClicked:" destination="97W-j7-dPd" eventType="touchUpInside" id="g0N-fS-0ON"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YeL-XT-VNu">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -654,11 +666,128 @@
                         <outlet property="subPhaseDescriptionLabel" destination="yko-ga-nX5" id="UhR-gT-Lgj"/>
                         <outlet property="unableButton" destination="ukj-98-1Ns" id="q4h-ac-Kmx"/>
                         <outlet property="verbalInstructionLabel" destination="mOM-gr-Vrq" id="Zs7-qA-utK"/>
+                        <segue destination="dx1-9g-5D0" kind="popoverPresentation" identifier="showConfirmationPopOver" popoverAnchorView="ukj-98-1Ns" id="ry5-Cu-03y">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gd-7r-8Dj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1920" y="529.5"/>
+        </scene>
+        <!--Confirmation Pop Over View Controller-->
+        <scene sceneID="UX6-7f-h1p">
+            <objects>
+                <viewController id="dx1-9g-5D0" customClass="ConfirmationPopOverViewController" customModule="NRS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xzn-yQ-A44"/>
+                        <viewControllerLayoutGuide type="bottom" id="CV6-Ph-e01"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PWS-qJ-pz8">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSK-Lm-wxf">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="rvb-0F-fHS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="rvb-0F-fHS"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="rvb-0F-fHS"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXd-ek-jh5">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="XLT-P3-LbT"/>
+                                </constraints>
+                                <state key="normal" title="Reject"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="XLT-P3-LbT"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="XLT-P3-LbT"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="rejectButtonClicked:" destination="dx1-9g-5D0" eventType="touchUpInside" id="wOq-bQ-6Kj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JN0-Fb-7p2">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Confirm"/>
+                                <connections>
+                                    <action selector="confirmButtonClicked:" destination="dx1-9g-5D0" eventType="touchUpInside" id="x8s-LS-HYr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="1" green="0.79746800661087036" blue="0.0071427719667553902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JN0-Fb-7p2" firstAttribute="top" secondItem="sSK-Lm-wxf" secondAttribute="bottom" constant="186" id="08u-ks-xuh"/>
+                            <constraint firstItem="JN0-Fb-7p2" firstAttribute="centerX" secondItem="PWS-qJ-pz8" secondAttribute="centerX" id="FlU-OB-tR3">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-65.5"/>
+                            </constraint>
+                            <constraint firstItem="sSK-Lm-wxf" firstAttribute="centerX" secondItem="JN0-Fb-7p2" secondAttribute="centerX" id="NV9-hA-Zsj">
+                                <variation key="heightClass=regular-widthClass=compact" constant="65.5"/>
+                            </constraint>
+                            <constraint firstItem="ZXd-ek-jh5" firstAttribute="leading" secondItem="JN0-Fb-7p2" secondAttribute="trailing" constant="71" id="Ou4-1x-xvW"/>
+                            <constraint firstItem="ZXd-ek-jh5" firstAttribute="baseline" secondItem="JN0-Fb-7p2" secondAttribute="baseline" id="PCc-3k-CoP"/>
+                            <constraint firstItem="sSK-Lm-wxf" firstAttribute="top" secondItem="xzn-yQ-A44" secondAttribute="bottom" constant="158" id="Vsc-Gb-aBP"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="sSK-Lm-wxf"/>
+                                <exclude reference="ZXd-ek-jh5"/>
+                                <exclude reference="JN0-Fb-7p2"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="NV9-hA-Zsj"/>
+                                <exclude reference="Vsc-Gb-aBP"/>
+                                <exclude reference="08u-ks-xuh"/>
+                                <exclude reference="FlU-OB-tR3"/>
+                                <exclude reference="Ou4-1x-xvW"/>
+                                <exclude reference="PCc-3k-CoP"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="sSK-Lm-wxf"/>
+                                <include reference="ZXd-ek-jh5"/>
+                                <include reference="JN0-Fb-7p2"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="NV9-hA-Zsj"/>
+                                <include reference="Vsc-Gb-aBP"/>
+                                <include reference="08u-ks-xuh"/>
+                                <include reference="FlU-OB-tR3"/>
+                                <include reference="Ou4-1x-xvW"/>
+                                <include reference="PCc-3k-CoP"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="subphaseDescriptionLabel" destination="sSK-Lm-wxf" id="rXe-KA-LR8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0bl-B4-503" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2749.5" y="529.5"/>
         </scene>
         <!--New Evaluation-->
         <scene sceneID="cRN-jv-YPw">

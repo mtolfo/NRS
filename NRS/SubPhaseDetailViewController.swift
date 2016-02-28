@@ -8,13 +8,13 @@
 
 import UIKit
 
-class SubPhaseDetailViewController: UIViewController
+class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationControllerDelegate
 {
     var subPhaseFromSegue:Subphase!
     var scoreObjectFromDatabase:Score!
     var phaseDatabaseNameFromSegue:String?
     var verbalInstructionArray = [VerbalInstruction]()
-    var verbalInstructionFromSegue:String?
+    //var verbalInstructionFromSegue:String?
     var sessionIdFromSegue:String?
     var verbalInstructionObjectFromSegue:VerbalInstruction!
    
@@ -42,6 +42,15 @@ class SubPhaseDetailViewController: UIViewController
         print ("END DONE BUTTON")
     }
 
+    @IBAction func ableButtonClicked(sender: AnyObject)
+    {
+        //get the next subphase object in the phase
+        print (self.subPhaseFromSegue.description)
+    }
+    @IBAction func unableButtonClicked(sender: AnyObject)
+    {
+        self.performSegueWithIdentifier("showConfirmationPopOver", sender: self)
+    }
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -57,30 +66,11 @@ class SubPhaseDetailViewController: UIViewController
         }
         //self.scoreObjectFromDatabase = getScoreObectFromDatabase(self.sessionIdFromSegue!)
         //self.getScoreObectFromDatabase(self.sessionIdFromSegue!)
-        self.getScoreObjectFromDatabase(self.sessionIdFromSegue!)
-        //print(self.scoreObjectFromDatabase)
+        //self.getScoreObjectFromDatabase(self.sessionIdFromSegue!)
+        //print(self.scoreObject˚FromDatabase)
         print ("END VIEW DID LOAD")
+        
     }
-    
-//    func getScoreObectFromDatabase(sessionIdInput:String) -> Score!
-//    {
-//        var scoreObject:Score!
-//        
-//        let query = PFQuery(className: "Scores")
-//        query.whereKey("objectId", equalTo: sessionIdInput)
-//        query.getFirstObjectInBackgroundWithBlock {
-//            (object: PFObject?, error: NSError?) -> Void in
-//            if error != nil || object == nil {
-//                print("The getFirstObject request failed.")
-//            } else {
-//                // The find succeeded.
-//                print("Successfully retrieved the object.")
-//                scoreObject = Score(pfObject: object!)
-//                print ("scoreObject.scoreId from getScoreObjectFromDatabase \(scoreObject.scoreId)")
-//            }
-//        }
-//        return scoreObject
-//    }
     
     
     func getScoreObjectFromDatabase(sessionIdInput:String)
@@ -126,58 +116,6 @@ class SubPhaseDetailViewController: UIViewController
     }
     
     
-    //save where object id
-    func scoreSubphaseDescriptionId(scorePfObject: PFObject, descriptionIdInput: String)
-    {
-        //var pointer = PFObject .objectForKey(<#T##PFObject#>)
-        
-//        // Create a pointer to an object of class Point with id dlkj83d
-//        PFObject *point = [PFObject objectWithoutDataWithClassName:@"Point" objectId:@"dlkj83d"];
-//        
-//        // Set a new value on quantity
-//        [point setObject:@6 forKey:@"quantity"];
-//        
-//        // Save
-//        [point save];
-        
-    }
-    
-    
-//    func scoreSubphaseDescriptionId(scoreObject: Score, sessionIdInput: String, subphaseDescriptionId: String, sessionDatabaseName: String)
-//    {
-//        //score the subphase within the session with the subphaseDescriptionId
-//        //scoreObject.["sessionDatabaseName"] = sessionIdInput
-//        let query = PFQuery(className: "Scores")
-//        query.whereKey(scoreObject.scoreId, equalTo: sessionIdInput)
-//        
-//        scoreObjectFromDatabase.toPfObject().saveInBackgroundWithBlock ({ (success, error) -> Void in
-//            if (success)
-//            {
-//                print ("Successfully updated the trip")
-//            }
-//            else
-//            {
-//                print("Error: \(error?.description)")
-//            }
-//        })
-//        
-//    }
-
-    
-    //        trips[indexPath.row].toPFObject().saveInBackgroundWithBlock({ (success,
-    //            error) -> Void in
-    //            if (success) {
-    //            print("Successfully updated the trip")
-    //        } else {
-    //            print("Error: \(error?.description)")
-    //            } })
-    
-//    func getDatabaseNameFromSubPhaseNameFromDatabase()
-//    {
-//        //maybe use VerbalInstruction model
-//        let query = PFQuery(className: String)
-//    }
-    
    
     override func didReceiveMemoryWarning()
     {
@@ -186,14 +124,31 @@ class SubPhaseDetailViewController: UIViewController
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier ==  "showConfirmationPopOver"
+        {
+            let destinationVc = segue.destinationViewController as! ConfirmationPopOverViewController
+            
+            let controller = destinationVc.popoverPresentationController
+            if controller != nil
+            {
+                controller?.delegate = self
+            }
+            
+        }
     }
-    */
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle
+    {
+        return UIModalPresentationStyle.None
+    }
+    
     
     }

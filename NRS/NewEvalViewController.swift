@@ -140,7 +140,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         self.newEvalDoneButton.hidden = true
     }
     
-    //NEW BRANCH: 
+    
     func getCurrentVersionFromArray()
     {
         let filteredArray = self.versionsArray.filter({$0.isCurrentVersion == true})
@@ -211,9 +211,9 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
                     {
                         //print(object.objectId)
                         let versionObject = Version(pfObject: object)
-                        print(versionObject.version)
-                        print(versionObject.startDate)
-                        print(versionObject.endDate)
+//                        print(versionObject.version)
+//                        print(versionObject.startDate)
+//                        print(versionObject.endDate)
                         //print(versionObject.isCurrentVersion)
                         self.versionsArray.append(versionObject)
                     }

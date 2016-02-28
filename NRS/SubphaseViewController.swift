@@ -49,7 +49,7 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         subphaseCollectionView.reloadData()
         
         //pass in the class name of the Phase Name object in database (Sit, Stand, Sit Up...)
-        let query = PFQuery(className: phaseNameFromSegue!) //or whatever is passed in segue or default from PhaseViewController
+        let query = PFQuery(className: self.phaseNameFromSegue!) //or whatever is passed in segue or default from PhaseViewController
         query.cachePolicy = PFCachePolicy.NetworkElseCache
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             if let error = error {
@@ -165,13 +165,8 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
                 let destinationViewController = segue.destinationViewController as! SubPhaseDetailViewController
                 destinationViewController.subPhaseFromSegue = phaseItemArray[indexPaths[0].row]
                 destinationViewController.phaseDatabaseNameFromSegue = self.phaseNameFromSegue
-                destinationViewController.verbalInstructionFromSegue = self.getVerbalInstructionFromArray()
                 destinationViewController.sessionIdFromSegue = self.sessionIdFromSegue
-//                print("IN COLLECTION VIEW: \(self.sessionIdToPass)")
-                
-                //passing the verbal instuctions object to the detail view controller
                 destinationViewController.verbalInstructionObjectFromSegue = self.getVerbalInstructionObjectFromArray()
-                    //self.verbalInstructionArray.filter({$0.phaseDatabaseName == self.phaseNameFromSegue})
                 subphaseCollectionView.deselectItemAtIndexPath(indexPaths[0], animated: false)
             }
         }

@@ -138,8 +138,8 @@ class SessionInputViewController: UIViewController
             destinationController.phaseScore = filteredScoreArray.first!
             destinationController.navigationItem.title = "Session: \(destinationController.phaseScore.scoreId)"
             
-            print ("Print isEmpty: \(self.scoreArray.isEmpty)")
-            print ("User session input: \(sessionTextField.text)")
+//            print ("Print isEmpty: \(self.scoreArray.isEmpty)")
+//            print ("User session input: \(sessionTextField.text)")
             
             //            .filter({$0.phaseOrder == 1})
             //print("In Segue: \(destinationController.phaseScore)")

@@ -94,6 +94,8 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
             Phase(phaseDatabaseNameInput: PhaseDatabaseName.stepAdaptability.rawValue, phaseScoreInput: phaseScore.stepAdaptability, phaseNameInput: PhaseName.stepAdaptability.rawValue, phaseScoreIdInput: phaseScore.scoreId)]
     }
     
+    
+    
     func do_table_refresh() {
         
         dispatch_async(dispatch_get_main_queue()) {
@@ -105,14 +107,51 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         
     }
     
+    @IBAction func didClickRefreshButton(sender: AnyObject)
+    {
+        print("In refresh: \(self.phaseScore.scoreId)")
+        self.getScoreObjectFromDatabase(phaseScore.scoreId)
+        //self.createArrayOfPhases()
+        //self.tableView.reloadData()
+        //self.do_table_refresh()
+    }
+    
+    func getScoreObjectFromDatabase(sessionIdInput:String)
+    {
+        let query = PFQuery(className: "Scores")
+        query.whereKey("objectId", equalTo: sessionIdInput)
+        query.getFirstObjectInBackgroundWithBlock {
+            (object: PFObject?, error: NSError?) -> Void in
+            if error != nil || object == nil {
+                print("The getFirstObject request failed.")
+            } else
+            {
+                // The find succeeded.
+                print("Successfully retrieved the object.")
+//                self.scoreObjectFromDatabase = Score(pfObject: object!)
+//                print ("scoreObject.scoreId from getScoreObjectFromDatabase \(self.scoreObjectFromDatabase.scoreId)")
+                self.phaseScore = Score(pfObject: object!)
+                print (self.phaseScore)
+                self.createArrayOfPhases()
+                self.do_table_refresh()
+            }
+        }
+        
+    }
+    
+    //
+
+    
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
         //self.tableView.reloadData()
+        self.getScoreObjectFromDatabase(self.phaseScore.scoreId)
         createArrayOfPhases()
-        do_table_refresh()
+        //self.do_table_refresh()
         //h2C2x4Jq7A
+        //7DFJDjDChM
 
         // Do any additional setup after loading the view.
     }
@@ -126,8 +165,11 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         return self.phaseStructArray.count
     }
     
+    //PjotGycNtZ
+    
     //TODO: -Implement refresh in case there are new score.
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
         let cellIdentifier = "Cell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! PhaseTableViewCell
       
