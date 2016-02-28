@@ -167,6 +167,8 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
                 destinationViewController.phaseDatabaseNameFromSegue = self.phaseNameFromSegue
                 destinationViewController.sessionIdFromSegue = self.sessionIdFromSegue
                 destinationViewController.verbalInstructionObjectFromSegue = self.getVerbalInstructionObjectFromArray()
+                destinationViewController.subPhaseArray = self.phaseItemArray
+                
                 subphaseCollectionView.deselectItemAtIndexPath(indexPaths[0], animated: false)
             }
         }

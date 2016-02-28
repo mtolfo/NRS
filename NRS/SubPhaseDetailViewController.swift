@@ -17,6 +17,8 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     //var verbalInstructionFromSegue:String?
     var sessionIdFromSegue:String?
     var verbalInstructionObjectFromSegue:VerbalInstruction!
+    var subPhaseArray = [Subphase]()
+    var subPhaseArrayIndex:Int = 0
    
     
     @IBOutlet weak var verbalInstructionLabel: UILabel!
@@ -42,15 +44,25 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         print ("END DONE BUTTON")
     }
 
+    // TODO: Problem with Stand_Adaptability in Model
     @IBAction func ableButtonClicked(sender: AnyObject)
     {
-        //get the next subphase object in the phase
-        print (self.subPhaseFromSegue.description)
+        self.subPhaseArrayIndex += 1
+        self.subPhaseDescriptionLabel.text = self.subPhaseArray[self.subPhaseArrayIndex].description
+        self.navigationItem.title = self.subPhaseArray[self.subPhaseArrayIndex].descriptionId
     }
+    
+    func getStartingIndex(subphaseDescriptionIdInput: String, subPhaseArrayInput: [Subphase]) -> Int?
+    {
+        
+        return subPhaseArrayInput.indexOf({$0.descriptionId == subphaseDescriptionIdInput})!
+    }
+    
     @IBAction func unableButtonClicked(sender: AnyObject)
     {
         self.performSegueWithIdentifier("showConfirmationPopOver", sender: self)
     }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -68,6 +80,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         //self.getScoreObectFromDatabase(self.sessionIdFromSegue!)
         //self.getScoreObjectFromDatabase(self.sessionIdFromSegue!)
         //print(self.scoreObject˚FromDatabase)
+        self.subPhaseArrayIndex = getStartingIndex(self.subPhaseFromSegue.descriptionId, subPhaseArrayInput: self.subPhaseArray)!
         print ("END VIEW DID LOAD")
         
     }
@@ -141,6 +154,8 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
             {
                 controller?.delegate = self
             }
+            
+            destinationVc.subPhaseObject = self.subPhaseArray[subPhaseArrayIndex]
             
         }
     }

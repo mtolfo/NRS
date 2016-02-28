@@ -16,6 +16,7 @@ class ConfirmationPopOverViewController: UIViewController
 
     @IBOutlet
     weak var subphaseDescriptionLabel: UILabel!
+    var subPhaseObject:Subphase!
     
     @IBAction func confirmButtonClicked(sender: AnyObject)
     {
@@ -32,6 +33,7 @@ class ConfirmationPopOverViewController: UIViewController
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.subphaseDescriptionLabel.text = self.subPhaseObject.description
     }
 
     override func didReceiveMemoryWarning()
