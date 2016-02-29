@@ -38,7 +38,7 @@ class ConfirmationPopOverViewController: UIViewController
 
         self.subphaseDescriptionLabel.text = self.subPhaseObject.description
         
-        self.confirmationMessageLabel.text = "Confirm previous task: \(self.verbalInstructionObject.phaseItem) \(self.subPhaseObject.descriptionId) as ABLE."
+        self.confirmationMessageLabel.text = "Confirm previous task \(self.verbalInstructionObject.phaseItem) \(self.subPhaseObject.descriptionId) as ABLE."
 
     }
 
