@@ -8,16 +8,20 @@
 
 import UIKit
 
-var verbalInstructionObject:VerbalInstruction!
-var database:Database!
+
+
 
 class ConfirmationPopOverViewController: UIViewController
 {
 
     @IBOutlet
     weak var subphaseDescriptionLabel: UILabel!
-    var subPhaseObject:Subphase!
+    var subPhaseObject:Subphase! //this object is the subphase before the one on the previous view controller because we are confirming that the patient is UNABLE to do this task
+    var verbalInstructionObject:VerbalInstruction!
     
+    
+    
+    @IBOutlet weak var confirmationMessageLabel: UILabel!
     @IBAction func confirmButtonClicked(sender: AnyObject)
     {
         
@@ -32,8 +36,10 @@ class ConfirmationPopOverViewController: UIViewController
     {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
         self.subphaseDescriptionLabel.text = self.subPhaseObject.description
+        
+        self.confirmationMessageLabel.text = "Confirm previous task: \(self.verbalInstructionObject.phaseItem) \(self.subPhaseObject.descriptionId) as ABLE."
+
     }
 
     override func didReceiveMemoryWarning()

@@ -128,8 +128,6 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         loadPhaseItemsFromParse()
 
         self.currentVersionLabel.text = self.currentVersion
-//        getCurrentVersionFromArray()
-//        self.currentVersionLabel.text = self.currentVersionArray[0].version
         
         self.versionPicker.delegate = self
         self.versionPicker.dataSource = self
@@ -209,12 +207,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
                 {
                     for object in objects
                     {
-                        //print(object.objectId)
                         let versionObject = Version(pfObject: object)
-//                        print(versionObject.version)
-//                        print(versionObject.startDate)
-//                        print(versionObject.endDate)
-                        //print(versionObject.isCurrentVersion)
                         self.versionsArray.append(versionObject)
                     }
                 }
@@ -312,7 +305,6 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         switch (self.versionSegmentedControl.selectedSegmentIndex)
         {
         case 0:
-//            selectedVersion = self.currentVersionLabel.text!
             selectedVersion = self.currentVersionArray[0].version
         case 1: //self.selectedPrevious version comes from pickerView didSelectRow delegate
             selectedVersion = self.selectedPreviousVersion!
@@ -331,11 +323,6 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
             destinationController.navigationItem.title = "\(self.startingPhaseItemName.regularName)"
             //TODO: self.startingPhaseItem should be the database name
             destinationController.phaseNameFromSegue = self.startingPhaseItemName.databaseName
-            //destinationController.sessionIdFromSegue = self.newEvalScoreSessionPfObject?.objectId as String!
-            
-            
-            
-            
         }
     }
 }

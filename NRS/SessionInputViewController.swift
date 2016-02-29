@@ -23,9 +23,9 @@ class SessionInputViewController: UIViewController
     
     @IBAction func sessionEnteredButtonClick(sender: AnyObject)
     {
-        print("Did click button")
+        //print("Did click button")
         sessionIdText = sessionTextField.text
-        printScores()
+        //printScores()
     }
     
     //place all of the scores into an array
@@ -45,7 +45,6 @@ class SessionInputViewController: UIViewController
                     {
                         let scoreObject = Score(pfObject: object)
                         self.scoreArray.append(scoreObject)
-                        print(scoreObject.reverseSitUp)
                     }
                 }
             }
@@ -103,9 +102,6 @@ class SessionInputViewController: UIViewController
         return sessionDidLoad
     }
     
-    func loadSomething() -> Bool{
-        return true
-    }
 
     override func viewDidLoad()
     {
@@ -137,15 +133,9 @@ class SessionInputViewController: UIViewController
             let filteredScoreArray = scoreArray.filter({$0.scoreId == sessionTextField.text})
             destinationController.phaseScore = filteredScoreArray.first!
             destinationController.navigationItem.title = "Session: \(destinationController.phaseScore.scoreId)"
-            
-//            print ("Print isEmpty: \(self.scoreArray.isEmpty)")
-//            print ("User session input: \(sessionTextField.text)")
-            
-            //            .filter({$0.phaseOrder == 1})
-            //print("In Segue: \(destinationController.phaseScore)")
         }
     }
-    //PjotGycNtZ
+    
     //validation to prevent segue
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool
     {

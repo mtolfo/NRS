@@ -60,7 +60,9 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     
     @IBAction func unableButtonClicked(sender: AnyObject)
     {
-        self.performSegueWithIdentifier("showConfirmationPopOver", sender: self)
+        self.shouldPerformSegueWithIdentifier("showConfirmationPopOver", sender: self)
+        //self.performSegueWithIdentifier("showConfirmationPopOver", sender: self)
+        
     }
     
     override func viewDidLoad()
@@ -81,28 +83,29 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         //self.getScoreObjectFromDatabase(self.sessionIdFromSegue!)
         //print(self.scoreObject˚FromDatabase)
         self.subPhaseArrayIndex = getStartingIndex(self.subPhaseFromSegue.descriptionId, subPhaseArrayInput: self.subPhaseArray)!
+        self.getScoreObject(self.sessionIdFromSegue!)
         print ("END VIEW DID LOAD")
         
     }
     
     
-    func getScoreObjectFromDatabase(sessionIdInput:String)
-    {
-        let query = PFQuery(className: "Scores")
-        query.whereKey("objectId", equalTo: sessionIdInput)
-        query.getFirstObjectInBackgroundWithBlock {
-            (object: PFObject?, error: NSError?) -> Void in
-            if error != nil || object == nil {
-                print("The getFirstObject request failed.")
-            } else {
-                // The find succeeded.
-                print("Successfully retrieved the object.")
-                self.scoreObjectFromDatabase = Score(pfObject: object!)
-                print ("scoreObject.scoreId from getScoreObjectFromDatabase \(self.scoreObjectFromDatabase.scoreId)")
-            }
-        }
-
-    }
+//    func getScoreObjectFromDatabase(sessionIdInput:String)
+//    {
+//        let query = PFQuery(className: "Scores")
+//        query.whereKey("objectId", equalTo: sessionIdInput)
+//        query.getFirstObjectInBackgroundWithBlock {
+//            (object: PFObject?, error: NSError?) -> Void in
+//            if error != nil || object == nil {
+//                print("The getFirstObject request failed.")
+//            } else {
+//                // The find succeeded.
+//                print("Successfully retrieved the object.")
+//                self.scoreObjectFromDatabase = Score(pfObject: object!)
+//                print ("scoreObject.scoreId from getScoreObjectFromDatabase \(self.scoreObjectFromDatabase.scoreId)")
+//            }
+//        }
+//
+//    }
     
     func markScoreObjectFromDatabase(descriptionIdInput:String, sessionDatabaseName: String)
     {
@@ -128,6 +131,23 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         
     }
     
+    func getScoreObject(sessionIdInput: String)
+    {
+        let query = PFQuery(className: "Scores")
+        query.whereKey("objectId", equalTo: self.sessionIdFromSegue!)
+        query.getFirstObjectInBackgroundWithBlock {
+            (object: PFObject?, error: NSError?) -> Void in
+            if error != nil || object == nil {
+                print("The getScoreObject request failed.")
+            }
+            else
+            {
+                self.scoreObjectFromDatabase = Score(pfObject: object!)
+            }
+        }
+        
+    }
+    
     
    
     override func didReceiveMemoryWarning()
@@ -135,6 +155,44 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //validation to prevent segue
+//    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool
+//    {
+//        if identifier == "showInProgressPhases"
+//        {
+//            //use "sessionTextField.text!" instead of backing variable "sessionIdText" for validation
+//            if (sessionTextField.text!.isEmpty || !scoreArray.contains({$0.scoreId == sessionTextField.text!}))
+//            {
+//                let alertController = UIAlertController(title: "Session Does Not Exist", message:
+//                    "The session id you have entered does not exist in the database.", preferredStyle: UIAlertControllerStyle.Alert)
+//                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+//                self.presentViewController(alertController, animated: true, completion: nil)
+//                return false
+//            }
+//            else
+//            {
+//                return true
+//            }
+//        }
+//        
+//        //by default, do the transition
+//        return true
+//    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if identifier == "showConfirmationPopOver"
+        {
+            // if any of the subphases have been scored as unable, send a warning that cannot 
+            if (self.scoreObjectFromDatabase.scoreId != "")
+            {
+                print ("Score id exists.")
+                return false
+            }
+        }
+        return false
+    }
+
     
 
     
@@ -155,7 +213,10 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
                 controller?.delegate = self
             }
             
-            destinationVc.subPhaseObject = self.subPhaseArray[subPhaseArrayIndex]
+            //Popover only shows during confirmation that a subPhase is UNABLE so
+            //we need the index before the one that is in the SubPhaseDetailVC
+            destinationVc.subPhaseObject = self.subPhaseArray[subPhaseArrayIndex - 1]
+            destinationVc.verbalInstructionObject = self.verbalInstructionObjectFromSegue
             
         }
     }

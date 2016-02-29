@@ -23,6 +23,7 @@ class NewEvalSessionId
     }
     
     var sessionId = ""
+    
 }
 
 

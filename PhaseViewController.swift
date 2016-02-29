@@ -116,6 +116,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         //self.do_table_refresh()
     }
     
+    //TODO: Duplicate with the db call in ConfirmationVc
     func getScoreObjectFromDatabase(sessionIdInput:String)
     {
         let query = PFQuery(className: "Scores")
