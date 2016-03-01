@@ -15,6 +15,7 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
     var phaseNameFromSegue:String?
     var sessionIdFromSegue:String?
     var destinationTempString = ""
+    
     //var sessionIdToPass:String?
     private var phaseItemArray = [Subphase]() //TODO: rename this model to PhaseItem.swift
     private var verbalInstructionArray = [VerbalInstruction]()
@@ -52,7 +53,8 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         let query = PFQuery(className: self.phaseNameFromSegue!) //or whatever is passed in segue or default from PhaseViewController
         query.cachePolicy = PFCachePolicy.NetworkElseCache
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
-            if let error = error {
+            if let error = error
+            {
                 print ("Error: \(error) \(error.userInfo)")
             }
             

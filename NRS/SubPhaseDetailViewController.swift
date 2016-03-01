@@ -183,14 +183,24 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     func doesPhaseHaveScore(phaseDatabaseName: String) -> Bool
     {
         //let result = self.scoreObjectFromDatabase.valueForKey(phaseDatabaseName)
-        let result  = ""
-
-        if (result == "")
+        let scoreMirror = _reflect(self.scoreObjectFromDatabase)
+        
+        for i in 0..<scoreMirror.count
         {
-            print ("\(result) has no score")
-            return false
+            let (phase, score) = scoreMirror[i]
+            let value = score.value
+            print("\(i): \(phase) = \(value)")
         }
-        print ("\(result) has a score")
+        
+        
+//        let result  = ""
+//
+//        if (result == "")
+//        {
+//            print ("\(result) has no score")
+//            return false
+//        }
+//        print ("\(result) has a score")
         return true
         
     }
@@ -198,12 +208,13 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         if identifier == "showConfirmationPopOver"
         {
+            let tempBool = self.doesPhaseHaveScore(self.verbalInstructionObjectFromSegue.phaseDatabaseName)
             // if any of the subphases have been scored as unable, send a warning that cannot 
-            if (self.doesPhaseHaveScore(self.verbalInstructionObjectFromSegue.phaseDatabaseName))
-            {
-                print ("Score id exists.")
-                return false
-            }
+//            if (self.doesPhaseHaveScore(self.verbalInstructionObjectFromSegue.phaseDatabaseName))
+//            {
+//                print ("Score id exists.")
+//                return false
+//            }
         }
         return true
     }
