@@ -61,8 +61,6 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     @IBAction func unableButtonClicked(sender: AnyObject)
     {
         self.shouldPerformSegueWithIdentifier("showConfirmationPopOver", sender: self)
-        //self.performSegueWithIdentifier("showConfirmationPopOver", sender: self)
-        
     }
     
     override func viewDidLoad()
@@ -78,34 +76,11 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         {
             self.sessionIdFromSegue = NewEvalSessionId.sharedInstance.sessionId
         }
-        //self.scoreObjectFromDatabase = getScoreObectFromDatabase(self.sessionIdFromSegue!)
-        //self.getScoreObectFromDatabase(self.sessionIdFromSegue!)
-        //self.getScoreObjectFromDatabase(self.sessionIdFromSegue!)
-        //print(self.scoreObject˚FromDatabase)
+
         self.subPhaseArrayIndex = getStartingIndex(self.subPhaseFromSegue.descriptionId, subPhaseArrayInput: self.subPhaseArray)!
         self.getScoreObject(self.sessionIdFromSegue!)
-        print ("END VIEW DID LOAD")
         
     }
-    
-    
-//    func getScoreObjectFromDatabase(sessionIdInput:String)
-//    {
-//        let query = PFQuery(className: "Scores")
-//        query.whereKey("objectId", equalTo: sessionIdInput)
-//        query.getFirstObjectInBackgroundWithBlock {
-//            (object: PFObject?, error: NSError?) -> Void in
-//            if error != nil || object == nil {
-//                print("The getFirstObject request failed.")
-//            } else {
-//                // The find succeeded.
-//                print("Successfully retrieved the object.")
-//                self.scoreObjectFromDatabase = Score(pfObject: object!)
-//                print ("scoreObject.scoreId from getScoreObjectFromDatabase \(self.scoreObjectFromDatabase.scoreId)")
-//            }
-//        }
-//
-//    }
     
     func markScoreObjectFromDatabase(descriptionIdInput:String, sessionDatabaseName: String)
     {
@@ -145,7 +120,6 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
                 self.scoreObjectFromDatabase = Score(pfObject: object!)
             }
         }
-        
     }
     
     
@@ -190,7 +164,14 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
             let (phase, score) = scoreMirror[i]
             let value = score.value
             print("\(i): \(phase) = \(value)")
+            if phase == phaseDatabaseName
+            {
+                
+                print("In the if: \(phaseDatabaseName) \(score.value)")
+            }
         }
+        
+        
         
         
 //        let result  = ""

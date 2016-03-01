@@ -11,23 +11,6 @@ import UIKit
 
 class Score: NSObject
 {
-    //change these to empty string ""
-//    var scoreId: String?
-//    var sit: String?
-//    var reverseSitUp: String?
-//    var sitUp: String?
-//    var trunkExtensionInSitting: String?
-//    var overheadPress: String?
-//    var forwardReachAndGrasp: String?
-//    var doorPullAndOpen: String?
-//    var canOpenAndManipulation: String?
-//    var sitToStand: String?
-//    var stand: String?
-//    var walking: String?
-//    var standAdaptability: String?
-//    var stepRetraining: String?
-//    var stepAdaptability: String?
-    
     var scoreId = ""
     var sit = ""
     var reverseSitUp = ""
@@ -45,11 +28,9 @@ class Score: NSObject
     var stepAdaptability = ""
     var version = ""
     
-//    7DFJDjDChM
     
-    init(/*scoreIdInit: String,*/ sitInit: String, reverseSitUpInit: String, sitUpInit: String, trunkExtensionInSittingInit: String, overheadPressInit: String, forwardReachAndGraspInit: String, doorPullAndOpenInit: String, canOpenAndManipulationInit:String, sitToStandInit: String, standInit: String, walkingInit: String, standAdaptabilityInit: String, stepRetrainingInit: String, stepAdaptabilityInit: String, versionInit: String)
+    init(sitInit: String, reverseSitUpInit: String, sitUpInit: String, trunkExtensionInSittingInit: String, overheadPressInit: String, forwardReachAndGraspInit: String, doorPullAndOpenInit: String, canOpenAndManipulationInit:String, sitToStandInit: String, standInit: String, walkingInit: String, standAdaptabilityInit: String, stepRetrainingInit: String, stepAdaptabilityInit: String, versionInit: String)
     {
-        //self.scoreId = scoreIdInit
         self.sit = sitInit
         self.reverseSitUp = reverseSitUpInit
         self.sitUp = sitUpInit
