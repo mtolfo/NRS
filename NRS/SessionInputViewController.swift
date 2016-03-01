@@ -25,7 +25,7 @@ class SessionInputViewController: UIViewController
     {
         //print("Did click button")
         sessionIdText = sessionTextField.text
-        //printScores()
+        
     }
     
     //place all of the scores into an array
@@ -55,13 +55,13 @@ class SessionInputViewController: UIViewController
         }
     }
     
-    func printScores()
-    {
-        for element in self.scoreArray
-        {
-            print("Score Array check: \(element.scoreId) \(element.sit) \(element.reverseSitUp)")
-        }
-    }
+//    func printScores()
+//    {
+//        for element in self.scoreArray
+//        {
+//            print("Score Array check: \(element.scoreId) \(element.sit) \(element.reverseSitUp)")
+//        }
+//    }
     
     
     // loads the session from user input into an array

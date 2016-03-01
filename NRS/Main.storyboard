@@ -228,6 +228,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="MeY-4n-mMC" id="BgC-1z-Tnl"/>
                                     <outlet property="delegate" destination="MeY-4n-mMC" id="bzM-6a-xko"/>
@@ -742,6 +745,7 @@
                                 <state key="normal" title="Confirm"/>
                                 <connections>
                                     <action selector="confirmButtonClicked:" destination="dx1-9g-5D0" eventType="touchUpInside" id="x8s-LS-HYr"/>
+                                    <segue destination="MeY-4n-mMC" kind="show" id="H6d-wb-eeh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -807,7 +811,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0bl-B4-503" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2749.5" y="529.5"/>
+            <point key="canvasLocation" x="1291.5" y="1291.5"/>
         </scene>
         <!--New Evaluation-->
         <scene sceneID="cRN-jv-YPw">
@@ -924,6 +928,7 @@
         <image name="play_whiteOnClear_22x22" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xCI-E7-eTL"/>
+        <segue reference="SZW-FV-s8R"/>
+        <segue reference="H6d-wb-eeh"/>
     </inferredMetricsTieBreakers>
 </document>

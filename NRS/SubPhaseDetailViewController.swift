@@ -14,12 +14,10 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     var scoreObjectFromDatabase:Score!
     var phaseDatabaseNameFromSegue:String?
     var verbalInstructionArray = [VerbalInstruction]()
-    //var verbalInstructionFromSegue:String?
     var sessionIdFromSegue:String?
     var verbalInstructionObjectFromSegue:VerbalInstruction!
     var subPhaseArray = [Subphase]()
     var subPhaseArrayIndex:Int = 0
-   
     
     @IBOutlet weak var verbalInstructionLabel: UILabel!
     @IBOutlet weak var subPhaseDescriptionLabel: UILabel!
@@ -44,12 +42,16 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         print ("END DONE BUTTON")
     }
 
-    // TODO: Problem with Stand_Adaptability in Model
     @IBAction func ableButtonClicked(sender: AnyObject)
     {
-        self.subPhaseArrayIndex += 1
-        self.subPhaseDescriptionLabel.text = self.subPhaseArray[self.subPhaseArrayIndex].description
-        self.navigationItem.title = self.subPhaseArray[self.subPhaseArrayIndex].descriptionId
+        //TODO: Create check to not go beyond array
+        if self.subPhaseArrayIndex < self.subPhaseArray.count - 1
+        {
+            self.subPhaseArrayIndex += 1
+            self.subPhaseDescriptionLabel.text = self.subPhaseArray[self.subPhaseArrayIndex].description
+            self.navigationItem.title = self.subPhaseArray[self.subPhaseArrayIndex].descriptionId
+        }
+        
     }
     
     func getStartingIndex(subphaseDescriptionIdInput: String, subPhaseArrayInput: [Subphase]) -> Int?
@@ -60,7 +62,36 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     
     @IBAction func unableButtonClicked(sender: AnyObject)
     {
-        self.shouldPerformSegueWithIdentifier("showConfirmationPopOver", sender: self)
+        //self.shouldPerformSegueWithIdentifier("showConfirmationPopOver", sender: self)
+        //self.performSegueWithIdentifier("showConfirmationPopOver", sender: self)
+        if (shouldPerformSegueWithIdentifier("showConfirmationPopOver", sender: self))
+        {
+            performSegueWithIdentifier("showConfirmationPopOver", sender: self)
+        }
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool
+    {
+        // If the phase does not have a score, then move on to the confirm screen
+        if identifier ==  "showConfirmationPopOver"
+        {
+            if !(self.doesPhaseHaveScore(self.verbalInstructionObjectFromSegue.phaseDatabaseName))
+            {
+                return true
+            }
+            else
+            {
+                //put alert code here and return false
+                let alertController = UIAlertController(title: "Phase already scored", message:
+                    "If you want to score this subphase, you must clear the scores for the \(self.verbalInstructionObjectFromSegue.phaseItem) phase", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                self.presentViewController(alertController, animated: true, completion: nil)
+                return false
+            }
+        }
+        
+        
+        return false
     }
     
     override func viewDidLoad()
@@ -122,8 +153,6 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         }
     }
     
-    
-   
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
@@ -156,7 +185,6 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     
     func doesPhaseHaveScore(phaseDatabaseName: String) -> Bool
     {
-        //let result = self.scoreObjectFromDatabase.valueForKey(phaseDatabaseName)
         let scoreMirror = _reflect(self.scoreObjectFromDatabase)
         
         for i in 0..<scoreMirror.count
@@ -166,39 +194,18 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
             print("\(i): \(phase) = \(value)")
             if phase == phaseDatabaseName
             {
-                
                 print("In the if: \(phaseDatabaseName) \(score.value)")
+                if score.summary.isEmpty
+                {
+                    return false
+                }
             }
         }
         
-        
-        
-        
-//        let result  = ""
-//
-//        if (result == "")
-//        {
-//            print ("\(result) has no score")
-//            return false
-//        }
-//        print ("\(result) has a score")
         return true
-        
     }
     
-    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-        if identifier == "showConfirmationPopOver"
-        {
-            let tempBool = self.doesPhaseHaveScore(self.verbalInstructionObjectFromSegue.phaseDatabaseName)
-            // if any of the subphases have been scored as unable, send a warning that cannot 
-//            if (self.doesPhaseHaveScore(self.verbalInstructionObjectFromSegue.phaseDatabaseName))
-//            {
-//                print ("Score id exists.")
-//                return false
-//            }
-        }
-        return true
-    }
+    
 
     
 
@@ -224,6 +231,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
             //we need the index before the one that is in the SubPhaseDetailVC
             destinationVc.subPhaseObject = self.subPhaseArray[subPhaseArrayIndex - 1]
             destinationVc.verbalInstructionObject = self.verbalInstructionObjectFromSegue
+            destinationVc.sessionId = self.sessionIdFromSegue
             
         }
     }
