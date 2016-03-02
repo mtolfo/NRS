@@ -26,6 +26,11 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     @IBOutlet weak var manualButton: UIButton!
     @IBOutlet weak var playVideoButton: UIButton!
 
+    @IBAction func scoresButtonClicked(sender: AnyObject)
+    {
+        performSegueWithIdentifier("showScoresTableView", sender: self)
+    }
+    
     @IBAction func manualButtonPressed(sender: AnyObject)
     {
         print("HELLO MANUAL BUTTON")
@@ -237,6 +242,12 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
             destinationVc.verbalInstructionObject = self.verbalInstructionObjectFromSegue
             destinationVc.sessionId = self.sessionIdFromSegue
             
+        }
+        
+        if segue.identifier ==  "showScoresTableView"
+        {
+            let targetVc = segue.destinationViewController as! PhaseViewController
+            targetVc.phaseScore = self.scoreObjectFromDatabase
         }
     }
     

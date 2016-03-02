@@ -567,6 +567,10 @@
                                 <state key="normal" title="SCORES">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="scoresButtonClicked:" destination="97W-j7-dPd" eventType="touchUpInside" id="3Wp-DM-I3H"/>
+                                    <segue destination="MeY-4n-mMC" kind="show" identifier="showScoresTableView" id="ioo-8n-J1S"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -679,7 +683,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gd-7r-8Dj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="390" y="1801.5"/>
+            <point key="canvasLocation" x="352.5" y="1599.75"/>
         </scene>
         <!--Confirm View Controller-->
         <scene sceneID="zeI-rs-jLi">
@@ -931,5 +935,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="SZW-FV-s8R"/>
+        <segue reference="ioo-8n-J1S"/>
     </inferredMetricsTieBreakers>
 </document>
