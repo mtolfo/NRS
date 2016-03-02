@@ -46,6 +46,7 @@
 		A8DC3F5B1C8682BD009B3774 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8DC3F591C8682BD009B3774 /* Parse.framework */; };
 		A8DC3F5D1C86940B009B3774 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DC3F5C1C86940B009B3774 /* ConfirmViewController.swift */; };
 		A8DC3F5F1C86AB4B009B3774 /* InstructionManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DC3F5E1C86AB4B009B3774 /* InstructionManualViewController.swift */; };
+		A8DC3F611C86AEF5009B3774 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8DC3F601C86AEF5009B3774 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		A8DC3F591C8682BD009B3774 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A8DC3F5C1C86940B009B3774 /* ConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		A8DC3F5E1C86AB4B009B3774 /* InstructionManualViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionManualViewController.swift; sourceTree = "<group>"; };
+		A8DC3F601C86AEF5009B3774 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8DC3F611C86AEF5009B3774 /* MessageUI.framework in Frameworks */,
 				A889D0A11C41EC78005DB665 /* AudioToolbox.framework in Frameworks */,
 				A889D0A21C41EC78005DB665 /* CFNetwork.framework in Frameworks */,
 				A889D0A31C41EC78005DB665 /* CoreGraphics.framework in Frameworks */,
@@ -215,6 +218,7 @@
 		A899520E1C3C976E0023373D = {
 			isa = PBXGroup;
 			children = (
+				A8DC3F601C86AEF5009B3774 /* MessageUI.framework */,
 				A89952191C3C976E0023373D /* NRS */,
 				A899522E1C3C976E0023373D /* NRSTests */,
 				A89952391C3C976E0023373D /* NRSUITests */,

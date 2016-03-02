@@ -232,15 +232,70 @@
                                     <outlet property="delegate" destination="MeY-4n-mMC" id="bzM-6a-xko"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6u-Xm-DDr">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="10" y="-34" width="42" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znU-Uu-fbK">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="-24" width="42" height="21"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGg-u8-SVR">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="EMAIL"/>
+                                <connections>
+                                    <action selector="emailButtonClicked:" destination="MeY-4n-mMC" eventType="touchUpInside" id="SUi-Rn-H0M"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="iGg-u8-SVR" firstAttribute="top" secondItem="x6S-SL-uBh" secondAttribute="bottom" constant="8" symbolic="YES" id="0fP-lt-wHj"/>
                             <constraint firstItem="x6S-SL-uBh" firstAttribute="top" secondItem="DfL-Df-EHR" secondAttribute="bottom" constant="-64" id="5VC-I8-jCX"/>
-                            <constraint firstItem="c5f-0z-i54" firstAttribute="top" secondItem="x6S-SL-uBh" secondAttribute="bottom" id="AZ5-Ug-qNJ"/>
+                            <constraint firstItem="c5f-0z-i54" firstAttribute="top" secondItem="x6S-SL-uBh" secondAttribute="bottom" id="AZ5-Ug-qNJ">
+                                <variation key="heightClass=regular-widthClass=compact" constant="48"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="iGg-u8-SVR" secondAttribute="trailing" constant="1" id="OAG-Xz-TgQ"/>
                             <constraint firstItem="x6S-SL-uBh" firstAttribute="leading" secondItem="T8e-My-zRE" secondAttribute="leadingMargin" constant="-20" id="fwU-f5-uuF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="x6S-SL-uBh" secondAttribute="trailing" constant="-20" id="kXW-pC-f4N"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="w6u-Xm-DDr"/>
+                                <exclude reference="znU-Uu-fbK"/>
+                                <exclude reference="iGg-u8-SVR"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="0fP-lt-wHj"/>
+                                <exclude reference="OAG-Xz-TgQ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="w6u-Xm-DDr"/>
+                                <include reference="znU-Uu-fbK"/>
+                                <include reference="iGg-u8-SVR"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="0fP-lt-wHj"/>
+                                <include reference="OAG-Xz-TgQ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="In Progress Phase Items" id="1TU-6e-Eh6">
                         <barButtonItem key="rightBarButtonItem" title="Refresh" id="41U-uI-hbF">
@@ -255,7 +310,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p1G-8H-gHa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-523.5" y="1354.5"/>
+            <point key="canvasLocation" x="-1018.5" y="1189.5"/>
         </scene>
         <!--Phase Item-->
         <scene sceneID="XLy-Kc-UVz">
@@ -421,7 +476,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijd-Sh-Bs6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="573" y="886.5"/>
+            <point key="canvasLocation" x="576" y="738"/>
         </scene>
         <!--Subphase Detail-->
         <scene sceneID="5lM-em-4I9">
@@ -684,7 +739,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gd-7r-8Dj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="352.5" y="1599.75"/>
+            <point key="canvasLocation" x="10.5" y="1539.75"/>
         </scene>
         <!--Instruction Manual View Controller-->
         <scene sceneID="skC-sg-GY0">
@@ -783,7 +838,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AmZ-Jo-l60" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1173" y="1915.5"/>
+            <point key="canvasLocation" x="1431" y="1764"/>
         </scene>
         <!--Confirm View Controller-->
         <scene sceneID="zeI-rs-jLi">

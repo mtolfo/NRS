@@ -8,8 +8,9 @@
 // This has a table view. Launched with user puts in a session number. 
 
 import UIKit
+import MessageUI
 
-class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
+class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate
 {
     var phaseScore:Score! //Score object from segue goes here
     var phaseScoreArray:[String]?
@@ -197,6 +198,37 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         navigationController?.hidesBarsOnSwipe = true
     }
     
+    @IBAction func emailButtonClicked(sender: AnyObject)
+    {
+        let mailComposeViewController = self.configuredMailComposeViewController()
+        
+        if MFMailComposeViewController.canSendMail()
+        {
+            self.presentViewController(mailComposeViewController, animated:true, completion:nil)
+        }
+        else
+        {
+            //self.showSendMailErrorAlert()
+            print("Could not sent email")
+        }
+        
+    }
+    func configuredMailComposeViewController() -> MFMailComposeViewController
+    {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self
+        
+        mailComposerVC.setToRecipients(["mtolfo@mac.com"])
+        mailComposerVC.setSubject("NRS Scores")
+        mailComposerVC.setMessageBody("Here are your scores.", isHTML: false)
+        return mailComposerVC
+    }
+    
+//    func showSendMailErrorAlert()
+//    {
+//        let sendMailErrorAlert = UIAlertView(title:"Could not send email", message: "Your device could not send e-mail. Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "Ok")
+//        sendMailErrorAlert.show()
+//    }
     // MARK: - Navigation
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
