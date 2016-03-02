@@ -7,30 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A80AD05D1C54304A00AB70ED /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A80AD05B1C54304A00AB70ED /* Bolts.framework */; };
-		A80AD05E1C54304A00AB70ED /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A80AD05C1C54304A00AB70ED /* Parse.framework */; };
 		A80D5B151C572B6B004EE98C /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80D5B141C572B6B004EE98C /* Session.swift */; };
 		A80D5B171C585B6A004EE98C /* PhaseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80D5B161C585B6A004EE98C /* PhaseItem.swift */; };
 		A80D5B1A1C5875F4004EE98C /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80D5B191C5875F4004EE98C /* Score.swift */; };
 		A80D5B1E1C618485004EE98C /* PhaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80D5B1D1C618485004EE98C /* PhaseViewController.swift */; };
 		A814B8D11C66868300E20A35 /* PhaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A814B8D01C66868300E20A35 /* PhaseTableViewCell.swift */; };
-		A82B16121C7217FD0095CE2B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A82B16101C7217FD0095CE2B /* Bolts.framework */; };
-		A82B16131C7217FD0095CE2B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A82B16111C7217FD0095CE2B /* Parse.framework */; };
 		A82B16151C725D980095CE2B /* VerbalInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82B16141C725D980095CE2B /* VerbalInstruction.swift */; };
-		A841AC5F1C7C9894007B5A57 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A841AC5D1C7C9894007B5A57 /* Bolts.framework */; };
-		A841AC601C7C9894007B5A57 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A841AC5E1C7C9894007B5A57 /* Parse.framework */; };
-		A84C59351C7A115600D02C11 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84C59331C7A115500D02C11 /* Bolts.framework */; };
-		A84C59361C7A115600D02C11 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84C59341C7A115500D02C11 /* Parse.framework */; };
 		A84C59381C7A5ED700D02C11 /* NewEvalSessionId.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C59371C7A5ED700D02C11 /* NewEvalSessionId.swift */; };
-		A84C593B1C7AA95600D02C11 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84C59391C7AA95600D02C11 /* Bolts.framework */; };
-		A84C593C1C7AA95600D02C11 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84C593A1C7AA95600D02C11 /* Parse.framework */; };
 		A85F40E41C8213F80093F7C5 /* ConfirmationPopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F40E31C8213F80093F7C5 /* ConfirmationPopOverViewController.swift */; };
 		A85F40E61C8219DC0093F7C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A85F40E51C8219DC0093F7C5 /* Main.storyboard */; };
 		A85F40E81C828F420093F7C5 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F40E71C828F420093F7C5 /* Database.swift */; };
-		A8697EB31C7401E900CAC63D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8697EB11C7401E900CAC63D /* Bolts.framework */; };
-		A8697EB41C7401E900CAC63D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8697EB21C7401E900CAC63D /* Parse.framework */; };
-		A8697EB71C76E15A00CAC63D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8697EB51C76E15A00CAC63D /* Bolts.framework */; };
-		A8697EB81C76E15A00CAC63D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8697EB61C76E15A00CAC63D /* Parse.framework */; };
 		A86F697C1C49400F00C402AB /* SessionInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86F697B1C49400F00C402AB /* SessionInputViewController.swift */; };
 		A86F697E1C4AF25400C402AB /* SubphaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86F697D1C4AF25400C402AB /* SubphaseViewController.swift */; };
 		A86F69801C4DAA0000C402AB /* SubPhaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86F697F1C4DAA0000C402AB /* SubPhaseCollectionViewCell.swift */; };
@@ -54,13 +40,11 @@
 		A89952301C3C976E0023373D /* NRSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899522F1C3C976E0023373D /* NRSTests.swift */; };
 		A899523B1C3C976E0023373D /* NRSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899523A1C3C976E0023373D /* NRSUITests.swift */; };
 		A899524B1C3CADAB0023373D /* NewEvalSelectSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899524A1C3CADAB0023373D /* NewEvalSelectSessionViewController.swift */; };
-		A89EF5F11C6988AE0098CDBB /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89EF5EF1C6988AE0098CDBB /* Bolts.framework */; };
-		A89EF5F21C6988AE0098CDBB /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89EF5F01C6988AE0098CDBB /* Parse.framework */; };
 		A89EF5F41C6997A30098CDBB /* SubPhaseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89EF5F31C6997A30098CDBB /* SubPhaseDetailViewController.swift */; };
 		A8A5E62B1C3FF653002D7A10 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A5E62A1C3FF653002D7A10 /* Version.swift */; };
 		A8D392881C3CCCC1000B4125 /* NewEvalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D392871C3CCCC1000B4125 /* NewEvalViewController.swift */; };
-		A8F4F5A81C7F3C4E00A4A8D4 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8F4F5A61C7F3C4E00A4A8D4 /* Bolts.framework */; };
-		A8F4F5A91C7F3C4E00A4A8D4 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8F4F5A71C7F3C4E00A4A8D4 /* Parse.framework */; };
+		A8DC3F5A1C8682BD009B3774 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8DC3F581C8682BD009B3774 /* Bolts.framework */; };
+		A8DC3F5B1C8682BD009B3774 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8DC3F591C8682BD009B3774 /* Parse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,30 +65,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A80AD05B1C54304A00AB70ED /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		A80AD05C1C54304A00AB70ED /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A80D5B141C572B6B004EE98C /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		A80D5B161C585B6A004EE98C /* PhaseItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhaseItem.swift; sourceTree = "<group>"; };
 		A80D5B191C5875F4004EE98C /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		A80D5B1D1C618485004EE98C /* PhaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhaseViewController.swift; path = ../PhaseViewController.swift; sourceTree = "<group>"; };
 		A814B8D01C66868300E20A35 /* PhaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhaseTableViewCell.swift; sourceTree = "<group>"; };
-		A82B16101C7217FD0095CE2B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		A82B16111C7217FD0095CE2B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A82B16141C725D980095CE2B /* VerbalInstruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerbalInstruction.swift; sourceTree = "<group>"; };
-		A841AC5D1C7C9894007B5A57 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		A841AC5E1C7C9894007B5A57 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		A84C59331C7A115500D02C11 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		A84C59341C7A115500D02C11 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A84C59371C7A5ED700D02C11 /* NewEvalSessionId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEvalSessionId.swift; sourceTree = "<group>"; };
-		A84C59391C7AA95600D02C11 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		A84C593A1C7AA95600D02C11 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A85F40E31C8213F80093F7C5 /* ConfirmationPopOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationPopOverViewController.swift; sourceTree = "<group>"; };
 		A85F40E51C8219DC0093F7C5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A85F40E71C828F420093F7C5 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
-		A8697EB11C7401E900CAC63D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		A8697EB21C7401E900CAC63D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		A8697EB51C76E15A00CAC63D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		A8697EB61C76E15A00CAC63D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A86F697B1C49400F00C402AB /* SessionInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionInputViewController.swift; sourceTree = "<group>"; };
 		A86F697D1C4AF25400C402AB /* SubphaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubphaseViewController.swift; sourceTree = "<group>"; };
 		A86F697F1C4DAA0000C402AB /* SubPhaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubPhaseCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -135,13 +105,11 @@
 		A899523A1C3C976E0023373D /* NRSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRSUITests.swift; sourceTree = "<group>"; };
 		A899523C1C3C976E0023373D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A899524A1C3CADAB0023373D /* NewEvalSelectSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEvalSelectSessionViewController.swift; sourceTree = "<group>"; };
-		A89EF5EF1C6988AE0098CDBB /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		A89EF5F01C6988AE0098CDBB /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A89EF5F31C6997A30098CDBB /* SubPhaseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubPhaseDetailViewController.swift; sourceTree = "<group>"; };
 		A8A5E62A1C3FF653002D7A10 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		A8D392871C3CCCC1000B4125 /* NewEvalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEvalViewController.swift; sourceTree = "<group>"; };
-		A8F4F5A61C7F3C4E00A4A8D4 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		A8F4F5A71C7F3C4E00A4A8D4 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		A8DC3F581C8682BD009B3774 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		A8DC3F591C8682BD009B3774 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,34 +120,18 @@
 				A889D0A11C41EC78005DB665 /* AudioToolbox.framework in Frameworks */,
 				A889D0A21C41EC78005DB665 /* CFNetwork.framework in Frameworks */,
 				A889D0A31C41EC78005DB665 /* CoreGraphics.framework in Frameworks */,
-				A8F4F5A91C7F3C4E00A4A8D4 /* Parse.framework in Frameworks */,
 				A889D0A41C41EC78005DB665 /* CoreLocation.framework in Frameworks */,
-				A80AD05E1C54304A00AB70ED /* Parse.framework in Frameworks */,
+				A8DC3F5B1C8682BD009B3774 /* Parse.framework in Frameworks */,
 				A889D0A51C41EC78005DB665 /* libsqlite3.tbd in Frameworks */,
-				A89EF5F21C6988AE0098CDBB /* Parse.framework in Frameworks */,
-				A84C593B1C7AA95600D02C11 /* Bolts.framework in Frameworks */,
 				A889D0A61C41EC78005DB665 /* libz.tbd in Frameworks */,
 				A889D0A71C41EC78005DB665 /* MobileCoreServices.framework in Frameworks */,
-				A84C593C1C7AA95600D02C11 /* Parse.framework in Frameworks */,
 				A889D0A81C41EC78005DB665 /* QuartzCore.framework in Frameworks */,
-				A841AC601C7C9894007B5A57 /* Parse.framework in Frameworks */,
-				A8697EB41C7401E900CAC63D /* Parse.framework in Frameworks */,
 				A889D0A91C41EC78005DB665 /* Security.framework in Frameworks */,
-				A8F4F5A81C7F3C4E00A4A8D4 /* Bolts.framework in Frameworks */,
 				A889D0AA1C41EC78005DB665 /* StoreKit.framework in Frameworks */,
 				A889D0AB1C41EC78005DB665 /* SystemConfiguration.framework in Frameworks */,
-				A82B16131C7217FD0095CE2B /* Parse.framework in Frameworks */,
-				A84C59351C7A115600D02C11 /* Bolts.framework in Frameworks */,
 				A889D0951C41EBFF005DB665 /* Parse.framework in Frameworks */,
-				A8697EB81C76E15A00CAC63D /* Parse.framework in Frameworks */,
-				A8697EB31C7401E900CAC63D /* Bolts.framework in Frameworks */,
-				A84C59361C7A115600D02C11 /* Parse.framework in Frameworks */,
 				A889D0941C41EBFF005DB665 /* Bolts.framework in Frameworks */,
-				A82B16121C7217FD0095CE2B /* Bolts.framework in Frameworks */,
-				A8697EB71C76E15A00CAC63D /* Bolts.framework in Frameworks */,
-				A80AD05D1C54304A00AB70ED /* Bolts.framework in Frameworks */,
-				A89EF5F11C6988AE0098CDBB /* Bolts.framework in Frameworks */,
-				A841AC5F1C7C9894007B5A57 /* Bolts.framework in Frameworks */,
+				A8DC3F5A1C8682BD009B3774 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,24 +191,8 @@
 		A889D0911C41EBF2005DB665 /* Parse */ = {
 			isa = PBXGroup;
 			children = (
-				A841AC5D1C7C9894007B5A57 /* Bolts.framework */,
-				A8F4F5A61C7F3C4E00A4A8D4 /* Bolts.framework */,
-				A8F4F5A71C7F3C4E00A4A8D4 /* Parse.framework */,
-				A841AC5E1C7C9894007B5A57 /* Parse.framework */,
-				A84C59391C7AA95600D02C11 /* Bolts.framework */,
-				A84C593A1C7AA95600D02C11 /* Parse.framework */,
-				A84C59331C7A115500D02C11 /* Bolts.framework */,
-				A84C59341C7A115500D02C11 /* Parse.framework */,
-				A8697EB51C76E15A00CAC63D /* Bolts.framework */,
-				A8697EB61C76E15A00CAC63D /* Parse.framework */,
-				A8697EB11C7401E900CAC63D /* Bolts.framework */,
-				A8697EB21C7401E900CAC63D /* Parse.framework */,
-				A82B16101C7217FD0095CE2B /* Bolts.framework */,
-				A82B16111C7217FD0095CE2B /* Parse.framework */,
-				A89EF5EF1C6988AE0098CDBB /* Bolts.framework */,
-				A89EF5F01C6988AE0098CDBB /* Parse.framework */,
-				A80AD05B1C54304A00AB70ED /* Bolts.framework */,
-				A80AD05C1C54304A00AB70ED /* Parse.framework */,
+				A8DC3F581C8682BD009B3774 /* Bolts.framework */,
+				A8DC3F591C8682BD009B3774 /* Parse.framework */,
 				A889D0961C41EC78005DB665 /* AudioToolbox.framework */,
 				A889D0971C41EC78005DB665 /* CFNetwork.framework */,
 				A889D0981C41EC78005DB665 /* CoreGraphics.framework */,

@@ -229,7 +229,11 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
             
             //Popover only shows during confirmation that a subPhase is UNABLE so
             //we need the index before the one that is in the SubPhaseDetailVC
-            destinationVc.subPhaseObject = self.subPhaseArray[subPhaseArrayIndex - 1]
+            if self.subPhaseArrayIndex > 0
+            {
+                subPhaseArrayIndex -= 1
+            }
+            destinationVc.subPhaseObject = self.subPhaseArray[subPhaseArrayIndex]
             destinationVc.verbalInstructionObject = self.verbalInstructionObjectFromSegue
             destinationVc.sessionId = self.sessionIdFromSegue
             

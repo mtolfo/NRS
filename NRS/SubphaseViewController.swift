@@ -105,6 +105,7 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
     func getVerbalInstructionObjectFromArray() -> VerbalInstruction
     {
         let filteredArray = self.verbalInstructionArray.filter({$0.phaseDatabaseName == self.phaseNameFromSegue})
+        print (filteredArray[0].phaseDatabaseName)
         return filteredArray[0]
     }
 
