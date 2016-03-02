@@ -64,16 +64,16 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     {
         //self.shouldPerformSegueWithIdentifier("showConfirmationPopOver", sender: self)
         //self.performSegueWithIdentifier("showConfirmationPopOver", sender: self)
-        if (shouldPerformSegueWithIdentifier("showConfirmationPopOver", sender: self))
+        if (shouldPerformSegueWithIdentifier("showConfirmView", sender: self))
         {
-            performSegueWithIdentifier("showConfirmationPopOver", sender: self)
+            performSegueWithIdentifier("showConfirmView", sender: self)
         }
     }
     
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool
     {
         // If the phase does not have a score, then move on to the confirm screen
-        if identifier ==  "showConfirmationPopOver"
+        if identifier ==  "showConfirmView"
         {
             if !(self.doesPhaseHaveScore(self.verbalInstructionObjectFromSegue.phaseDatabaseName))
             {
@@ -217,9 +217,9 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier ==  "showConfirmationPopOver"
+        if segue.identifier ==  "showConfirmView"
         {
-            let destinationVc = segue.destinationViewController as! ConfirmationPopOverViewController
+            let destinationVc = segue.destinationViewController as! ConfirmViewController
             
             let controller = destinationVc.popoverPresentationController
             if controller != nil

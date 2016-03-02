@@ -1,48 +1,42 @@
 //
-//  ConfirmationPopOverViewController.swift
+//  ConfirmViewController.swift
 //  NRS
 //
-//  Created by Michael Tolfo on 2/27/16.
+//  Created by Michael Tolfo on 3/1/16.
 //  Copyright © 2016 tolfosoftware. All rights reserved.
 //
 
 import UIKit
 
-
-
-
-class ConfirmationPopOverViewController: UIViewController
+class ConfirmViewController: UIViewController
 {
     var subPhaseObject:Subphase! //this object is the subphase before the one on the previous view controller because we are confirming that the patient is UNABLE to do this task
     var verbalInstructionObject:VerbalInstruction!
     var sessionId:String!
-
-    @IBOutlet
-    weak var subphaseDescriptionLabel: UILabel!
     
-    
-    
+    @IBOutlet weak var subphaseDescriptionLabel: UILabel!
     @IBOutlet weak var confirmationMessageLabel: UILabel!
+    
     @IBAction func confirmButtonClicked(sender: AnyObject)
     {
         self.markScoreObjectFromDatabase(self.subPhaseObject.descriptionId, sessionDatabaseName: self.verbalInstructionObject.phaseDatabaseName)
         dismissViewControllerAnimated(true, completion: nil)
     }
-    
-    @IBAction func rejectButtonClicked(sender: AnyObject)
+    @IBAction func rejectButonClicked(sender: AnyObject)
     {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    override func viewDidLoad()
-    {
+
+    override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Do any additional setup after loading the view.
         self.subphaseDescriptionLabel.text = self.subPhaseObject.description
         
         if (subPhaseObject.descriptionId == "1A")
         {
-            self.confirmationMessageLabel.text = "Confirm \(self.verbalInstructionObject.phaseItem) as ABLE"
+            self.confirmationMessageLabel.text = "Confirm \(self.verbalInstructionObject.phaseItem) \(self.subPhaseObject.descriptionId) as ABLE"
         }
         else
         {
@@ -50,6 +44,11 @@ class ConfirmationPopOverViewController: UIViewController
         }
         
 
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     func markScoreObjectFromDatabase(descriptionIdInput:String, sessionDatabaseName: String)
@@ -76,26 +75,38 @@ class ConfirmationPopOverViewController: UIViewController
         
     }
 
-
-    override func didReceiveMemoryWarning()
+    
+    /*
+    var subPhaseObject:Subphase! //this object is the subphase before the one on the previous view controller because we are confirming that the patient is UNABLE to do this task
+    var verbalInstructionObject:VerbalInstruction!
+    var sessionId:String!
+    
+    @IBOutlet
+    weak var subphaseDescriptionLabel: UILabel!
+    
+    
+    
+    @IBOutlet weak var confirmationMessageLabel: UILabel!
+    @IBAction func confirmButtonClicked(sender: AnyObject)
     {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.markScoreObjectFromDatabase(self.subPhaseObject.descriptionId, sessionDatabaseName: self.verbalInstructionObject.phaseDatabaseName)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func rejectButtonClicked(sender: AnyObject)
+    {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+*/
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if segue.identifier == "showTableViewFromConfirmView"
-        {
-            
-        }
     }
-    
+    */
 
 }

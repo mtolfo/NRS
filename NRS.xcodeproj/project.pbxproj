@@ -45,6 +45,7 @@
 		A8D392881C3CCCC1000B4125 /* NewEvalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D392871C3CCCC1000B4125 /* NewEvalViewController.swift */; };
 		A8DC3F5A1C8682BD009B3774 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8DC3F581C8682BD009B3774 /* Bolts.framework */; };
 		A8DC3F5B1C8682BD009B3774 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8DC3F591C8682BD009B3774 /* Parse.framework */; };
+		A8DC3F5D1C86940B009B3774 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DC3F5C1C86940B009B3774 /* ConfirmViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		A8D392871C3CCCC1000B4125 /* NewEvalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEvalViewController.swift; sourceTree = "<group>"; };
 		A8DC3F581C8682BD009B3774 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A8DC3F591C8682BD009B3774 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		A8DC3F5C1C86940B009B3774 /* ConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 				A89EF5F31C6997A30098CDBB /* SubPhaseDetailViewController.swift */,
 				A86F697F1C4DAA0000C402AB /* SubPhaseCollectionViewCell.swift */,
 				A85F40E31C8213F80093F7C5 /* ConfirmationPopOverViewController.swift */,
+				A8DC3F5C1C86940B009B3774 /* ConfirmViewController.swift */,
 			);
 			name = Subphase;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				A85F40E41C8213F80093F7C5 /* ConfirmationPopOverViewController.swift in Sources */,
 				A814B8D11C66868300E20A35 /* PhaseTableViewCell.swift in Sources */,
 				A80D5B1A1C5875F4004EE98C /* Score.swift in Sources */,
+				A8DC3F5D1C86940B009B3774 /* ConfirmViewController.swift in Sources */,
 				A89EF5F41C6997A30098CDBB /* SubPhaseDetailViewController.swift in Sources */,
 				A80D5B151C572B6B004EE98C /* Session.swift in Sources */,
 			);
