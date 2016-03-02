@@ -14,7 +14,6 @@
 		A814B8D11C66868300E20A35 /* PhaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A814B8D01C66868300E20A35 /* PhaseTableViewCell.swift */; };
 		A82B16151C725D980095CE2B /* VerbalInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82B16141C725D980095CE2B /* VerbalInstruction.swift */; };
 		A84C59381C7A5ED700D02C11 /* NewEvalSessionId.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C59371C7A5ED700D02C11 /* NewEvalSessionId.swift */; };
-		A85F40E41C8213F80093F7C5 /* ConfirmationPopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F40E31C8213F80093F7C5 /* ConfirmationPopOverViewController.swift */; };
 		A85F40E61C8219DC0093F7C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A85F40E51C8219DC0093F7C5 /* Main.storyboard */; };
 		A85F40E81C828F420093F7C5 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F40E71C828F420093F7C5 /* Database.swift */; };
 		A86F697C1C49400F00C402AB /* SessionInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86F697B1C49400F00C402AB /* SessionInputViewController.swift */; };
@@ -73,7 +72,6 @@
 		A814B8D01C66868300E20A35 /* PhaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhaseTableViewCell.swift; sourceTree = "<group>"; };
 		A82B16141C725D980095CE2B /* VerbalInstruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerbalInstruction.swift; sourceTree = "<group>"; };
 		A84C59371C7A5ED700D02C11 /* NewEvalSessionId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEvalSessionId.swift; sourceTree = "<group>"; };
-		A85F40E31C8213F80093F7C5 /* ConfirmationPopOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationPopOverViewController.swift; sourceTree = "<group>"; };
 		A85F40E51C8219DC0093F7C5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A85F40E71C828F420093F7C5 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		A86F697B1C49400F00C402AB /* SessionInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionInputViewController.swift; sourceTree = "<group>"; };
@@ -185,7 +183,6 @@
 				A86F697D1C4AF25400C402AB /* SubphaseViewController.swift */,
 				A89EF5F31C6997A30098CDBB /* SubPhaseDetailViewController.swift */,
 				A86F697F1C4DAA0000C402AB /* SubPhaseCollectionViewCell.swift */,
-				A85F40E31C8213F80093F7C5 /* ConfirmationPopOverViewController.swift */,
 				A8DC3F5C1C86940B009B3774 /* ConfirmViewController.swift */,
 			);
 			name = Subphase;
@@ -417,7 +414,6 @@
 				A80D5B1E1C618485004EE98C /* PhaseViewController.swift in Sources */,
 				A82B16151C725D980095CE2B /* VerbalInstruction.swift in Sources */,
 				A80D5B171C585B6A004EE98C /* PhaseItem.swift in Sources */,
-				A85F40E41C8213F80093F7C5 /* ConfirmationPopOverViewController.swift in Sources */,
 				A814B8D11C66868300E20A35 /* PhaseTableViewCell.swift in Sources */,
 				A80D5B1A1C5875F4004EE98C /* Score.swift in Sources */,
 				A8DC3F5D1C86940B009B3774 /* ConfirmViewController.swift in Sources */,
