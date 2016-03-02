@@ -527,6 +527,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="manualButtonPressed:" destination="97W-j7-dPd" eventType="touchUpInside" id="Dlf-BB-4Ij"/>
+                                    <segue destination="FOy-1O-vz0" kind="show" identifier="showInstructionManualVc" id="kvj-oh-xcu"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dR-ko-ehL">
@@ -684,6 +685,105 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gd-7r-8Dj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="352.5" y="1599.75"/>
+        </scene>
+        <!--Instruction Manual View Controller-->
+        <scene sceneID="skC-sg-GY0">
+            <objects>
+                <viewController id="FOy-1O-vz0" customClass="InstructionManualViewController" customModule="NRS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uFC-8C-l4G"/>
+                        <viewControllerLayoutGuide type="bottom" id="ygg-EL-5gp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="C1a-DW-fDf">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RVN-oA-s53">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5q8-LZ-pVU">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="91" id="E8Z-yf-C6E">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="147"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="21" id="njs-6j-aWk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="E8Z-yf-C6E"/>
+                                        <exclude reference="njs-6j-aWk"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="E8Z-yf-C6E"/>
+                                        <include reference="njs-6j-aWk"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="5q8-LZ-pVU" firstAttribute="leading" secondItem="C1a-DW-fDf" secondAttribute="leadingMargin" constant="135" id="6Cb-nf-ePq">
+                                <variation key="heightClass=regular-widthClass=compact" constant="107"/>
+                            </constraint>
+                            <constraint firstItem="RVN-oA-s53" firstAttribute="centerX" secondItem="5q8-LZ-pVU" secondAttribute="centerX" id="Gqa-uo-qlG"/>
+                            <constraint firstAttribute="bottom" secondItem="RVN-oA-s53" secondAttribute="bottom" constant="20" symbolic="YES" id="Qxp-AB-ez4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5q8-LZ-pVU" secondAttribute="trailing" constant="134" id="T5H-U5-wmr">
+                                <variation key="heightClass=regular-widthClass=compact" constant="106"/>
+                            </constraint>
+                            <constraint firstItem="RVN-oA-s53" firstAttribute="leading" secondItem="C1a-DW-fDf" secondAttribute="leadingMargin" id="c5c-IF-UeU"/>
+                            <constraint firstItem="RVN-oA-s53" firstAttribute="top" secondItem="5q8-LZ-pVU" secondAttribute="bottom" constant="8" symbolic="YES" id="fJT-fz-RpZ"/>
+                            <constraint firstItem="5q8-LZ-pVU" firstAttribute="top" secondItem="uFC-8C-l4G" secondAttribute="bottom" constant="8" id="kfl-QW-yyl"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="RVN-oA-s53"/>
+                                <exclude reference="5q8-LZ-pVU"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Gqa-uo-qlG"/>
+                                <exclude reference="Qxp-AB-ez4"/>
+                                <exclude reference="c5c-IF-UeU"/>
+                                <exclude reference="fJT-fz-RpZ"/>
+                                <exclude reference="6Cb-nf-ePq"/>
+                                <exclude reference="T5H-U5-wmr"/>
+                                <exclude reference="kfl-QW-yyl"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="RVN-oA-s53"/>
+                                <include reference="5q8-LZ-pVU"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Gqa-uo-qlG"/>
+                                <include reference="Qxp-AB-ez4"/>
+                                <include reference="c5c-IF-UeU"/>
+                                <include reference="fJT-fz-RpZ"/>
+                                <include reference="6Cb-nf-ePq"/>
+                                <include reference="T5H-U5-wmr"/>
+                                <include reference="kfl-QW-yyl"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="instructionManualTextView" destination="RVN-oA-s53" id="yWG-s3-9ai"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AmZ-Jo-l60" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1173" y="1915.5"/>
         </scene>
         <!--Confirm View Controller-->
         <scene sceneID="zeI-rs-jLi">

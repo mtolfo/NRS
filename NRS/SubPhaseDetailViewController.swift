@@ -18,6 +18,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     var verbalInstructionObjectFromSegue:VerbalInstruction!
     var subPhaseArray = [Subphase]()
     var subPhaseArrayIndex:Int = 0
+    var phaseInstruction = ""
     
     @IBOutlet weak var verbalInstructionLabel: UILabel!
     @IBOutlet weak var subPhaseDescriptionLabel: UILabel!
@@ -33,18 +34,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     
     @IBAction func manualButtonPressed(sender: AnyObject)
     {
-        print("HELLO MANUAL BUTTON")
-        
-        print("Session Id: \(self.sessionIdFromSegue)")
-        //scoreObjectFromDatabase = getScoreObectFromDatabase(self.sessionIdFromSegue!)
-        //print ("Score object from database: \
-        //(scoreObjectFromDatabase.stand)") //gettin nil here for same reason as before, block not executed yet
-        //self.scoreObjectFromDatabase = getScoreObectFromDatabase(self.sessionIdFromSegue!)
-
-        //print(scoreObjectFromDatabase)
-        print ("Verbal instruction object: \(self.verbalInstructionObjectFromSegue.phaseDatabaseName)")
-        self.markScoreObjectFromDatabase(self.subPhaseFromSegue.descriptionId, sessionDatabaseName: self.verbalInstructionObjectFromSegue.phaseDatabaseName)
-        print ("END DONE BUTTON")
+        performSegueWithIdentifier("showInstructionManualVc", sender: self)
     }
 
     @IBAction func ableButtonClicked(sender: AnyObject)
@@ -57,6 +47,22 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
             self.navigationItem.title = self.subPhaseArray[self.subPhaseArrayIndex].descriptionId
         }
         
+    }
+    
+    func getInstructionManualFromDatabase (phaseDatabaseName: String)
+    {
+        let query = PFQuery(className: "Phase_Instructions")
+        query.whereKey(phaseDatabaseName, equalTo: self.verbalInstructionObjectFromSegue.phaseDatabaseName)
+        query.getFirstObjectInBackgroundWithBlock {
+            (object: PFObject?, error: NSError?) -> Void in
+            if error != nil || object == nil {
+                print("The getInstructionManualFromDatabase request failed.")
+            }
+            else
+            {
+                self.phaseInstruction = object!["instruction"] as! String
+            }
+        }
     }
     
     func getStartingIndex(subphaseDescriptionIdInput: String, subPhaseArrayInput: [Subphase]) -> Int?
@@ -115,6 +121,8 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
 
         self.subPhaseArrayIndex = getStartingIndex(self.subPhaseFromSegue.descriptionId, subPhaseArrayInput: self.subPhaseArray)!
         self.getScoreObject(self.sessionIdFromSegue!)
+        self.getInstructionManualFromDatabase("Sit")
+        self.getInstructionManualFromDatabase("Reverse_Sit_up")
         
     }
     
@@ -164,29 +172,6 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         // Dispose of any resources that can be recreated.
     }
     
-    //validation to prevent segue
-//    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool
-//    {
-//        if identifier == "showInProgressPhases"
-//        {
-//            //use "sessionTextField.text!" instead of backing variable "sessionIdText" for validation
-//            if (sessionTextField.text!.isEmpty || !scoreArray.contains({$0.scoreId == sessionTextField.text!}))
-//            {
-//                let alertController = UIAlertController(title: "Session Does Not Exist", message:
-//                    "The session id you have entered does not exist in the database.", preferredStyle: UIAlertControllerStyle.Alert)
-//                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-//                self.presentViewController(alertController, animated: true, completion: nil)
-//                return false
-//            }
-//            else
-//            {
-//                return true
-//            }
-//        }
-//        
-//        //by default, do the transition
-//        return true
-//    }
     
     func doesPhaseHaveScore(phaseDatabaseName: String) -> Bool
     {
@@ -209,11 +194,6 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         
         return true
     }
-    
-    
-
-    
-
     
     // MARK: - Navigation
 
