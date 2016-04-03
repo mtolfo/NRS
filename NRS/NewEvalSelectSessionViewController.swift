@@ -12,6 +12,7 @@ class NewEvalSelectSessionViewController: UIViewController
 {
     @IBOutlet var backgroundImagView:UIImageView!
     var blurEffectView:UIVisualEffectView?
+    let gradientLayer = CAGradientLayer()
     
     override func viewDidLoad()
        {
@@ -31,7 +32,25 @@ class NewEvalSelectSessionViewController: UIViewController
 //            let flowLayout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
 //            flowLayout.itemSize = CGSizeMake(250.0, 300.0)
 //        }
-
+        
+        // we created a CAGradientExtension here
+        let background = CAGradientLayer().orangeRedGradient()
+        background.frame = self.view.bounds
+        
+        
+        // INSERT GRADIENT LAYER BEHIND OTHER ELEMENTS
+        self.view.layer.insertSublayer(background, atIndex: 0)
+        
+    }
+    
+    // RGB COLOR FUNCTION
+    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
     }
     
     override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?)

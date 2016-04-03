@@ -142,14 +142,9 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         
     }
     
-    //
-
-    
-
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        //self.tableView.reloadData()
         self.getScoreObjectFromDatabase(self.phaseScore.scoreId)
         createArrayOfPhases()
         //self.do_table_refresh()
@@ -200,35 +195,25 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBAction func emailButtonClicked(sender: AnyObject)
     {
-        let mailComposeViewController = self.configuredMailComposeViewController()
-        
         if MFMailComposeViewController.canSendMail()
         {
-            self.presentViewController(mailComposeViewController, animated:true, completion:nil)
+            print("Can send email")
+            
+            let mailComposer = MFMailComposeViewController()
+            mailComposer.mailComposeDelegate = self
+            
+            mailComposer.setSubject("NRS Score")
+            mailComposer.setMessageBody("These are your scores", isHTML: false)
+            
+            self.presentViewController(mailComposer, animated: true, completion: nil)
+            
         }
-        else
-        {
-            //self.showSendMailErrorAlert()
-            print("Could not sent email")
-        }
-        
-    }
-    func configuredMailComposeViewController() -> MFMailComposeViewController
-    {
-        let mailComposerVC = MFMailComposeViewController()
-        mailComposerVC.mailComposeDelegate = self
-        
-        mailComposerVC.setToRecipients(["mtolfo@mac.com"])
-        mailComposerVC.setSubject("NRS Scores")
-        mailComposerVC.setMessageBody("Here are your scores.", isHTML: false)
-        return mailComposerVC
     }
     
-//    func showSendMailErrorAlert()
-//    {
-//        let sendMailErrorAlert = UIAlertView(title:"Could not send email", message: "Your device could not send e-mail. Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "Ok")
-//        sendMailErrorAlert.show()
-//    }
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     // MARK: - Navigation
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
