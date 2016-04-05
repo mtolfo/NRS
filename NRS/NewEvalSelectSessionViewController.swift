@@ -14,6 +14,7 @@ class NewEvalSelectSessionViewController: UIViewController
     var blurEffectView:UIVisualEffectView?
     let gradientLayer = CAGradientLayer()
     
+        
     override func viewDidLoad()
        {
         super.viewDidLoad()
@@ -41,16 +42,28 @@ class NewEvalSelectSessionViewController: UIViewController
         // INSERT GRADIENT LAYER BEHIND OTHER ELEMENTS
         self.view.layer.insertSublayer(background, atIndex: 0)
         
-    }
-    
-    // RGB COLOR FUNCTION
-    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
-        return UIColor(
-            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-            alpha: CGFloat(1.0)
-        )
+        //font attributes
+//        labelRecoveryScale.backgroundColor = UIColor.redColor()
+//        labelNeuroMuscular.font = UIFont(name: "AvenirNext-UltraLight", size: 32)
+//        labelRecoveryScale.font = UIFont(name: "AvenirNext-UltraLight", size: 32)
+        
+//        
+//        let myTitle = NSAttributedString(string: "NeuroRecovery", attributes: [NSFontAttributeName:UIFont(name: "AvenirNext-UltraLight", size: 32.0)!,NSForegroundColorAttributeName:UIColor.whiteColor()])
+//        labelNeuroMuscular.attributedText = myTitle
+//        pickerLabel!.attributedText = myTitle
+//        pickerLabel!.textAlignment = .Center
+//        
+
+        
+//        for family: String in UIFont.familyNames()
+//        {
+//            print("\(family)")
+//                for names: String in UIFont.fontNamesForFamilyName(family)
+//                {
+//                    print("==\(names)")
+//                }
+//        }
+        
     }
     
     override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?)

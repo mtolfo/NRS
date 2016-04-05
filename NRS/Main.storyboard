@@ -20,75 +20,123 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fly-fa-OkR">
-                                <rect key="frame" x="160.5" y="98" width="279" height="48"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NeuroRecovery Network" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hoc-Lc-dHt">
-                                        <rect key="frame" x="30.5" y="0.0" width="218" height="24"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Neuromuscular Recovery Scale" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1C-3e-eT5">
-                                        <rect key="frame" x="0.0" y="24" width="279" height="24"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnS-xA-eVT">
+                                <rect key="frame" x="76" y="394" width="60" height="60"/>
                                 <animations/>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="dMg-oG-rGp">
-                                <rect key="frame" x="155" y="294" width="290" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afb-0v-ObS">
-                                        <rect key="frame" x="0.0" y="0.0" width="105" height="30"/>
-                                        <animations/>
-                                        <state key="normal" title="New Evaluation">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="xiX-LP-0LT" kind="show" identifier="showNewEvalPickVersionScreen" id="va6-9P-Jvq"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNP-XI-AXm">
-                                        <rect key="frame" x="135" y="0.0" width="155" height="30"/>
-                                        <animations/>
-                                        <state key="normal" title="In-Progress Evaluation">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="Gdp-15-g88" kind="show" id="hrP-Jw-fO5"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="0hj-cO-ywB"/>
+                                    <constraint firstAttribute="width" constant="60" id="hha-7H-M4R"/>
+                                </constraints>
+                                <state key="normal" image="Button New Eval"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="125" y="394" width="60" height="60"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="270" y="394" width="60" height="60"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="xiX-LP-0LT" kind="show" id="cVU-JF-us0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Neuromuscular Recovery Network" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rud-oX-rmH">
+                                <rect key="frame" x="165" y="80" width="270" height="88"/>
                                 <animations/>
-                            </stackView>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="270" id="PDI-zl-oWf"/>
+                                    <constraint firstAttribute="height" constant="88" id="oRu-Ps-uFg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Evaluation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXV-dj-Afp">
+                                <rect key="frame" x="56" y="465" width="100" height="19"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="cWo-Be-bRA"/>
+                                    <constraint firstAttribute="height" constant="19" id="hMV-gc-laB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hku-Zd-1VX">
+                                <rect key="frame" x="464" y="394" width="60" height="60"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="6pH-bs-dHe"/>
+                                    <constraint firstAttribute="width" constant="60" id="aFE-Nu-478"/>
+                                </constraints>
+                                <state key="normal" image="Button In Progress Eval"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="275" y="394" width="60" height="60"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="Gdp-15-g88" kind="show" id="4cF-Lb-Hez"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In Progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huT-PA-GOO">
+                                <rect key="frame" x="456" y="465" width="75" height="19"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="ND6-Kt-CjC"/>
+                                    <constraint firstAttribute="width" constant="75" id="VzD-Sf-J5S"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="224" y="465" width="75" height="20"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="230" y="465" width="140" height="19"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.85882352941176465" green="0.21568627450980393" blue="0.16078431372549021" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dMg-oG-rGp" firstAttribute="centerX" secondItem="ONE-Nf-TUz" secondAttribute="centerX" id="M3b-Ya-uEM"/>
-                            <constraint firstItem="dMg-oG-rGp" firstAttribute="top" secondItem="fly-fa-OkR" secondAttribute="bottom" constant="148" id="ZSa-gK-WpS">
-                                <variation key="heightClass=compact" constant="88"/>
+                            <constraint firstItem="xnS-xA-eVT" firstAttribute="top" secondItem="A7F-N6-FHD" secondAttribute="bottom" constant="330" id="8Fd-bK-jRg">
+                                <variation key="heightClass=compact" constant="148"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="318"/>
                             </constraint>
-                            <constraint firstItem="r1C-3e-eT5" firstAttribute="centerX" secondItem="ONE-Nf-TUz" secondAttribute="centerX" id="eBK-Ik-RkT"/>
-                            <constraint firstItem="fly-fa-OkR" firstAttribute="top" secondItem="A7F-N6-FHD" secondAttribute="bottom" constant="34" id="li4-Hd-fHZ"/>
-                            <constraint firstItem="fly-fa-OkR" firstAttribute="centerX" secondItem="ONE-Nf-TUz" secondAttribute="centerX" id="tSd-Mx-BAn"/>
+                            <constraint firstAttribute="trailing" secondItem="Hku-Zd-1VX" secondAttribute="trailing" constant="76" id="EbI-to-o6O">
+                                <variation key="heightClass=compact" constant="165"/>
+                                <variation key="heightClass=compact-widthClass=regular" constant="220"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="265"/>
+                            </constraint>
+                            <constraint firstItem="Hku-Zd-1VX" firstAttribute="top" secondItem="A7F-N6-FHD" secondAttribute="bottom" constant="330" id="L30-lD-2ai">
+                                <variation key="heightClass=compact" constant="148"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="318"/>
+                            </constraint>
+                            <constraint firstItem="ZXV-dj-Afp" firstAttribute="leading" secondItem="ONE-Nf-TUz" secondAttribute="leading" constant="56" id="LlC-Pp-hty">
+                                <variation key="heightClass=compact" constant="145"/>
+                                <variation key="heightClass=compact-widthClass=regular" constant="200"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="245"/>
+                            </constraint>
+                            <constraint firstItem="huT-PA-GOO" firstAttribute="top" secondItem="Hku-Zd-1VX" secondAttribute="bottom" constant="11" id="MEr-gv-L9j"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="huT-PA-GOO" secondAttribute="trailing" constant="49" id="d6h-cQ-HmP">
+                                <variation key="heightClass=compact" constant="137"/>
+                                <variation key="heightClass=compact-widthClass=regular" constant="192"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="237"/>
+                            </constraint>
+                            <constraint firstItem="xnS-xA-eVT" firstAttribute="leading" secondItem="ONE-Nf-TUz" secondAttribute="leading" constant="76" id="deE-0i-jvI">
+                                <variation key="heightClass=compact" constant="165"/>
+                                <variation key="heightClass=compact-widthClass=regular" constant="220"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="265"/>
+                            </constraint>
+                            <constraint firstItem="rud-oX-rmH" firstAttribute="top" secondItem="A7F-N6-FHD" secondAttribute="bottom" constant="16" id="edu-dT-z5f"/>
+                            <constraint firstItem="rud-oX-rmH" firstAttribute="centerX" secondItem="ONE-Nf-TUz" secondAttribute="centerX" id="fcD-8q-bjr"/>
+                            <constraint firstItem="ZXV-dj-Afp" firstAttribute="top" secondItem="xnS-xA-eVT" secondAttribute="bottom" constant="11" id="vWh-1b-Gfm">
+                                <variation key="heightClass=compact" constant="11"/>
+                            </constraint>
                         </constraints>
-                        <variation key="heightClass=compact">
-                            <mask key="constraints">
-                                <exclude reference="tSd-Mx-BAn"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Gcz-9O-zOO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CDF-SD-KQ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="467" y="-429"/>
+            <point key="canvasLocation" x="336" y="-429"/>
         </scene>
         <!--In Progress Evaluation-->
         <scene sceneID="9qp-1m-h1K">
@@ -103,7 +151,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7C6-Os-mxk">
-                                <rect key="frame" x="281.5" y="390.5" width="37" height="30"/>
+                                <rect key="frame" x="281" y="390" width="37" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -114,7 +162,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gqh-6c-JqR">
-                                <rect key="frame" x="184" y="274.5" width="233" height="51"/>
+                                <rect key="frame" x="183" y="274" width="233" height="51"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter in progress evaluation ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Amx-Ub-fFd">
                                         <rect key="frame" x="0.0" y="0.0" width="233" height="21"/>
@@ -182,13 +230,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x6S-SL-uBh">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x6S-SL-uBh">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="AJi-o3-5I0" customClass="PhaseTableViewCell" customModule="NRS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AJi-o3-5I0" id="RJ4-IN-rbE">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -311,7 +359,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="4Ub-cX-onD" customClass="SubPhaseCollectionViewCell" customModule="NRS" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="0.0" width="214" height="128"/>
+                                        <rect key="frame" x="10" y="64" width="214" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="214" height="128"/>
@@ -964,7 +1012,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ViZ-jj-LEK">
-                                <rect key="frame" x="155.5" y="140" width="289" height="30"/>
+                                <rect key="frame" x="156" y="140" width="289" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ViZ-jj-LEK" secondAttribute="height" multiplier="49:4" constant="-66.25" id="Ccb-mS-ccM"/>
@@ -979,7 +1027,7 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Version" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xg2-8a-efS">
-                                <rect key="frame" x="240.5" y="221" width="119.5" height="20.5"/>
+                                <rect key="frame" x="241" y="221" width="119.5" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -995,7 +1043,7 @@
                                 </connections>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fs-28-yA4">
-                                <rect key="frame" x="281.5" y="417" width="37" height="30"/>
+                                <rect key="frame" x="281" y="417" width="37" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1063,10 +1111,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Button In Progress Eval" width="76" height="76"/>
+        <image name="Button New Eval" width="76" height="76"/>
         <image name="play_whiteOnClear_22x22" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SZW-FV-s8R"/>
-        <segue reference="ioo-8n-J1S"/>
+        <segue reference="TGc-n3-7N9"/>
+        <segue reference="xCI-E7-eTL"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -42,6 +42,7 @@
 		A89EF5F41C6997A30098CDBB /* SubPhaseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89EF5F31C6997A30098CDBB /* SubPhaseDetailViewController.swift */; };
 		A8A5E62B1C3FF653002D7A10 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A5E62A1C3FF653002D7A10 /* Version.swift */; };
 		A8CEEE241CB1653D00C0C939 /* CAGradientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CEEE231CB1653D00C0C939 /* CAGradientExtension.swift */; };
+		A8CEEE271CB33FC100C0C939 /* Avenir Next.ttc in Resources */ = {isa = PBXBuildFile; fileRef = A8CEEE261CB33FC100C0C939 /* Avenir Next.ttc */; };
 		A8D392881C3CCCC1000B4125 /* NewEvalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D392871C3CCCC1000B4125 /* NewEvalViewController.swift */; };
 		A8DC3F5A1C8682BD009B3774 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8DC3F581C8682BD009B3774 /* Bolts.framework */; };
 		A8DC3F5B1C8682BD009B3774 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8DC3F591C8682BD009B3774 /* Parse.framework */; };
@@ -110,6 +111,7 @@
 		A89EF5F31C6997A30098CDBB /* SubPhaseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubPhaseDetailViewController.swift; sourceTree = "<group>"; };
 		A8A5E62A1C3FF653002D7A10 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		A8CEEE231CB1653D00C0C939 /* CAGradientExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CAGradientExtension.swift; path = ../CAGradientExtension.swift; sourceTree = "<group>"; };
+		A8CEEE261CB33FC100C0C939 /* Avenir Next.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Avenir Next.ttc"; path = "/System/Library/Fonts/Avenir Next.ttc"; sourceTree = "<absolute>"; };
 		A8D392871C3CCCC1000B4125 /* NewEvalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEvalViewController.swift; sourceTree = "<group>"; };
 		A8DC3F581C8682BD009B3774 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A8DC3F591C8682BD009B3774 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 		A89952191C3C976E0023373D /* NRS */ = {
 			isa = PBXGroup;
 			children = (
+				A8CEEE261CB33FC100C0C939 /* Avenir Next.ttc */,
 				A85F40E51C8219DC0093F7C5 /* Main.storyboard */,
 				A8DC3F5E1C86AB4B009B3774 /* InstructionManualViewController.swift */,
 				A889D0911C41EBF2005DB665 /* Parse */,
@@ -384,6 +387,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8CEEE271CB33FC100C0C939 /* Avenir Next.ttc in Resources */,
 				A85F40E61C8219DC0093F7C5 /* Main.storyboard in Resources */,
 				A89952251C3C976E0023373D /* LaunchScreen.storyboard in Resources */,
 				A89952221C3C976E0023373D /* Assets.xcassets in Resources */,
