@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="top" id="A7F-N6-FHD"/>
                         <viewControllerLayoutGuide type="bottom" id="ihk-BC-K4W"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ONE-Nf-TUz">
+                    <view key="view" contentMode="scaleToFill" id="ONE-Nf-TUz" customClass="GradientView" customModule="NRS" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -133,6 +133,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Gcz-9O-zOO"/>
+                    <connections>
+                        <outlet property="gradientLayerView" destination="ONE-Nf-TUz" id="Kkg-gO-jgQ"/>
+                        <outlet property="gradientView" destination="ONE-Nf-TUz" id="iyZ-DY-2ud"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CDF-SD-KQ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

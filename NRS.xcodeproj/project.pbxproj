@@ -20,8 +20,6 @@
 		A86F697E1C4AF25400C402AB /* SubphaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86F697D1C4AF25400C402AB /* SubphaseViewController.swift */; };
 		A86F69801C4DAA0000C402AB /* SubPhaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86F697F1C4DAA0000C402AB /* SubPhaseCollectionViewCell.swift */; };
 		A86F69821C4DADD400C402AB /* Subphase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86F69811C4DADD400C402AB /* Subphase.swift */; };
-		A889D0941C41EBFF005DB665 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A889D0921C41EBFF005DB665 /* Bolts.framework */; };
-		A889D0951C41EBFF005DB665 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A889D0931C41EBFF005DB665 /* Parse.framework */; };
 		A889D0A11C41EC78005DB665 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A889D0961C41EC78005DB665 /* AudioToolbox.framework */; };
 		A889D0A21C41EC78005DB665 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A889D0971C41EC78005DB665 /* CFNetwork.framework */; };
 		A889D0A31C41EC78005DB665 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A889D0981C41EC78005DB665 /* CoreGraphics.framework */; };
@@ -40,12 +38,13 @@
 		A899523B1C3C976E0023373D /* NRSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899523A1C3C976E0023373D /* NRSUITests.swift */; };
 		A899524B1C3CADAB0023373D /* NewEvalSelectSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A899524A1C3CADAB0023373D /* NewEvalSelectSessionViewController.swift */; };
 		A89EF5F41C6997A30098CDBB /* SubPhaseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89EF5F31C6997A30098CDBB /* SubPhaseDetailViewController.swift */; };
+		A8A194D71CB53FD300859970 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A194D51CB53FD300859970 /* Bolts.framework */; };
+		A8A194D81CB53FD300859970 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A194D61CB53FD300859970 /* Parse.framework */; };
+		A8A194DA1CB5CCF700859970 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A194D91CB5CCF700859970 /* GradientView.swift */; };
 		A8A5E62B1C3FF653002D7A10 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A5E62A1C3FF653002D7A10 /* Version.swift */; };
 		A8CEEE241CB1653D00C0C939 /* CAGradientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CEEE231CB1653D00C0C939 /* CAGradientExtension.swift */; };
 		A8CEEE271CB33FC100C0C939 /* Avenir Next.ttc in Resources */ = {isa = PBXBuildFile; fileRef = A8CEEE261CB33FC100C0C939 /* Avenir Next.ttc */; };
 		A8D392881C3CCCC1000B4125 /* NewEvalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D392871C3CCCC1000B4125 /* NewEvalViewController.swift */; };
-		A8DC3F5A1C8682BD009B3774 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8DC3F581C8682BD009B3774 /* Bolts.framework */; };
-		A8DC3F5B1C8682BD009B3774 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8DC3F591C8682BD009B3774 /* Parse.framework */; };
 		A8DC3F5D1C86940B009B3774 /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DC3F5C1C86940B009B3774 /* ConfirmViewController.swift */; };
 		A8DC3F5F1C86AB4B009B3774 /* InstructionManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8DC3F5E1C86AB4B009B3774 /* InstructionManualViewController.swift */; };
 		A8DC3F611C86AEF5009B3774 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8DC3F601C86AEF5009B3774 /* MessageUI.framework */; };
@@ -82,8 +81,6 @@
 		A86F697D1C4AF25400C402AB /* SubphaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubphaseViewController.swift; sourceTree = "<group>"; };
 		A86F697F1C4DAA0000C402AB /* SubPhaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubPhaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		A86F69811C4DADD400C402AB /* Subphase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subphase.swift; sourceTree = "<group>"; };
-		A889D0921C41EBFF005DB665 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		A889D0931C41EBFF005DB665 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A889D0961C41EC78005DB665 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A889D0971C41EC78005DB665 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		A889D0981C41EC78005DB665 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -109,12 +106,13 @@
 		A899523C1C3C976E0023373D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A899524A1C3CADAB0023373D /* NewEvalSelectSessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEvalSelectSessionViewController.swift; sourceTree = "<group>"; };
 		A89EF5F31C6997A30098CDBB /* SubPhaseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubPhaseDetailViewController.swift; sourceTree = "<group>"; };
+		A8A194D51CB53FD300859970 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		A8A194D61CB53FD300859970 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		A8A194D91CB5CCF700859970 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		A8A5E62A1C3FF653002D7A10 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		A8CEEE231CB1653D00C0C939 /* CAGradientExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CAGradientExtension.swift; path = ../CAGradientExtension.swift; sourceTree = "<group>"; };
 		A8CEEE261CB33FC100C0C939 /* Avenir Next.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Avenir Next.ttc"; path = "/System/Library/Fonts/Avenir Next.ttc"; sourceTree = "<absolute>"; };
 		A8D392871C3CCCC1000B4125 /* NewEvalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEvalViewController.swift; sourceTree = "<group>"; };
-		A8DC3F581C8682BD009B3774 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		A8DC3F591C8682BD009B3774 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A8DC3F5C1C86940B009B3774 /* ConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		A8DC3F5E1C86AB4B009B3774 /* InstructionManualViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionManualViewController.swift; sourceTree = "<group>"; };
 		A8DC3F601C86AEF5009B3774 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -125,12 +123,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8A194D71CB53FD300859970 /* Bolts.framework in Frameworks */,
 				A8DC3F611C86AEF5009B3774 /* MessageUI.framework in Frameworks */,
 				A889D0A11C41EC78005DB665 /* AudioToolbox.framework in Frameworks */,
 				A889D0A21C41EC78005DB665 /* CFNetwork.framework in Frameworks */,
 				A889D0A31C41EC78005DB665 /* CoreGraphics.framework in Frameworks */,
 				A889D0A41C41EC78005DB665 /* CoreLocation.framework in Frameworks */,
-				A8DC3F5B1C8682BD009B3774 /* Parse.framework in Frameworks */,
+				A8A194D81CB53FD300859970 /* Parse.framework in Frameworks */,
 				A889D0A51C41EC78005DB665 /* libsqlite3.tbd in Frameworks */,
 				A889D0A61C41EC78005DB665 /* libz.tbd in Frameworks */,
 				A889D0A71C41EC78005DB665 /* MobileCoreServices.framework in Frameworks */,
@@ -138,9 +137,6 @@
 				A889D0A91C41EC78005DB665 /* Security.framework in Frameworks */,
 				A889D0AA1C41EC78005DB665 /* StoreKit.framework in Frameworks */,
 				A889D0AB1C41EC78005DB665 /* SystemConfiguration.framework in Frameworks */,
-				A889D0951C41EBFF005DB665 /* Parse.framework in Frameworks */,
-				A889D0941C41EBFF005DB665 /* Bolts.framework in Frameworks */,
-				A8DC3F5A1C8682BD009B3774 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,8 +196,8 @@
 		A889D0911C41EBF2005DB665 /* Parse */ = {
 			isa = PBXGroup;
 			children = (
-				A8DC3F581C8682BD009B3774 /* Bolts.framework */,
-				A8DC3F591C8682BD009B3774 /* Parse.framework */,
+				A8A194D51CB53FD300859970 /* Bolts.framework */,
+				A8A194D61CB53FD300859970 /* Parse.framework */,
 				A889D0961C41EC78005DB665 /* AudioToolbox.framework */,
 				A889D0971C41EC78005DB665 /* CFNetwork.framework */,
 				A889D0981C41EC78005DB665 /* CoreGraphics.framework */,
@@ -213,8 +209,6 @@
 				A889D09E1C41EC78005DB665 /* Security.framework */,
 				A889D09F1C41EC78005DB665 /* StoreKit.framework */,
 				A889D0A01C41EC78005DB665 /* SystemConfiguration.framework */,
-				A889D0921C41EBFF005DB665 /* Bolts.framework */,
-				A889D0931C41EBFF005DB665 /* Parse.framework */,
 			);
 			name = Parse;
 			sourceTree = "<group>";
@@ -245,6 +239,7 @@
 			children = (
 				A8CEEE261CB33FC100C0C939 /* Avenir Next.ttc */,
 				A85F40E51C8219DC0093F7C5 /* Main.storyboard */,
+				A8A194D91CB5CCF700859970 /* GradientView.swift */,
 				A8DC3F5E1C86AB4B009B3774 /* InstructionManualViewController.swift */,
 				A889D0911C41EBF2005DB665 /* Parse */,
 				A899521A1C3C976E0023373D /* AppDelegate.swift */,
@@ -426,6 +421,7 @@
 				A8A5E62B1C3FF653002D7A10 /* Version.swift in Sources */,
 				A899521B1C3C976E0023373D /* AppDelegate.swift in Sources */,
 				A86F697E1C4AF25400C402AB /* SubphaseViewController.swift in Sources */,
+				A8A194DA1CB5CCF700859970 /* GradientView.swift in Sources */,
 				A80D5B1E1C618485004EE98C /* PhaseViewController.swift in Sources */,
 				A82B16151C725D980095CE2B /* VerbalInstruction.swift in Sources */,
 				A80D5B171C585B6A004EE98C /* PhaseItem.swift in Sources */,
