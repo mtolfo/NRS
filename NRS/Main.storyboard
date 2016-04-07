@@ -96,18 +96,12 @@
                         <animations/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xnS-xA-eVT" firstAttribute="top" secondItem="A7F-N6-FHD" secondAttribute="bottom" constant="330" id="8Fd-bK-jRg">
-                                <variation key="heightClass=compact" constant="148"/>
-                                <variation key="heightClass=regular-widthClass=regular" constant="318"/>
-                            </constraint>
+                            <constraint firstItem="Hku-Zd-1VX" firstAttribute="top" secondItem="A7F-N6-FHD" secondAttribute="bottom" constant="330" id="8eq-yw-EfR"/>
+                            <constraint firstItem="rud-oX-rmH" firstAttribute="top" secondItem="A7F-N6-FHD" secondAttribute="bottom" constant="16" id="Cja-Km-VCj"/>
                             <constraint firstAttribute="trailing" secondItem="Hku-Zd-1VX" secondAttribute="trailing" constant="76" id="EbI-to-o6O">
                                 <variation key="heightClass=compact" constant="165"/>
                                 <variation key="heightClass=compact-widthClass=regular" constant="220"/>
                                 <variation key="heightClass=regular-widthClass=regular" constant="265"/>
-                            </constraint>
-                            <constraint firstItem="Hku-Zd-1VX" firstAttribute="top" secondItem="A7F-N6-FHD" secondAttribute="bottom" constant="330" id="L30-lD-2ai">
-                                <variation key="heightClass=compact" constant="148"/>
-                                <variation key="heightClass=regular-widthClass=regular" constant="318"/>
                             </constraint>
                             <constraint firstItem="ZXV-dj-Afp" firstAttribute="leading" secondItem="ONE-Nf-TUz" secondAttribute="leading" constant="56" id="LlC-Pp-hty">
                                 <variation key="heightClass=compact" constant="145"/>
@@ -115,6 +109,7 @@
                                 <variation key="heightClass=regular-widthClass=regular" constant="245"/>
                             </constraint>
                             <constraint firstItem="huT-PA-GOO" firstAttribute="top" secondItem="Hku-Zd-1VX" secondAttribute="bottom" constant="11" id="MEr-gv-L9j"/>
+                            <constraint firstItem="xnS-xA-eVT" firstAttribute="top" secondItem="A7F-N6-FHD" secondAttribute="bottom" constant="330" id="bcy-xx-3l1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="huT-PA-GOO" secondAttribute="trailing" constant="49" id="d6h-cQ-HmP">
                                 <variation key="heightClass=compact" constant="137"/>
                                 <variation key="heightClass=compact-widthClass=regular" constant="192"/>
@@ -125,7 +120,6 @@
                                 <variation key="heightClass=compact-widthClass=regular" constant="220"/>
                                 <variation key="heightClass=regular-widthClass=regular" constant="265"/>
                             </constraint>
-                            <constraint firstItem="rud-oX-rmH" firstAttribute="top" secondItem="A7F-N6-FHD" secondAttribute="bottom" constant="16" id="edu-dT-z5f"/>
                             <constraint firstItem="rud-oX-rmH" firstAttribute="centerX" secondItem="ONE-Nf-TUz" secondAttribute="centerX" id="fcD-8q-bjr"/>
                             <constraint firstItem="ZXV-dj-Afp" firstAttribute="top" secondItem="xnS-xA-eVT" secondAttribute="bottom" constant="11" id="vWh-1b-Gfm">
                                 <variation key="heightClass=compact" constant="11"/>

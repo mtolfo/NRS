@@ -1,22 +1,34 @@
 //
-//  CAGradientExtension.swift
+//  GradientLayer.swift
 //  NRS
 //
-//  Created by Michael Tolfo on 4/3/16.
+//  Created by Michael Tolfo on 4/5/16.
 //  Copyright © 2016 tolfosoftware. All rights reserved.
 //
 
 import UIKit
 
-extension CAGradientLayer
+class GradientLayerView: UIView
 {
+    override class func layerClass() -> AnyClass {
+        return CAGradientLayer.self
+    }
+    
+    func gradientWithColors(firstColor : UIColor, _ secondColor : UIColor) {
+        
+        let deviceScale = UIScreen.mainScreen().scale
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = CGRectMake(0.0, 0.0, self.frame.size.width * deviceScale, self.frame.size.height * deviceScale)
+        gradientLayer.colors = [ firstColor.CGColor, secondColor.CGColor ]
+        
+        self.layer.insertSublayer(gradientLayer, atIndex: 0)
+    }
+    
+    //////////////
     
     func orangeRedGradient() -> CAGradientLayer
     {
-        let deviceScale = UIScreen.mainScreen().scale
         let gradientLayer:CAGradientLayer = CAGradientLayer()
-        gradientLayer.frame = CGRectMake(0.0, 0.0, self.frame.size.width * deviceScale, self.frame.size.height * deviceScale)
-
         
         // SETS THE COLORS YOU WANT TO USE IN THE GRADIENT
         let color1 = UIColorFromRGB(0x9F041B).CGColor as CGColorRef
@@ -42,16 +54,5 @@ extension CAGradientLayer
             alpha: CGFloat(1.0)
         )
     }
-    
-//    func gradientWithColors(firstColor : UIColor, _ secondColor : UIColor) {
-//        
-//        let deviceScale = UIScreen.mainScreen().scale
-//        let gradientLayer = CAGradientLayer()
-//        gradientLayer.frame = CGRectMake(0.0, 0.0, self.frame.size.width * deviceScale, self.frame.size.height * deviceScale)
-//        gradientLayer.colors = [ firstColor.CGColor, secondColor.CGColor ]
-//        
-//        self.layer.insertSublayer(gradientLayer, atIndex: 0)
-//    }
 
 }
-

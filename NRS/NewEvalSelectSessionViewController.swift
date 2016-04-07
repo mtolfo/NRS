@@ -9,11 +9,13 @@
 import UIKit
 
 class NewEvalSelectSessionViewController: UIViewController
+
 {
     @IBOutlet var backgroundImagView:UIImageView!
     var blurEffectView:UIVisualEffectView?
     let gradientLayer = CAGradientLayer()
     
+  
         
     override func viewDidLoad()
        {
@@ -35,12 +37,14 @@ class NewEvalSelectSessionViewController: UIViewController
 //        }
         
         // we created a CAGradientExtension here
-        let background = CAGradientLayer().orangeRedGradient()
-        background.frame = self.view.bounds
+//        let background = CAGradientLayer().orangeRedGradient()
+//        background.frame = self.view.bounds
         
         
         // INSERT GRADIENT LAYER BEHIND OTHER ELEMENTS
-        self.view.layer.insertSublayer(background, atIndex: 0)
+        //self.view.layer.insertSublayer(background, atIndex: 0)
+        
+        
         
         //font attributes
 //        labelRecoveryScale.backgroundColor = UIColor.redColor()
@@ -65,6 +69,40 @@ class NewEvalSelectSessionViewController: UIViewController
 //        }
         
     }
+    
+//    override func viewDidLayoutSubviews()
+//    {
+//        //self.myGradientView.gradientWithColors(UIColor.whiteColor(), UIColor.blueColor())
+//    
+//    }
+    
+    override func viewWillLayoutSubviews() {
+        let background = CAGradientLayer().orangeRedGradient()
+        background.frame = self.view.bounds
+        self.view.layer.insertSublayer(background, atIndex: 0)
+    }
+    
+    override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        //self.backgroundImageView.layer.sublayers?.first?.frame = self.view.bounds
+        self.view.layer.sublayers?.first?.frame = self.view.bounds
+        
+    }
+//
+//    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator)
+//    {
+//        if (UIDevice.currentDevice().orientation.isLandscape)
+//        {
+//            // we created a CAGradientExtension here
+//            let background = CAGradientLayer().orangeRedGradient()
+//            background.frame = self.view.bounds
+//            
+//            
+//            // INSERT GRADIENT LAYER BEHIND OTHER ELEMENTS
+//            self.view.layer.insertSublayer(background, atIndex: 0)
+//        }
+//        
+//
+//    }
     
     override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?)
     {
