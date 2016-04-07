@@ -41,6 +41,15 @@ class NewEvalSelectSessionViewController: UIViewController
 //        self.gradientView.gradientWithColors(UIColor(red: 159/255, green: 4/255, blue: 27/255, alpha: 1.0), UIColor(red: 240/255, green: 152/255, blue: 55/255, alpha: 1.0))
         self.gradientView.gradientWithHexColor()
         
+//        let rect = CGRect.zero
+//        self.gradientView.drawRect(rect)
+        
+        //this doesn't work
+        //self.gradientView.autoresizingMask = [.FlexibleHeight, .FlexibleWidth, .FlexibleBottomMargin, .FlexibleLeftMargin, .FlexibleRightMargin, .FlexibleTopMargin]
+        
+        //this doesn't work
+        //view.autoresizingMask = UIViewAutoresizing.FlexibleWidth.union(UIViewAutoresizing.FlexibleHeight)
+        
         //red 9F041B rgb  159 4 27
         //orange F09937 240 153 55
     }

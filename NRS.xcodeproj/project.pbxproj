@@ -239,11 +239,11 @@
 			children = (
 				A8CEEE261CB33FC100C0C939 /* Avenir Next.ttc */,
 				A85F40E51C8219DC0093F7C5 /* Main.storyboard */,
+				A8CEEE231CB1653D00C0C939 /* CAGradientExtension.swift */,
 				A8A194D91CB5CCF700859970 /* GradientView.swift */,
 				A8DC3F5E1C86AB4B009B3774 /* InstructionManualViewController.swift */,
 				A889D0911C41EBF2005DB665 /* Parse */,
 				A899521A1C3C976E0023373D /* AppDelegate.swift */,
-				A8CEEE231CB1653D00C0C939 /* CAGradientExtension.swift */,
 				A899524A1C3CADAB0023373D /* NewEvalSelectSessionViewController.swift */,
 				A8D392871C3CCCC1000B4125 /* NewEvalViewController.swift */,
 				A80D5B131C572A68004EE98C /* Session */,

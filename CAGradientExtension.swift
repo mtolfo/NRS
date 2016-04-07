@@ -13,6 +13,7 @@ extension CAGradientLayer
     
     func orangeRedGradient() -> CAGradientLayer
     {
+        //let context = UIGraphicsGetCurrentContext()
         let gradientLayer:CAGradientLayer = CAGradientLayer()
         
         // SETS THE COLORS YOU WANT TO USE IN THE GRADIENT
@@ -23,7 +24,7 @@ extension CAGradientLayer
         gradientLayer.colors = [color1, color2]
         
         // SETS THE LOCATION OF THE RESPECTIVE COLORS
-        gradientLayer.locations = [0.0,1]
+        gradientLayer.locations = [0.0,1.0]
         
         return gradientLayer
         

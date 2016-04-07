@@ -29,20 +29,79 @@ class GradientView: UIView {
         gradientLayer.colors = [ firstColor.CGColor, secondColor.CGColor ]
         
         self.layer.insertSublayer(gradientLayer, atIndex: 0)
+        
+       
     }
+    
+    
+    override func drawRect(rect: CGRect) {
+        // 1
+        let currentContext = UIGraphicsGetCurrentContext()
+        
+        // 2
+        //CGContextSaveGState(currentContext);
+        
+        // 3
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        
+        // 4
+        let startColor = UIColorFromRGB(0x9F041B).CGColor as CGColorRef
+        let startColorComponents = CGColorGetComponents(startColor)
+        let endColor = UIColorFromRGB(0xF09937).CGColor as CGColorRef
+        let endColorComponents = CGColorGetComponents(endColor)
+        
+        // 5
+        var colorComponents = [startColorComponents[0], startColorComponents[1], startColorComponents[2], startColorComponents[3], endColorComponents[0], endColorComponents[1], endColorComponents[2], endColorComponents[3]]
+        //var colorComponents = [startColorComponents[0], startColorComponents[1], startColorComponents[2],endColorComponents[0],endColorComponents[1],endColorComponents[2]]
+        
+        // 6
+        var locations:[CGFloat] = [0.0, 1.0]
+        
+        // 7
+        let gradient = CGGradientCreateWithColorComponents(colorSpace,&colorComponents,&locations,2)
+        
+        
+        let startPoint = CGPointMake(self.bounds.height,0)
+        let endPoint = CGPointMake(self.bounds.width, self.bounds.height)
+
+        
+        // 8
+//        CGContextDrawLinearGradient(currentContext,gradient,startPoint,endPoint, 0)
+        CGContextDrawLinearGradient(currentContext, gradient, startPoint, endPoint, CGGradientDrawingOptions.DrawsAfterEndLocation)
+        
+        //// Swift 2 update:
+//        let context = UIGraphicsGetCurrentContext() // <-- and you missed the context
+//        CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, CGGradientDrawingOptions(rawValue: 0))
+        
+        // 9
+        //CGContextRestoreGState(currentContext);
+    }
+
     
     func gradientWithHexColor()
     {
-        let deviceScale = UIScreen.mainScreen().scale
+        //let deviceScale = UIScreen.mainScreen().scale
         
         let gradientLayer = CAGradientLayer().orangeRedGradient()
-        gradientLayer.frame = CGRectMake(0.0, 0.0, self.frame.size.width * deviceScale, self.frame.size.height * deviceScale)
-
+        //gradientLayer.frame = CGRectMake(0.0, 0.0, self.frame.size.width * deviceScale, self.frame.size.height * deviceScale)
+        
+        gradientLayer.startPoint = CGPointMake(self.bounds.height, 0)
+        gradientLayer.endPoint = CGPointMake(self.bounds.width, self.bounds.height)
+        //gradientLayer.frame = CGRectMake(0, 0, self.bounds.width , self.bounds.height)
+        //gradientLayer.bounds = CGRectMake(0, 0, 200, 300)
         self.layer.insertSublayer(gradientLayer, atIndex: 0)
-        print (deviceScale)
-        print(self.frame.size.width * deviceScale)
+        
+//        print (deviceScale)
+//        print(self.frame.size.width)
+//        print(self.frame.size.width * deviceScale)
+//        print (self.frame.size.height)
+//        print(self.frame.size.height * deviceScale)
+        
+        print(self.bounds.width)
+        print(self.bounds.height)
 
     }
+
     
 //    func orangeRedGradient() -> CAGradientLayer
 //    {
@@ -63,15 +122,15 @@ class GradientView: UIView {
 //    }
     
     // RGB COLOR FUNCTION
-//    func UIColorFromRGB(rgbValue: UInt) -> UIColor
-//    {
-//        return UIColor(
-//            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
-//            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
-//            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
-//            alpha: CGFloat(1.0)
-//        )
-//    }
+    func UIColorFromRGB(rgbValue: UInt) -> UIColor
+    {
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
 
 
 }
