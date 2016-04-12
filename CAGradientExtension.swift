@@ -30,6 +30,28 @@ extension CAGradientLayer
         
     }
     
+    func purpleBlueGradientLayer() -> CAGradientLayer
+    {
+        //let context = UIGraphicsGetCurrentContext()
+        let gradientLayer:CAGradientLayer = CAGradientLayer()
+        
+        // SETS THE COLORS YOU WANT TO USE IN THE GRADIENT
+        let color1 = UIColorFromRGB(0x3023AE).CGColor as CGColorRef
+        let color2 = UIColorFromRGB(0x53A0FD).CGColor as CGColorRef
+        
+        // ADDS THE COLORS TO THE ARRAY
+        gradientLayer.colors = [color1, color2]
+        
+        // SETS THE LOCATION OF THE RESPECTIVE COLORS
+        gradientLayer.locations = [0.0,1.0]
+        
+        return gradientLayer
+        
+    }
+
+    
+    
+    
     // RGB COLOR FUNCTION
     func UIColorFromRGB(rgbValue: UInt) -> UIColor
     {

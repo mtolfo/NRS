@@ -61,7 +61,8 @@ class GradientView: UIView {
         let gradient = CGGradientCreateWithColorComponents(colorSpace,&colorComponents,&locations,2)
         
         
-        let startPoint = CGPointMake(self.bounds.height,0)
+//        let startPoint = CGPointMake(self.bounds.height,0)
+        let startPoint = CGPointMake(self.bounds.width, 0)
         let endPoint = CGPointMake(self.bounds.width, self.bounds.height)
 
         
@@ -75,6 +76,7 @@ class GradientView: UIView {
         
         // 9
         //CGContextRestoreGState(currentContext);
+        print("rect")
     }
 
     
@@ -82,14 +84,15 @@ class GradientView: UIView {
     {
         //let deviceScale = UIScreen.mainScreen().scale
         
-        let gradientLayer = CAGradientLayer().orangeRedGradient()
+//        let gradientLayer = CAGradientLayer().orangeRedGradient()
+        //let gradientLayer = CAGradientLayer().purpleBlueGradientLayer()
         //gradientLayer.frame = CGRectMake(0.0, 0.0, self.frame.size.width * deviceScale, self.frame.size.height * deviceScale)
         
-        gradientLayer.startPoint = CGPointMake(self.bounds.height, 0)
-        gradientLayer.endPoint = CGPointMake(self.bounds.width, self.bounds.height)
+//        gradientLayer.startPoint = CGPointMake(self.bounds.height, 0)
+//        gradientLayer.endPoint = CGPointMake(self.bounds.width, self.bounds.height)
         //gradientLayer.frame = CGRectMake(0, 0, self.bounds.width , self.bounds.height)
         //gradientLayer.bounds = CGRectMake(0, 0, 200, 300)
-        self.layer.insertSublayer(gradientLayer, atIndex: 0)
+        //self.layer.insertSublayer(gradientLayer, atIndex: 0)
         
 //        print (deviceScale)
 //        print(self.frame.size.width)
@@ -97,8 +100,9 @@ class GradientView: UIView {
 //        print (self.frame.size.height)
 //        print(self.frame.size.height * deviceScale)
         
-        print(self.bounds.width)
-        print(self.bounds.height)
+//        print(self.bounds.width)
+//        print(self.bounds.height)
+        print("gradientWithHexColor")
 
     }
 

@@ -44,6 +44,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     @IBOutlet weak var currentVersionLabel: UILabel!
     @IBOutlet weak var newEvalDoneButton: UIButton!
     
+    @IBOutlet weak var gradientLayerView: GradientView!
     @IBAction func segmentControlIndexChanged(sender: AnyObject)
     {
         switch (versionSegmentedControl.selectedSegmentIndex)
@@ -116,6 +117,22 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         
         
     }
+    
+    override func viewDidLayoutSubviews()
+    {
+        //set up text attributes for segmented control
+        let normalFont = UIFont(name: "AvenirNext-Regular", size: 12.0)
+        let normalTextAttributes: [NSObject : AnyObject] = [
+            NSForegroundColorAttributeName: UIColor.whiteColor(),
+            NSFontAttributeName: normalFont!]
+        
+        //use attributes for normal and selected state of segmented control
+        self.versionSegmentedControl.setTitleTextAttributes(normalTextAttributes, forState: UIControlState.Normal)
+        self.versionSegmentedControl.setTitleTextAttributes(normalTextAttributes, forState: UIControlState.Selected)
+        
+        let rect = CGRect.zero
+        self.gradientLayerView.drawRect(rect)
+    }
 
     
     
@@ -124,25 +141,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 1
-        //self.view.backgroundColor = UIColor.greenColor()
-        
-        // 2
-//        let gradientLayer = CAGradientLayer()
-//        gradientLayer.frame = self.view.bounds
-//        
-//        // 3
-//        let color1 = UIColor.yellowColor().CGColor as CGColorRef
-//        let color2 = UIColor(red: 1.0, green: 0, blue: 0, alpha: 1.0).CGColor as CGColorRef
-//        let color3 = UIColor.clearColor().CGColor as CGColorRef
-//        let color4 = UIColor(white: 0.0, alpha: 0.7).CGColor as CGColorRef
-//        gradientLayer.colors = [color1, color2, color3, color4]
-//        
-//        // 4
-//        gradientLayer.locations = [0.0, 0.25, 0.75, 1.0]
-//        
-//        // 5
-//        self.view.layer.addSublayer(gradientLayer)
+      
         
         // Do any additional setup after loading the view, typically from a nib.
         loadAllVersionsFromParse()
@@ -158,6 +157,8 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         self.currentVersionLabel.adjustsFontSizeToFitWidth = true
         self.newEvalDoneButton.hidden = true
     }
+    
+    
     
     
     func getCurrentVersionFromArray()
@@ -305,7 +306,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         let formattedDate = formatDates(self.previousVersionArray[row].startDate, endDate:self.previousVersionArray[row].endDate)
         
         let titleData = "\(self.previousVersionArray[row].version): \(formattedDate.startDateString)-\(formattedDate.endDateString)"
-        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "AvenirNext-UltraLight", size: 16.0)!,NSForegroundColorAttributeName:UIColor.whiteColor()])
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "AvenirNext-Regular", size: 16.0)!,NSForegroundColorAttributeName:UIColor.whiteColor()])
         pickerLabel!.attributedText = myTitle
         pickerLabel!.textAlignment = .Center
         //Helvetica Neue

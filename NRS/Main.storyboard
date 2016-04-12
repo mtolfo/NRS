@@ -1011,12 +1011,12 @@
                         <viewControllerLayoutGuide type="top" id="SDg-yN-9l2"/>
                         <viewControllerLayoutGuide type="bottom" id="rOH-I3-KZH"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9Nu-TR-smq">
+                    <view key="view" contentMode="scaleToFill" id="9Nu-TR-smq" customClass="GradientView" customModule="NRS" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ViZ-jj-LEK">
-                                <rect key="frame" x="156" y="140" width="289" height="30"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ViZ-jj-LEK">
+                                <rect key="frame" x="156" y="140" width="336" height="29"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ViZ-jj-LEK" secondAttribute="height" multiplier="49:4" constant="-66.25" id="Ccb-mS-ccM"/>
@@ -1025,15 +1025,15 @@
                                     <segment title="Current NRS version"/>
                                     <segment title="Previous NRS version"/>
                                 </segments>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="1" green="0.79746800661087036" blue="0.0071427719667553902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="segmentControlIndexChanged:" destination="xiX-LP-0LT" eventType="valueChanged" id="K9q-Ts-GT6"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Version" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xg2-8a-efS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Current Version" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xg2-8a-efS">
                                 <rect key="frame" x="241" y="221" width="119.5" height="20.5"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1046,10 +1046,10 @@
                                     <outlet property="delegate" destination="xiX-LP-0LT" id="vyi-po-YCD"/>
                                 </connections>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fs-28-yA4">
-                                <rect key="frame" x="281" y="417" width="37" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fs-28-yA4">
+                                <rect key="frame" x="262" y="417" width="76" height="76"/>
                                 <animations/>
-                                <state key="normal" title="Done">
+                                <state key="normal" image="ButtonCheckMark">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1059,7 +1059,7 @@
                             </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.99215686274509807" green="0.70196078431372544" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Xg2-8a-efS" firstAttribute="centerX" secondItem="ViZ-jj-LEK" secondAttribute="centerX" id="BDf-0n-WSU"/>
                             <constraint firstItem="ViZ-jj-LEK" firstAttribute="top" secondItem="SDg-yN-9l2" secondAttribute="bottom" constant="76" id="C2p-Af-wP1">
@@ -1080,6 +1080,7 @@
                     <navigationItem key="navigationItem" title="New Evaluation" id="Nut-Gk-muZ"/>
                     <connections>
                         <outlet property="currentVersionLabel" destination="Xg2-8a-efS" id="xCX-tt-8T2"/>
+                        <outlet property="gradientLayerView" destination="9Nu-TR-smq" id="2Yp-IY-Xx8"/>
                         <outlet property="newEvalDoneButton" destination="1fs-28-yA4" id="hCE-Bk-IBF"/>
                         <outlet property="versionPicker" destination="L2L-xy-w6F" id="K3r-r7-dBV"/>
                         <outlet property="versionSegmentedControl" destination="ViZ-jj-LEK" id="iJg-sy-QRP"/>
@@ -1117,6 +1118,7 @@
     <resources>
         <image name="Button In Progress Eval" width="76" height="76"/>
         <image name="Button New Eval" width="76" height="76"/>
+        <image name="ButtonCheckMark" width="76" height="76"/>
         <image name="play_whiteOnClear_22x22" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
