@@ -145,6 +145,8 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
 //        self.view.layer.addSublayer(gradientLayer)
         
         // Do any additional setup after loading the view, typically from a nib.
+        setSegmentedControlFont()
+        
         loadAllVersionsFromParse()
         loadPhaseItemsFromParse()
 
@@ -157,6 +159,25 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         self.versionPicker.hidden = true
         self.currentVersionLabel.adjustsFontSizeToFitWidth = true
         self.newEvalDoneButton.hidden = true
+    }
+    
+    func setSegmentedControlFont()
+    {
+        let normalFont = UIFont(name: "AvenirNext-Regular", size: 12.0)
+        //let boldFont = UIFont(name: "Helvetica-Bold", size: 16.0)
+        
+        let normalTextAttributes: [NSObject : AnyObject] = [
+            NSForegroundColorAttributeName: UIColor.whiteColor(),
+            NSFontAttributeName: normalFont!
+        ]
+        
+        //let boldTextAttributes: [NSObject : AnyObject] = [
+            //NSForegroundColorAttributeName : UIColor.whiteColor(),
+            //NSFontAttributeName : boldFont!,
+        //]
+        
+        self.versionSegmentedControl.setTitleTextAttributes(normalTextAttributes, forState: .Normal)
+        self.versionSegmentedControl.setTitleTextAttributes(normalTextAttributes, forState: .Highlighted)
     }
     
     
