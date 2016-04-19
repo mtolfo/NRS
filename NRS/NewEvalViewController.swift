@@ -156,6 +156,12 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         self.versionPicker.hidden = true
         self.currentVersionLabel.adjustsFontSizeToFitWidth = true
         self.newEvalDoneButton.hidden = true
+        
+        //self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Hello", style: UIBarButtonItemStyle.Plain, target: navigationController, action: nil)
+        //self.navigationController?.navigationBar.backIndicatorImage = UIImage(named: "BackButton")
+        //self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "BackButton")
+        self.navigationItem.leftBarButtonItem = nil;
+        
     }
     
     
