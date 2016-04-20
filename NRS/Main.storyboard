@@ -1196,7 +1196,9 @@
                             <constraint firstItem="Xg2-8a-efS" firstAttribute="centerY" secondItem="9Nu-TR-smq" secondAttribute="centerY" id="EmK-Qt-sMP"/>
                             <constraint firstItem="ViZ-jj-LEK" firstAttribute="centerX" secondItem="9Nu-TR-smq" secondAttribute="centerX" id="HDV-Cb-DqS"/>
                             <constraint firstItem="L2L-xy-w6F" firstAttribute="centerX" secondItem="9Nu-TR-smq" secondAttribute="centerX" id="IvH-ls-6J9"/>
-                            <constraint firstItem="rOH-I3-KZH" firstAttribute="top" secondItem="L2L-xy-w6F" secondAttribute="bottom" constant="30" id="J5q-hr-OHQ"/>
+                            <constraint firstItem="rOH-I3-KZH" firstAttribute="top" secondItem="L2L-xy-w6F" secondAttribute="bottom" constant="30" id="J5q-hr-OHQ">
+                                <variation key="heightClass=compact-widthClass=regular" constant="62"/>
+                            </constraint>
                             <constraint firstItem="Xg2-8a-efS" firstAttribute="centerX" secondItem="9Nu-TR-smq" secondAttribute="centerX" id="JyL-Ej-3lq"/>
                             <constraint firstItem="L2L-xy-w6F" firstAttribute="centerX" secondItem="9Nu-TR-smq" secondAttribute="centerX" id="MUH-z2-0Zw"/>
                             <constraint firstItem="ViZ-jj-LEK" firstAttribute="top" secondItem="wy2-gz-718" secondAttribute="bottom" constant="30" id="NNo-uH-AR4"/>
