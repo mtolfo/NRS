@@ -62,7 +62,7 @@
                                 </constraints>
                                 <state key="normal" image="Button In Progress Eval"/>
                                 <connections>
-                                    <segue destination="Gdp-15-g88" kind="show" id="4cF-Lb-Hez"/>
+                                    <segue destination="Gdp-15-g88" kind="show" animates="NO" id="4cF-Lb-Hez"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="In Progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huT-PA-GOO">
@@ -143,10 +143,26 @@
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="AIK-oC-blz"/>
+                                    <constraint firstAttribute="width" constant="200" id="OBG-gj-X4K"/>
                                     <constraint firstAttribute="width" constant="200" id="XU1-av-e5o"/>
+                                    <constraint firstAttribute="height" constant="30" id="sAP-Px-8aL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="OBG-gj-X4K"/>
+                                        <exclude reference="sAP-Px-8aL"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="AIK-oC-blz"/>
+                                        <include reference="OBG-gj-X4K"/>
+                                        <exclude reference="XU1-av-e5o"/>
+                                        <include reference="sAP-Px-8aL"/>
+                                    </mask>
+                                </variation>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In Progress Evaluation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5J-Hs-Rlz">
                                 <rect key="frame" x="189" y="82" width="222" height="88"/>
@@ -154,37 +170,114 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="222" id="99B-cG-Wqg"/>
                                     <constraint firstAttribute="height" constant="88" id="B8P-Zm-mat"/>
+                                    <constraint firstAttribute="width" constant="222" id="W4G-UL-Lld"/>
+                                    <constraint firstAttribute="height" constant="88" id="rbe-Pj-yre"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="W4G-UL-Lld"/>
+                                        <exclude reference="rbe-Pj-yre"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="99B-cG-Wqg"/>
+                                        <exclude reference="B8P-Zm-mat"/>
+                                        <include reference="W4G-UL-Lld"/>
+                                        <include reference="rbe-Pj-yre"/>
+                                    </mask>
+                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7C6-Os-mxk">
-                                <rect key="frame" x="262" y="431" width="76" height="76"/>
+                                <rect key="frame" x="270" y="460" width="60" height="60"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="76" id="97l-Ey-nFH"/>
-                                    <constraint firstAttribute="width" constant="76" id="oQ2-Gk-mCk"/>
+                                    <constraint firstAttribute="width" constant="60" id="O5M-O2-rxi"/>
+                                    <constraint firstAttribute="height" constant="60" id="Vpf-6d-es9"/>
+                                    <constraint firstAttribute="height" constant="60" id="ZTP-iA-XaD"/>
+                                    <constraint firstAttribute="width" constant="60" id="jC6-YX-4kF"/>
                                 </constraints>
                                 <state key="normal" image="ButtonCheckMark">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ZTP-iA-XaD"/>
+                                        <exclude reference="jC6-YX-4kF"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="O5M-O2-rxi"/>
+                                        <exclude reference="Vpf-6d-es9"/>
+                                        <include reference="ZTP-iA-XaD"/>
+                                        <include reference="jC6-YX-4kF"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="sessionEnteredButtonClick:" destination="Gdp-15-g88" eventType="touchUpInside" id="khc-OD-k7E"/>
                                     <segue destination="MeY-4n-mMC" kind="show" identifier="showInProgressPhases" id="TGc-n3-7N9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NI8-Ao-2oQ">
+                                <rect key="frame" x="20" y="20" width="44" height="44"/>
+                                <animations/>
+                                <state key="normal" image="BackButton"/>
+                                <variation key="heightClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="20" y="30" width="46" height="46"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="yus-ui-774" kind="show" animates="NO" id="Dhf-FT-onD"/>
                                 </connections>
                             </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="7C6-Os-mxk" firstAttribute="centerX" secondItem="fGK-gX-R6U" secondAttribute="centerX" id="AHq-5L-cIw"/>
                             <constraint firstItem="l5J-Hs-Rlz" firstAttribute="top" secondItem="MWm-LL-Dxe" secondAttribute="bottom" constant="62" id="AtU-Fc-sZH"/>
+                            <constraint firstItem="l5J-Hs-Rlz" firstAttribute="top" secondItem="MWm-LL-Dxe" secondAttribute="bottom" constant="10" id="Dy7-m9-OmO"/>
+                            <constraint firstItem="csO-zA-BSU" firstAttribute="top" secondItem="7C6-Os-mxk" secondAttribute="bottom" constant="30" id="KKt-kl-TRo"/>
+                            <constraint firstItem="7C6-Os-mxk" firstAttribute="top" secondItem="CWP-ty-fkL" secondAttribute="bottom" constant="120" id="N33-gQ-xYo"/>
                             <constraint firstItem="CWP-ty-fkL" firstAttribute="centerX" secondItem="fGK-gX-R6U" secondAttribute="centerX" id="XTH-AG-XHq"/>
                             <constraint firstItem="CWP-ty-fkL" firstAttribute="top" secondItem="l5J-Hs-Rlz" secondAttribute="bottom" constant="140" id="a6l-DE-1cz"/>
                             <constraint firstItem="l5J-Hs-Rlz" firstAttribute="centerX" secondItem="fGK-gX-R6U" secondAttribute="centerX" id="d77-rE-HYs"/>
-                            <constraint firstItem="7C6-Os-mxk" firstAttribute="centerX" secondItem="fGK-gX-R6U" secondAttribute="centerX" id="dvs-Qi-d4k"/>
-                            <constraint firstItem="7C6-Os-mxk" firstAttribute="top" secondItem="CWP-ty-fkL" secondAttribute="bottom" constant="91" id="yQG-jw-Ls8"/>
+                            <constraint firstItem="CWP-ty-fkL" firstAttribute="top" secondItem="l5J-Hs-Rlz" secondAttribute="bottom" constant="70" id="dUK-Yy-Hyr">
+                                <variation key="heightClass=compact" constant="40"/>
+                            </constraint>
+                            <constraint firstItem="7C6-Os-mxk" firstAttribute="centerX" secondItem="fGK-gX-R6U" secondAttribute="centerX" id="fPN-Da-3O9"/>
+                            <constraint firstItem="CWP-ty-fkL" firstAttribute="centerX" secondItem="fGK-gX-R6U" secondAttribute="centerX" id="kuG-1D-r76"/>
+                            <constraint firstItem="l5J-Hs-Rlz" firstAttribute="centerX" secondItem="fGK-gX-R6U" secondAttribute="centerX" id="zaW-PQ-Nk3"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Dy7-m9-OmO"/>
+                                <exclude reference="zaW-PQ-Nk3"/>
+                                <exclude reference="dUK-Yy-Hyr"/>
+                                <exclude reference="kuG-1D-r76"/>
+                                <exclude reference="KKt-kl-TRo"/>
+                                <exclude reference="fPN-Da-3O9"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="AtU-Fc-sZH"/>
+                                <include reference="Dy7-m9-OmO"/>
+                                <exclude reference="d77-rE-HYs"/>
+                                <include reference="zaW-PQ-Nk3"/>
+                                <exclude reference="XTH-AG-XHq"/>
+                                <exclude reference="a6l-DE-1cz"/>
+                                <include reference="dUK-Yy-Hyr"/>
+                                <include reference="kuG-1D-r76"/>
+                                <include reference="KKt-kl-TRo"/>
+                                <exclude reference="AHq-5L-cIw"/>
+                                <exclude reference="N33-gQ-xYo"/>
+                                <include reference="fPN-Da-3O9"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="In Progress Evaluation" id="Blo-gG-6ja"/>
                     <connections>
@@ -193,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gG2-Hk-KCk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-573" y="361"/>
+            <point key="canvasLocation" x="10" y="355.5"/>
         </scene>
         <!--In Progress Phase Items-->
         <scene sceneID="ssn-t6-Hnc">
@@ -1345,6 +1438,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="xCI-E7-eTL"/>
+        <segue reference="Dhf-FT-onD"/>
         <segue reference="TGc-n3-7N9"/>
     </inferredMetricsTieBreakers>
 </document>
