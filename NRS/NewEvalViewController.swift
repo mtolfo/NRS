@@ -154,7 +154,7 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         
         self.versionSegmentedControl.selectedSegmentIndex = -1
         self.versionPicker.hidden = true
-        self.currentVersionLabel.adjustsFontSizeToFitWidth = true
+        //self.currentVersionLabel.adjustsFontSizeToFitWidth = true
         self.newEvalDoneButton.hidden = true
         
         //self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Hello", style: UIBarButtonItemStyle.Plain, target: navigationController, action: nil)
