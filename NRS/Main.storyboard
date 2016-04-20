@@ -134,7 +134,7 @@
                         <viewControllerLayoutGuide type="top" id="MWm-LL-Dxe"/>
                         <viewControllerLayoutGuide type="bottom" id="csO-zA-BSU"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="fGK-gX-R6U">
+                    <view key="view" contentMode="scaleToFill" id="fGK-gX-R6U" customClass="GradientView" customModule="NRS" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -281,6 +281,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="In Progress Evaluation" id="Blo-gG-6ja"/>
                     <connections>
+                        <outlet property="gradientView" destination="fGK-gX-R6U" id="qpt-YS-M88"/>
                         <outlet property="sessionTextField" destination="CWP-ty-fkL" id="gAZ-uw-Ra6"/>
                     </connections>
                 </viewController>
