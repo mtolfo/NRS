@@ -28,7 +28,7 @@
                                 </constraints>
                                 <state key="normal" image="Button New Eval"/>
                                 <connections>
-                                    <segue destination="xiX-LP-0LT" kind="showDetail" action="showViewController:sender:" id="cVU-JF-us0"/>
+                                    <segue destination="xiX-LP-0LT" kind="showDetail" animates="NO" id="cVU-JF-us0"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Neuromuscular Recovery Network" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rud-oX-rmH">
@@ -138,10 +138,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7C6-Os-mxk">
-                                <rect key="frame" x="281" y="390" width="37" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Evaluation ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CWP-ty-fkL">
+                                <rect key="frame" x="200" y="310" width="200" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Done">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="AIK-oC-blz"/>
+                                    <constraint firstAttribute="width" constant="200" id="XU1-av-e5o"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In Progress Evaluation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5J-Hs-Rlz">
+                                <rect key="frame" x="189" y="82" width="222" height="88"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="222" id="99B-cG-Wqg"/>
+                                    <constraint firstAttribute="height" constant="88" id="B8P-Zm-mat"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7C6-Os-mxk">
+                                <rect key="frame" x="262" y="431" width="76" height="76"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="97l-Ey-nFH"/>
+                                    <constraint firstAttribute="width" constant="76" id="oQ2-Gk-mCk"/>
+                                </constraints>
+                                <state key="normal" image="ButtonCheckMark">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -149,52 +174,16 @@
                                     <segue destination="MeY-4n-mMC" kind="show" identifier="showInProgressPhases" id="TGc-n3-7N9"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gqh-6c-JqR">
-                                <rect key="frame" x="183" y="274" width="233" height="51"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter in progress evaluation ID" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Amx-Ub-fFd">
-                                        <rect key="frame" x="0.0" y="0.0" width="233" height="21"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="8we-vL-mV2"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Evaluation ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CWP-ty-fkL">
-                                        <rect key="frame" x="0.0" y="21" width="233" height="30"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                </subviews>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstItem="Amx-Ub-fFd" firstAttribute="leading" secondItem="gqh-6c-JqR" secondAttribute="leading" id="13D-hZ-bSI"/>
-                                    <constraint firstItem="Amx-Ub-fFd" firstAttribute="leading" secondItem="gqh-6c-JqR" secondAttribute="leading" id="6dD-Po-2tY"/>
-                                    <constraint firstItem="Amx-Ub-fFd" firstAttribute="top" secondItem="gqh-6c-JqR" secondAttribute="top" id="8D9-Fb-ecr"/>
-                                    <constraint firstItem="Amx-Ub-fFd" firstAttribute="leading" secondItem="gqh-6c-JqR" secondAttribute="leading" id="A6k-16-akW"/>
-                                    <constraint firstItem="Amx-Ub-fFd" firstAttribute="top" secondItem="gqh-6c-JqR" secondAttribute="top" id="NLT-6m-ejg"/>
-                                    <constraint firstItem="Amx-Ub-fFd" firstAttribute="leading" secondItem="gqh-6c-JqR" secondAttribute="leading" id="TY4-yA-Y9y"/>
-                                    <constraint firstAttribute="trailing" secondItem="Amx-Ub-fFd" secondAttribute="trailing" id="VGJ-H5-PJg"/>
-                                    <constraint firstItem="Amx-Ub-fFd" firstAttribute="leading" secondItem="gqh-6c-JqR" secondAttribute="leadingMargin" id="d2d-5a-fbV"/>
-                                    <constraint firstItem="Amx-Ub-fFd" firstAttribute="top" secondItem="gqh-6c-JqR" secondAttribute="top" id="dQf-gf-r54"/>
-                                    <constraint firstItem="Amx-Ub-fFd" firstAttribute="trailing" secondItem="gqh-6c-JqR" secondAttribute="trailingMargin" id="dT3-ac-o1x"/>
-                                    <constraint firstItem="Amx-Ub-fFd" firstAttribute="centerX" secondItem="gqh-6c-JqR" secondAttribute="centerX" id="gzr-fr-U6J"/>
-                                    <constraint firstItem="Amx-Ub-fFd" firstAttribute="top" secondItem="gqh-6c-JqR" secondAttribute="top" id="rrV-AS-Old"/>
-                                    <constraint firstAttribute="trailing" secondItem="Amx-Ub-fFd" secondAttribute="trailing" id="tsU-i6-aPc"/>
-                                    <constraint firstItem="Amx-Ub-fFd" firstAttribute="top" secondItem="gqh-6c-JqR" secondAttribute="topMargin" id="zF2-yt-Y7k"/>
-                                </constraints>
-                            </stackView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.53725490196078429" green="0.0" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gqh-6c-JqR" firstAttribute="centerX" secondItem="fGK-gX-R6U" secondAttribute="centerX" id="Eeo-OX-uav"/>
-                            <constraint firstItem="gqh-6c-JqR" firstAttribute="centerX" secondItem="7C6-Os-mxk" secondAttribute="centerX" id="rV8-LF-dHz"/>
-                            <constraint firstItem="7C6-Os-mxk" firstAttribute="top" secondItem="gqh-6c-JqR" secondAttribute="bottom" constant="65" id="sCh-PY-a0y"/>
-                            <constraint firstItem="gqh-6c-JqR" firstAttribute="centerY" secondItem="fGK-gX-R6U" secondAttribute="centerY" id="shq-aE-IN9"/>
+                            <constraint firstItem="l5J-Hs-Rlz" firstAttribute="top" secondItem="MWm-LL-Dxe" secondAttribute="bottom" constant="62" id="AtU-Fc-sZH"/>
+                            <constraint firstItem="CWP-ty-fkL" firstAttribute="centerX" secondItem="fGK-gX-R6U" secondAttribute="centerX" id="XTH-AG-XHq"/>
+                            <constraint firstItem="CWP-ty-fkL" firstAttribute="top" secondItem="l5J-Hs-Rlz" secondAttribute="bottom" constant="140" id="a6l-DE-1cz"/>
+                            <constraint firstItem="l5J-Hs-Rlz" firstAttribute="centerX" secondItem="fGK-gX-R6U" secondAttribute="centerX" id="d77-rE-HYs"/>
+                            <constraint firstItem="7C6-Os-mxk" firstAttribute="centerX" secondItem="fGK-gX-R6U" secondAttribute="centerX" id="dvs-Qi-d4k"/>
+                            <constraint firstItem="7C6-Os-mxk" firstAttribute="top" secondItem="CWP-ty-fkL" secondAttribute="bottom" constant="91" id="yQG-jw-Ls8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="In Progress Evaluation" id="Blo-gG-6ja"/>
@@ -204,7 +193,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gG2-Hk-KCk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-573" y="361.5"/>
+            <point key="canvasLocation" x="-573" y="361"/>
         </scene>
         <!--In Progress Phase Items-->
         <scene sceneID="ssn-t6-Hnc">
@@ -1099,6 +1088,9 @@
                                     <constraint firstAttribute="width" constant="44" id="kgC-l0-V49"/>
                                 </constraints>
                                 <state key="normal" image="BackButton"/>
+                                <connections>
+                                    <segue destination="yus-ui-774" kind="show" animates="NO" id="QrH-FV-f4S"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2L-xy-w6F">
                                 <rect key="frame" x="160" y="194" width="280" height="155"/>
@@ -1352,7 +1344,7 @@
         <image name="play_whiteOnClear_22x22" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="TGc-n3-7N9"/>
         <segue reference="xCI-E7-eTL"/>
+        <segue reference="TGc-n3-7N9"/>
     </inferredMetricsTieBreakers>
 </document>
