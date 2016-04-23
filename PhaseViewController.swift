@@ -19,6 +19,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
     var phaseNameToPass:String?
     var phaseScoreToPass:String?
     
+    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var tableView: UITableView!
     
     // TODO: Phase Item names should be pulled from database
@@ -174,12 +175,14 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         let phaseScore = self.phaseStructArray[indexPath.row].phaseScore
         if (phaseScore == "")
         {
-            cell.phaseName.textColor = UIColor.redColor()
+            //cell.phaseName.textColor = UIColor.redColor()
+            cell.scoreBox.backgroundColor = UIColor().UIColorFromRGB(0xB6B6B6)
         }
         else
         {
-            cell.phaseName.textColor = UIColor.blueColor()
-            cell.phaseScore.textColor = UIColor.blueColor()
+            //cell.phaseName.textColor = UIColor.blueColor()
+            //cell.phaseScore.textColor = UIColor.blueColor()
+            cell.scoreBox.backgroundColor = UIColor().UIColorFromRGB(0xFFC107)
         }
         cell.phaseName?.text = self.phaseStructArray[indexPath.row].phaseName
         cell.phaseScore?.text = self.phaseStructArray[indexPath.row].phaseScore
@@ -191,6 +194,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         navigationController?.hidesBarsOnSwipe = true
+        self.navBar.backgroundColor = UIColor().UIColorFromRGB(0xA30B1D)
     }
     
     @IBAction func emailButtonClicked(sender: AnyObject)

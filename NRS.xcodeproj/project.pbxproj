@@ -12,6 +12,7 @@
 		A80D5B1A1C5875F4004EE98C /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80D5B191C5875F4004EE98C /* Score.swift */; };
 		A80D5B1E1C618485004EE98C /* PhaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80D5B1D1C618485004EE98C /* PhaseViewController.swift */; };
 		A814B8D11C66868300E20A35 /* PhaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A814B8D01C66868300E20A35 /* PhaseTableViewCell.swift */; };
+		A8194A811CCA5C130089EC59 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8194A801CCA5C120089EC59 /* ColorExtensions.swift */; };
 		A82B16151C725D980095CE2B /* VerbalInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82B16141C725D980095CE2B /* VerbalInstruction.swift */; };
 		A84C59381C7A5ED700D02C11 /* NewEvalSessionId.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C59371C7A5ED700D02C11 /* NewEvalSessionId.swift */; };
 		A85F40E61C8219DC0093F7C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A85F40E51C8219DC0093F7C5 /* Main.storyboard */; };
@@ -73,6 +74,7 @@
 		A80D5B191C5875F4004EE98C /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		A80D5B1D1C618485004EE98C /* PhaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhaseViewController.swift; path = ../PhaseViewController.swift; sourceTree = "<group>"; };
 		A814B8D01C66868300E20A35 /* PhaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhaseTableViewCell.swift; sourceTree = "<group>"; };
+		A8194A801CCA5C120089EC59 /* ColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		A82B16141C725D980095CE2B /* VerbalInstruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerbalInstruction.swift; sourceTree = "<group>"; };
 		A84C59371C7A5ED700D02C11 /* NewEvalSessionId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEvalSessionId.swift; sourceTree = "<group>"; };
 		A85F40E51C8219DC0093F7C5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				A8CEEE261CB33FC100C0C939 /* Avenir Next.ttc */,
 				A85F40E51C8219DC0093F7C5 /* Main.storyboard */,
 				A8CEEE231CB1653D00C0C939 /* CAGradientExtension.swift */,
+				A8194A801CCA5C120089EC59 /* ColorExtensions.swift */,
 				A8A194D91CB5CCF700859970 /* GradientView.swift */,
 				A8DC3F5E1C86AB4B009B3774 /* InstructionManualViewController.swift */,
 				A889D0911C41EBF2005DB665 /* Parse */,
@@ -421,6 +424,7 @@
 				A8A5E62B1C3FF653002D7A10 /* Version.swift in Sources */,
 				A899521B1C3C976E0023373D /* AppDelegate.swift in Sources */,
 				A86F697E1C4AF25400C402AB /* SubphaseViewController.swift in Sources */,
+				A8194A811CCA5C130089EC59 /* ColorExtensions.swift in Sources */,
 				A8A194DA1CB5CCF700859970 /* GradientView.swift in Sources */,
 				A80D5B1E1C618485004EE98C /* PhaseViewController.swift in Sources */,
 				A82B16151C725D980095CE2B /* VerbalInstruction.swift in Sources */,
