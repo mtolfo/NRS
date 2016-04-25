@@ -216,22 +216,6 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
-//    @IBAction func emailButtonClicked(sender: AnyObject)
-//    {
-//        if MFMailComposeViewController.canSendMail()
-//        {
-//            print("Can send email")
-//            
-//            let mailComposer = MFMailComposeViewController()
-//            mailComposer.mailComposeDelegate = self
-//            
-//            mailComposer.setSubject("NRS Score")
-//            mailComposer.setMessageBody("These are your scores", isHTML: false)
-//            
-//            self.presentViewController(mailComposer, animated: true, completion: nil)
-//            
-//        }
-//    }
     
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         self.dismissViewControllerAnimated(true, completion: nil)
