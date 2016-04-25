@@ -19,8 +19,8 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
     var phaseNameToPass:String?
     var phaseScoreToPass:String?
     
-    @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var navBarView: UIView!
     
     // TODO: Phase Item names should be pulled from database
     //The names of the Phases need to be pulled from the database to prevent future refactorings in the event the name of the phase changes. In which case, a simple change to the database will make all of the changes.
@@ -194,25 +194,44 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         navigationController?.hidesBarsOnSwipe = true
-        self.navBar.backgroundColor = UIColor().UIColorFromRGB(0xA30B1D)
+        //self.navBar.backgroundColor = UIColor().UIColorFromRGB(0xA30B1D)
+        self.navBarView.backgroundColor = UIColor().UIColorFromRGB(0xA30B1D)
     }
+    
     
     @IBAction func emailButtonClicked(sender: AnyObject)
     {
         if MFMailComposeViewController.canSendMail()
         {
             print("Can send email")
-            
+        
             let mailComposer = MFMailComposeViewController()
             mailComposer.mailComposeDelegate = self
-            
+        
             mailComposer.setSubject("NRS Score")
             mailComposer.setMessageBody("These are your scores", isHTML: false)
-            
+        
             self.presentViewController(mailComposer, animated: true, completion: nil)
-            
+                    
         }
     }
+    
+//    @IBAction func emailButtonClicked(sender: AnyObject)
+//    {
+//        if MFMailComposeViewController.canSendMail()
+//        {
+//            print("Can send email")
+//            
+//            let mailComposer = MFMailComposeViewController()
+//            mailComposer.mailComposeDelegate = self
+//            
+//            mailComposer.setSubject("NRS Score")
+//            mailComposer.setMessageBody("These are your scores", isHTML: false)
+//            
+//            self.presentViewController(mailComposer, animated: true, completion: nil)
+//            
+//        }
+//    }
     
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         self.dismissViewControllerAnimated(true, completion: nil)
