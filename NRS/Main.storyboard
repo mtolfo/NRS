@@ -647,22 +647,13 @@ We are going to assess trunk extension. Please return to an upright sitting posi
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VerbalInstruction" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOM-gr-Vrq">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="76" width="361" height="150"/>
-                                </variation>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dR-ko-ehL">
                                 <rect key="frame" x="20" y="378" width="560" height="98"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="98" id="50M-Mj-Hs8"/>
+                                    <constraint firstAttribute="height" constant="98" id="50M-Mj-Hs8">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="297"/>
+                                    </constraint>
                                 </constraints>
                                 <string key="text">Description
 With arms hanging down, able to initiate thoracic spine extension.</string>
@@ -704,7 +695,7 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DB7-Ju-6RI">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DB7-Ju-6RI" userLabel="Play Button">
                                 <rect key="frame" x="408" y="30" width="44" height="44"/>
                                 <animations/>
                                 <constraints>
@@ -713,7 +704,7 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 </constraints>
                                 <state key="normal" image="Button Play"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWJ-lM-i78">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWJ-lM-i78" userLabel="Info Button">
                                 <rect key="frame" x="472" y="30" width="44" height="44"/>
                                 <animations/>
                                 <constraints>
@@ -721,38 +712,12 @@ This tip will help remind you of what to do in this sub phase.</string>
                                     <constraint firstAttribute="height" constant="44" id="xOy-H1-QPw"/>
                                 </constraints>
                                 <state key="normal" image="Button Info"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="209" y="532" width="44" height="244"/>
-                                </variation>
                                 <connections>
                                     <action selector="infoButtonClicked:" destination="97W-j7-dPd" eventType="touchUpInside" id="mic-F2-qQr"/>
                                     <segue destination="FOy-1O-vz0" kind="show" identifier="showInstructionManualVc" id="By2-VW-I2H"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YeL-XT-VNu">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
-                                <state key="normal" image="play_whiteOnClear_22x22"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="359" y="247" width="22" height="22"/>
-                                </variation>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWo-C2-UKb">
-                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                <animations/>
-                                <state key="normal" title="UNABLE">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="59" height="30"/>
-                                </variation>
-                                <connections>
-                                    <segue destination="wJJ-Ct-Zj0" kind="popoverPresentation" identifier="showConfirmView" popoverAnchorView="FWo-C2-UKb" id="Mva-ZR-1hw">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wh3-IB-33F">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wh3-IB-33F" userLabel="Score Button">
                                 <rect key="frame" x="536" y="30" width="44" height="44"/>
                                 <animations/>
                                 <constraints>
@@ -765,7 +730,7 @@ This tip will help remind you of what to do in this sub phase.</string>
                                     <segue destination="MeY-4n-mMC" kind="show" identifier="showScoresTableView" animates="NO" id="TAU-PR-Cy6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7I-LM-YB3">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7I-LM-YB3" userLabel="Back Button">
                                 <rect key="frame" x="20" y="30" width="44" height="44"/>
                                 <animations/>
                                 <constraints>
@@ -774,7 +739,7 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 </constraints>
                                 <state key="normal" image="BackButton"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4m-Zk-k6F">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4m-Zk-k6F" userLabel="Able Button">
                                 <rect key="frame" x="30" y="520" width="60" height="60"/>
                                 <animations/>
                                 <constraints>
@@ -786,6 +751,21 @@ This tip will help remind you of what to do in this sub phase.</string>
                                     <action selector="ableCheckClicked:" destination="97W-j7-dPd" eventType="touchUpInside" id="IXu-rX-hju"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWo-C2-UKb">
+                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" title="UNABLE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="298" y="735" width="59" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="wJJ-Ct-Zj0" kind="popoverPresentation" identifier="showConfirmView" popoverAnchorView="FWo-C2-UKb" id="Mva-ZR-1hw">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
@@ -795,6 +775,7 @@ This tip will help remind you of what to do in this sub phase.</string>
                             <constraint firstItem="sc9-yf-ZKK" firstAttribute="top" secondItem="fKN-OE-vj2" secondAttribute="bottom" constant="62" id="38B-Rq-wXx"/>
                             <constraint firstItem="sc9-yf-ZKK" firstAttribute="centerX" secondItem="pgz-zV-kit" secondAttribute="centerX" id="5I7-AT-Bkj"/>
                             <constraint firstItem="lNF-Oz-BM2" firstAttribute="top" secondItem="JZq-Sk-xgf" secondAttribute="bottom" constant="12" id="8Me-gS-1KV"/>
+                            <constraint firstAttribute="trailing" secondItem="sc9-yf-ZKK" secondAttribute="trailing" constant="20" id="Az5-8h-7jG"/>
                             <constraint firstItem="Wh3-IB-33F" firstAttribute="top" secondItem="fKN-OE-vj2" secondAttribute="bottom" constant="10" id="Byu-bU-A7Z"/>
                             <constraint firstItem="2dR-ko-ehL" firstAttribute="top" secondItem="lNF-Oz-BM2" secondAttribute="bottom" constant="12" id="Dfc-ZI-XGk"/>
                             <constraint firstAttribute="trailing" secondItem="2dR-ko-ehL" secondAttribute="trailing" constant="20" id="F8n-xc-OtW"/>
@@ -809,6 +790,7 @@ This tip will help remind you of what to do in this sub phase.</string>
                             <constraint firstItem="lNF-Oz-BM2" firstAttribute="leading" secondItem="pgz-zV-kit" secondAttribute="leading" constant="20" id="Uh3-DX-ECJ"/>
                             <constraint firstAttribute="trailing" secondItem="Wh3-IB-33F" secondAttribute="trailing" constant="20" id="Xgc-f4-bHZ"/>
                             <constraint firstItem="Sk8-gF-gDG" firstAttribute="top" secondItem="U4m-Zk-k6F" secondAttribute="bottom" constant="20" id="Xha-rR-HXT"/>
+                            <constraint firstItem="sc9-yf-ZKK" firstAttribute="leading" secondItem="pgz-zV-kit" secondAttribute="leading" constant="20" id="Zpw-T6-5Ne"/>
                             <constraint firstItem="Xp8-K8-nr5" firstAttribute="centerX" secondItem="pgz-zV-kit" secondAttribute="centerX" id="ctd-NB-uA6"/>
                             <constraint firstItem="JZq-Sk-xgf" firstAttribute="centerX" secondItem="pgz-zV-kit" secondAttribute="centerX" id="kOG-pl-Tta"/>
                             <constraint firstItem="Wh3-IB-33F" firstAttribute="leading" secondItem="AWJ-lM-i78" secondAttribute="trailing" constant="20" id="pAj-fm-AMc"/>
@@ -816,32 +798,28 @@ This tip will help remind you of what to do in this sub phase.</string>
                             <constraint firstItem="p7I-LM-YB3" firstAttribute="top" secondItem="fKN-OE-vj2" secondAttribute="bottom" constant="10" id="qx3-Fj-xIB"/>
                             <constraint firstItem="AWJ-lM-i78" firstAttribute="top" secondItem="fKN-OE-vj2" secondAttribute="bottom" constant="10" id="tkG-9e-YPh"/>
                             <constraint firstItem="DB7-Ju-6RI" firstAttribute="top" secondItem="fKN-OE-vj2" secondAttribute="bottom" constant="10" id="wAm-qI-6W1"/>
+                            <constraint firstItem="sc9-yf-ZKK" firstAttribute="top" secondItem="p7I-LM-YB3" secondAttribute="bottom" constant="8" id="x1k-NF-NS3"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="mOM-gr-Vrq"/>
-                                <exclude reference="YeL-XT-VNu"/>
                                 <exclude reference="FWo-C2-UKb"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="mOM-gr-Vrq"/>
-                                <include reference="YeL-XT-VNu"/>
                                 <include reference="FWo-C2-UKb"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="gradientLayerView" destination="pgz-zV-kit" id="TtV-0Q-sy8"/>
-                        <outlet property="playVideoButton" destination="YeL-XT-VNu" id="92g-ww-V1i"/>
                         <outlet property="subPhaseDescriptionLabel" destination="2dR-ko-ehL" id="gWM-8l-KT8"/>
                         <outlet property="verbalInstructionLabel" destination="lNF-Oz-BM2" id="m06-MM-3y2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gd-7r-8Dj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-175" y="636"/>
+            <point key="canvasLocation" x="-148.5" y="626.25"/>
         </scene>
         <!--Instruction Manual View Controller-->
         <scene sceneID="skC-sg-GY0">
@@ -941,7 +919,7 @@ This tip will help remind you of what to do in this sub phase.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AmZ-Jo-l60" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="176" y="1228"/>
+            <point key="canvasLocation" x="167" y="1326"/>
         </scene>
         <!--Confirm View Controller-->
         <scene sceneID="zeI-rs-jLi">
@@ -1447,7 +1425,6 @@ This tip will help remind you of what to do in this sub phase.</string>
         <image name="Button Play" width="46" height="46"/>
         <image name="Button Score" width="46" height="46"/>
         <image name="ButtonCheckMark" width="76" height="76"/>
-        <image name="play_whiteOnClear_22x22" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="jFt-WV-u4L"/>
