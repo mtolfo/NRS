@@ -20,6 +20,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     var subPhaseArrayIndex:Int = 0
     var phaseInstruction = ""
     
+    @IBOutlet weak var gradientLayerView: GradientView!
     @IBOutlet weak var verbalInstructionLabel: UILabel!
     @IBOutlet weak var subPhaseDescriptionLabel: UILabel!
     @IBOutlet weak var unableButton: UIButton!
@@ -46,8 +47,9 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
             self.subPhaseDescriptionLabel.text = self.subPhaseArray[self.subPhaseArrayIndex].description
             self.navigationItem.title = self.subPhaseArray[self.subPhaseArrayIndex].descriptionId
         }
-        
     }
+
+    
     
     func getInstructionManualFromDatabase (phaseDatabaseName: String)
     {
@@ -124,6 +126,12 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         self.getInstructionManualFromDatabase("Sit")
         self.getInstructionManualFromDatabase("Reverse_Sit_up")
         
+    }
+    
+    override func viewDidLayoutSubviews()
+    {
+        let rect = CGRect.zero
+        self.gradientLayerView.drawRect(rect)
     }
     
     func markScoreObjectFromDatabase(descriptionIdInput:String, sessionDatabaseName: String)

@@ -18,6 +18,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
     var phaseStruct:Phase!
     var phaseNameToPass:String?
     var phaseScoreToPass:String?
+    var verbalInstructionArray = [VerbalInstruction]()
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var navBarView: UIView!
@@ -140,14 +141,49 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
                 self.do_table_refresh()
             }
         }
+    }
+    
+    func loadVerbalInstructionsFromDatabase()
+    {
+        let query = PFQuery(className: "PhaseItem_Verbal_Instructions")
         
     }
+    
+//    func loadVerbalInstructionsFromDatabase()
+//    {
+//        let query = PFQuery(className: "PhaseItem_Verbal_Instructions")
+//        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+//            if error == nil
+//            {
+//                if let objects = objects
+//                {
+//                    for object in objects
+//                    {
+//                        let verbalInstructionObject = VerbalInstruction(pfObject: object)
+//                        self.verbalInstructionArray.append(verbalInstructionObject)
+//                    }
+//                }
+//            }
+//            else
+//            {
+//                print("Error: \(error!) \(error!.userInfo)")
+//            }
+//        }
+//    }
+    
+    func getVerbalInstructionFromArray(phaseDatabaseNameInput: String) -> String
+    {
+        let filteredArray = self.verbalInstructionArray.filter({$0.phaseDatabaseName == phaseDatabaseNameInput})
+        return filteredArray[0].verbalInstruction
+    }
+
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         self.getScoreObjectFromDatabase(self.phaseScore.scoreId)
         createArrayOfPhases()
+       
         //self.do_table_refresh()
         //h2C2x4Jq7A
         //7DFJDjDChM
@@ -164,7 +200,6 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         return self.phaseStructArray.count
     }
     
-    //PjotGycNtZ
     
     //TODO: -Implement refresh in case there are new score.
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
@@ -175,17 +210,18 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         let phaseScore = self.phaseStructArray[indexPath.row].phaseScore
         if (phaseScore == "")
         {
-            //cell.phaseName.textColor = UIColor.redColor()
             cell.scoreBox.backgroundColor = UIColor().UIColorFromRGB(0xB6B6B6)
         }
         else
         {
-            //cell.phaseName.textColor = UIColor.blueColor()
-            //cell.phaseScore.textColor = UIColor.blueColor()
             cell.scoreBox.backgroundColor = UIColor().UIColorFromRGB(0xFFC107)
         }
         cell.phaseName?.text = self.phaseStructArray[indexPath.row].phaseName
         cell.phaseScore?.text = self.phaseStructArray[indexPath.row].phaseScore
+        //cell.verbalInstructionLabel?.text = self.getVerbalInstructionFromArray(self.phaseStructArray[indexPath.row].phaseDatabaseName!)
+        //cell.verbalInstructionLabel?.text = "Hard coded. Here is where we will place some type of quick tip as reminders"
+        cell.verbalInstructionLabel?.text
+        
         
         return cell
         
@@ -194,7 +230,6 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         navigationController?.hidesBarsOnSwipe = true
-        //self.navBar.backgroundColor = UIColor().UIColorFromRGB(0xA30B1D)
         self.navBarView.backgroundColor = UIColor().UIColorFromRGB(0xA30B1D)
     }
     

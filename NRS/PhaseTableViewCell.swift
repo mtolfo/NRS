@@ -13,6 +13,7 @@ class PhaseTableViewCell: UITableViewCell {
     @IBOutlet weak var phaseName: UILabel!
     @IBOutlet weak var phaseScore: UILabel!
     @IBOutlet weak var scoreBox: UIView!
+    @IBOutlet weak var verbalInstructionLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
