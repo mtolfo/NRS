@@ -33,27 +33,13 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
 //        performSegueWithIdentifier("showScoresTableView", sender: self)
 //    }
     
-    @IBAction func manualButtonPressed(sender: AnyObject)
-    {
-        performSegueWithIdentifier("showInstructionManualVc", sender: self)
-    }
-    
-    //test for the button
-//    @IBAction func buttonTest(sender: AnyObject)
+//    @IBAction func manualButtonPressed(sender: AnyObject)
 //    {
 //        performSegueWithIdentifier("showInstructionManualVc", sender: self)
 //    }
-
-    @IBAction func infoButtonClicked(sender: AnyObject)
-    {
-       performSegueWithIdentifier("showInstructionManualVc", sender: self)
-    }
     
-    @IBAction func scoresButtonClicked(sender: AnyObject)
-    {
-        performSegueWithIdentifier("showScoresTableView", sender: self)
-    }
-    @IBAction func ableButtonClicked(sender: AnyObject)
+    //keep this
+    @IBAction func ableCheckClicked(sender: AnyObject)
     {
         //TODO: Create check to not go beyond array
         if self.subPhaseArrayIndex < self.subPhaseArray.count - 1
@@ -62,7 +48,35 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
             self.subPhaseDescriptionLabel.text = self.subPhaseArray[self.subPhaseArrayIndex].description
             self.navigationItem.title = self.subPhaseArray[self.subPhaseArrayIndex].descriptionId
         }
+
     }
+    //test for the button
+//    @IBAction func buttonTest(sender: AnyObject)
+//    {
+//        performSegueWithIdentifier("showInstructionManualVc", sender: self)
+//    }
+
+    //keep this
+    @IBAction func infoButtonClicked(sender: AnyObject)
+    {
+       performSegueWithIdentifier("showInstructionManualVc", sender: self)
+    }
+    
+    //keep this
+    @IBAction func scoresButtonClicked(sender: AnyObject)
+    {
+        performSegueWithIdentifier("showScoresTableView", sender: self)
+    }
+//    @IBAction func ableButtonClicked(sender: AnyObject)
+//    {
+//        //TODO: Create check to not go beyond array
+//        if self.subPhaseArrayIndex < self.subPhaseArray.count - 1
+//        {
+//            self.subPhaseArrayIndex += 1
+//            self.subPhaseDescriptionLabel.text = self.subPhaseArray[self.subPhaseArrayIndex].description
+//            self.navigationItem.title = self.subPhaseArray[self.subPhaseArrayIndex].descriptionId
+//        }
+//    }
 
     
     
