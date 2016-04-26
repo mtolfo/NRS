@@ -28,16 +28,31 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     @IBOutlet weak var manualButton: UIButton!
     @IBOutlet weak var playVideoButton: UIButton!
 
-    @IBAction func scoresButtonClicked(sender: AnyObject)
-    {
-        performSegueWithIdentifier("showScoresTableView", sender: self)
-    }
+//    @IBAction func scoresButtonClicked(sender: AnyObject)
+//    {
+//        performSegueWithIdentifier("showScoresTableView", sender: self)
+//    }
     
     @IBAction func manualButtonPressed(sender: AnyObject)
     {
         performSegueWithIdentifier("showInstructionManualVc", sender: self)
     }
+    
+    //test for the button
+//    @IBAction func buttonTest(sender: AnyObject)
+//    {
+//        performSegueWithIdentifier("showInstructionManualVc", sender: self)
+//    }
 
+    @IBAction func infoButtonClicked(sender: AnyObject)
+    {
+       performSegueWithIdentifier("showInstructionManualVc", sender: self)
+    }
+    
+    @IBAction func scoresButtonClicked(sender: AnyObject)
+    {
+        performSegueWithIdentifier("showScoresTableView", sender: self)
+    }
     @IBAction func ableButtonClicked(sender: AnyObject)
     {
         //TODO: Create check to not go beyond array
