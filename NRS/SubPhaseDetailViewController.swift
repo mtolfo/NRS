@@ -62,6 +62,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
        performSegueWithIdentifier("showInstructionManualVc", sender: self)
     }
     
+    
     //keep this
     @IBAction func scoresButtonClicked(sender: AnyObject)
     {
@@ -119,6 +120,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
             performSegueWithIdentifier("showConfirmView", sender: self)
         }
     }
+    
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool
     {
         // If the phase does not have a score, then move on to the confirm screen
@@ -148,7 +150,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         super.viewDidLoad()
         self.navigationItem.title = subPhaseFromSegue.descriptionId
         //self.verbalInstructionLabel.text = verbalInstructionFromSegue
-        self.subPhaseDescriptionLabel.sizeToFit()
+        self.subPhaseDescriptionLabel.sizeToFit() //don't know if this works
         self.verbalInstructionLabel.text = self.verbalInstructionObjectFromSegue.verbalInstruction
         self.subPhaseDescriptionLabel.text = subPhaseFromSegue.description
         

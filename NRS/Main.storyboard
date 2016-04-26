@@ -648,11 +648,11 @@ We are going to assess trunk extension. Please return to an upright sitting posi
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dR-ko-ehL">
-                                <rect key="frame" x="20" y="378" width="560" height="63"/>
+                                <rect key="frame" x="20" y="378" width="560" height="116"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="63" id="50M-Mj-Hs8">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="82"/>
+                                    <constraint firstAttribute="height" constant="116" id="50M-Mj-Hs8">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="212"/>
                                     </constraint>
                                 </constraints>
                                 <string key="text">Description
@@ -743,9 +743,6 @@ This tip will help remind you of what to do in this sub phase.</string>
                                     <constraint firstAttribute="width" constant="44" id="eQX-Ak-RkY"/>
                                 </constraints>
                                 <state key="normal" image="BackButton"/>
-                                <connections>
-                                    <segue destination="qZp-9i-Sta" kind="show" id="as4-eo-OUw"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4m-Zk-k6F" userLabel="Able Button">
                                 <rect key="frame" x="30" y="520" width="60" height="60"/>
@@ -819,7 +816,7 @@ This tip will help remind you of what to do in this sub phase.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gd-7r-8Dj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-149" y="626"/>
+            <point key="canvasLocation" x="-150" y="625.5"/>
         </scene>
         <!--Instruction Manual View Controller-->
         <scene sceneID="skC-sg-GY0">
@@ -1428,8 +1425,8 @@ This tip will help remind you of what to do in this sub phase.</string>
         <image name="ButtonCheckMark" width="76" height="76"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="as4-eo-OUw"/>
-        <segue reference="TAU-PR-Cy6"/>
+        <segue reference="xCI-E7-eTL"/>
         <segue reference="jFt-WV-u4L"/>
+        <segue reference="TAU-PR-Cy6"/>
     </inferredMetricsTieBreakers>
 </document>

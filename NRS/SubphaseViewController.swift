@@ -35,7 +35,7 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.redColor()
+        //self.view.backgroundColor = UIColor.redColor()
         
         // Do any additional setup after loading the view.
         loadPhaseItemsFromDatabase()
