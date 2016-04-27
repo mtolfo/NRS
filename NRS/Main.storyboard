@@ -679,11 +679,11 @@ With arms hanging down, able to initiate thoracic spine extension.</string>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1B" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xp8-K8-nr5">
-                                <rect key="frame" x="281" y="132" width="38" height="44"/>
+                                <rect key="frame" x="276" y="132" width="48" height="44"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="C8U-ma-bf5"/>
-                                    <constraint firstAttribute="width" constant="38" id="Sqz-ij-2cZ"/>
+                                    <constraint firstAttribute="width" constant="48" id="Sqz-ij-2cZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="32"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -799,6 +799,7 @@ This tip will help remind you of what to do in this sub phase.</string>
                             <constraint firstAttribute="trailing" secondItem="JZq-Sk-xgf" secondAttribute="trailing" constant="20" id="O9e-h7-81e"/>
                             <constraint firstAttribute="trailing" secondItem="tY0-bS-pGM" secondAttribute="trailing" constant="30" id="RDs-rh-FGj"/>
                             <constraint firstItem="Xp8-K8-nr5" firstAttribute="top" secondItem="sc9-yf-ZKK" secondAttribute="bottom" constant="8" id="SF8-no-5il"/>
+                            <constraint firstItem="Xp8-K8-nr5" firstAttribute="centerX" secondItem="pgz-zV-kit" secondAttribute="centerX" id="Stm-eO-kyu"/>
                             <constraint firstItem="lNF-Oz-BM2" firstAttribute="leading" secondItem="pgz-zV-kit" secondAttribute="leading" constant="20" id="Uh3-DX-ECJ"/>
                             <constraint firstAttribute="trailing" secondItem="Wh3-IB-33F" secondAttribute="trailing" constant="20" id="Xgc-f4-bHZ"/>
                             <constraint firstItem="Sk8-gF-gDG" firstAttribute="top" secondItem="U4m-Zk-k6F" secondAttribute="bottom" constant="20" id="Xha-rR-HXT"/>
@@ -815,7 +816,9 @@ This tip will help remind you of what to do in this sub phase.</string>
                     </view>
                     <connections>
                         <outlet property="gradientLayerView" destination="pgz-zV-kit" id="TtV-0Q-sy8"/>
+                        <outlet property="phaseName" destination="sc9-yf-ZKK" id="Ogs-4i-32o"/>
                         <outlet property="subPhaseDescriptionLabel" destination="2dR-ko-ehL" id="gWM-8l-KT8"/>
+                        <outlet property="subPhaseId" destination="Xp8-K8-nr5" id="j1g-aO-N2L"/>
                         <outlet property="verbalInstructionLabel" destination="lNF-Oz-BM2" id="m06-MM-3y2"/>
                     </connections>
                 </viewController>

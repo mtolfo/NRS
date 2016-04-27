@@ -23,6 +23,8 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     @IBOutlet weak var gradientLayerView: GradientView!
     @IBOutlet weak var verbalInstructionLabel: UILabel!
     @IBOutlet weak var subPhaseDescriptionLabel: UILabel!
+    @IBOutlet weak var phaseName: UILabel!
+    @IBOutlet weak var subPhaseId: UILabel!
 //    @IBOutlet weak var unableButton: UIButton!
 //    @IBOutlet weak var ableButton: UIButton!
 //    @IBOutlet weak var manualButton: UIButton!
@@ -36,7 +38,9 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         {
             self.subPhaseArrayIndex += 1
             self.subPhaseDescriptionLabel.text = self.subPhaseArray[self.subPhaseArrayIndex].description
+            self.subPhaseId.text = self.subPhaseArray[self.subPhaseArrayIndex].descriptionId
             self.navigationItem.title = self.subPhaseArray[self.subPhaseArrayIndex].descriptionId
+            print (self.subPhaseId.text)
         }
 
     }
@@ -97,6 +101,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         self.subPhaseDescriptionLabel.sizeToFit() //don't know if this works
         self.verbalInstructionLabel.text = self.verbalInstructionObjectFromSegue.verbalInstruction
         self.subPhaseDescriptionLabel.text = subPhaseFromSegue.description
+        self.phaseName.text = self.verbalInstructionObjectFromSegue.phaseItem
         
         // if the session id is not coming from the in progress screen the use the singleton for the session id
         if (self.sessionIdFromSegue ==  nil)
