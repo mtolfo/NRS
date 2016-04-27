@@ -25,10 +25,6 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     @IBOutlet weak var subPhaseDescriptionLabel: UILabel!
     @IBOutlet weak var phaseName: UILabel!
     @IBOutlet weak var subPhaseId: UILabel!
-//    @IBOutlet weak var unableButton: UIButton!
-//    @IBOutlet weak var ableButton: UIButton!
-//    @IBOutlet weak var manualButton: UIButton!
-//    @IBOutlet weak var playVideoButton: UIButton!
 
     //keep this
     @IBAction func ableCheckClicked(sender: AnyObject)
@@ -51,16 +47,23 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
        performSegueWithIdentifier("showInstructionManualVc", sender: self)
     }
     
-    //this is a test for the button
-    @IBAction func testSegueGreenVc(sender: AnyObject)
-    {
-        performSegueWithIdentifier("greenVc", sender: self)
-    }
-    
     //keep this
     @IBAction func scoresButtonClicked(sender: AnyObject)
     {
         performSegueWithIdentifier("showScoresTableView", sender: self)
+    }
+    
+    @IBAction func backButtonClicked(sender: AnyObject)
+    {
+        performSegueWithIdentifier("showSubphaseCollectionView", sender: self)
+    }
+    
+    @IBAction func unableButtonClicked(sender: AnyObject)
+    {
+        if (shouldPerformSegueWithIdentifier("showConfirmView", sender: self))
+        {
+            performSegueWithIdentifier("showConfirmView", sender: self)
+        }
     }
     
     func getInstructionManualFromDatabase (phaseDatabaseName: String)
@@ -85,19 +88,10 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         return subPhaseArrayInput.indexOf({$0.descriptionId == subphaseDescriptionIdInput})!
     }
     
-    @IBAction func unableButtonClicked(sender: AnyObject)
-    {
-        if (shouldPerformSegueWithIdentifier("showConfirmView", sender: self))
-        {
-            performSegueWithIdentifier("showConfirmView", sender: self)
-        }
-    }
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         self.navigationItem.title = subPhaseFromSegue.descriptionId
-        //self.verbalInstructionLabel.text = verbalInstructionFromSegue
         self.subPhaseDescriptionLabel.sizeToFit() //don't know if this works
         self.verbalInstructionLabel.text = self.verbalInstructionObjectFromSegue.verbalInstruction
         self.subPhaseDescriptionLabel.text = subPhaseFromSegue.description
@@ -137,9 +131,6 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
                 print("Successfully retrieved the object.")
                 object![self.verbalInstructionObjectFromSegue.phaseDatabaseName] = descriptionIdInput
                 object!.saveInBackground()
-                //self.scoreObjectFromDatabase = Score(pfObject: object!)
-                //object![self.verbalInstructionObjectFromSegue.phaseDatabaseName] = descriptionIdInput
-                //print ("scoreObject.scoreId from getScoreObjectFromDatabase \(self.scoreObjectFromDatabase.scoreId)")
                 print ("Marked \(sessionDatabaseName) as \(object![self.verbalInstructionObjectFromSegue.phaseDatabaseName])")
             }
         }
@@ -241,10 +232,17 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
             
         }
         
+        //this goes back to table view and refreshes the scores
         if segue.identifier ==  "showScoresTableView"
         {
             let targetVc = segue.destinationViewController as! PhaseViewController
             targetVc.phaseScore = self.scoreObjectFromDatabase
+        }
+        
+        if segue.identifier == "showSubphaseCollectionView"
+        {
+            let targetVc = segue.destinationViewController as! SubphaseViewController
+            targetVc.phaseNameFromSegue = self.phaseDatabaseNameFromSegue
         }
     }
     

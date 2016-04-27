@@ -745,8 +745,8 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 </constraints>
                                 <state key="normal" image="BackButton"/>
                                 <connections>
-                                    <action selector="testSegueGreenVc:" destination="97W-j7-dPd" eventType="touchUpInside" id="Wxa-Ug-nzP"/>
-                                    <segue destination="Xme-Ut-zm7" kind="show" identifier="greenVc" id="TRr-OY-HCC"/>
+                                    <action selector="backButtonClicked:" destination="97W-j7-dPd" eventType="touchUpInside" id="akg-u4-Amf"/>
+                                    <segue destination="qZp-9i-Sta" kind="show" identifier="showSubphaseCollectionView" id="rWq-gQ-i6a"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4m-Zk-k6F" userLabel="Able Button">
@@ -936,7 +936,7 @@ This tip will help remind you of what to do in this sub phase.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AIj-Rk-uMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-675" y="1320"/>
+            <point key="canvasLocation" x="-781" y="1324"/>
         </scene>
         <!--Confirm View Controller-->
         <scene sceneID="zeI-rs-jLi">
@@ -1445,7 +1445,7 @@ This tip will help remind you of what to do in this sub phase.</string>
         <image name="ButtonCheckMark" width="76" height="76"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SZW-FV-s8R"/>
+        <segue reference="rWq-gQ-i6a"/>
         <segue reference="TAU-PR-Cy6"/>
         <segue reference="jFt-WV-u4L"/>
     </inferredMetricsTieBreakers>

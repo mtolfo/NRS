@@ -57,6 +57,7 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         subphaseCollectionView.reloadData()
         
         //pass in the class name of the Phase Name object in database (Sit, Stand, Sit Up...)
+        //self.phaseNameFromSegue is the database name such as "Overhead_Press"
         let query = PFQuery(className: self.phaseNameFromSegue!) //or whatever is passed in segue or default from PhaseViewController
         query.cachePolicy = PFCachePolicy.NetworkElseCache
         query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
