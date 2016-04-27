@@ -23,21 +23,11 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     @IBOutlet weak var gradientLayerView: GradientView!
     @IBOutlet weak var verbalInstructionLabel: UILabel!
     @IBOutlet weak var subPhaseDescriptionLabel: UILabel!
-    @IBOutlet weak var unableButton: UIButton!
-    @IBOutlet weak var ableButton: UIButton!
-    @IBOutlet weak var manualButton: UIButton!
-    @IBOutlet weak var playVideoButton: UIButton!
+//    @IBOutlet weak var unableButton: UIButton!
+//    @IBOutlet weak var ableButton: UIButton!
+//    @IBOutlet weak var manualButton: UIButton!
+//    @IBOutlet weak var playVideoButton: UIButton!
 
-//    @IBAction func scoresButtonClicked(sender: AnyObject)
-//    {
-//        performSegueWithIdentifier("showScoresTableView", sender: self)
-//    }
-    
-//    @IBAction func manualButtonPressed(sender: AnyObject)
-//    {
-//        performSegueWithIdentifier("showInstructionManualVc", sender: self)
-//    }
-    
     //keep this
     @IBAction func ableCheckClicked(sender: AnyObject)
     {
@@ -50,11 +40,6 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         }
 
     }
-    //test for the button
-//    @IBAction func buttonTest(sender: AnyObject)
-//    {
-//        performSegueWithIdentifier("showInstructionManualVc", sender: self)
-//    }
 
     //keep this
     @IBAction func infoButtonClicked(sender: AnyObject)
@@ -62,24 +47,17 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
        performSegueWithIdentifier("showInstructionManualVc", sender: self)
     }
     
+    //this is a test for the button
+    @IBAction func testSegueGreenVc(sender: AnyObject)
+    {
+        performSegueWithIdentifier("greenVc", sender: self)
+    }
     
     //keep this
     @IBAction func scoresButtonClicked(sender: AnyObject)
     {
         performSegueWithIdentifier("showScoresTableView", sender: self)
     }
-//    @IBAction func ableButtonClicked(sender: AnyObject)
-//    {
-//        //TODO: Create check to not go beyond array
-//        if self.subPhaseArrayIndex < self.subPhaseArray.count - 1
-//        {
-//            self.subPhaseArrayIndex += 1
-//            self.subPhaseDescriptionLabel.text = self.subPhaseArray[self.subPhaseArrayIndex].description
-//            self.navigationItem.title = self.subPhaseArray[self.subPhaseArrayIndex].descriptionId
-//        }
-//    }
-
-    
     
     func getInstructionManualFromDatabase (phaseDatabaseName: String)
     {
@@ -103,46 +81,12 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         return subPhaseArrayInput.indexOf({$0.descriptionId == subphaseDescriptionIdInput})!
     }
     
-//    @IBAction func unableButtonClicked(sender: AnyObject)
-//    {
-//        //self.shouldPerformSegueWithIdentifier("showConfirmationPopOver", sender: self)
-//        //self.performSegueWithIdentifier("showConfirmationPopOver", sender: self)
-//        if (shouldPerformSegueWithIdentifier("showConfirmView", sender: self))
-//        {
-//            performSegueWithIdentifier("showConfirmView", sender: self)
-//        }
-//    }
-    
     @IBAction func unableButtonClicked(sender: AnyObject)
     {
         if (shouldPerformSegueWithIdentifier("showConfirmView", sender: self))
         {
             performSegueWithIdentifier("showConfirmView", sender: self)
         }
-    }
-    
-    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool
-    {
-        // If the phase does not have a score, then move on to the confirm screen
-        if identifier ==  "showConfirmView"
-        {
-            if !(self.doesPhaseHaveScore(self.verbalInstructionObjectFromSegue.phaseDatabaseName))
-            {
-                return true
-            }
-            else
-            {
-                //put alert code here and return false
-                let alertController = UIAlertController(title: "Phase already scored", message:
-                    "If you want to score this subphase, you must clear the scores for the \(self.verbalInstructionObjectFromSegue.phaseItem) phase", preferredStyle: UIAlertControllerStyle.Alert)
-                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
-                self.presentViewController(alertController, animated: true, completion: nil)
-                return false
-            }
-        }
-        
-        
-        return false
     }
     
     override func viewDidLoad()
@@ -219,7 +163,6 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         // Dispose of any resources that can be recreated.
     }
     
-    
     func doesPhaseHaveScore(phaseDatabaseName: String) -> Bool
     {
         let scoreMirror = _reflect(self.scoreObjectFromDatabase)
@@ -242,7 +185,29 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         return true
     }
     
-    // MARK: - Navigation
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool
+    {
+        // If the phase does not have a score, then move on to the confirm screen
+        if identifier ==  "showConfirmView"
+        {
+            if !(self.doesPhaseHaveScore(self.verbalInstructionObjectFromSegue.phaseDatabaseName))
+            {
+                return true
+            }
+            else
+            {
+                //put alert code here and return false
+                let alertController = UIAlertController(title: "Phase already scored", message:
+                    "If you want to score this subphase, you must clear the scores for the \(self.verbalInstructionObjectFromSegue.phaseItem) phase", preferredStyle: UIAlertControllerStyle.Alert)
+                alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
+                self.presentViewController(alertController, animated: true, completion: nil)
+                return false
+            }
+        }
+        
+        
+        return false
+    }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)

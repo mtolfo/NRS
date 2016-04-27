@@ -21,6 +21,7 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
     private var verbalInstructionArray = [VerbalInstruction]()
     private var verbalInstructionString = ""
     
+    @IBOutlet weak var gradientLayerView: GradientView!
     @IBOutlet weak var subphaseCollectionView: UICollectionView!
     
     override func viewDidAppear(animated: Bool) {
@@ -42,6 +43,12 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         loadVerbalInstructionsFromDatabase()
         //sessionIdToPass = sessionIdFromSegue
         
+    }
+    
+    override func viewDidLayoutSubviews()
+    {
+        let rect = CGRect.zero
+        self.gradientLayerView.drawRect(rect)
     }
 
     func loadPhaseItemsFromDatabase()
@@ -169,7 +176,11 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
                 destinationViewController.subPhaseFromSegue = phaseItemArray[indexPaths[0].row]
                 destinationViewController.phaseDatabaseNameFromSegue = self.phaseNameFromSegue
                 destinationViewController.sessionIdFromSegue = self.sessionIdFromSegue
+                
+                //get phase item name from here
                 destinationViewController.verbalInstructionObjectFromSegue = self.getVerbalInstructionObjectFromArray()
+                
+                //get phase item from here ("1B")
                 destinationViewController.subPhaseArray = self.phaseItemArray
                 
                 subphaseCollectionView.deselectItemAtIndexPath(indexPaths[0], animated: false)

@@ -12,6 +12,7 @@ class InstructionManualViewController: UIViewController
 {
     @IBOutlet weak var instructionManualTextView: UITextView!
 
+    @IBOutlet weak var gradientLayerView: GradientView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +23,12 @@ class InstructionManualViewController: UIViewController
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidLayoutSubviews()
+    {
+        let rect = CGRect.zero
+        self.gradientLayerView.drawRect(rect)
     }
     
 

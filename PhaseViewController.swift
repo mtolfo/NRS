@@ -143,32 +143,11 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
-    func loadVerbalInstructionsFromDatabase()
-    {
-        let query = PFQuery(className: "PhaseItem_Verbal_Instructions")
-        
-    }
-    
+    //keep this for now
 //    func loadVerbalInstructionsFromDatabase()
 //    {
 //        let query = PFQuery(className: "PhaseItem_Verbal_Instructions")
-//        query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
-//            if error == nil
-//            {
-//                if let objects = objects
-//                {
-//                    for object in objects
-//                    {
-//                        let verbalInstructionObject = VerbalInstruction(pfObject: object)
-//                        self.verbalInstructionArray.append(verbalInstructionObject)
-//                    }
-//                }
-//            }
-//            else
-//            {
-//                print("Error: \(error!) \(error!.userInfo)")
-//            }
-//        }
+//        
 //    }
     
     func getVerbalInstructionFromArray(phaseDatabaseNameInput: String) -> String
