@@ -363,9 +363,6 @@
                                                         <constraint firstItem="9AN-4Q-Sh3" firstAttribute="centerY" secondItem="tf6-pk-1qy" secondAttribute="centerY" id="sWH-C2-ORY"/>
                                                         <constraint firstItem="9AN-4Q-Sh3" firstAttribute="centerX" secondItem="tf6-pk-1qy" secondAttribute="centerX" id="vzJ-Zj-Bde"/>
                                                     </constraints>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="311" y="8" width="79" height="79"/>
-                                                    </variation>
                                                     <variation key="heightClass=compact-widthClass=regular" ambiguous="YES" misplaced="YES">
                                                         <rect key="frame" x="711" y="8" width="79" height="79"/>
                                                     </variation>
@@ -407,8 +404,7 @@
                                                             <include reference="VTh-p6-ZOR"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="16" y="44" width="287" height="43"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="W3u-ec-W8k"/>
                                                             <exclude reference="c77-am-IY6"/>
@@ -423,8 +419,7 @@
                                                     <variation key="heightClass=compact-widthClass=regular" ambiguous="YES">
                                                         <rect key="frame" x="16" y="42" width="687" height="43"/>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="16" y="44" width="287" height="43"/>
+                                                    <variation key="heightClass=regular-widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="2SJ-2D-Pev"/>
                                                             <exclude reference="c77-am-IY6"/>
@@ -2105,6 +2100,9 @@ This tip will help remind you of what to do in this sub phase.</string>
                                     <constraint firstAttribute="width" constant="44" id="DIl-W0-X5t"/>
                                 </constraints>
                                 <state key="normal" image="BackButton"/>
+                                <connections>
+                                    <action selector="backButtonManualVcClicked:" destination="FOy-1O-vz0" eventType="touchUpInside" id="71m-vy-dB0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>

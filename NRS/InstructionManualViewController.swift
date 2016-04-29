@@ -11,16 +11,22 @@ import UIKit
 class InstructionManualViewController: UIViewController
 {
     var phaseNameInstructionManualVc: String?
-    var subPhaseFromSegue:Subphase!
+    var verbalInstructionObject: VerbalInstruction!
     @IBOutlet weak var phaseNameLabel: UILabel!
     
     @IBOutlet weak var instructionManualTextView: UITextView!
 
+    @IBAction func backButtonManualVcClicked(sender: AnyObject)
+    {
+        
+    }
 
     @IBOutlet weak var gradientLayerView: GradientView!
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        phaseNameLabel.text = self.verbalInstructionObject.phaseItem
         
 
         // Do any additional setup after loading the view.

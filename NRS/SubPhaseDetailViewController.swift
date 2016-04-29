@@ -261,6 +261,9 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         if segue.identifier == "showManualVc"
         {
             print("Hello Manual Vc")
+            let targetVc = segue.destinationViewController as! InstructionManualViewController
+            targetVc.verbalInstructionObject = self.verbalInstructionObjectFromSegue
+    
         }
         }
     
