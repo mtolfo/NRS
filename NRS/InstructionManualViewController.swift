@@ -10,6 +10,10 @@ import UIKit
 
 class InstructionManualViewController: UIViewController
 {
+    var phaseNameInstructionManualVc: String?
+    var subPhaseFromSegue:Subphase!
+    @IBOutlet weak var phaseNameLabel: UILabel!
+    
     @IBOutlet weak var instructionManualTextView: UITextView!
 
 

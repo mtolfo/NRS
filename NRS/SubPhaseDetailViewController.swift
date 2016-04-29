@@ -42,10 +42,12 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     }
 
     //keep this
-    @IBAction func infoButtonClicked(sender: AnyObject)
-    {
-       performSegueWithIdentifier("showInstructionManualVc", sender: self)
-    }
+//    @IBAction func infoButtonClicked(sender: AnyObject)
+//    {
+//       performSegueWithIdentifier("showInstructionManualVc", sender: self)
+//    }
+    
+    
     
     //keep this
     @IBAction func scoresButtonClicked(sender: AnyObject)
@@ -60,12 +62,17 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     
     @IBAction func unableButtonClicked(sender: AnyObject)
     {
+        // shouldPerform is a validation check
         if (shouldPerformSegueWithIdentifier("showConfirmView", sender: self))
         {
             performSegueWithIdentifier("showConfirmView", sender: self)
         }
     }
     
+    @IBAction func manualButonClicked(sender: AnyObject)
+    {
+        performSegueWithIdentifier("showManualVc", sender: self)
+    }
     func getInstructionManualFromDatabase (phaseDatabaseName: String)
     {
         let query = PFQuery(className: "Phase_Instructions")
@@ -106,6 +113,8 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
 
         self.subPhaseArrayIndex = getStartingIndex(self.subPhaseFromSegue.descriptionId, subPhaseArrayInput: self.subPhaseArray)!
         self.getScoreObject(self.sessionIdFromSegue!)
+        
+        //getInstructionManualFromdatabase now working correctly
         self.getInstructionManualFromDatabase("Sit")
         self.getInstructionManualFromDatabase("Reverse_Sit_up")
         
@@ -212,6 +221,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
         if segue.identifier ==  "showConfirmView"
         {
             let destinationVc = segue.destinationViewController as! ConfirmViewController
@@ -233,6 +243,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
             destinationVc.sessionId = self.sessionIdFromSegue
             
         }
+
         
         //this goes back to table view and refreshes the scores
         if segue.identifier ==  "showScoresTableView"
@@ -245,6 +256,11 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         {
             let targetVc = segue.destinationViewController as! SubphaseViewController
             targetVc.phaseNameFromSegue = self.phaseDatabaseNameFromSegue
+        }
+        
+        if segue.identifier == "showManualVc"
+        {
+            print("Hello Manual Vc")
         }
         }
     

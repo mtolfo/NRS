@@ -554,7 +554,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="85"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scores" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVo-4T-nR5">
-                                        <rect key="frame" x="273" y="39" width="55" height="25"/>
+                                        <rect key="frame" x="272.5" y="39" width="55" height="25"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -640,7 +640,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ND8-iC-w3c" userLabel="Phase Item Collection View">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ND8-iC-w3c" userLabel="Phase Item Collection View">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="Nu1-hk-hhh">
@@ -796,7 +796,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijd-Sh-Bs6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-137" y="-114"/>
+            <point key="canvasLocation" x="171" y="-254"/>
         </scene>
         <!--Subphase Detail-->
         <scene sceneID="5lM-em-4I9">
@@ -1052,8 +1052,8 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="infoButtonClicked:" destination="97W-j7-dPd" eventType="touchUpInside" id="mic-F2-qQr"/>
-                                    <segue destination="FOy-1O-vz0" kind="show" identifier="showInstructionManualVc" animates="NO" id="By2-VW-I2H"/>
+                                    <action selector="manualButonClicked:" destination="97W-j7-dPd" eventType="touchUpInside" id="t1A-Ca-v0Z"/>
+                                    <segue destination="FOy-1O-vz0" kind="show" identifier="showManualVc" id="DOG-xf-HZk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wh3-IB-33F" userLabel="Score Button">
@@ -1190,7 +1190,7 @@
                                     <segue destination="qZp-9i-Sta" kind="show" identifier="showSubphaseCollectionView" id="rWq-gQ-i6a"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tY0-bS-pGM" userLabel="Unable Button">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tY0-bS-pGM" userLabel="Unable Button">
                                 <rect key="frame" x="510" y="520" width="60" height="60"/>
                                 <animations/>
                                 <constraints>
@@ -1301,7 +1301,7 @@ With arms hanging down, able to initiate thoracic spine extension.</string>
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4m-Zk-k6F" userLabel="Able Button">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4m-Zk-k6F" userLabel="Able Button">
                                 <rect key="frame" x="30" y="520" width="60" height="60"/>
                                 <animations/>
                                 <constraints>
@@ -1666,6 +1666,21 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 <exclude reference="ox9-kI-z2f"/>
                                 <exclude reference="rvH-fr-fM2"/>
                                 <exclude reference="shI-Yp-9Zf"/>
+                                <exclude reference="0b1-sT-T54"/>
+                                <exclude reference="41O-aV-OMR"/>
+                                <exclude reference="70A-ng-ORU"/>
+                                <exclude reference="8oM-e0-0hR"/>
+                                <exclude reference="97B-Pp-ali"/>
+                                <exclude reference="EoH-bG-3uj"/>
+                                <exclude reference="JR3-KT-d8Z"/>
+                                <exclude reference="NSZ-aS-NB3"/>
+                                <exclude reference="NTi-1j-wqm"/>
+                                <exclude reference="ceH-OC-R3t"/>
+                                <exclude reference="dvg-ho-cND"/>
+                                <exclude reference="haU-cX-Mph"/>
+                                <exclude reference="j9q-vE-H9x"/>
+                                <exclude reference="pny-b2-z1j"/>
+                                <exclude reference="x11-3E-pEk"/>
                                 <exclude reference="2NH-Xu-syO"/>
                                 <exclude reference="AeE-DC-297"/>
                                 <exclude reference="EaM-co-iHV"/>
@@ -1693,21 +1708,6 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 <exclude reference="XFH-1Y-IBn"/>
                                 <exclude reference="d6q-3m-fhc"/>
                                 <exclude reference="nyh-IF-y77"/>
-                                <exclude reference="0b1-sT-T54"/>
-                                <exclude reference="41O-aV-OMR"/>
-                                <exclude reference="70A-ng-ORU"/>
-                                <exclude reference="8oM-e0-0hR"/>
-                                <exclude reference="97B-Pp-ali"/>
-                                <exclude reference="EoH-bG-3uj"/>
-                                <exclude reference="JR3-KT-d8Z"/>
-                                <exclude reference="NSZ-aS-NB3"/>
-                                <exclude reference="NTi-1j-wqm"/>
-                                <exclude reference="ceH-OC-R3t"/>
-                                <exclude reference="dvg-ho-cND"/>
-                                <exclude reference="haU-cX-Mph"/>
-                                <exclude reference="j9q-vE-H9x"/>
-                                <exclude reference="pny-b2-z1j"/>
-                                <exclude reference="x11-3E-pEk"/>
                                 <exclude reference="HNy-b0-XnV"/>
                                 <exclude reference="JmH-Sn-RUR"/>
                                 <exclude reference="QHe-gp-nu7"/>
@@ -1771,6 +1771,12 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 <include reference="hat-5N-8W2"/>
                                 <include reference="jDg-h7-01K"/>
                                 <exclude reference="kOG-pl-Tta"/>
+                                <exclude reference="0Xu-Cp-vCj"/>
+                                <exclude reference="8Me-gS-1KV"/>
+                                <include reference="97B-Pp-ali"/>
+                                <exclude reference="Hge-Lr-KoY"/>
+                                <exclude reference="Uh3-DX-ECJ"/>
+                                <include reference="ceH-OC-R3t"/>
                                 <include reference="2NH-Xu-syO"/>
                                 <include reference="Oqr-bj-XeL"/>
                                 <exclude reference="SF8-no-5il"/>
@@ -1787,12 +1793,6 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 <exclude reference="q6g-m3-RPJ"/>
                                 <include reference="d6q-3m-fhc"/>
                                 <exclude reference="wAm-qI-6W1"/>
-                                <exclude reference="0Xu-Cp-vCj"/>
-                                <exclude reference="8Me-gS-1KV"/>
-                                <include reference="97B-Pp-ali"/>
-                                <exclude reference="Hge-Lr-KoY"/>
-                                <exclude reference="Uh3-DX-ECJ"/>
-                                <include reference="ceH-OC-R3t"/>
                                 <include reference="JmH-Sn-RUR"/>
                                 <exclude reference="K9z-Rh-Vfj"/>
                                 <include reference="qN8-fY-MH4"/>
@@ -1836,6 +1836,14 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 <exclude reference="O9e-h7-81e"/>
                                 <exclude reference="kOG-pl-Tta"/>
                                 <include reference="rvH-fr-fM2"/>
+                                <exclude reference="0Xu-Cp-vCj"/>
+                                <exclude reference="8Me-gS-1KV"/>
+                                <include reference="EoH-bG-3uj"/>
+                                <exclude reference="Hge-Lr-KoY"/>
+                                <include reference="NTi-1j-wqm"/>
+                                <exclude reference="Uh3-DX-ECJ"/>
+                                <include reference="pny-b2-z1j"/>
+                                <include reference="x11-3E-pEk"/>
                                 <include reference="AeE-DC-297"/>
                                 <exclude reference="SF8-no-5il"/>
                                 <exclude reference="Stm-eO-kyu"/>
@@ -1850,14 +1858,6 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 <include reference="x75-lW-En6"/>
                                 <include reference="AHr-Dw-hmh"/>
                                 <exclude reference="wAm-qI-6W1"/>
-                                <exclude reference="0Xu-Cp-vCj"/>
-                                <exclude reference="8Me-gS-1KV"/>
-                                <include reference="EoH-bG-3uj"/>
-                                <exclude reference="Hge-Lr-KoY"/>
-                                <include reference="NTi-1j-wqm"/>
-                                <exclude reference="Uh3-DX-ECJ"/>
-                                <include reference="pny-b2-z1j"/>
-                                <include reference="x11-3E-pEk"/>
                                 <exclude reference="K9z-Rh-Vfj"/>
                                 <exclude reference="tkG-9e-YPh"/>
                                 <include reference="xND-yx-Zvw"/>
@@ -1903,6 +1903,15 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 <exclude reference="jDg-h7-01K"/>
                                 <exclude reference="rvH-fr-fM2"/>
                                 <include reference="shI-Yp-9Zf"/>
+                                <include reference="41O-aV-OMR"/>
+                                <include reference="8oM-e0-0hR"/>
+                                <exclude reference="97B-Pp-ali"/>
+                                <exclude reference="EoH-bG-3uj"/>
+                                <exclude reference="NTi-1j-wqm"/>
+                                <exclude reference="ceH-OC-R3t"/>
+                                <include reference="dvg-ho-cND"/>
+                                <exclude reference="pny-b2-z1j"/>
+                                <exclude reference="x11-3E-pEk"/>
                                 <exclude reference="2NH-Xu-syO"/>
                                 <exclude reference="AeE-DC-297"/>
                                 <exclude reference="Oqr-bj-XeL"/>
@@ -1924,15 +1933,6 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 <include reference="XFH-1Y-IBn"/>
                                 <exclude reference="d6q-3m-fhc"/>
                                 <include reference="nyh-IF-y77"/>
-                                <include reference="41O-aV-OMR"/>
-                                <include reference="8oM-e0-0hR"/>
-                                <exclude reference="97B-Pp-ali"/>
-                                <exclude reference="EoH-bG-3uj"/>
-                                <exclude reference="NTi-1j-wqm"/>
-                                <exclude reference="ceH-OC-R3t"/>
-                                <include reference="dvg-ho-cND"/>
-                                <exclude reference="pny-b2-z1j"/>
-                                <exclude reference="x11-3E-pEk"/>
                                 <include reference="HNy-b0-XnV"/>
                                 <exclude reference="JmH-Sn-RUR"/>
                                 <include reference="TQ4-c2-8eT"/>
@@ -1996,6 +1996,13 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 <include reference="ohr-sT-HDI"/>
                                 <include reference="ox9-kI-z2f"/>
                                 <exclude reference="rvH-fr-fM2"/>
+                                <exclude reference="EoH-bG-3uj"/>
+                                <include reference="JR3-KT-d8Z"/>
+                                <include reference="NSZ-aS-NB3"/>
+                                <exclude reference="NTi-1j-wqm"/>
+                                <include reference="j9q-vE-H9x"/>
+                                <exclude reference="pny-b2-z1j"/>
+                                <exclude reference="x11-3E-pEk"/>
                                 <exclude reference="AeE-DC-297"/>
                                 <include reference="EaM-co-iHV"/>
                                 <exclude reference="Z84-Wy-EQb"/>
@@ -2008,13 +2015,6 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 <exclude reference="x75-lW-En6"/>
                                 <exclude reference="AHr-Dw-hmh"/>
                                 <include reference="INg-4T-PC2"/>
-                                <exclude reference="EoH-bG-3uj"/>
-                                <include reference="JR3-KT-d8Z"/>
-                                <include reference="NSZ-aS-NB3"/>
-                                <exclude reference="NTi-1j-wqm"/>
-                                <include reference="j9q-vE-H9x"/>
-                                <exclude reference="pny-b2-z1j"/>
-                                <exclude reference="x11-3E-pEk"/>
                                 <include reference="QHe-gp-nu7"/>
                                 <include reference="wCq-0q-gtQ"/>
                                 <exclude reference="xND-yx-Zvw"/>
@@ -2123,11 +2123,12 @@ This tip will help remind you of what to do in this sub phase.</string>
                     <connections>
                         <outlet property="gradientLayerView" destination="C1a-DW-fDf" id="Qox-9s-Pme"/>
                         <outlet property="instructionManualTextView" destination="Gz7-IY-m8u" id="vGe-LA-XJX"/>
+                        <outlet property="phaseNameLabel" destination="Bsf-cd-koy" id="oXo-lj-iFt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AmZ-Jo-l60" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4" y="1387"/>
+            <point key="canvasLocation" x="74" y="1093"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2dk-Et-6jA">
@@ -2304,7 +2305,7 @@ This tip will help remind you of what to do in this sub phase.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SAr-Mo-tSO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="692" y="694"/>
+            <point key="canvasLocation" x="676" y="462"/>
         </scene>
         <!--New Evaluation-->
         <scene sceneID="cRN-jv-YPw">
@@ -2319,7 +2320,7 @@ This tip will help remind you of what to do in this sub phase.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ViZ-jj-LEK">
-                                <rect key="frame" x="155" y="154" width="289" height="23"/>
+                                <rect key="frame" x="155.5" y="154" width="289" height="23"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="289" id="2dO-KP-dBK"/>
@@ -2378,7 +2379,7 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Version" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xg2-8a-efS">
-                                <rect key="frame" x="155" y="294" width="289" height="36"/>
+                                <rect key="frame" x="155.5" y="294" width="289" height="36"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="284" id="3qI-cO-SOo"/>
@@ -2587,12 +2588,12 @@ This tip will help remind you of what to do in this sub phase.</string>
                             <mask key="constraints">
                                 <exclude reference="LsL-Ep-ozW"/>
                                 <exclude reference="m6R-uU-YjL"/>
-                                <exclude reference="dBw-EB-Ev5"/>
-                                <exclude reference="ic4-Z9-l2K"/>
                                 <exclude reference="IvH-ls-6J9"/>
                                 <exclude reference="V90-tC-q9u"/>
                                 <exclude reference="joC-oU-5iV"/>
                                 <exclude reference="q7o-tm-uc7"/>
+                                <exclude reference="dBw-EB-Ev5"/>
+                                <exclude reference="ic4-Z9-l2K"/>
                                 <exclude reference="E5d-Vi-rSI"/>
                                 <exclude reference="EmK-Qt-sMP"/>
                                 <exclude reference="JyL-Ej-3lq"/>
@@ -2613,15 +2614,15 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 <include reference="LsL-Ep-ozW"/>
                                 <exclude reference="NNo-uH-AR4"/>
                                 <include reference="m6R-uU-YjL"/>
-                                <exclude reference="4q7-70-JHo"/>
-                                <exclude reference="S5R-4j-mgW"/>
-                                <include reference="dBw-EB-Ev5"/>
-                                <include reference="ic4-Z9-l2K"/>
                                 <exclude reference="3bh-98-7CW"/>
                                 <exclude reference="PcR-Bh-joc"/>
                                 <include reference="V90-tC-q9u"/>
                                 <exclude reference="ihj-Ff-Oj5"/>
                                 <include reference="joC-oU-5iV"/>
+                                <exclude reference="4q7-70-JHo"/>
+                                <exclude reference="S5R-4j-mgW"/>
+                                <include reference="dBw-EB-Ev5"/>
+                                <include reference="ic4-Z9-l2K"/>
                                 <include reference="E5d-Vi-rSI"/>
                                 <include reference="EmK-Qt-sMP"/>
                                 <exclude reference="Zr6-SD-buM"/>
