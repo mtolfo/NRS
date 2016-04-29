@@ -12,13 +12,16 @@ class InstructionManualViewController: UIViewController
 {
     var phaseNameInstructionManualVc: String?
     var verbalInstructionObject: VerbalInstruction!
+    var subPhaseObject: Subphase!
+    var sessionId: String?
+    var subPhaseArray = [Subphase]()
     @IBOutlet weak var phaseNameLabel: UILabel!
     
     @IBOutlet weak var instructionManualTextView: UITextView!
 
     @IBAction func backButtonManualVcClicked(sender: AnyObject)
     {
-        
+        performSegueWithIdentifier("showSubphaseDetail", sender: self)
     }
 
     @IBOutlet weak var gradientLayerView: GradientView!
@@ -46,14 +49,24 @@ class InstructionManualViewController: UIViewController
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "showSubphaseDetail"
+        {
+            let targetVc = segue.destinationViewController as! SubPhaseDetailViewController
+            print ("I'm going to SubphaseDetailViewController")
+            targetVc.verbalInstructionObjectFromSegue = self.verbalInstructionObject
+            targetVc.subPhaseFromSegue = self.subPhaseObject
+            targetVc.sessionIdFromSegue = self.sessionId
+            targetVc.subPhaseArray = self.subPhaseArray
+        }
     }
-    */
+    
 
 }

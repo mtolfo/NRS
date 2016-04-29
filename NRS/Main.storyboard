@@ -2102,6 +2102,7 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 <state key="normal" image="BackButton"/>
                                 <connections>
                                     <action selector="backButtonManualVcClicked:" destination="FOy-1O-vz0" eventType="touchUpInside" id="71m-vy-dB0"/>
+                                    <segue destination="97W-j7-dPd" kind="show" identifier="showSubphaseDetail" id="TuH-tc-x7x"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2691,6 +2692,7 @@ This tip will help remind you of what to do in this sub phase.</string>
         <image name="ButtonCheckMark" width="76" height="76"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="TuH-tc-x7x"/>
         <segue reference="rWq-gQ-i6a"/>
         <segue reference="TAU-PR-Cy6"/>
         <segue reference="jFt-WV-u4L"/>

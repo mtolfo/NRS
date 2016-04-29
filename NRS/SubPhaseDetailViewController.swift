@@ -263,6 +263,19 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
             print("Hello Manual Vc")
             let targetVc = segue.destinationViewController as! InstructionManualViewController
             targetVc.verbalInstructionObject = self.verbalInstructionObjectFromSegue
+            //must pass the state of the subphase object as well.
+            //updated description ID and description based off of the 
+            //check marking. So we need to set a new Subphase object
+            subPhaseFromSegue.descriptionId = self.subPhaseId.text!
+            subPhaseFromSegue.description = self.subPhaseDescriptionLabel.text!
+            targetVc.subPhaseObject = self.subPhaseFromSegue
+            targetVc.sessionId = self.sessionIdFromSegue
+            targetVc.subPhaseArray = self.subPhaseArray
+            
+            print(subPhaseFromSegue.descriptionId)
+            print (subPhaseFromSegue.description)
+            print (subPhaseFromSegue.isDefaultSelection)
+            print (self.sessionIdFromSegue)
     
         }
         }
