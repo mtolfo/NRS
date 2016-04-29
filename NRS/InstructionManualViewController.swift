@@ -8,6 +8,12 @@
 
 import UIKit
 
+//new delegate stuff
+protocol DataEnteredFromInstructionManualVcDelegate
+{
+    func userDidEnterInformation(phaseDatabaseName: String)
+}
+
 class InstructionManualViewController: UIViewController
 {
     var phaseNameInstructionManualVc: String?
@@ -15,12 +21,23 @@ class InstructionManualViewController: UIViewController
     var subPhaseObject: Subphase!
     var sessionId: String?
     var subPhaseArray = [Subphase]()
+    var phaseDatabaseName: String?
+    
+    //new delegate stuff
+    var delegate: DataEnteredFromInstructionManualVcDelegate? = nil
+    
     @IBOutlet weak var phaseNameLabel: UILabel!
     
     @IBOutlet weak var instructionManualTextView: UITextView!
 
     @IBAction func backButtonManualVcClicked(sender: AnyObject)
     {
+        //new delegate stuff
+        if (delegate != nil)
+        {
+            let data = self.phaseDatabaseName
+            delegate!.userDidEnterInformation(data!)
+        }
         performSegueWithIdentifier("showSubphaseDetail", sender: self)
     }
 
@@ -59,12 +76,14 @@ class InstructionManualViewController: UIViewController
         // Pass the selected object to the new view controller.
         if segue.identifier == "showSubphaseDetail"
         {
+            //passing back all info needed in the previous view controller
             let targetVc = segue.destinationViewController as! SubPhaseDetailViewController
             print ("I'm going to SubphaseDetailViewController")
             targetVc.verbalInstructionObjectFromSegue = self.verbalInstructionObject
             targetVc.subPhaseFromSegue = self.subPhaseObject
             targetVc.sessionIdFromSegue = self.sessionId
             targetVc.subPhaseArray = self.subPhaseArray
+            targetVc.phaseDatabaseNameFromSegue = self.phaseDatabaseName
         }
     }
     

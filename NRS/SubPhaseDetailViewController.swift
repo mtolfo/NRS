@@ -8,7 +8,9 @@
 
 import UIKit
 
-class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationControllerDelegate
+
+
+class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationControllerDelegate//, DataEnteredFromInstructionManualVcDelegate
 {
     var subPhaseFromSegue:Subphase!
     var scoreObjectFromDatabase:Score!
@@ -73,6 +75,12 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     {
         performSegueWithIdentifier("showManualVc", sender: self)
     }
+    
+    //new delegate stuff
+//    func userDidEnterInformation(phaseDatabaseName: String) {
+//        self.phaseDatabaseNameFromSegue = phaseDatabaseName
+//    }
+    
     func getInstructionManualFromDatabase (phaseDatabaseName: String)
     {
         let query = PFQuery(className: "Phase_Instructions")
@@ -271,6 +279,10 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
             targetVc.subPhaseObject = self.subPhaseFromSegue
             targetVc.sessionId = self.sessionIdFromSegue
             targetVc.subPhaseArray = self.subPhaseArray
+            targetVc.phaseDatabaseName = self.phaseDatabaseNameFromSegue
+            
+            //new delegate stuff
+            //targetVc.delegate = self
             
             print(subPhaseFromSegue.descriptionId)
             print (subPhaseFromSegue.description)

@@ -33,10 +33,13 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         self.sessionIdFromSegue = sessionId
     }
     
+
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         //self.view.backgroundColor = UIColor.redColor()
+        
         
         // Do any additional setup after loading the view.
         loadPhaseItemsFromDatabase()
@@ -54,7 +57,9 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
     func loadPhaseItemsFromDatabase()
     {
         phaseItemArray.removeAll()
-        subphaseCollectionView.reloadData()
+        
+        //comment this out for now to see if back button will work
+        //subphaseCollectionView.reloadData()
         
         //pass in the class name of the Phase Name object in database (Sit, Stand, Sit Up...)
         //self.phaseNameFromSegue is the database name such as "Overhead_Press"
