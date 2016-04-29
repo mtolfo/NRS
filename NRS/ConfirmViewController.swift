@@ -22,6 +22,7 @@ class ConfirmViewController: UIViewController
         self.markScoreObjectFromDatabase(self.subPhaseObject.descriptionId, sessionDatabaseName: self.verbalInstructionObject.phaseDatabaseName)
         dismissViewControllerAnimated(true, completion: nil)
     }
+    
     @IBAction func rejectButonClicked(sender: AnyObject)
     {
         dismissViewControllerAnimated(true, completion: nil)

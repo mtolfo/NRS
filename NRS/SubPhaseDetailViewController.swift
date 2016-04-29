@@ -96,6 +96,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         self.verbalInstructionLabel.text = self.verbalInstructionObjectFromSegue.verbalInstruction
         self.subPhaseDescriptionLabel.text = subPhaseFromSegue.description
         self.phaseName.text = self.verbalInstructionObjectFromSegue.phaseItem
+        self.subPhaseId.text = self.subPhaseFromSegue.descriptionId
         
         // if the session id is not coming from the in progress screen the use the singleton for the session id
         if (self.sessionIdFromSegue ==  nil)
@@ -181,6 +182,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         return true
     }
     
+    //provides validation before the segue
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool
     {
         // If the phase does not have a score, then move on to the confirm screen
@@ -244,7 +246,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
             let targetVc = segue.destinationViewController as! SubphaseViewController
             targetVc.phaseNameFromSegue = self.phaseDatabaseNameFromSegue
         }
-    }
+        }
     
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle
     {
