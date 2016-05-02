@@ -29,7 +29,8 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         navigationController?.hidesBarsOnSwipe = true
     }
     
-    func getNewEvalSessionId(sessionId: String) {
+    func getNewEvalSessionId(sessionId: String)
+    {
         self.sessionIdFromSegue = sessionId
     }
     
@@ -38,8 +39,6 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        //self.view.backgroundColor = UIColor.redColor()
-        
         
         // Do any additional setup after loading the view.
         loadPhaseItemsFromDatabase()
@@ -134,26 +133,28 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! SubPhaseCollectionViewCell
         
-        //configure text
-        let paragraphStyle = NSMutableParagraphStyle()
-        //let tempString = subphaseArray[indexPath.row].description
-        //paragraphStyle.headIndent = 20
-        paragraphStyle.firstLineHeadIndent = 20.0
-        
-        let attributes = [NSParagraphStyleAttributeName: paragraphStyle]
-        
         //configure cell
         //cell.descriptionLabel.text = subphases[indexPath.row].description
-        cell.descriptionLabel.text = phaseItemArray[indexPath.row].description
+        let descriptionId = phaseItemArray[indexPath.row].descriptionId
+        cell.descriptionLabel.text = descriptionId + " " + phaseItemArray[indexPath.row].description
         cell.descriptionIdLabel.text = phaseItemArray[indexPath.row].descriptionId
         
-        let label = NSAttributedString(string: cell.descriptionLabel.text!, attributes: attributes)
-        
-        cell.descriptionLabel.attributedText = label
+        //change color if default
+        if (phaseItemArray[indexPath.row].isDefaultSelection == true)
+        {
+            cell.backgroundColor = UIColor().UIColorFromRGB(0xFFECB3)
+        }
+
+        //configure text -- indent first line of lable text
+        //let paragraphStyle = NSMutableParagraphStyle()
+        //paragraphStyle.firstLineHeadIndent = 20.0
+        //let attributes = [NSParagraphStyleAttributeName: paragraphStyle]
+        //let label = NSAttributedString(string: cell.descriptionLabel.text!, attributes: attributes)
+        //cell.descriptionLabel.attributedText = label
         //cell.descriptionLabel.sizeToFit()
         
         //apply round corner
-        cell.layer.cornerRadius = 4.0
+        //cell.layer.cornerRadius = 4.0
         return cell
     }
 
