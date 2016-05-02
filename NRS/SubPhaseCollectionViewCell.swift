@@ -13,6 +13,6 @@ class SubPhaseCollectionViewCell: UICollectionViewCell
     
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    @IBOutlet weak var descriptionIdLabel: UILabel!
+    //@IBOutlet weak var descriptionIdLabel: UILabel!
     
 }

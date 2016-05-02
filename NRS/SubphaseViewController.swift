@@ -136,8 +136,8 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         //configure cell
         //cell.descriptionLabel.text = subphases[indexPath.row].description
         let descriptionId = phaseItemArray[indexPath.row].descriptionId
-        cell.descriptionLabel.text = descriptionId + " " + phaseItemArray[indexPath.row].description
-        cell.descriptionIdLabel.text = phaseItemArray[indexPath.row].descriptionId
+        cell.descriptionLabel.text = descriptionId + "\n" + phaseItemArray[indexPath.row].description
+        //cell.descriptionIdLabel.text = phaseItemArray[indexPath.row].descriptionId
         
         //change color if default
         if (phaseItemArray[indexPath.row].isDefaultSelection == true)
@@ -151,7 +151,7 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         //let attributes = [NSParagraphStyleAttributeName: paragraphStyle]
         //let label = NSAttributedString(string: cell.descriptionLabel.text!, attributes: attributes)
         //cell.descriptionLabel.attributedText = label
-        //cell.descriptionLabel.sizeToFit()
+        cell.descriptionLabel.sizeToFit()
         
         //apply round corner
         //cell.layer.cornerRadius = 4.0

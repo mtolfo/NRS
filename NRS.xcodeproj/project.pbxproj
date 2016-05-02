@@ -199,9 +199,9 @@
 		A86F69831C4DB04F00C402AB /* Subphase */ = {
 			isa = PBXGroup;
 			children = (
+				A86F697F1C4DAA0000C402AB /* SubPhaseCollectionViewCell.swift */,
 				A86F697D1C4AF25400C402AB /* SubphaseViewController.swift */,
 				A89EF5F31C6997A30098CDBB /* SubPhaseDetailViewController.swift */,
-				A86F697F1C4DAA0000C402AB /* SubPhaseCollectionViewCell.swift */,
 				A8DC3F5C1C86940B009B3774 /* ConfirmViewController.swift */,
 			);
 			name = Subphase;
