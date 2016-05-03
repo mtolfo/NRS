@@ -23,6 +23,7 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     @IBOutlet weak var gradientLayerView: GradientView!
     @IBOutlet weak var subphaseCollectionView: UICollectionView!
+    @IBOutlet weak var phaseName: UILabel!
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -43,7 +44,9 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         // Do any additional setup after loading the view.
         loadPhaseItemsFromDatabase()
         loadVerbalInstructionsFromDatabase()
+        //self.phaseName.text = self.getVerbalInstructionObjectFromArray().phaseItem
         //sessionIdToPass = sessionIdFromSegue
+        self.phaseName.text = "Hello"
         
     }
     
@@ -140,10 +143,10 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         //cell.descriptionIdLabel.text = phaseItemArray[indexPath.row].descriptionId
         
         //change color if default
-        if (phaseItemArray[indexPath.row].isDefaultSelection == true)
-        {
-            cell.backgroundColor = UIColor().UIColorFromRGB(0xFFECB3)
-        }
+//        if (phaseItemArray[indexPath.row].isDefaultSelection == true)
+//        {
+//            cell.backgroundColor = UIColor().UIColorFromRGB(0xFFECB3)
+//        }
 
         //configure text -- indent first line of lable text
         //let paragraphStyle = NSMutableParagraphStyle()

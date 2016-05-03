@@ -249,6 +249,8 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
                 destinationController.navigationItem.title = self.phaseStructArray[indexpath.row].phaseName
                 destinationController.phaseNameFromSegue = self.phaseStructArray[indexpath.row].phaseDatabaseName
                 destinationController.sessionIdFromSegue = self.phaseStructArray[indexpath.row].phaseScoreId
+                
+                
             }
         }
     }

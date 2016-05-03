@@ -653,7 +653,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="headTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="sx4-7N-o01">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="headTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="sx4-7N-o01">
                                                     <rect key="frame" x="12" y="8" width="126" height="130"/>
                                                     <animations/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -774,9 +774,6 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="EMm-og-Sib"/>
-                                <exclude reference="OcS-qm-pRC"/>
-                                <exclude reference="o5T-1N-H6o"/>
                                 <exclude reference="8TX-6a-fhG"/>
                                 <exclude reference="CI3-vL-Hly"/>
                                 <exclude reference="TMY-Ib-2yS"/>
@@ -784,6 +781,9 @@
                                 <exclude reference="aQj-eh-po5"/>
                                 <exclude reference="ua1-hZ-xMy"/>
                                 <exclude reference="xPX-wo-Roe"/>
+                                <exclude reference="EMm-og-Sib"/>
+                                <exclude reference="OcS-qm-pRC"/>
+                                <exclude reference="o5T-1N-H6o"/>
                                 <exclude reference="cXY-yM-Jtd"/>
                             </mask>
                         </variation>
@@ -815,6 +815,7 @@
                     </view>
                     <connections>
                         <outlet property="gradientLayerView" destination="TdK-HD-WQ8" id="98w-rd-kPz"/>
+                        <outlet property="phaseName" destination="viy-jl-ukf" id="CCn-f4-mfL"/>
                         <outlet property="subphaseCollectionView" destination="ND8-iC-w3c" id="rnT-Yb-Hgs"/>
                     </connections>
                 </viewController>
@@ -1740,17 +1741,6 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 <exclude reference="wCq-0q-gtQ"/>
                                 <exclude reference="xND-yx-Zvw"/>
                                 <exclude reference="xQw-9f-hHq"/>
-                                <exclude reference="5oi-lu-wep"/>
-                                <exclude reference="8JK-Vp-zqF"/>
-                                <exclude reference="SLW-h1-aem"/>
-                                <exclude reference="Vmw-3P-2b8"/>
-                                <exclude reference="VvX-Uc-Kmq"/>
-                                <exclude reference="fDY-c0-x7v"/>
-                                <exclude reference="k6E-KP-dPB"/>
-                                <exclude reference="kGp-u9-YhB"/>
-                                <exclude reference="mMx-bY-Ycb"/>
-                                <exclude reference="thd-ep-hTm"/>
-                                <exclude reference="u8a-C7-IRo"/>
                                 <exclude reference="K2x-nb-Rod"/>
                                 <exclude reference="KSo-Tx-FRQ"/>
                                 <exclude reference="QLR-62-fiv"/>
@@ -1763,6 +1753,17 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 <exclude reference="qMn-Mm-def"/>
                                 <exclude reference="tcn-Xk-rwb"/>
                                 <exclude reference="xfD-0w-NTQ"/>
+                                <exclude reference="5oi-lu-wep"/>
+                                <exclude reference="8JK-Vp-zqF"/>
+                                <exclude reference="SLW-h1-aem"/>
+                                <exclude reference="Vmw-3P-2b8"/>
+                                <exclude reference="VvX-Uc-Kmq"/>
+                                <exclude reference="fDY-c0-x7v"/>
+                                <exclude reference="k6E-KP-dPB"/>
+                                <exclude reference="kGp-u9-YhB"/>
+                                <exclude reference="mMx-bY-Ycb"/>
+                                <exclude reference="thd-ep-hTm"/>
+                                <exclude reference="u8a-C7-IRo"/>
                                 <exclude reference="7K6-1Q-9rO"/>
                                 <exclude reference="cjJ-ut-z7r"/>
                                 <exclude reference="1m2-rU-E1Z"/>
@@ -1821,16 +1822,16 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 <exclude reference="K9z-Rh-Vfj"/>
                                 <include reference="qN8-fY-MH4"/>
                                 <exclude reference="tkG-9e-YPh"/>
-                                <exclude reference="Mdl-tJ-C9Z"/>
-                                <include reference="Vmw-3P-2b8"/>
-                                <include reference="VvX-Uc-Kmq"/>
-                                <include reference="fDY-c0-x7v"/>
                                 <exclude reference="Byu-bU-A7Z"/>
                                 <include reference="SjZ-Ea-iMK"/>
                                 <exclude reference="Xgc-f4-bHZ"/>
                                 <include reference="aau-cg-NbO"/>
                                 <include reference="mpP-HQ-VFN"/>
                                 <exclude reference="pAj-fm-AMc"/>
+                                <exclude reference="Mdl-tJ-C9Z"/>
+                                <include reference="Vmw-3P-2b8"/>
+                                <include reference="VvX-Uc-Kmq"/>
+                                <include reference="fDY-c0-x7v"/>
                                 <exclude reference="BMK-7u-IQV"/>
                                 <exclude reference="Xha-rR-HXT"/>
                                 <include reference="CDu-UW-js4"/>
@@ -1886,15 +1887,15 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 <exclude reference="tkG-9e-YPh"/>
                                 <include reference="xND-yx-Zvw"/>
                                 <include reference="xQw-9f-hHq"/>
-                                <include reference="5oi-lu-wep"/>
-                                <exclude reference="Mdl-tJ-C9Z"/>
-                                <include reference="k6E-KP-dPB"/>
                                 <exclude reference="Byu-bU-A7Z"/>
                                 <include reference="KSo-Tx-FRQ"/>
                                 <include reference="UdI-YX-B1O"/>
                                 <exclude reference="Xgc-f4-bHZ"/>
                                 <exclude reference="pAj-fm-AMc"/>
                                 <include reference="tcn-Xk-rwb"/>
+                                <include reference="5oi-lu-wep"/>
+                                <exclude reference="Mdl-tJ-C9Z"/>
+                                <include reference="k6E-KP-dPB"/>
                                 <exclude reference="BMK-7u-IQV"/>
                                 <exclude reference="Xha-rR-HXT"/>
                                 <include reference="2iG-9t-6J6"/>
@@ -1963,14 +1964,6 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 <exclude reference="qN8-fY-MH4"/>
                                 <exclude reference="xND-yx-Zvw"/>
                                 <exclude reference="xQw-9f-hHq"/>
-                                <exclude reference="5oi-lu-wep"/>
-                                <include reference="8JK-Vp-zqF"/>
-                                <include reference="SLW-h1-aem"/>
-                                <exclude reference="Vmw-3P-2b8"/>
-                                <exclude reference="VvX-Uc-Kmq"/>
-                                <exclude reference="fDY-c0-x7v"/>
-                                <exclude reference="k6E-KP-dPB"/>
-                                <include reference="mMx-bY-Ycb"/>
                                 <include reference="K2x-nb-Rod"/>
                                 <exclude reference="KSo-Tx-FRQ"/>
                                 <exclude reference="SjZ-Ea-iMK"/>
@@ -1980,6 +1973,14 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 <exclude reference="mpP-HQ-VFN"/>
                                 <include reference="qMn-Mm-def"/>
                                 <exclude reference="tcn-Xk-rwb"/>
+                                <exclude reference="5oi-lu-wep"/>
+                                <include reference="8JK-Vp-zqF"/>
+                                <include reference="SLW-h1-aem"/>
+                                <exclude reference="Vmw-3P-2b8"/>
+                                <exclude reference="VvX-Uc-Kmq"/>
+                                <exclude reference="fDY-c0-x7v"/>
+                                <exclude reference="k6E-KP-dPB"/>
+                                <include reference="mMx-bY-Ycb"/>
                                 <exclude reference="2iG-9t-6J6"/>
                                 <exclude reference="6VT-ac-rxN"/>
                                 <exclude reference="CDu-UW-js4"/>
@@ -2043,16 +2044,16 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 <include reference="wCq-0q-gtQ"/>
                                 <exclude reference="xND-yx-Zvw"/>
                                 <exclude reference="xQw-9f-hHq"/>
-                                <exclude reference="5oi-lu-wep"/>
-                                <exclude reference="k6E-KP-dPB"/>
-                                <include reference="kGp-u9-YhB"/>
-                                <include reference="u8a-C7-IRo"/>
                                 <exclude reference="KSo-Tx-FRQ"/>
                                 <include reference="QLR-62-fiv"/>
                                 <exclude reference="UdI-YX-B1O"/>
                                 <include reference="hXq-Ql-HDa"/>
                                 <exclude reference="tcn-Xk-rwb"/>
                                 <include reference="xfD-0w-NTQ"/>
+                                <exclude reference="5oi-lu-wep"/>
+                                <exclude reference="k6E-KP-dPB"/>
+                                <include reference="kGp-u9-YhB"/>
+                                <include reference="u8a-C7-IRo"/>
                                 <include reference="7K6-1Q-9rO"/>
                                 <include reference="cjJ-ut-z7r"/>
                                 <include reference="1m2-rU-E1Z"/>
@@ -2722,8 +2723,8 @@ This tip will help remind you of what to do in this sub phase.</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="upe-EF-Pqf"/>
-        <segue reference="xCI-E7-eTL"/>
+        <segue reference="rWq-gQ-i6a"/>
+        <segue reference="TAU-PR-Cy6"/>
         <segue reference="QrH-FV-f4S"/>
-        <segue reference="TGc-n3-7N9"/>
     </inferredMetricsTieBreakers>
 </document>
