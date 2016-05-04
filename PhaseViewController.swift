@@ -98,6 +98,36 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
             Phase(phaseDatabaseNameInput: PhaseDatabaseName.stepAdaptability.rawValue, phaseScoreInput: phaseScore.Step_Adaptability, phaseNameInput: PhaseName.stepAdaptability.rawValue, phaseScoreIdInput: phaseScore.scoreId)]
     }
     
+    func getNumberOfPhasesWithScores() -> Double
+    {
+        let numberOfPhases = self.phaseStructArray.filter({$0.phaseScoreId != ""})
+        for element in 1...numberOfPhases.count
+        {
+//            if (element.phaseScore != "")
+//            {
+//                if( (element.phaseName == "Overhead Left") || (element.phaseName == "Overhead Right"))
+//                {
+//                    count = count + 0.5
+//                }
+//                else
+//                {
+//                    count  = count + 1.0
+//                }
+//            }
+//
+//        }
+            
+//            let count = 10
+//            var sum = 0
+//            
+//            for i in 1...count {
+//                sum += i
+//            }
+            print (numberOfPhases)
+        }
+        return 0.0
+    }
+    
     
     
     func do_table_refresh() {
@@ -162,6 +192,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         super.viewDidLoad()
         self.getScoreObjectFromDatabase(self.phaseScore.scoreId)
         createArrayOfPhases()
+        
        
         //self.do_table_refresh()
         //h2C2x4Jq7A
@@ -186,6 +217,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         let cellIdentifier = "Cell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! PhaseTableViewCell
       
+        //table view gray if no score, yellow if there is a score
         let phaseScore = self.phaseStructArray[indexPath.row].phaseScore
         if (phaseScore == "")
         {
@@ -249,7 +281,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
                 destinationController.navigationItem.title = self.phaseStructArray[indexpath.row].phaseName
                 destinationController.phaseNameFromSegue = self.phaseStructArray[indexpath.row].phaseDatabaseName
                 destinationController.sessionIdFromSegue = self.phaseStructArray[indexpath.row].phaseScoreId
-                
+                print(self.phaseStructArray[indexpath.row].phaseName)
                 
             }
         }

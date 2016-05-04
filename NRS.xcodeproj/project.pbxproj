@@ -47,6 +47,7 @@
 		A8A194D81CB53FD300859970 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A194D61CB53FD300859970 /* Parse.framework */; };
 		A8A194DA1CB5CCF700859970 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A194D91CB5CCF700859970 /* GradientView.swift */; };
 		A8A5E62B1C3FF653002D7A10 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A5E62A1C3FF653002D7A10 /* Version.swift */; };
+		A8CC55661CD853AC00A735A9 /* CalculateScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC55651CD853AC00A735A9 /* CalculateScore.swift */; };
 		A8CEEE241CB1653D00C0C939 /* CAGradientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CEEE231CB1653D00C0C939 /* CAGradientExtension.swift */; };
 		A8CEEE271CB33FC100C0C939 /* Avenir Next.ttc in Resources */ = {isa = PBXBuildFile; fileRef = A8CEEE261CB33FC100C0C939 /* Avenir Next.ttc */; };
 		A8D392881C3CCCC1000B4125 /* NewEvalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D392871C3CCCC1000B4125 /* NewEvalViewController.swift */; };
@@ -120,6 +121,7 @@
 		A8A194D61CB53FD300859970 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A8A194D91CB5CCF700859970 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		A8A5E62A1C3FF653002D7A10 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		A8CC55651CD853AC00A735A9 /* CalculateScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculateScore.swift; sourceTree = "<group>"; };
 		A8CEEE231CB1653D00C0C939 /* CAGradientExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CAGradientExtension.swift; path = ../CAGradientExtension.swift; sourceTree = "<group>"; };
 		A8CEEE261CB33FC100C0C939 /* Avenir Next.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Avenir Next.ttc"; path = "/System/Library/Fonts/Avenir Next.ttc"; sourceTree = "<absolute>"; };
 		A8D392871C3CCCC1000B4125 /* NewEvalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEvalViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				A8CEEE231CB1653D00C0C939 /* CAGradientExtension.swift */,
 				A8194A801CCA5C120089EC59 /* ColorExtensions.swift */,
 				A8A194D91CB5CCF700859970 /* GradientView.swift */,
+				A8CC55651CD853AC00A735A9 /* CalculateScore.swift */,
 				A8DC3F5E1C86AB4B009B3774 /* InstructionManualViewController.swift */,
 				A889D0911C41EBF2005DB665 /* Parse */,
 				A899521A1C3C976E0023373D /* AppDelegate.swift */,
@@ -431,6 +434,7 @@
 			files = (
 				A86F69801C4DAA0000C402AB /* SubPhaseCollectionViewCell.swift in Sources */,
 				A899524B1C3CADAB0023373D /* NewEvalSelectSessionViewController.swift in Sources */,
+				A8CC55661CD853AC00A735A9 /* CalculateScore.swift in Sources */,
 				A8D392881C3CCCC1000B4125 /* NewEvalViewController.swift in Sources */,
 				A86F697C1C49400F00C402AB /* SessionInputViewController.swift in Sources */,
 				A84C59381C7A5ED700D02C11 /* NewEvalSessionId.swift in Sources */,

@@ -15,6 +15,7 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
     var phaseNameFromSegue:String?
     var sessionIdFromSegue:String?
     var destinationTempString = ""
+    var phaseScoreObject:Score!
     
     //var sessionIdToPass:String?
     private var phaseItemArray = [Subphase]() //TODO: rename this model to PhaseItem.swift
@@ -46,7 +47,10 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         loadVerbalInstructionsFromDatabase()
         //self.phaseName.text = self.getVerbalInstructionObjectFromArray().phaseItem
         //sessionIdToPass = sessionIdFromSegue
-        self.phaseName.text = "Hello"
+//        let indexPaths = subphaseCollectionView.indexPathsForSelectedItems()
+//        self.phaseName.text = self.pha
+        //self.phaseName.text = self.getVerbalInstructionObjectFromArray().phaseItem
+        
         
     }
     
@@ -196,6 +200,13 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
                 subphaseCollectionView.deselectItemAtIndexPath(indexPaths[0], animated: false)
             }
         }
+        
+        //segue back to phase table view
+//        if segue.identifier == "showPhaseTableView"
+//        {
+//            let targetVc = segue.destinationViewController as! PhaseViewController
+//            targetVc.phaseScore.scoreId = self.sessionIdFromSegue!
+//        }
         
         
         

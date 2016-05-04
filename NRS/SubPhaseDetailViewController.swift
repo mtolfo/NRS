@@ -67,6 +67,10 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         // shouldPerform is a validation check
         if (shouldPerformSegueWithIdentifier("showConfirmView", sender: self))
         {
+//            let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+//            let blurView = UIVisualEffectView(effect: darkBlur)
+//            blurView.frame = gradientLayerView.bounds
+//            gradientLayerView.addSubview(blurView)
             performSegueWithIdentifier("showConfirmView", sender: self)
         }
     }

@@ -17,6 +17,7 @@ class ConfirmViewController: UIViewController
     @IBOutlet weak var subphaseDescriptionLabel: UILabel!
     @IBOutlet weak var confirmationMessageLabel: UILabel!
     
+    @IBOutlet weak var gradientLayerView: GradientView!
     @IBAction func confirmButtonClicked(sender: AnyObject)
     {
         self.markScoreObjectFromDatabase(self.subPhaseObject.descriptionId, sessionDatabaseName: self.verbalInstructionObject.phaseDatabaseName)
@@ -45,6 +46,12 @@ class ConfirmViewController: UIViewController
         }
         
 
+    }
+    
+    override func viewDidLayoutSubviews()
+    {
+        let rect = CGRect.zero
+        self.gradientLayerView.drawRect(rect)
     }
 
     override func didReceiveMemoryWarning() {
