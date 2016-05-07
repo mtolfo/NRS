@@ -836,6 +836,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="navBarView" destination="aWd-pb-BLr" id="xsA-Ox-58z"/>
+                        <outlet property="scoreLabel" destination="7Ur-lu-WEo" id="6CZ-qM-ASk"/>
                         <outlet property="tableView" destination="x6S-SL-uBh" id="9zs-wN-qyY"/>
                     </connections>
                 </viewController>
