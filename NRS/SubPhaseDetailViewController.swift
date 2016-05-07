@@ -80,6 +80,10 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         performSegueWithIdentifier("showManualVc", sender: self)
     }
     
+    @IBAction func testButtonClicked(sender: AnyObject)
+    {
+        performSegueWithIdentifier("showTestVc", sender: self)
+    }
     //new delegate stuff
 //    func userDidEnterInformation(phaseDatabaseName: String) {
 //        self.phaseDatabaseNameFromSegue = phaseDatabaseName
@@ -294,6 +298,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
             print (self.sessionIdFromSegue)
     
         }
+        
         }
     
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle

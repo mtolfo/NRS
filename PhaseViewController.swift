@@ -82,50 +82,69 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func createArrayOfPhases()
     {
-            phaseStructArray = [Phase(phaseDatabaseNameInput: PhaseDatabaseName.sit.rawValue, phaseScoreInput: phaseScore.Sit, phaseNameInput: PhaseName.sit.rawValue, phaseScoreIdInput: phaseScore.scoreId),
-            Phase(phaseDatabaseNameInput: PhaseDatabaseName.sitUp.rawValue, phaseScoreInput: phaseScore.Sit_up, phaseNameInput: PhaseName.sitUp.rawValue, phaseScoreIdInput: phaseScore.scoreId),
-            Phase(phaseDatabaseNameInput: PhaseDatabaseName.reverseSitUp.rawValue, phaseScoreInput: phaseScore.Reverse_Sit_up, phaseNameInput: PhaseName.reverseSitUp.rawValue, phaseScoreIdInput: phaseScore.scoreId),
-            Phase(phaseDatabaseNameInput: PhaseDatabaseName.trunkExtensionInSitting.rawValue, phaseScoreInput: phaseScore.Trunk_Extension_in_Sitting, phaseNameInput: PhaseName.trunkExtensionInSitting.rawValue, phaseScoreIdInput: phaseScore.scoreId),
-            Phase(phaseDatabaseNameInput: PhaseDatabaseName.overheadPress.rawValue, phaseScoreInput: phaseScore.Overhead_Press, phaseNameInput: PhaseName.overheadPress.rawValue, phaseScoreIdInput: phaseScore.scoreId),
-            Phase(phaseDatabaseNameInput: PhaseDatabaseName.forwardReachAndGrasp.rawValue, phaseScoreInput: phaseScore.Forward_Reach_and_Grasp, phaseNameInput: PhaseName.forwardReachAndGrasp.rawValue, phaseScoreIdInput: phaseScore.scoreId),
-            Phase(phaseDatabaseNameInput: PhaseDatabaseName.doorAndPull.rawValue, phaseScoreInput: phaseScore.Door_Pull_and_Open, phaseNameInput: PhaseName.doorAndPull.rawValue, phaseScoreIdInput: phaseScore.scoreId),
-            Phase(phaseDatabaseNameInput: PhaseDatabaseName.canOpenAndManipulate.rawValue, phaseScoreInput: phaseScore.Can_Open_and_Manipulation, phaseNameInput: PhaseName.canOpenAndManipulate.rawValue, phaseScoreIdInput: phaseScore.scoreId),
-            Phase(phaseDatabaseNameInput: PhaseDatabaseName.sitToStand.rawValue, phaseScoreInput: phaseScore.Sit_to_Stand, phaseNameInput: PhaseName.sitToStand.rawValue, phaseScoreIdInput: phaseScore.scoreId),
-            Phase(phaseDatabaseNameInput: PhaseDatabaseName.stand.rawValue, phaseScoreInput: phaseScore.Stand, phaseNameInput: PhaseName.stand.rawValue, phaseScoreIdInput: phaseScore.scoreId),
-            Phase(phaseDatabaseNameInput: PhaseDatabaseName.walking.rawValue, phaseScoreInput: phaseScore.Walking, phaseNameInput: PhaseName.walking.rawValue, phaseScoreIdInput: phaseScore.scoreId),
-            Phase(phaseDatabaseNameInput: PhaseDatabaseName.standAdaptability.rawValue, phaseScoreInput: phaseScore.Stand_Adaptability, phaseNameInput: PhaseName.standAdaptability.rawValue, phaseScoreIdInput: phaseScore.scoreId),
-            Phase(phaseDatabaseNameInput: PhaseDatabaseName.stepRetraining.rawValue, phaseScoreInput: phaseScore.Step_Retraining, phaseNameInput: PhaseName.stepRetraining.rawValue, phaseScoreIdInput: phaseScore.scoreId),
-            Phase(phaseDatabaseNameInput: PhaseDatabaseName.stepAdaptability.rawValue, phaseScoreInput: phaseScore.Step_Adaptability, phaseNameInput: PhaseName.stepAdaptability.rawValue, phaseScoreIdInput: phaseScore.scoreId)]
+            phaseStructArray = [Phase(phaseDatabaseNameInput: PhaseDatabaseName.sit.rawValue, phaseScoreInput: phaseScore.Sit, phaseNameInput: PhaseName.sit.rawValue, phaseScoreIdInput: phaseScore.scoreId),Phase(phaseDatabaseNameInput: PhaseDatabaseName.sitUp.rawValue, phaseScoreInput: phaseScore.Sit_up, phaseNameInput: PhaseName.sitUp.rawValue, phaseScoreIdInput: phaseScore.scoreId),Phase(phaseDatabaseNameInput: PhaseDatabaseName.reverseSitUp.rawValue, phaseScoreInput: phaseScore.Reverse_Sit_up, phaseNameInput: PhaseName.reverseSitUp.rawValue, phaseScoreIdInput: phaseScore.scoreId),Phase(phaseDatabaseNameInput: PhaseDatabaseName.trunkExtensionInSitting.rawValue, phaseScoreInput: phaseScore.Trunk_Extension_in_Sitting, phaseNameInput: PhaseName.trunkExtensionInSitting.rawValue, phaseScoreIdInput: phaseScore.scoreId),Phase(phaseDatabaseNameInput: PhaseDatabaseName.overheadPress.rawValue, phaseScoreInput: phaseScore.Overhead_Press, phaseNameInput: PhaseName.overheadPress.rawValue, phaseScoreIdInput: phaseScore.scoreId),Phase(phaseDatabaseNameInput: PhaseDatabaseName.forwardReachAndGrasp.rawValue, phaseScoreInput: phaseScore.Forward_Reach_and_Grasp, phaseNameInput: PhaseName.forwardReachAndGrasp.rawValue, phaseScoreIdInput: phaseScore.scoreId),Phase(phaseDatabaseNameInput: PhaseDatabaseName.doorAndPull.rawValue, phaseScoreInput: phaseScore.Door_Pull_and_Open, phaseNameInput: PhaseName.doorAndPull.rawValue, phaseScoreIdInput: phaseScore.scoreId),Phase(phaseDatabaseNameInput: PhaseDatabaseName.canOpenAndManipulate.rawValue, phaseScoreInput: phaseScore.Can_Open_and_Manipulation, phaseNameInput: PhaseName.canOpenAndManipulate.rawValue, phaseScoreIdInput: phaseScore.scoreId),Phase(phaseDatabaseNameInput: PhaseDatabaseName.sitToStand.rawValue, phaseScoreInput: phaseScore.Sit_to_Stand, phaseNameInput: PhaseName.sitToStand.rawValue, phaseScoreIdInput: phaseScore.scoreId),Phase(phaseDatabaseNameInput: PhaseDatabaseName.stand.rawValue, phaseScoreInput: phaseScore.Stand, phaseNameInput: PhaseName.stand.rawValue, phaseScoreIdInput: phaseScore.scoreId),Phase(phaseDatabaseNameInput: PhaseDatabaseName.walking.rawValue, phaseScoreInput: phaseScore.Walking, phaseNameInput: PhaseName.walking.rawValue, phaseScoreIdInput: phaseScore.scoreId),Phase(phaseDatabaseNameInput: PhaseDatabaseName.standAdaptability.rawValue, phaseScoreInput: phaseScore.Stand_Adaptability, phaseNameInput: PhaseName.standAdaptability.rawValue, phaseScoreIdInput: phaseScore.scoreId),Phase(phaseDatabaseNameInput: PhaseDatabaseName.stepRetraining.rawValue, phaseScoreInput: phaseScore.Step_Retraining, phaseNameInput: PhaseName.stepRetraining.rawValue, phaseScoreIdInput: phaseScore.scoreId),Phase(phaseDatabaseNameInput: PhaseDatabaseName.stepAdaptability.rawValue, phaseScoreInput: phaseScore.Step_Adaptability, phaseNameInput: PhaseName.stepAdaptability.rawValue, phaseScoreIdInput: phaseScore.scoreId)]
     }
     
     func getNumberOfPhasesWithScores() -> Double
     {
-        let numberOfPhases = self.phaseStructArray.filter({$0.phaseScoreId != ""})
-        for element in 1...numberOfPhases.count
+        let numberOfPhases = self.phaseStructArray.filter({$0.phaseScore != ""})
+        for element in numberOfPhases
         {
-//            if (element.phaseScore != "")
-//            {
-//                if( (element.phaseName == "Overhead Left") || (element.phaseName == "Overhead Right"))
-//                {
-//                    count = count + 0.5
-//                }
-//                else
-//                {
-//                    count  = count + 1.0
-//                }
-//            }
-//
-//        }
-            
-//            let count = 10
-//            var sum = 0
-//            
-//            for i in 1...count {
-//                sum += i
-//            }
-            print (numberOfPhases)
+            print ("Score: \(element.phaseScore)")
         }
+        
+        print ("PHASE COUNT WITH SCORES: \(numberOfPhases.count)")
         return 0.0
+    }
+    
+    func getNumberOfTimesSubphaseValueAppears(subphaseValue: String) -> Double
+    {
+        /*
+            If overhead press or forward reach and grasp, the Double(count * 0.5)
+        */
+        let value = Double(self.phaseStructArray.filter({$0.phaseScore == subphaseValue}).count)
+        return value
+    }
+    
+
+    
+    func getNumberTotal() -> Double
+    {
+        var numberTotal: Double = 0.0
+        let subphasesWithScores = self.phaseStructArray.filter({$0.phaseScore != ""})
+        for element in subphasesWithScores
+        {
+            switch element.phaseScore!
+            {
+            case "1A":
+                numberTotal += 1.0
+            case "1B":
+                numberTotal += 2.0
+            case "1C":
+                numberTotal += 3.0
+            case "2A":
+                numberTotal += 4.0
+            case "2B":
+                numberTotal += 5.0
+            case "2C":
+                numberTotal += 6.0
+            case "3A":
+                numberTotal += 7.0
+            case "3B":
+                numberTotal += 8.0
+            case "3C":
+                numberTotal += 9.0
+            case "4A":
+                numberTotal += 10.0
+            case "4B":
+                numberTotal += 11.0
+            case "4C":
+                numberTotal += 12.0
+            default:
+                numberTotal = 0.0
+            }
+        }
+        return numberTotal
     }
     
     
@@ -144,7 +163,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBAction func didClickRefreshButton(sender: AnyObject)
     {
         print("In refresh: \(self.phaseScore.scoreId)")
-        self.getScoreObjectFromDatabase(phaseScore.scoreId)
+        self.getScoreObjectFromDatabase(phaseScore.scoreId) /// Do we need to createArrayOfPhases here????
         //self.createArrayOfPhases()
         //self.tableView.reloadData()
         //self.do_table_refresh()
@@ -168,6 +187,9 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
                 self.phaseScore = Score(pfObject: object!)
                 print (self.phaseScore)
                 self.createArrayOfPhases()
+                //self.getNumberOfPhasesWithScores()
+                //print("NUMBER TOTAL: \(self.calculateNumberTotal())")
+                print ("NUMBER TOTAL: \(self.getNumberTotal())")
                 self.do_table_refresh()
             }
         }
@@ -191,7 +213,8 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
     {
         super.viewDidLoad()
         self.getScoreObjectFromDatabase(self.phaseScore.scoreId)
-        createArrayOfPhases()
+        //createArrayOfPhases()
+        //self.getNumberOfPhasesWithScores()
         
        
         //self.do_table_refresh()
