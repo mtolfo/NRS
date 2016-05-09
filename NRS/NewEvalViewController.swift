@@ -81,8 +81,8 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
     
     func createNewEvalScoreSession()
     {
-        let noScore = ""
-        let scoreSession = Score(/*scoreIdInit: noScore, */sitInit: noScore, reverseSitUpInit: noScore, sitUpInit: noScore, trunkExtensionInSittingInit: noScore, overheadPressInit: noScore, forwardReachAndGraspInit: noScore, doorPullAndOpenInit: noScore, canOpenAndManipulationInit: noScore, sitToStandInit: noScore, standInit: noScore, walkingInit: noScore, standAdaptabilityInit: noScore, stepRetrainingInit: noScore, stepAdaptabilityInit: noScore, versionInit: self.selectedVersionAfterDoneButtonClick)
+        let noScore = "" //to enter an empty string in database to avoid error 
+        let scoreSession = Score(/*scoreIdInit: noScore, */sitInit: noScore, reverseSitUpInit: noScore, sitUpInit: noScore, trunkExtensionInSittingInit: noScore, overheadPressInit: noScore, overheadPressRightInit: noScore, overheadPressLeftInit: noScore, forwardReachAndGraspInit: noScore, doorPullAndOpenInit: noScore, canOpenAndManipulationInit: noScore, sitToStandInit: noScore, standInit: noScore, walkingInit: noScore, standAdaptabilityInit: noScore, stepRetrainingInit: noScore, stepAdaptabilityInit: noScore, versionInit: self.selectedVersionAfterDoneButtonClick)
         
         self.newEvalScoreSessionPfObject = scoreSession.toPfObject()
         self.newEvalScoreSessionPfObject!.saveInBackgroundWithBlock({ (success:Bool, error:NSError?) -> Void in
@@ -107,16 +107,16 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         })
     }
     
-    func tempCreateNewEvalScoreSession()
-    {
-        
-        let noScore = ""
-        let scoreSession = Score(/*scoreIdInit: noScore, */sitInit: noScore, reverseSitUpInit: noScore, sitUpInit: noScore, trunkExtensionInSittingInit: noScore, overheadPressInit: noScore, forwardReachAndGraspInit: noScore, doorPullAndOpenInit: noScore, canOpenAndManipulationInit: noScore, sitToStandInit: noScore, standInit: noScore, walkingInit: noScore, standAdaptabilityInit: noScore, stepRetrainingInit: noScore, stepAdaptabilityInit: noScore, versionInit: self.selectedVersionAfterDoneButtonClick)
-        
-        self.newEvalScoreSessionPfObject = scoreSession.toPfObject()
-        
-        
-    }
+//    func tempCreateNewEvalScoreSession()
+//    {
+//        
+//        let noScore = ""
+//        let scoreSession = Score(/*scoreIdInit: noScore, */sitInit: noScore, reverseSitUpInit: noScore, sitUpInit: noScore, trunkExtensionInSittingInit: noScore, overheadPressInit: noScore, forwardReachAndGraspInit: noScore, doorPullAndOpenInit: noScore, canOpenAndManipulationInit: noScore, sitToStandInit: noScore, standInit: noScore, walkingInit: noScore, standAdaptabilityInit: noScore, stepRetrainingInit: noScore, stepAdaptabilityInit: noScore, versionInit: self.selectedVersionAfterDoneButtonClick)
+//        
+//        self.newEvalScoreSessionPfObject = scoreSession.toPfObject()
+//        
+//        
+//    }
     
     override func viewDidLayoutSubviews()
     {

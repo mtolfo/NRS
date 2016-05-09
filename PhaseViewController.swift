@@ -35,6 +35,8 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         case sitUp = "Sit_up"
         case trunkExtensionInSitting = "Trunk_Extension_in_Sitting"
         case overheadPress = "Overhead_Press"
+        case overheadPressRight = "Overhead_Press_Right"
+        case overheadPressLeft = "Overhead_Press_Left"
         case forwardReachAndGrasp = "Forward_Reach_and_Grasp"
         case doorAndPull = "Door_Pull_and_Open"
         case canOpenAndManipulate = "Can_Open_and_Manipulation"
@@ -54,6 +56,8 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         case sitUp = "Sit up"
         case trunkExtensionInSitting = "Trunk Extension in Sitting"
         case overheadPress = "Overhead Press"
+        case overheadPressRight = "Overhead Press Right"
+        case overheadPressLeft = "Overhead Press Left"
         case forwardReachAndGrasp = "Forward Reach and Grasp"
         case doorAndPull = "Door Pull and Open"
         case canOpenAndManipulate = "Can Open and Manipulation"
@@ -63,6 +67,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         case standAdaptability = "Stand Adaptability"
         case stepRetraining = "Step Retraining"
         case stepAdaptability = "Step Adaptability"
+        
     }
     
     struct Phase
@@ -89,6 +94,8 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.sitUp.rawValue, phaseScoreInput: phaseScore.Sit_up, phaseNameInput: PhaseName.sitUp.rawValue, phaseScoreIdInput: phaseScore.scoreId),
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.trunkExtensionInSitting.rawValue, phaseScoreInput: phaseScore.Trunk_Extension_in_Sitting, phaseNameInput: PhaseName.trunkExtensionInSitting.rawValue, phaseScoreIdInput: phaseScore.scoreId),
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.overheadPress.rawValue, phaseScoreInput: phaseScore.Overhead_Press, phaseNameInput: PhaseName.overheadPress.rawValue, phaseScoreIdInput: phaseScore.scoreId),
+                Phase(phaseDatabaseNameInput: PhaseDatabaseName.overheadPressRight.rawValue, phaseScoreInput: phaseScore.Overhead_Press_Right, phaseNameInput: PhaseName.overheadPressRight.rawValue, phaseScoreIdInput: phaseScore.scoreId),
+                Phase(phaseDatabaseNameInput: PhaseDatabaseName.overheadPressLeft.rawValue, phaseScoreInput: phaseScore.Overhead_Press_Left, phaseNameInput: PhaseName.overheadPressLeft.rawValue, phaseScoreIdInput: phaseScore.scoreId),
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.forwardReachAndGrasp.rawValue, phaseScoreInput: phaseScore.Forward_Reach_and_Grasp, phaseNameInput: PhaseName.forwardReachAndGrasp.rawValue, phaseScoreIdInput: phaseScore.scoreId),
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.doorAndPull.rawValue, phaseScoreInput: phaseScore.Door_Pull_and_Open, phaseNameInput: PhaseName.doorAndPull.rawValue, phaseScoreIdInput: phaseScore.scoreId),
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.canOpenAndManipulate.rawValue, phaseScoreInput: phaseScore.Can_Open_and_Manipulation, phaseNameInput: PhaseName.canOpenAndManipulate.rawValue, phaseScoreIdInput: phaseScore.scoreId),
@@ -129,6 +136,10 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         {
         case "Overhead Press":
             print(phaseName)
+            isRightLeftPhase = true
+        case "Overhead Press Right":
+            isRightLeftPhase = true
+        case "Overhead Press Left":
             isRightLeftPhase = true
         case "Can Open and Manipulation":
             print (phaseName)
