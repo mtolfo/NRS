@@ -19,6 +19,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
     var phaseNameToPass:String?
     var phaseScoreToPass:String?
     var verbalInstructionArray = [VerbalInstruction]()
+    var grandTotal:Double = 0.0
     
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -38,13 +39,10 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         case overheadPressLeft = "Overhead_Press_Left"
         case forwardReachAndGraspRight = "Forward_Reach_and_Grasp_Right"
         case forwardReachAndGraspLeft = "Forward_Reach_and_Grasp_Left"
-        case forwardReachAndGrasp = "Forward_Reach_and_Grasp"
         case doorAndPullRight = "Door_Pull_and_Open_Right"
         case doorAndPullLeft = "Door_Pull_and_Open_Left"
-        case doorAndPull = "Door_Pull_and_Open"
         case canOpenAndManipulatRight = "Can_Open_and_Manipulation_Right"
         case canOpenAndManipulatLeft = "Can_Open_and_Manipulation_Left"
-        case canOpenAndManipulate = "Can_Open_and_Manipulation"
         case sitToStand = "Sit_to_Stand"
         case stand = "Stand"
         case walking = "Walking"
@@ -64,13 +62,10 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         case overheadPressLeft = "Overhead Press Left"
         case forwardReachAndGraspRight = "Forward Reach and Grasp Right"
         case forwardReachAndGraspLeft = "Forward Reach and Grasp Left"
-        case forwardReachAndGrasp = "Forward Reach and Grasp"
         case doorAndPullRight = "Door Pull and Open Right"
         case doorAndPullLeft = "Door Pull and Open Left"
-        case doorAndPull = "Door Pull and Open"
         case canOpenAndManipulatRight = "Can Open and Manipulation Right"
         case canOpenAndManipulatLeft = "Can Open and Manipulation Left"
-        case canOpenAndManipulate = "Can Open and Manipulation"
         case sitToStand = "Sit to Stand"
         case stand = "Stand"
         case walking = "Walking"
@@ -103,23 +98,16 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.reverseSitUp.rawValue, phaseScoreInput: phaseScore.Reverse_Sit_up, phaseNameInput: PhaseName.reverseSitUp.rawValue, phaseScoreIdInput: phaseScore.scoreId),
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.sitUp.rawValue, phaseScoreInput: phaseScore.Sit_up, phaseNameInput: PhaseName.sitUp.rawValue, phaseScoreIdInput: phaseScore.scoreId),
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.trunkExtensionInSitting.rawValue, phaseScoreInput: phaseScore.Trunk_Extension_in_Sitting, phaseNameInput: PhaseName.trunkExtensionInSitting.rawValue, phaseScoreIdInput: phaseScore.scoreId),
-                
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.overheadPressRight.rawValue, phaseScoreInput: phaseScore.Overhead_Press_Right, phaseNameInput: PhaseName.overheadPressRight.rawValue, phaseScoreIdInput: phaseScore.scoreId),
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.overheadPressLeft.rawValue, phaseScoreInput: phaseScore.Overhead_Press_Left, phaseNameInput: PhaseName.overheadPressLeft.rawValue, phaseScoreIdInput: phaseScore.scoreId),
                 
-                Phase(phaseDatabaseNameInput: PhaseDatabaseName.forwardReachAndGrasp.rawValue, phaseScoreInput: phaseScore.Forward_Reach_and_Grasp, phaseNameInput: PhaseName.forwardReachAndGrasp.rawValue, phaseScoreIdInput: phaseScore.scoreId),
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.forwardReachAndGraspRight.rawValue, phaseScoreInput: phaseScore.Forward_Reach_and_Grasp_Right, phaseNameInput: PhaseName.forwardReachAndGraspRight.rawValue, phaseScoreIdInput: phaseScore.scoreId),
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.forwardReachAndGraspLeft.rawValue, phaseScoreInput: phaseScore.Forward_Reach_and_Grasp_Left, phaseNameInput: PhaseName.forwardReachAndGraspLeft.rawValue, phaseScoreIdInput: phaseScore.scoreId),
-                
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.doorAndPullRight.rawValue, phaseScoreInput: phaseScore.Door_Pull_and_Open_Right, phaseNameInput: PhaseName.doorAndPullRight.rawValue, phaseScoreIdInput: phaseScore.scoreId),
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.doorAndPullLeft.rawValue, phaseScoreInput: phaseScore.Door_Pull_and_Open_Left, phaseNameInput: PhaseName.doorAndPullLeft.rawValue, phaseScoreIdInput: phaseScore.scoreId),
-                Phase(phaseDatabaseNameInput: PhaseDatabaseName.doorAndPull.rawValue, phaseScoreInput: phaseScore.Door_Pull_and_Open, phaseNameInput: PhaseName.doorAndPull.rawValue, phaseScoreIdInput: phaseScore.scoreId),
                 
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.canOpenAndManipulatRight.rawValue, phaseScoreInput: phaseScore.Can_Open_and_Manipulation_Right, phaseNameInput: PhaseName.canOpenAndManipulatRight.rawValue, phaseScoreIdInput: phaseScore.scoreId),
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.canOpenAndManipulatLeft.rawValue, phaseScoreInput: phaseScore.Can_Open_and_Manipulation_Left, phaseNameInput: PhaseName.canOpenAndManipulatLeft.rawValue, phaseScoreIdInput: phaseScore.scoreId),
-                
-                Phase(phaseDatabaseNameInput: PhaseDatabaseName.canOpenAndManipulate.rawValue, phaseScoreInput: phaseScore.Can_Open_and_Manipulation, phaseNameInput: PhaseName.canOpenAndManipulate.rawValue, phaseScoreIdInput: phaseScore.scoreId),
-                
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.sitToStand.rawValue, phaseScoreInput: phaseScore.Sit_to_Stand, phaseNameInput: PhaseName.sitToStand.rawValue, phaseScoreIdInput: phaseScore.scoreId),
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.stand.rawValue, phaseScoreInput: phaseScore.Stand, phaseNameInput: PhaseName.stand.rawValue, phaseScoreIdInput: phaseScore.scoreId),
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.walking.rawValue, phaseScoreInput: phaseScore.Walking, phaseNameInput: PhaseName.walking.rawValue, phaseScoreIdInput: phaseScore.scoreId),
@@ -130,14 +118,9 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func getNumberOfPhasesWithScores() -> Double
     {
-        let numberOfPhases = self.phaseStructArray.filter({$0.phaseScore != ""})
-        for element in numberOfPhases
-        {
-            print ("Score: \(element.phaseScore)")
-        }
-        
-        print ("PHASE COUNT WITH SCORES: \(numberOfPhases.count)")
-        return 0.0
+        var numberOfPhases = 0.0
+        numberOfPhases = Double(self.phaseStructArray.filter({$0.phaseScore != ""}).count)
+        return numberOfPhases
     }
     
     func getNumberOfTimesSubphaseValueAppears(subphaseValue: String) -> Double
@@ -147,6 +130,58 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         */
         let value = Double(self.phaseStructArray.filter({$0.phaseScore == subphaseValue}).count)
         return value
+    }
+    
+    func calculateGrandTotal() -> Double
+    {
+        var itemTotal: Double = 1.0
+        var numberTotal: Double = 0.0
+        var grandTotal: Double = 0.0
+        
+        itemTotal = getNumberOfPhasesWithScores()
+        numberTotal = getNumberTotal()
+        grandTotal = numberTotal/itemTotal
+        
+        print ("IN calculateGrandTotal()")
+        print ("ITEM TOTAL: \(itemTotal)")
+        print ("NUMBER TOTAL: \(numberTotal)")
+        print ("GRAND TOTAL: \(grandTotal)")
+        return grandTotal
+    }
+    
+    func getOverallPhase(grandTotal: Double) -> String
+    {
+        var overallPhase: String = "No Overall Phase"
+        switch grandTotal
+        {
+        case (1.0...1.99):
+            overallPhase = "1A"
+        case (2.0...2.99):
+            overallPhase = "1B"
+        case (3.0...3.99):
+            overallPhase = "1C"
+        case (4.0...4.99):
+            overallPhase = "2A"
+        case (5.0...5.99):
+            overallPhase = "2B"
+        case (6.0...6.99):
+            overallPhase = "2C"
+        case (7.0...7.99):
+            overallPhase = "3A"
+        case (8.0...8.99):
+            overallPhase = "3B"
+        case (9.0...9.99):
+            overallPhase = "3C"
+        case (10.0...10.99):
+            overallPhase = "4A"
+        case (11.0...11.99):
+            overallPhase = "4B"
+        case 12:
+            overallPhase = "4C"
+        default:
+            overallPhase = "No Overall Phase"
+        }
+        return overallPhase
     }
     
     
@@ -163,22 +198,13 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
             isRightLeftPhase = true
         case "Can Open and Manipulation Left":
             isRightLeftPhase = true
-        case "Can Open and Manipulation":
-            print (phaseName)
-            isRightLeftPhase = true
         case "Forward Reach and Grasp Right":
-            isRightLeftPhase = true
-        case "Forward Reach and Grasp":
-            print (phaseName)
             isRightLeftPhase = true
         case "Forward Reach and Grasp Left":
             isRightLeftPhase = true
         case "Door Pull and Open Right":
             isRightLeftPhase = true
         case "Door Pull and Open Left":
-            isRightLeftPhase = true
-        case "Door Pull and Open":
-            print (phaseName)
             isRightLeftPhase = true
         default:
             isRightLeftPhase = false
@@ -309,8 +335,10 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
                 self.createArrayOfPhases()
                 //self.getNumberOfPhasesWithScores()
                 //print("NUMBER TOTAL: \(self.calculateNumberTotal())")
-                print ("Is Overhead right left: \(self.isRightLeftPhase("Overhead Press"))")
+                self.grandTotal = self.calculateGrandTotal()
+                print ("GRAND TOTAL \(self.calculateGrandTotal())")
                 print ("NUMBER TOTAL: \(self.getNumberTotal())")
+                print ("OVERALL PHASE: \(self.getOverallPhase(self.grandTotal))")
                 self.scoreLabel.text = String(self.getNumberTotal())
                 self.do_table_refresh()
             }
