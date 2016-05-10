@@ -37,8 +37,14 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         case overheadPress = "Overhead_Press"
         case overheadPressRight = "Overhead_Press_Right"
         case overheadPressLeft = "Overhead_Press_Left"
+        case forwardReachAndGraspRight = "Forward_Reach_and_Grasp_Right"
+        case forwardReachAndGraspLeft = "Forward_Reach_and_Grasp_Left"
         case forwardReachAndGrasp = "Forward_Reach_and_Grasp"
+        case doorAndPullRight = "Door_Pull_and_Open_Right"
+        case doorAndPullLeft = "Door_Pull_and_Open_Left"
         case doorAndPull = "Door_Pull_and_Open"
+        case canOpenAndManipulatRight = "Can_Open_and_Manipulation_Right"
+        case canOpenAndManipulatLeft = "Can_Open_and_Manipulation_Left"
         case canOpenAndManipulate = "Can_Open_and_Manipulation"
         case sitToStand = "Sit_to_Stand"
         case stand = "Stand"
@@ -58,8 +64,14 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         case overheadPress = "Overhead Press"
         case overheadPressRight = "Overhead Press Right"
         case overheadPressLeft = "Overhead Press Left"
+        case forwardReachAndGraspRight = "Forward Reach and Grasp Right"
+        case forwardReachAndGraspLeft = "Forward Reach and Grasp Left"
         case forwardReachAndGrasp = "Forward Reach and Grasp"
+        case doorAndPullRight = "Door Pull and Open Right"
+        case doorAndPullLeft = "Door Pull and Open Left"
         case doorAndPull = "Door Pull and Open"
+        case canOpenAndManipulatRight = "Can Open and Manipulation Right"
+        case canOpenAndManipulatLeft = "Can Open and Manipulation Left"
         case canOpenAndManipulate = "Can Open and Manipulation"
         case sitToStand = "Sit to Stand"
         case stand = "Stand"
@@ -96,9 +108,20 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.overheadPress.rawValue, phaseScoreInput: phaseScore.Overhead_Press, phaseNameInput: PhaseName.overheadPress.rawValue, phaseScoreIdInput: phaseScore.scoreId),
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.overheadPressRight.rawValue, phaseScoreInput: phaseScore.Overhead_Press_Right, phaseNameInput: PhaseName.overheadPressRight.rawValue, phaseScoreIdInput: phaseScore.scoreId),
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.overheadPressLeft.rawValue, phaseScoreInput: phaseScore.Overhead_Press_Left, phaseNameInput: PhaseName.overheadPressLeft.rawValue, phaseScoreIdInput: phaseScore.scoreId),
+                
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.forwardReachAndGrasp.rawValue, phaseScoreInput: phaseScore.Forward_Reach_and_Grasp, phaseNameInput: PhaseName.forwardReachAndGrasp.rawValue, phaseScoreIdInput: phaseScore.scoreId),
+                Phase(phaseDatabaseNameInput: PhaseDatabaseName.forwardReachAndGraspRight.rawValue, phaseScoreInput: phaseScore.Forward_Reach_and_Grasp_Right, phaseNameInput: PhaseName.forwardReachAndGraspRight.rawValue, phaseScoreIdInput: phaseScore.scoreId),
+                Phase(phaseDatabaseNameInput: PhaseDatabaseName.forwardReachAndGraspLeft.rawValue, phaseScoreInput: phaseScore.Forward_Reach_and_Grasp_Left, phaseNameInput: PhaseName.forwardReachAndGraspLeft.rawValue, phaseScoreIdInput: phaseScore.scoreId),
+                
+                Phase(phaseDatabaseNameInput: PhaseDatabaseName.doorAndPullRight.rawValue, phaseScoreInput: phaseScore.Door_Pull_and_Open_Right, phaseNameInput: PhaseName.doorAndPullRight.rawValue, phaseScoreIdInput: phaseScore.scoreId),
+                Phase(phaseDatabaseNameInput: PhaseDatabaseName.doorAndPullLeft.rawValue, phaseScoreInput: phaseScore.Door_Pull_and_Open_Left, phaseNameInput: PhaseName.doorAndPullLeft.rawValue, phaseScoreIdInput: phaseScore.scoreId),
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.doorAndPull.rawValue, phaseScoreInput: phaseScore.Door_Pull_and_Open, phaseNameInput: PhaseName.doorAndPull.rawValue, phaseScoreIdInput: phaseScore.scoreId),
+                
+                Phase(phaseDatabaseNameInput: PhaseDatabaseName.canOpenAndManipulatRight.rawValue, phaseScoreInput: phaseScore.Can_Open_and_Manipulation_Right, phaseNameInput: PhaseName.canOpenAndManipulatRight.rawValue, phaseScoreIdInput: phaseScore.scoreId),
+                Phase(phaseDatabaseNameInput: PhaseDatabaseName.canOpenAndManipulatLeft.rawValue, phaseScoreInput: phaseScore.Can_Open_and_Manipulation_Left, phaseNameInput: PhaseName.canOpenAndManipulatLeft.rawValue, phaseScoreIdInput: phaseScore.scoreId),
+                
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.canOpenAndManipulate.rawValue, phaseScoreInput: phaseScore.Can_Open_and_Manipulation, phaseNameInput: PhaseName.canOpenAndManipulate.rawValue, phaseScoreIdInput: phaseScore.scoreId),
+                
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.sitToStand.rawValue, phaseScoreInput: phaseScore.Sit_to_Stand, phaseNameInput: PhaseName.sitToStand.rawValue, phaseScoreIdInput: phaseScore.scoreId),
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.stand.rawValue, phaseScoreInput: phaseScore.Stand, phaseNameInput: PhaseName.stand.rawValue, phaseScoreIdInput: phaseScore.scoreId),
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.walking.rawValue, phaseScoreInput: phaseScore.Walking, phaseNameInput: PhaseName.walking.rawValue, phaseScoreIdInput: phaseScore.scoreId),
@@ -141,11 +164,23 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
             isRightLeftPhase = true
         case "Overhead Press Left":
             isRightLeftPhase = true
+        case "Can Open and Manipulation Right":
+            isRightLeftPhase = true
+        case "Can Open and Manipulation Left":
+            isRightLeftPhase = true
         case "Can Open and Manipulation":
             print (phaseName)
             isRightLeftPhase = true
+        case "Forward Reach and Grasp Right":
+            isRightLeftPhase = true
         case "Forward Reach and Grasp":
             print (phaseName)
+            isRightLeftPhase = true
+        case "Forward Reach and Grasp Left":
+            isRightLeftPhase = true
+        case "Door Pull and Open Right":
+            isRightLeftPhase = true
+        case "Door Pull and Open Left":
             isRightLeftPhase = true
         case "Door Pull and Open":
             print (phaseName)
