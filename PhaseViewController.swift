@@ -24,6 +24,8 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var navBarView: UIView!
+    @IBOutlet weak var numScoredItemsLabel: UILabel!
+    @IBOutlet weak var overallPhaseScoreLabel: UILabel!
     
     // TODO: Phase Item names should be pulled from database
     //The names of the Phases need to be pulled from the database to prevent future refactorings in the event the name of the phase changes. In which case, a simple change to the database will make all of the changes.
@@ -340,6 +342,8 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
                 print ("NUMBER TOTAL: \(self.getNumberTotal())")
                 print ("OVERALL PHASE: \(self.getOverallPhase(self.grandTotal))")
                 self.scoreLabel.text = String(self.getNumberTotal())
+                self.numScoredItemsLabel.text = String(self.getNumberTotal())
+                self.overallPhaseScoreLabel.text = self.getOverallPhase(self.grandTotal)
                 self.do_table_refresh()
             }
         }
