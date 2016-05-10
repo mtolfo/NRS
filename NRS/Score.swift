@@ -16,7 +16,6 @@ class Score: NSObject
     var Reverse_Sit_up = ""
     var Sit_up = ""
     var Trunk_Extension_in_Sitting = ""
-    var Overhead_Press = ""
     var Overhead_Press_Right = ""
     var Overhead_Press_Left = ""
     var Forward_Reach_and_Grasp_Right = ""
@@ -37,7 +36,7 @@ class Score: NSObject
     var version = ""
     
     
-    init(sitInit: String, reverseSitUpInit: String, sitUpInit: String, trunkExtensionInSittingInit: String, overheadPressInit: String, overheadPressRightInit: String, overheadPressLeftInit: String,
+    init(sitInit: String, reverseSitUpInit: String, sitUpInit: String, trunkExtensionInSittingInit: String, overheadPressRightInit: String, overheadPressLeftInit: String,
         forwardReachAndGraspRightInit: String,  forwardReachAndGraspLeftInit: String,forwardReachAndGraspInit: String,
         doorPullAndOpenRightInit: String, doorPullAndOpenLeftInit: String, doorPullAndOpenInit: String,
         canOpenAndManipulationRightInit: String, canOpenAndManipulationLeftInit: String, canOpenAndManipulationInit:String, sitToStandInit: String, standInit: String, walkingInit: String, standAdaptabilityInit: String, stepRetrainingInit: String, stepAdaptabilityInit: String, versionInit: String)
@@ -46,7 +45,6 @@ class Score: NSObject
         self.Reverse_Sit_up = reverseSitUpInit
         self.Sit_up = sitUpInit
         self.Trunk_Extension_in_Sitting = trunkExtensionInSittingInit
-        self.Overhead_Press = overheadPressInit
         self.Overhead_Press_Right = overheadPressRightInit
         self.Overhead_Press_Left = overheadPressLeftInit
         self.Forward_Reach_and_Grasp_Right = forwardReachAndGraspRightInit
@@ -75,7 +73,6 @@ class Score: NSObject
         self.Reverse_Sit_up = pfObject["Reverse_Sit_up"] as! String
         self.Sit_up = pfObject["Sit_up"] as! String
         self.Trunk_Extension_in_Sitting = pfObject["Trunk_Extension_in_Sitting"] as! String
-        self.Overhead_Press = pfObject["Overhead_Press"] as! String
         self.Overhead_Press_Right = pfObject["Overhead_Press_Right"] as! String
         self.Overhead_Press_Left = pfObject["Overhead_Press_Left"] as! String
         self.Forward_Reach_and_Grasp_Right = pfObject["Forward_Reach_and_Grasp_Right"] as! String
@@ -104,7 +101,6 @@ class Score: NSObject
         scoreObject["Reverse_Sit_up"] = Reverse_Sit_up
         scoreObject["Sit_up"] = Sit_up
         scoreObject["Trunk_Extension_in_Sitting"] = Trunk_Extension_in_Sitting
-        scoreObject["Overhead_Press"] = Overhead_Press
         scoreObject["Overhead_Press_Right"] = Overhead_Press_Right
         scoreObject["Overhead_Press_Left"] = Overhead_Press_Left
         scoreObject["Forward_Reach_and_Grasp_Right"] = Forward_Reach_and_Grasp_Right

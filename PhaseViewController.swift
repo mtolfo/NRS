@@ -34,7 +34,6 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         case reverseSitUp = "Reverse_Sit_up"
         case sitUp = "Sit_up"
         case trunkExtensionInSitting = "Trunk_Extension_in_Sitting"
-        case overheadPress = "Overhead_Press"
         case overheadPressRight = "Overhead_Press_Right"
         case overheadPressLeft = "Overhead_Press_Left"
         case forwardReachAndGraspRight = "Forward_Reach_and_Grasp_Right"
@@ -61,7 +60,6 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         case reverseSitUp = "Reverse Sit up"
         case sitUp = "Sit up"
         case trunkExtensionInSitting = "Trunk Extension in Sitting"
-        case overheadPress = "Overhead Press"
         case overheadPressRight = "Overhead Press Right"
         case overheadPressLeft = "Overhead Press Left"
         case forwardReachAndGraspRight = "Forward Reach and Grasp Right"
@@ -105,7 +103,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.reverseSitUp.rawValue, phaseScoreInput: phaseScore.Reverse_Sit_up, phaseNameInput: PhaseName.reverseSitUp.rawValue, phaseScoreIdInput: phaseScore.scoreId),
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.sitUp.rawValue, phaseScoreInput: phaseScore.Sit_up, phaseNameInput: PhaseName.sitUp.rawValue, phaseScoreIdInput: phaseScore.scoreId),
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.trunkExtensionInSitting.rawValue, phaseScoreInput: phaseScore.Trunk_Extension_in_Sitting, phaseNameInput: PhaseName.trunkExtensionInSitting.rawValue, phaseScoreIdInput: phaseScore.scoreId),
-                Phase(phaseDatabaseNameInput: PhaseDatabaseName.overheadPress.rawValue, phaseScoreInput: phaseScore.Overhead_Press, phaseNameInput: PhaseName.overheadPress.rawValue, phaseScoreIdInput: phaseScore.scoreId),
+                
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.overheadPressRight.rawValue, phaseScoreInput: phaseScore.Overhead_Press_Right, phaseNameInput: PhaseName.overheadPressRight.rawValue, phaseScoreIdInput: phaseScore.scoreId),
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.overheadPressLeft.rawValue, phaseScoreInput: phaseScore.Overhead_Press_Left, phaseNameInput: PhaseName.overheadPressLeft.rawValue, phaseScoreIdInput: phaseScore.scoreId),
                 
@@ -157,9 +155,6 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         var isRightLeftPhase: Bool = false
         switch phaseName
         {
-        case "Overhead Press":
-            print(phaseName)
-            isRightLeftPhase = true
         case "Overhead Press Right":
             isRightLeftPhase = true
         case "Overhead Press Left":
