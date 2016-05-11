@@ -20,6 +20,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
     var phaseScoreToPass:String?
     var verbalInstructionArray = [VerbalInstruction]()
     var grandTotal:Double = 0.0
+    var rightLeftPhasesArray:[String] = ["Overhead Press Right", "Overhead Press Left", "Forward Reach and Grasp Right", "Forward Reach and Grasp Left", "Door Pull and Open Right", "Door Pull and Open Left", "Can Open and Manipulation Right", "Can Open and Manipulation Left"]
     
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -118,21 +119,44 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.stepAdaptability.rawValue, phaseScoreInput: phaseScore.Step_Adaptability, phaseNameInput: PhaseName.stepAdaptability.rawValue, phaseScoreIdInput: phaseScore.scoreId)]
     }
     
+//    var arr = englishBooks.filter {
+//        $0.nameOfBook.rangeOfString("rt") != nil
+//    }
+    
+//    var a = [1, 2, 3]
+//    var b = [2, 3, 4]
+//    a.filter { element in
+//    !contains(b, element)
+//    }
+    
     func getNumberOfPhasesWithScores() -> Double
     {
-        var numberOfPhases = 0.0
-        numberOfPhases = Double(self.phaseStructArray.filter({$0.phaseScore != ""}).count)
+        var numberOfPhases: Double = 0.0
+        let allPhasesWithScores = self.phaseStructArray.filter({$0.phaseScore != ""})
+        
+        for element in allPhasesWithScores
+        {
+            if (self.rightLeftPhasesArray.contains(element.phaseName!))
+            {
+                numberOfPhases += 0.5
+            }
+            else
+            {
+                numberOfPhases += 1.0
+            }
+        }
+        //numberOfPhases = Double(self.phaseStructArray.filter({$0.phaseScore != ""}).count)
         return numberOfPhases
     }
     
-    func getNumberOfTimesSubphaseValueAppears(subphaseValue: String) -> Double
-    {
-        /*
-            If overhead press or forward reach and grasp, the Double(count * 0.5)
-        */
-        let value = Double(self.phaseStructArray.filter({$0.phaseScore == subphaseValue}).count)
-        return value
-    }
+//    func getNumberOfTimesSubphaseValueAppears(subphaseValue: String) -> Double
+//    {
+//        /*
+//            If overhead press or forward reach and grasp, the Double(count * 0.5)
+//        */
+//        let value = Double(self.phaseStructArray.filter({$0.phaseScore == subphaseValue}).count)
+//        return value
+//    }
     
     func calculateGrandTotal() -> Double
     {
@@ -342,7 +366,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
                 print ("NUMBER TOTAL: \(self.getNumberTotal())")
                 print ("OVERALL PHASE: \(self.getOverallPhase(self.grandTotal))")
                 self.scoreLabel.text = String(self.getNumberTotal())
-                self.numScoredItemsLabel.text = String(self.getNumberTotal())
+                self.numScoredItemsLabel.text = String(self.getNumberOfPhasesWithScores())
                 self.overallPhaseScoreLabel.text = self.getOverallPhase(self.grandTotal)
                 self.do_table_refresh()
             }

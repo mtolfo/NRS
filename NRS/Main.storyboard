@@ -434,7 +434,7 @@
                                                     <rect key="frame" x="511" y="8" width="79" height="79"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9AN-4Q-Sh3">
-                                                            <rect key="frame" x="20" y="29" width="39" height="20.5"/>
+                                                            <rect key="frame" x="20" y="29" width="39" height="21"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -684,11 +684,13 @@
                                 </constraints>
                                 <state key="normal" image="Button Score"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTJ-w8-rwA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTJ-w8-rwA">
                                 <rect key="frame" x="85" y="477" width="44" height="25"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="C4A-RM-gOA"/>
+                                    <constraint firstAttribute="height" constant="20" id="C4A-RM-gOA">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="21"/>
+                                    </constraint>
                                     <constraint firstAttribute="height" constant="20" id="Cle-sz-L6X"/>
                                     <constraint firstAttribute="width" constant="44" id="D12-O7-35o"/>
                                     <constraint firstAttribute="height" constant="25" id="ROA-vn-qRo"/>
@@ -706,7 +708,8 @@
                                         <exclude reference="pmg-qN-5yH"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="85" y="477" width="37.5" height="25"/>
                                     <mask key="constraints">
                                         <include reference="Cle-sz-L6X"/>
                                         <include reference="hE1-PU-ZtD"/>
@@ -780,6 +783,9 @@
                                         <exclude reference="YPE-a4-Z6S"/>
                                     </mask>
                                 </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="175.5" y="479" width="105" height="21"/>
+                                </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="AZD-1W-mT0"/>
@@ -806,6 +812,9 @@
                                         <exclude reference="Ryj-RD-oft"/>
                                         <exclude reference="vb8-bv-En6"/>
                                     </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="288.5" y="479" width="103" height="21"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
@@ -893,7 +902,9 @@
                             <constraint firstItem="nTJ-w8-rwA" firstAttribute="leading" secondItem="8pH-e9-jLU" secondAttribute="trailing" constant="21" id="RgF-5O-ifO"/>
                             <constraint firstItem="c5f-0z-i54" firstAttribute="top" secondItem="7Ur-lu-WEo" secondAttribute="bottom" constant="26" id="SjT-ny-Mcw"/>
                             <constraint firstItem="tda-Hj-i1F" firstAttribute="top" secondItem="x6S-SL-uBh" secondAttribute="bottom" constant="13" id="Vj8-Cs-0a2"/>
-                            <constraint firstItem="x2k-ym-Dre" firstAttribute="leading" secondItem="nTJ-w8-rwA" secondAttribute="trailing" constant="32" id="Zck-9M-ocJ"/>
+                            <constraint firstItem="x2k-ym-Dre" firstAttribute="leading" secondItem="nTJ-w8-rwA" secondAttribute="trailing" constant="32" id="Zck-9M-ocJ">
+                                <variation key="heightClass=regular-widthClass=compact" constant="18"/>
+                            </constraint>
                             <constraint firstItem="nTJ-w8-rwA" firstAttribute="top" secondItem="x6S-SL-uBh" secondAttribute="bottom" constant="11" id="ahc-rJ-vbT"/>
                             <constraint firstItem="7Ur-lu-WEo" firstAttribute="leading" secondItem="8pH-e9-jLU" secondAttribute="trailing" constant="21" id="awG-ls-RRD"/>
                             <constraint firstItem="8pH-e9-jLU" firstAttribute="top" secondItem="x6S-SL-uBh" secondAttribute="bottom" constant="8" id="b90-g6-zUw"/>
@@ -925,13 +936,13 @@
                                 <exclude reference="0eS-5o-orx"/>
                                 <exclude reference="lAX-Ks-4a4"/>
                                 <exclude reference="yyc-pe-Jkn"/>
-                                <exclude reference="LUS-hm-adU"/>
-                                <exclude reference="xTQ-Y8-xLP"/>
                                 <exclude reference="iNN-Bm-QEA"/>
-                                <exclude reference="fml-iA-Q9Q"/>
-                                <exclude reference="ylq-qz-6xF"/>
                                 <exclude reference="SjT-ny-Mcw"/>
                                 <exclude reference="pXS-81-7da"/>
+                                <exclude reference="LUS-hm-adU"/>
+                                <exclude reference="xTQ-Y8-xLP"/>
+                                <exclude reference="fml-iA-Q9Q"/>
+                                <exclude reference="ylq-qz-6xF"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -958,20 +969,20 @@
                                 <exclude reference="awG-ls-RRD"/>
                                 <exclude reference="lAX-Ks-4a4"/>
                                 <include reference="yyc-pe-Jkn"/>
-                                <exclude reference="G5Q-hm-t6D"/>
-                                <include reference="LUS-hm-adU"/>
-                                <exclude reference="Vj8-Cs-0a2"/>
-                                <include reference="xTQ-Y8-xLP"/>
                                 <exclude reference="D7c-t3-X32"/>
                                 <include reference="iNN-Bm-QEA"/>
-                                <exclude reference="4bF-aU-CIv"/>
-                                <include reference="fml-iA-Q9Q"/>
-                                <include reference="ylq-qz-6xF"/>
                                 <exclude reference="CqX-XQ-9ao"/>
                                 <exclude reference="DUD-mV-JGC"/>
                                 <include reference="SjT-ny-Mcw"/>
                                 <exclude reference="jEh-vz-wqZ"/>
                                 <include reference="pXS-81-7da"/>
+                                <exclude reference="G5Q-hm-t6D"/>
+                                <include reference="LUS-hm-adU"/>
+                                <exclude reference="Vj8-Cs-0a2"/>
+                                <include reference="xTQ-Y8-xLP"/>
+                                <exclude reference="4bF-aU-CIv"/>
+                                <include reference="fml-iA-Q9Q"/>
+                                <include reference="ylq-qz-6xF"/>
                             </mask>
                         </variation>
                     </view>
@@ -1119,6 +1130,9 @@
                                         <include reference="veO-y1-d2a"/>
                                         <exclude reference="w8D-rA-I1G"/>
                                     </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="72" y="38" width="508" height="24"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sO7-6D-TcB">
@@ -1668,7 +1682,8 @@
                                         <include reference="xfv-1W-mCH"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="520" y="532" width="60" height="60"/>
                                     <mask key="constraints">
                                         <include reference="9oE-tM-e12"/>
                                         <include reference="FwR-ZN-xIB"/>
@@ -1723,6 +1738,9 @@ With arms hanging down, able to initiate thoracic spine extension.</string>
                                         <include reference="0vV-bA-Tcz"/>
                                         <exclude reference="TeI-Wo-ihT"/>
                                     </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="374" width="560" height="150"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4m-Zk-k6F" userLabel="Able Button">
@@ -1779,7 +1797,8 @@ With arms hanging down, able to initiate thoracic spine extension.</string>
                                         <exclude reference="tmz-c2-gek"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="532" width="60" height="60"/>
                                     <mask key="constraints">
                                         <exclude reference="8WP-HT-v28"/>
                                         <include reference="E6j-vf-Igc"/>
@@ -1900,17 +1919,6 @@ This tip will help remind you of what to do in this sub phase.</string>
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gt0-sf-JtO">
-                                <rect key="frame" x="262" y="502" width="46" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="testButtonClicked:" destination="97W-j7-dPd" eventType="touchUpInside" id="nNH-64-3qi"/>
-                                    <segue destination="Xme-Ut-zm7" kind="show" identifier="showTestVc" id="9ji-MO-y9Y"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
@@ -2046,7 +2054,6 @@ This tip will help remind you of what to do in this sub phase.</string>
                             <constraint firstItem="AWJ-lM-i78" firstAttribute="leading" secondItem="DB7-Ju-6RI" secondAttribute="trailing" constant="20" id="qN8-fY-MH4"/>
                             <constraint firstItem="p7I-LM-YB3" firstAttribute="top" secondItem="fKN-OE-vj2" secondAttribute="bottom" constant="10" id="qx3-Fj-xIB"/>
                             <constraint firstItem="JZq-Sk-xgf" firstAttribute="leading" secondItem="pgz-zV-kit" secondAttribute="leading" constant="20" id="rvH-fr-fM2"/>
-                            <constraint firstItem="Gt0-sf-JtO" firstAttribute="top" secondItem="2dR-ko-ehL" secondAttribute="bottom" constant="8" symbolic="YES" id="rzz-Ek-Y4C"/>
                             <constraint firstAttribute="trailing" secondItem="JZq-Sk-xgf" secondAttribute="trailing" constant="20" id="shI-Yp-9Zf"/>
                             <constraint firstItem="Wh3-IB-33F" firstAttribute="leading" secondItem="AWJ-lM-i78" secondAttribute="trailing" constant="20" id="tcn-Xk-rwb"/>
                             <constraint firstItem="U4m-Zk-k6F" firstAttribute="top" secondItem="lNF-Oz-BM2" secondAttribute="bottom" constant="8" id="thd-ep-hTm"/>
@@ -2063,7 +2070,6 @@ This tip will help remind you of what to do in this sub phase.</string>
                             <constraint firstItem="lNF-Oz-BM2" firstAttribute="centerX" secondItem="pgz-zV-kit" secondAttribute="centerX" id="x11-3E-pEk"/>
                             <constraint firstItem="sc9-yf-ZKK" firstAttribute="top" secondItem="p7I-LM-YB3" secondAttribute="bottom" constant="8" id="x1k-NF-NS3"/>
                             <constraint firstItem="2dR-ko-ehL" firstAttribute="leading" secondItem="pgz-zV-kit" secondAttribute="leading" constant="20" id="x75-lW-En6"/>
-                            <constraint firstItem="Gt0-sf-JtO" firstAttribute="leading" secondItem="pgz-zV-kit" secondAttribute="leading" constant="262" id="xGh-p5-RUR"/>
                             <constraint firstItem="sc9-yf-ZKK" firstAttribute="leading" secondItem="pgz-zV-kit" secondAttribute="leading" constant="20" id="xKi-19-BG6"/>
                             <constraint firstItem="AWJ-lM-i78" firstAttribute="top" secondItem="fKN-OE-vj2" secondAttribute="bottom" constant="10" id="xND-yx-Zvw"/>
                             <constraint firstItem="AWJ-lM-i78" firstAttribute="leading" secondItem="DB7-Ju-6RI" secondAttribute="trailing" constant="20" id="xQw-9f-hHq"/>
@@ -2500,7 +2506,7 @@ This tip will help remind you of what to do in this sub phase.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Gz7-IY-m8u">
-                                <rect key="frame" x="132.5" y="151" width="335" height="429"/>
+                                <rect key="frame" x="133" y="151" width="335" height="429"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -2524,7 +2530,7 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trunk Extension in Sitting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bsf-cd-koy">
-                                <rect key="frame" x="132.5" y="102" width="335" height="41"/>
+                                <rect key="frame" x="133" y="102" width="335" height="41"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="335" id="Sqc-ye-u5u"/>
@@ -2791,7 +2797,7 @@ This tip will help remind you of what to do in this sub phase.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ViZ-jj-LEK">
-                                <rect key="frame" x="155.5" y="154" width="289" height="23"/>
+                                <rect key="frame" x="156" y="154" width="289" height="23"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="289" id="2dO-KP-dBK"/>
@@ -2823,7 +2829,7 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wy2-gz-718">
-                                <rect key="frame" x="248" y="80" width="104.5" height="44"/>
+                                <rect key="frame" x="248" y="80" width="105" height="44"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Q78-nv-Gcl"/>
@@ -2850,7 +2856,7 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Version" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xg2-8a-efS">
-                                <rect key="frame" x="155.5" y="294" width="289" height="36"/>
+                                <rect key="frame" x="156" y="294" width="289" height="36"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="284" id="3qI-cO-SOo"/>
@@ -3164,9 +3170,9 @@ This tip will help remind you of what to do in this sub phase.</string>
         <image name="ButtonCheckMark" width="76" height="76"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="upe-EF-Pqf"/>
-        <segue reference="SZW-FV-s8R"/>
         <segue reference="w1g-wv-Xv8"/>
+        <segue reference="SZW-FV-s8R"/>
+        <segue reference="upe-EF-Pqf"/>
         <segue reference="jFt-WV-u4L"/>
     </inferredMetricsTieBreakers>
 </document>
