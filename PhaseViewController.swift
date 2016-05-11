@@ -21,6 +21,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
     var verbalInstructionArray = [VerbalInstruction]()
     var grandTotal:Double = 0.0
     var rightLeftPhasesArray:[String] = ["Overhead Press Right", "Overhead Press Left", "Forward Reach and Grasp Right", "Forward Reach and Grasp Left", "Door Pull and Open Right", "Door Pull and Open Left", "Can Open and Manipulation Right", "Can Open and Manipulation Left"]
+    var scoreId: String?
     
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -390,7 +391,19 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.getScoreObjectFromDatabase(self.phaseScore.scoreId)
+        
+        //if nil, then we coming straight from new eval
+        //we don't get a phaseScore object until we get to the tableView
+        if (self.phaseScore == nil)
+        {
+            self.scoreId = NewEvalSessionId.sharedInstance.sessionId
+        }
+        else
+        {
+            self.scoreId = self.phaseScore.scoreId
+        }
+        
+        self.getScoreObjectFromDatabase(self.scoreId!)
         //createArrayOfPhases()
         //self.getNumberOfPhasesWithScores()
         
@@ -482,6 +495,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
                 destinationController.navigationItem.title = self.phaseStructArray[indexpath.row].phaseName
                 destinationController.phaseNameFromSegue = self.phaseStructArray[indexpath.row].phaseDatabaseName
                 destinationController.sessionIdFromSegue = self.phaseStructArray[indexpath.row].phaseScoreId
+                destinationController.phaseScoreObject = self.phaseScore
                 print(self.phaseStructArray[indexpath.row].phaseName)
                 
             }

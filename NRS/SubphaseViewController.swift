@@ -148,10 +148,14 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         //cell.descriptionIdLabel.text = phaseItemArray[indexPath.row].descriptionId
         
         //change color if default
-//        if (phaseItemArray[indexPath.row].isDefaultSelection == true)
-//        {
-//            cell.backgroundColor = UIColor().UIColorFromRGB(0xFFECB3)
-//        }
+        if (phaseItemArray[indexPath.row].isDefaultSelection == true)
+        {
+            cell.backgroundColor = UIColor().UIColorFromRGB(0xFFECB3)
+        }
+        else
+        {
+            cell.backgroundColor = UIColor().UIColorFromRGB(0xFFFFFF)
+        }
 
         //configure text -- indent first line of lable text
         //let paragraphStyle = NSMutableParagraphStyle()
@@ -202,15 +206,12 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
             }
         }
         
-        //segue back to phase table view
-//        if segue.identifier == "showPhaseTableView"
-//        {
-//            let targetVc = segue.destinationViewController as! PhaseViewController
-//            targetVc.phaseScore.scoreId = self.sessionIdFromSegue!
-//        }
-        
-        
-        
+        //back button to table view
+        if segue.identifier == "showPhaseTableView"
+        {
+            let destinationViewController = segue.destinationViewController as! PhaseViewController
+            destinationViewController.phaseScore = self.phaseScoreObject
+        }
     }
     
 
