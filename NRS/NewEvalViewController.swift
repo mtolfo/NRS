@@ -79,6 +79,11 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         self.createNewEvalScoreSession()
     }
     
+    @IBAction func unwindToPhaseTableView (segue: UIStoryboardSegue)
+    {
+        
+    }
+    
     func createNewEvalScoreSession()
     {
         let noScore = "" //to enter an empty string in database to avoid error 

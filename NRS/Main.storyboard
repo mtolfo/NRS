@@ -118,7 +118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CDF-SD-KQ0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1507.5" y="-183"/>
+            <point key="canvasLocation" x="-1880" y="-995"/>
         </scene>
         <!--In Progress Evaluation-->
         <scene sceneID="9qp-1m-h1K">
@@ -660,6 +660,9 @@
                                     <constraint firstAttribute="width" constant="44" id="DBl-9b-yNc"/>
                                 </constraints>
                                 <state key="normal" image="Button Score"/>
+                                <connections>
+                                    <segue destination="Xme-Ut-zm7" kind="show" identifier="showLaggingAndScores" id="NFV-aB-qs5"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTJ-w8-rwA">
                                 <rect key="frame" x="85" y="477" width="44" height="25"/>
@@ -975,7 +978,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p1G-8H-gHa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-393" y="-183"/>
+            <point key="canvasLocation" x="-562" y="-99"/>
         </scene>
         <!--Phase Item-->
         <scene sceneID="XLy-Kc-UVz">
@@ -2523,10 +2526,10 @@ This tip will help remind you of what to do in this sub phase.</string>
             </objects>
             <point key="canvasLocation" x="367.5" y="1105.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Laggin And Scores View Controller-->
         <scene sceneID="2dk-Et-6jA">
             <objects>
-                <viewController modalPresentationStyle="overCurrentContext" id="Xme-Ut-zm7" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="overCurrentContext" id="Xme-Ut-zm7" customClass="LagginAndScoresViewController" customModule="NRS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fJG-zB-AEm"/>
                         <viewControllerLayoutGuide type="bottom" id="fBB-zC-dwz"/>
@@ -2536,7 +2539,7 @@ This tip will help remind you of what to do in this sub phase.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pf4-3D-6Go">
-                                <rect key="frame" x="295" y="223" width="33" height="21"/>
+                                <rect key="frame" x="284" y="290" width="33" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -2547,18 +2550,31 @@ This tip will help remind you of what to do in this sub phase.</string>
                                     <rect key="frame" x="295" y="223" width="33" height="20.5"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2mb-5K-3pN">
+                                <rect key="frame" x="277" y="332" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="backToPhasesButtonClicked:" destination="Xme-Ut-zm7" eventType="touchUpInside" id="PoM-7W-JWg"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="fBB-zC-dwz" firstAttribute="top" secondItem="Pf4-3D-6Go" secondAttribute="bottom" constant="356" id="9Eo-ml-2dZ"/>
-                            <constraint firstItem="Pf4-3D-6Go" firstAttribute="top" secondItem="fJG-zB-AEm" secondAttribute="bottom" constant="203" id="kjQ-6e-vVk"/>
-                            <constraint firstItem="Pf4-3D-6Go" firstAttribute="leading" secondItem="duE-NJ-dm5" secondAttribute="leading" constant="295" id="y2x-dF-YTR"/>
+                            <constraint firstItem="Pf4-3D-6Go" firstAttribute="centerX" secondItem="duE-NJ-dm5" secondAttribute="centerX" id="DHR-YH-wMA"/>
+                            <constraint firstItem="2mb-5K-3pN" firstAttribute="top" secondItem="Pf4-3D-6Go" secondAttribute="bottom" constant="21" id="VhB-Kn-EQp"/>
+                            <constraint firstItem="2mb-5K-3pN" firstAttribute="centerX" secondItem="duE-NJ-dm5" secondAttribute="centerX" id="gsn-NB-zuD"/>
+                            <constraint firstItem="Pf4-3D-6Go" firstAttribute="centerY" secondItem="duE-NJ-dm5" secondAttribute="centerY" id="ouI-ev-5Df"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="testTextLabel" destination="Pf4-3D-6Go" id="c91-Rf-RFH"/>
+                        <segue destination="euo-4e-agS" kind="unwind" identifier="unwindToPhaseTableView" unwindAction="unwindToPhaseTableView:" id="vec-9G-Hf6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AIj-Rk-uMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="euo-4e-agS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-318" y="1401"/>
+            <point key="canvasLocation" x="-1065" y="658"/>
         </scene>
         <!--Confirm View Controller-->
         <scene sceneID="zeI-rs-jLi">
@@ -3102,9 +3118,9 @@ This tip will help remind you of what to do in this sub phase.</string>
         <image name="ButtonCheckMark" width="76" height="76"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="w1g-wv-Xv8"/>
-        <segue reference="SZW-FV-s8R"/>
-        <segue reference="upe-EF-Pqf"/>
         <segue reference="jFt-WV-u4L"/>
+        <segue reference="TAU-PR-Cy6"/>
+        <segue reference="upe-EF-Pqf"/>
+        <segue reference="SZW-FV-s8R"/>
     </inferredMetricsTieBreakers>
 </document>

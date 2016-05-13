@@ -95,6 +95,30 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
     }
     
+    func createAndAppendArrayOfPhases()
+    {
+        self.phaseStructArray.append(Phase(phaseDatabaseNameInput: PhaseDatabaseName.sit.rawValue, phaseScoreInput: phaseScore.Sit, phaseNameInput: PhaseName.sit.rawValue, phaseScoreIdInput: phaseScore.scoreId))
+        self.phaseStructArray.append(Phase(phaseDatabaseNameInput: PhaseDatabaseName.reverseSitUp.rawValue, phaseScoreInput: phaseScore.Reverse_Sit_up, phaseNameInput: PhaseName.reverseSitUp.rawValue, phaseScoreIdInput: phaseScore.scoreId))
+        self.phaseStructArray.append(Phase(phaseDatabaseNameInput: PhaseDatabaseName.sitUp.rawValue, phaseScoreInput: phaseScore.Sit_up, phaseNameInput: PhaseName.sitUp.rawValue, phaseScoreIdInput: phaseScore.scoreId))
+        self.phaseStructArray.append(Phase(phaseDatabaseNameInput: PhaseDatabaseName.trunkExtensionInSitting.rawValue, phaseScoreInput: phaseScore.Trunk_Extension_in_Sitting, phaseNameInput: PhaseName.trunkExtensionInSitting.rawValue, phaseScoreIdInput: phaseScore.scoreId))
+        self.phaseStructArray.append(Phase(phaseDatabaseNameInput: PhaseDatabaseName.overheadPressRight.rawValue, phaseScoreInput: phaseScore.Overhead_Press_Right, phaseNameInput: PhaseName.overheadPressRight.rawValue, phaseScoreIdInput: phaseScore.scoreId))
+        self.phaseStructArray.append(Phase(phaseDatabaseNameInput: PhaseDatabaseName.overheadPressLeft.rawValue, phaseScoreInput: phaseScore.Overhead_Press_Left, phaseNameInput: PhaseName.overheadPressLeft.rawValue, phaseScoreIdInput: phaseScore.scoreId))
+        self.phaseStructArray.append(Phase(phaseDatabaseNameInput: PhaseDatabaseName.forwardReachAndGraspRight.rawValue, phaseScoreInput: phaseScore.Forward_Reach_and_Grasp_Right, phaseNameInput: PhaseName.forwardReachAndGraspRight.rawValue, phaseScoreIdInput: phaseScore.scoreId))
+        self.phaseStructArray.append(Phase(phaseDatabaseNameInput: PhaseDatabaseName.forwardReachAndGraspLeft.rawValue, phaseScoreInput: phaseScore.Forward_Reach_and_Grasp_Left, phaseNameInput: PhaseName.forwardReachAndGraspLeft.rawValue, phaseScoreIdInput: phaseScore.scoreId))
+        self.phaseStructArray.append(Phase(phaseDatabaseNameInput: PhaseDatabaseName.doorAndPullRight.rawValue, phaseScoreInput: phaseScore.Door_Pull_and_Open_Right, phaseNameInput: PhaseName.doorAndPullRight.rawValue, phaseScoreIdInput: phaseScore.scoreId))
+        self.phaseStructArray.append(Phase(phaseDatabaseNameInput: PhaseDatabaseName.doorAndPullLeft.rawValue, phaseScoreInput: phaseScore.Door_Pull_and_Open_Left, phaseNameInput: PhaseName.doorAndPullLeft.rawValue, phaseScoreIdInput: phaseScore.scoreId))
+        self.phaseStructArray.append(Phase(phaseDatabaseNameInput: PhaseDatabaseName.canOpenAndManipulatRight.rawValue, phaseScoreInput: phaseScore.Can_Open_and_Manipulation_Right, phaseNameInput: PhaseName.canOpenAndManipulatRight.rawValue, phaseScoreIdInput: phaseScore.scoreId))
+        self.phaseStructArray.append(Phase(phaseDatabaseNameInput: PhaseDatabaseName.canOpenAndManipulatLeft.rawValue, phaseScoreInput: phaseScore.Can_Open_and_Manipulation_Left, phaseNameInput: PhaseName.canOpenAndManipulatLeft.rawValue, phaseScoreIdInput: phaseScore.scoreId))
+        self.phaseStructArray.append(Phase(phaseDatabaseNameInput: PhaseDatabaseName.sitToStand.rawValue, phaseScoreInput: phaseScore.Sit_to_Stand, phaseNameInput: PhaseName.sitToStand.rawValue, phaseScoreIdInput: phaseScore.scoreId))
+        self.phaseStructArray.append(Phase(phaseDatabaseNameInput: PhaseDatabaseName.stand.rawValue, phaseScoreInput: phaseScore.Stand, phaseNameInput: PhaseName.stand.rawValue, phaseScoreIdInput: phaseScore.scoreId))
+        self.phaseStructArray.append(Phase(phaseDatabaseNameInput: PhaseDatabaseName.walking.rawValue, phaseScoreInput: phaseScore.Walking, phaseNameInput: PhaseName.walking.rawValue, phaseScoreIdInput: phaseScore.scoreId))
+        self.phaseStructArray.append(Phase(phaseDatabaseNameInput: PhaseDatabaseName.standAdaptability.rawValue, phaseScoreInput: phaseScore.Stand_Adaptability, phaseNameInput: PhaseName.standAdaptability.rawValue, phaseScoreIdInput: phaseScore.scoreId))
+        self.phaseStructArray.append(Phase(phaseDatabaseNameInput: PhaseDatabaseName.stepRetraining.rawValue, phaseScoreInput: phaseScore.Step_Retraining, phaseNameInput: PhaseName.stepRetraining.rawValue, phaseScoreIdInput: phaseScore.scoreId))
+        self.phaseStructArray.append(Phase(phaseDatabaseNameInput: PhaseDatabaseName.stepAdaptability.rawValue, phaseScoreInput: phaseScore.Step_Adaptability, phaseNameInput: PhaseName.stepAdaptability.rawValue, phaseScoreIdInput: phaseScore.scoreId))
+        
+    }
+    
+    /*
     func createArrayOfPhases()
     {
             self.phaseStructArray = [
@@ -119,6 +143,8 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.stepRetraining.rawValue, phaseScoreInput: phaseScore.Step_Retraining, phaseNameInput: PhaseName.stepRetraining.rawValue, phaseScoreIdInput: phaseScore.scoreId),
                 Phase(phaseDatabaseNameInput: PhaseDatabaseName.stepAdaptability.rawValue, phaseScoreInput: phaseScore.Step_Adaptability, phaseNameInput: PhaseName.stepAdaptability.rawValue, phaseScoreIdInput: phaseScore.scoreId)]
     }
+ */
+    
     
 //    var arr = englishBooks.filter {
 //        $0.nameOfBook.rangeOfString("rt") != nil
@@ -359,7 +385,8 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
 //                print ("scoreObject.scoreId from getScoreObjectFromDatabase \(self.scoreObjectFromDatabase.scoreId)")
                 self.phaseScore = Score(pfObject: object!)
                 print (self.phaseScore)
-                self.createArrayOfPhases()
+                //self.createArrayOfPhases()
+                self.createAndAppendArrayOfPhases()
                 //self.getNumberOfPhasesWithScores()
                 //print("NUMBER TOTAL: \(self.calculateNumberTotal())")
                 self.grandTotal = self.calculateGrandTotal()
@@ -500,6 +527,22 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
                 print(self.phaseStructArray[indexpath.row].phaseName)
                 
             }
+        }
+        
+        if segue.identifier == "showLaggingAndScores"
+        {
+            let destinationController = segue.destinationViewController as! LagginAndScoresViewController
+            destinationController.scoreIdLagAndScore = self.phaseScore.scoreId
+            destinationController.phaseStructArray = self.phaseStructArray
+        
+        }
+    }
+    
+    @IBAction func unwindToPhaseTableView(sender: UIStoryboardSegue)
+    {
+        if let sourceVc = sender.sourceViewController as? LagginAndScoresViewController
+        {
+           self.scoreId = sourceVc.scoreIdLagAndScore
         }
     }
 }
