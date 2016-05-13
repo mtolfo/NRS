@@ -31,7 +31,7 @@ class Utility
     {
         var laggingPhasesArray: [PhaseViewController.Phase] = []
         let allPhasesWithScores = phaseStructArray.filter({$0.phaseScore != ""})
-        laggingPhasesArray = allPhasesWithScores.filter({$0.phaseName == lowestScore})
+        laggingPhasesArray = allPhasesWithScores.filter({$0.phaseScore == lowestScore})
         
         return laggingPhasesArray
     }

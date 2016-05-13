@@ -221,7 +221,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
             {
                 //put alert code here and return false
                 let alertController = UIAlertController(title: "Phase already scored", message:
-                    "If you want to score this subphase, you must clear the scores for the \(self.verbalInstructionObjectFromSegue.phaseItem) phase", preferredStyle: UIAlertControllerStyle.Alert)
+                    "This phase has already been scored.", preferredStyle: UIAlertControllerStyle.Alert)
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default,handler: nil))
                 self.presentViewController(alertController, animated: true, completion: nil)
                 return false
