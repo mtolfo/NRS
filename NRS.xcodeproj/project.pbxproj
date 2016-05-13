@@ -16,8 +16,12 @@
 		A820A6EC1CCF0C34005246CB /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A820A6EA1CCF0C34005246CB /* Bolts.framework */; };
 		A820A6ED1CCF0C34005246CB /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A820A6EB1CCF0C34005246CB /* Parse.framework */; };
 		A82B16151C725D980095CE2B /* VerbalInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82B16141C725D980095CE2B /* VerbalInstruction.swift */; };
-		A83556911CCF0DF1008D0770 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A835568F1CCF0DF1008D0770 /* Bolts.framework */; };
 		A83556921CCF0DF1008D0770 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A83556901CCF0DF1008D0770 /* Parse.framework */; };
+		A84C3EBE1CE593C900CD212F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84C3EBC1CE593C900CD212F /* Bolts.framework */; };
+		A84C3EBF1CE593C900CD212F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84C3EBD1CE593C900CD212F /* Parse.framework */; };
+		A84C3EC21CE5941400CD212F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84C3EC01CE5941400CD212F /* Bolts.framework */; };
+		A84C3EC31CE5941400CD212F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84C3EC11CE5941400CD212F /* Parse.framework */; };
+		A84C3EC51CE5944000CD212F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84C3EC41CE5944000CD212F /* Bolts.framework */; };
 		A84C59381C7A5ED700D02C11 /* NewEvalSessionId.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84C59371C7A5ED700D02C11 /* NewEvalSessionId.swift */; };
 		A85F40E61C8219DC0093F7C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A85F40E51C8219DC0093F7C5 /* Main.storyboard */; };
 		A85F40E81C828F420093F7C5 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85F40E71C828F420093F7C5 /* Database.swift */; };
@@ -83,8 +87,12 @@
 		A820A6EA1CCF0C34005246CB /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A820A6EB1CCF0C34005246CB /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A82B16141C725D980095CE2B /* VerbalInstruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerbalInstruction.swift; sourceTree = "<group>"; };
-		A835568F1CCF0DF1008D0770 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A83556901CCF0DF1008D0770 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		A84C3EBC1CE593C900CD212F /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		A84C3EBD1CE593C900CD212F /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		A84C3EC01CE5941400CD212F /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		A84C3EC11CE5941400CD212F /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		A84C3EC41CE5944000CD212F /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A84C59371C7A5ED700D02C11 /* NewEvalSessionId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEvalSessionId.swift; sourceTree = "<group>"; };
 		A85F40E51C8219DC0093F7C5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A85F40E71C828F420093F7C5 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
@@ -136,10 +144,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A820A6EC1CCF0C34005246CB /* Bolts.framework in Frameworks */,
+				A84C3EBE1CE593C900CD212F /* Bolts.framework in Frameworks */,
 				A8A194D71CB53FD300859970 /* Bolts.framework in Frameworks */,
 				A8DC3F611C86AEF5009B3774 /* MessageUI.framework in Frameworks */,
 				A889D0A11C41EC78005DB665 /* AudioToolbox.framework in Frameworks */,
 				A889D0A21C41EC78005DB665 /* CFNetwork.framework in Frameworks */,
+				A84C3EC31CE5941400CD212F /* Parse.framework in Frameworks */,
+				A84C3EC21CE5941400CD212F /* Bolts.framework in Frameworks */,
 				A889D0A31C41EC78005DB665 /* CoreGraphics.framework in Frameworks */,
 				A820A6ED1CCF0C34005246CB /* Parse.framework in Frameworks */,
 				A889D0A41C41EC78005DB665 /* CoreLocation.framework in Frameworks */,
@@ -148,9 +159,10 @@
 				A83556921CCF0DF1008D0770 /* Parse.framework in Frameworks */,
 				A889D0A61C41EC78005DB665 /* libz.tbd in Frameworks */,
 				A889D0A71C41EC78005DB665 /* MobileCoreServices.framework in Frameworks */,
-				A83556911CCF0DF1008D0770 /* Bolts.framework in Frameworks */,
+				A84C3EBF1CE593C900CD212F /* Parse.framework in Frameworks */,
 				A889D0A81C41EC78005DB665 /* QuartzCore.framework in Frameworks */,
 				A889D0A91C41EC78005DB665 /* Security.framework in Frameworks */,
+				A84C3EC51CE5944000CD212F /* Bolts.framework in Frameworks */,
 				A889D0AA1C41EC78005DB665 /* StoreKit.framework in Frameworks */,
 				A889D0AB1C41EC78005DB665 /* SystemConfiguration.framework in Frameworks */,
 			);
@@ -232,7 +244,9 @@
 		A899520E1C3C976E0023373D = {
 			isa = PBXGroup;
 			children = (
-				A835568F1CCF0DF1008D0770 /* Bolts.framework */,
+				A84C3EC41CE5944000CD212F /* Bolts.framework */,
+				A84C3EBC1CE593C900CD212F /* Bolts.framework */,
+				A84C3EBD1CE593C900CD212F /* Parse.framework */,
 				A83556901CCF0DF1008D0770 /* Parse.framework */,
 				A8DC3F601C86AEF5009B3774 /* MessageUI.framework */,
 				A89952191C3C976E0023373D /* NRS */,
@@ -255,6 +269,8 @@
 		A89952191C3C976E0023373D /* NRS */ = {
 			isa = PBXGroup;
 			children = (
+				A84C3EC01CE5941400CD212F /* Bolts.framework */,
+				A84C3EC11CE5941400CD212F /* Parse.framework */,
 				A820A6EA1CCF0C34005246CB /* Bolts.framework */,
 				A820A6EB1CCF0C34005246CB /* Parse.framework */,
 				A8CEEE261CB33FC100C0C939 /* Avenir Next.ttc */,
