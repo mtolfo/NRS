@@ -16,6 +16,7 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
     var sessionIdFromSegue:String?
     var destinationTempString = ""
     var phaseScoreObject:Score!
+    var phaseName: String?
     
     //var sessionIdToPass:String?
     private var phaseItemArray = [Subphase]() //TODO: rename this model to PhaseItem.swift
@@ -24,7 +25,8 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     @IBOutlet weak var gradientLayerView: GradientView!
     @IBOutlet weak var subphaseCollectionView: UICollectionView!
-    @IBOutlet weak var phaseName: UILabel!
+    @IBOutlet weak var phaseNameLabel: UILabel!
+    
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -45,6 +47,14 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         // Do any additional setup after loading the view.
         loadPhaseItemsFromDatabase()
         loadVerbalInstructionsFromDatabase()
+        if (self.phaseScoreObject ==  nil)
+        {
+            self.phaseNameLabel.text = "Sit"
+        }
+        else
+        {
+            self.phaseNameLabel.text = self.phaseName
+        }
         //self.phaseName.text = self.getVerbalInstructionObjectFromArray().phaseItem
         //sessionIdToPass = sessionIdFromSegue
 //        let indexPaths = subphaseCollectionView.indexPathsForSelectedItems()

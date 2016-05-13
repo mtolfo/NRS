@@ -496,6 +496,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
                 destinationController.phaseNameFromSegue = self.phaseStructArray[indexpath.row].phaseDatabaseName
                 destinationController.sessionIdFromSegue = self.phaseStructArray[indexpath.row].phaseScoreId
                 destinationController.phaseScoreObject = self.phaseScore
+                destinationController.phaseName = self.phaseStructArray[indexpath.row].phaseName
                 print(self.phaseStructArray[indexpath.row].phaseName)
                 
             }

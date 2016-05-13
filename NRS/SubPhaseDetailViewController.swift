@@ -272,6 +272,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         {
             let targetVc = segue.destinationViewController as! SubphaseViewController
             targetVc.phaseNameFromSegue = self.phaseDatabaseNameFromSegue
+            targetVc.phaseName = self.phaseName.text
         }
         
         if segue.identifier == "showManualVc"

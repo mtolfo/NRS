@@ -1191,7 +1191,7 @@
                     </view>
                     <connections>
                         <outlet property="gradientLayerView" destination="TdK-HD-WQ8" id="98w-rd-kPz"/>
-                        <outlet property="phaseName" destination="viy-jl-ukf" id="CCn-f4-mfL"/>
+                        <outlet property="phaseNameLabel" destination="viy-jl-ukf" id="NAq-92-Nlc"/>
                         <outlet property="subphaseCollectionView" destination="ND8-iC-w3c" id="rnT-Yb-Hgs"/>
                     </connections>
                 </viewController>
