@@ -115,6 +115,11 @@ class SessionInputViewController: UIViewController
         // Do any additional setup after loading the view.
     }
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
+    }
+    
     override func viewDidLayoutSubviews()
     {
         

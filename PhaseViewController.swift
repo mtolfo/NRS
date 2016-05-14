@@ -22,6 +22,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
     var grandTotal:Double = 0.0
     var rightLeftPhasesArray:[String] = ["Overhead Press Right", "Overhead Press Left", "Forward Reach and Grasp Right", "Forward Reach and Grasp Left", "Door Pull and Open Right", "Door Pull and Open Left", "Can Open and Manipulation Right", "Can Open and Manipulation Left"]
     var scoreId: String?
+    var overallPhaseScore: String?
     
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -204,7 +205,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func getOverallPhase(grandTotal: Double) -> String
     {
-        var overallPhase: String = "No Overall Phase"
+        var overallPhase: String = "0"
         switch grandTotal
         {
         case (1.0...1.99):
@@ -232,7 +233,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         case 12:
             overallPhase = "4C"
         default:
-            overallPhase = "No Overall Phase"
+            overallPhase = "None"
         }
         return overallPhase
     }
@@ -395,7 +396,8 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
                 print ("OVERALL PHASE: \(self.getOverallPhase(self.grandTotal))")
                 self.scoreLabel.text = String(self.getNumberTotal())
                 self.numScoredItemsLabel.text = String(self.getNumberOfPhasesWithScores())
-                self.overallPhaseScoreLabel.text = self.getOverallPhase(self.grandTotal)
+                self.overallPhaseScore = self.getOverallPhase(self.grandTotal)
+                self.overallPhaseScoreLabel.text = self.overallPhaseScore
                 self.do_table_refresh()
             }
         }
@@ -534,6 +536,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
             let destinationController = segue.destinationViewController as! LagginAndScoresViewController
             destinationController.scoreIdLagAndScore = self.phaseScore.scoreId
             destinationController.phaseStructArray = self.phaseStructArray
+            destinationController.overallPhaseValue = self.overallPhaseScore
         
         }
     }

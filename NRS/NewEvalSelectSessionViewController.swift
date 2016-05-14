@@ -60,6 +60,8 @@ class NewEvalSelectSessionViewController: UIViewController
 //    {
 //        blurEffectView?.frame = view.bounds
 //    }
+    
+    
 
     override func didReceiveMemoryWarning()
     {
