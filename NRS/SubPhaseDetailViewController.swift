@@ -21,6 +21,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     var subPhaseArray = [Subphase]()
     var subPhaseArrayIndex:Int = 0
     var phaseInstruction = ""
+    var blurView: UIVisualEffectView!
     
     @IBOutlet weak var gradientLayerView: GradientView!
     @IBOutlet weak var verbalInstructionLabel: UILabel!
@@ -28,6 +29,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     @IBOutlet weak var phaseName: UILabel!
     @IBOutlet weak var subPhaseId: UILabel!
     @IBOutlet weak var confirmScoreView: UIView!
+    
 
     
     
@@ -66,14 +68,13 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         performSegueWithIdentifier("showSubphaseCollectionView", sender: self)
     }
     
-    
     @IBAction func unableButtonClicked(sender: AnyObject)
     {
         // shouldPerform is a validation check
         if (shouldPerformSegueWithIdentifier("showConfirmView", sender: self))
         {
             let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-            let blurView = UIVisualEffectView(effect: darkBlur)
+            blurView = UIVisualEffectView(effect: darkBlur)
             
             //always fill the view
             blurView.frame = gradientLayerView.bounds
@@ -84,10 +85,11 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         }
     }
     
+    //for new button
     @IBAction func unableScoreButtonClicked(sender: AnyObject)
     {
         let lightBlur = UIBlurEffect(style: UIBlurEffectStyle.Light)
-        let blurView = UIVisualEffectView(effect: lightBlur)
+        blurView = UIVisualEffectView(effect: lightBlur)
         
         //always fill the view
         blurView.frame = gradientLayerView.bounds
@@ -97,67 +99,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         gradientLayerView.addSubview(self.confirmScoreView)
         self.confirmScoreView.hidden = false
         
-        //insertBlurView(backgroundMaskView, style: UIBlurEffectStyle.Dark)
-        /*
-                let lightBlur = UIBlurEffect(style: UIBlurEffectStyle.Light)
-                let blurView = UIVisualEffectView(effect: lightBlur)
-                blurView.frame = self.gradientLayerView.bounds
-                    self.gradientLayerView.insertSubview(blurView, atIndex: 3)
-        
-                //only apply the blur if the user hasn't disabled transparency effects
-        */
-        
-        /*
-                if !UIAccessibilityIsReduceTransparencyEnabled() {
-                    
-        
-                    let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-                    let blurEffectView = UIVisualEffectView(effect: blurEffect)
-                    //always fill the view
-                    blurEffectView.frame = self.view.bounds
-                    blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        
-                    self.view.insertSubview(blurEffectView, atIndex: 1)//if you have more UIViews, use an insertSubview API to place it where needed
-                    self.view.insertSubview(self.confirmScoreView, atIndex: 5)
- 
-                    
-//                    performSegueWithIdentifier("showConfirmScoreVc", sender: self)
-                    
-                    
-                }
-                else {
-                    self.view.backgroundColor = UIColor.blackColor()
-                }
-        confirmScoreView.hidden = false
- */
- 
     }
-//    @IBAction func unableScoreButtonClicked(sender: AnyObject)
-//    {
-////        let lightBlur = UIBlurEffect(style: UIBlurEffectStyle.Light)
-////        let blurView = UIVisualEffectView(effect: lightBlur)
-////        blurView.frame = self.gradientLayerView.bounds
-////        self.gradientLayerView.insertSubview(blurView, atIndex: 3)
-//        
-//        //only apply the blur if the user hasn't disabled transparency effects
-//        if !UIAccessibilityIsReduceTransparencyEnabled() {
-//            self.view.backgroundColor = UIColor.clearColor()
-//
-//            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-//            let blurEffectView = UIVisualEffectView(effect: blurEffect)
-//            //always fill the view
-//            blurEffectView.frame = self.view.bounds
-//            blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-//            
-//            self.view.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
-//        } 
-//        else {
-//            self.view.backgroundColor = UIColor.blackColor()
-//        }
-//        
-//        self.confirmScorePopoverView.hidden = false
-//        
-//    }
     
     @IBAction func manualButonClicked(sender: AnyObject)
     {
@@ -169,6 +111,16 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         performSegueWithIdentifier("showTestVc", sender: self)
     }
     
+    @IBAction func doNotConfirmXbutton(sender: AnyObject)
+    {
+        self.confirmScoreView.removeFromSuperview()
+        self.blurView.removeFromSuperview()
+        
+        //remove gradient layter view
+//        for subviews in self.gradientLayerView.subviews
+//        {
+//        }
+    }
         //new delegate stuff
 //    func userDidEnterInformation(phaseDatabaseName: String) {
 //        self.phaseDatabaseNameFromSegue = phaseDatabaseName
