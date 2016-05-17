@@ -77,7 +77,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         self.confirmScoreView.removeFromSuperview()
         self.blurView.removeFromSuperview()
 
-        performSegueWithIdentifier("showPhasesFromConfirm", sender: self)
+        //performSegueWithIdentifier("showPhasesFromConfirm", sender: self)
 
         //        unwindToPhasesFromConfirm
         //self.performSegueWithIdentifier("unwindToPhasesFromConfirm", sender: self)
@@ -99,6 +99,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
                 object![self.verbalInstructionObjectFromSegue.phaseDatabaseName] = descriptionIdInput
                 object!.saveInBackground()
                 print ("MARKING \(sessionDatabaseName) as \(object![self.verbalInstructionObjectFromSegue.phaseDatabaseName])")
+                self.performSegueWithIdentifier("showPhasesFromConfirm", sender: self)
             }
         }
     }
