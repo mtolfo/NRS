@@ -27,7 +27,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     @IBOutlet weak var subPhaseDescriptionLabel: UILabel!
     @IBOutlet weak var phaseName: UILabel!
     @IBOutlet weak var subPhaseId: UILabel!
-
+    
     //keep this
     @IBAction func ableCheckClicked(sender: AnyObject)
     {
@@ -63,6 +63,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         performSegueWithIdentifier("showSubphaseCollectionView", sender: self)
     }
     
+    
     @IBAction func unableButtonClicked(sender: AnyObject)
     {
         // shouldPerform is a validation check
@@ -76,6 +77,65 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         }
     }
     
+    @IBAction func unableScoreButtonClicked(sender: AnyObject)
+    {
+        
+        
+        /*
+                let lightBlur = UIBlurEffect(style: UIBlurEffectStyle.Light)
+                let blurView = UIVisualEffectView(effect: lightBlur)
+                blurView.frame = self.gradientLayerView.bounds
+                self.gradientLayerView.insertSubview(blurView, atIndex: 3)
+        
+                //only apply the blur if the user hasn't disabled transparency effects
+        
+                if !UIAccessibilityIsReduceTransparencyEnabled() {
+                    self.view.backgroundColor = UIColor.clearColor()
+        
+                    let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+                    let blurEffectView = UIVisualEffectView(effect: blurEffect)
+                    //always fill the view
+                    blurEffectView.frame = self.view.bounds
+                    blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        
+                    self.view.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
+                    self.view.addSubview(blurEffectView)
+                    performSegueWithIdentifier("showConfirmScoreVc", sender: self)
+                    
+                    
+                }
+                else {
+                    self.view.backgroundColor = UIColor.blackColor()
+                }
+ */
+    }
+//    @IBAction func unableScoreButtonClicked(sender: AnyObject)
+//    {
+////        let lightBlur = UIBlurEffect(style: UIBlurEffectStyle.Light)
+////        let blurView = UIVisualEffectView(effect: lightBlur)
+////        blurView.frame = self.gradientLayerView.bounds
+////        self.gradientLayerView.insertSubview(blurView, atIndex: 3)
+//        
+//        //only apply the blur if the user hasn't disabled transparency effects
+//        if !UIAccessibilityIsReduceTransparencyEnabled() {
+//            self.view.backgroundColor = UIColor.clearColor()
+//
+//            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+//            let blurEffectView = UIVisualEffectView(effect: blurEffect)
+//            //always fill the view
+//            blurEffectView.frame = self.view.bounds
+//            blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+//            
+//            self.view.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
+//        } 
+//        else {
+//            self.view.backgroundColor = UIColor.blackColor()
+//        }
+//        
+//        self.confirmScorePopoverView.hidden = false
+//        
+//    }
+    
     @IBAction func manualButonClicked(sender: AnyObject)
     {
         performSegueWithIdentifier("showManualVc", sender: self)
@@ -85,7 +145,8 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     {
         performSegueWithIdentifier("showTestVc", sender: self)
     }
-    //new delegate stuff
+    
+        //new delegate stuff
 //    func userDidEnterInformation(phaseDatabaseName: String) {
 //        self.phaseDatabaseNameFromSegue = phaseDatabaseName
 //    }
@@ -121,6 +182,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         self.subPhaseDescriptionLabel.text = subPhaseFromSegue.description
         self.phaseName.text = self.verbalInstructionObjectFromSegue.phaseItem
         self.subPhaseId.text = self.subPhaseFromSegue.descriptionId
+        
         
         // if the session id is not coming from the in progress screen the use the singleton for the session id
         if (self.sessionIdFromSegue ==  nil)

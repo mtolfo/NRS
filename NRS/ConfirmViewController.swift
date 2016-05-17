@@ -84,28 +84,6 @@ class ConfirmViewController: UIViewController
     }
 
     
-    /*
-    var subPhaseObject:Subphase! //this object is the subphase before the one on the previous view controller because we are confirming that the patient is UNABLE to do this task
-    var verbalInstructionObject:VerbalInstruction!
-    var sessionId:String!
-    
-    @IBOutlet
-    weak var subphaseDescriptionLabel: UILabel!
-    
-    
-    
-    @IBOutlet weak var confirmationMessageLabel: UILabel!
-    @IBAction func confirmButtonClicked(sender: AnyObject)
-    {
-        self.markScoreObjectFromDatabase(self.subPhaseObject.descriptionId, sessionDatabaseName: self.verbalInstructionObject.phaseDatabaseName)
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    @IBAction func rejectButtonClicked(sender: AnyObject)
-    {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-*/
 
     /*
     // MARK: - Navigation
