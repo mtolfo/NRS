@@ -27,6 +27,9 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     @IBOutlet weak var subPhaseDescriptionLabel: UILabel!
     @IBOutlet weak var phaseName: UILabel!
     @IBOutlet weak var subPhaseId: UILabel!
+    @IBOutlet weak var confirmScoreView: UIView!
+
+    
     
     //keep this
     @IBAction func ableCheckClicked(sender: AnyObject)
@@ -69,28 +72,44 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         // shouldPerform is a validation check
         if (shouldPerformSegueWithIdentifier("showConfirmView", sender: self))
         {
-//            let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-//            let blurView = UIVisualEffectView(effect: darkBlur)
-//            blurView.frame = gradientLayerView.bounds
-//            gradientLayerView.addSubview(blurView)
+            let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+            let blurView = UIVisualEffectView(effect: darkBlur)
+            
+            //always fill the view
+            blurView.frame = gradientLayerView.bounds
+            blurView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+            
+            gradientLayerView.addSubview(blurView)
             performSegueWithIdentifier("showConfirmView", sender: self)
         }
     }
     
     @IBAction func unableScoreButtonClicked(sender: AnyObject)
     {
+        let lightBlur = UIBlurEffect(style: UIBlurEffectStyle.Light)
+        let blurView = UIVisualEffectView(effect: lightBlur)
         
+        //always fill the view
+        blurView.frame = gradientLayerView.bounds
+        blurView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         
+        gradientLayerView.addSubview(blurView)
+        gradientLayerView.addSubview(self.confirmScoreView)
+        self.confirmScoreView.hidden = false
+        
+        //insertBlurView(backgroundMaskView, style: UIBlurEffectStyle.Dark)
         /*
                 let lightBlur = UIBlurEffect(style: UIBlurEffectStyle.Light)
                 let blurView = UIVisualEffectView(effect: lightBlur)
                 blurView.frame = self.gradientLayerView.bounds
-                self.gradientLayerView.insertSubview(blurView, atIndex: 3)
+                    self.gradientLayerView.insertSubview(blurView, atIndex: 3)
         
                 //only apply the blur if the user hasn't disabled transparency effects
+        */
         
+        /*
                 if !UIAccessibilityIsReduceTransparencyEnabled() {
-                    self.view.backgroundColor = UIColor.clearColor()
+                    
         
                     let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
                     let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -98,16 +117,20 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
                     blurEffectView.frame = self.view.bounds
                     blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         
-                    self.view.addSubview(blurEffectView) //if you have more UIViews, use an insertSubview API to place it where needed
-                    self.view.addSubview(blurEffectView)
-                    performSegueWithIdentifier("showConfirmScoreVc", sender: self)
+                    self.view.insertSubview(blurEffectView, atIndex: 1)//if you have more UIViews, use an insertSubview API to place it where needed
+                    self.view.insertSubview(self.confirmScoreView, atIndex: 5)
+ 
+                    
+//                    performSegueWithIdentifier("showConfirmScoreVc", sender: self)
                     
                     
                 }
                 else {
                     self.view.backgroundColor = UIColor.blackColor()
                 }
+        confirmScoreView.hidden = false
  */
+ 
     }
 //    @IBAction func unableScoreButtonClicked(sender: AnyObject)
 //    {
@@ -192,6 +215,8 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
 
         self.subPhaseArrayIndex = getStartingIndex(self.subPhaseFromSegue.descriptionId, subPhaseArrayInput: self.subPhaseArray)!
         self.getScoreObject(self.sessionIdFromSegue!)
+        
+        self.confirmScoreView.hidden = true
         
         //getInstructionManualFromdatabase now working correctly
         self.getInstructionManualFromDatabase("Sit")

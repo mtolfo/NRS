@@ -26,6 +26,7 @@ class ConfirmViewController: UIViewController
     
     @IBAction func rejectButonClicked(sender: AnyObject)
     {
+        
         dismissViewControllerAnimated(true, completion: nil)
     }
     

@@ -18,7 +18,7 @@
 		A82B16151C725D980095CE2B /* VerbalInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82B16141C725D980095CE2B /* VerbalInstruction.swift */; };
 		A82BF7AF1CEAA4F400A1C3D1 /* ConfirmScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82BF7AE1CEAA4F400A1C3D1 /* ConfirmScoreViewController.swift */; };
 		A82BF7B11CEAC1E500A1C3D1 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82BF7B01CEAC1E500A1C3D1 /* TestViewController.swift */; };
-		A82BF7B31CEAD03B00A1C3D1 /* Spring in Resources */ = {isa = PBXBuildFile; fileRef = A82BF7B21CEAD03B00A1C3D1 /* Spring */; };
+		A82BF7B71CEAD83200A1C3D1 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82BF7B61CEAD83200A1C3D1 /* BlurView.swift */; };
 		A83556921CCF0DF1008D0770 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A83556901CCF0DF1008D0770 /* Parse.framework */; };
 		A84C3EBE1CE593C900CD212F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84C3EBC1CE593C900CD212F /* Bolts.framework */; };
 		A84C3EBF1CE593C900CD212F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84C3EBD1CE593C900CD212F /* Parse.framework */; };
@@ -95,7 +95,7 @@
 		A82B16141C725D980095CE2B /* VerbalInstruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerbalInstruction.swift; sourceTree = "<group>"; };
 		A82BF7AE1CEAA4F400A1C3D1 /* ConfirmScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmScoreViewController.swift; sourceTree = "<group>"; };
 		A82BF7B01CEAC1E500A1C3D1 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		A82BF7B21CEAD03B00A1C3D1 /* Spring */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Spring; sourceTree = "<group>"; };
+		A82BF7B61CEAD83200A1C3D1 /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		A83556901CCF0DF1008D0770 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A84C3EBC1CE593C900CD212F /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A84C3EBD1CE593C900CD212F /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -283,7 +283,7 @@
 		A89952191C3C976E0023373D /* NRS */ = {
 			isa = PBXGroup;
 			children = (
-				A82BF7B21CEAD03B00A1C3D1 /* Spring */,
+				A82BF7B61CEAD83200A1C3D1 /* BlurView.swift */,
 				A84C3EC01CE5941400CD212F /* Bolts.framework */,
 				A84C3EC11CE5941400CD212F /* Parse.framework */,
 				A820A6EA1CCF0C34005246CB /* Bolts.framework */,
@@ -438,7 +438,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A82BF7B31CEAD03B00A1C3D1 /* Spring in Resources */,
 				A8CEEE271CB33FC100C0C939 /* Avenir Next.ttc in Resources */,
 				A85F40E61C8219DC0093F7C5 /* Main.storyboard in Resources */,
 				A89952251C3C976E0023373D /* LaunchScreen.storyboard in Resources */,
@@ -485,6 +484,7 @@
 				A8194A811CCA5C130089EC59 /* ColorExtensions.swift in Sources */,
 				A8A194DA1CB5CCF700859970 /* GradientView.swift in Sources */,
 				A80D5B1E1C618485004EE98C /* PhaseViewController.swift in Sources */,
+				A82BF7B71CEAD83200A1C3D1 /* BlurView.swift in Sources */,
 				A82B16151C725D980095CE2B /* VerbalInstruction.swift in Sources */,
 				A80D5B171C585B6A004EE98C /* PhaseItem.swift in Sources */,
 				A814B8D11C66868300E20A35 /* PhaseTableViewCell.swift in Sources */,
