@@ -49,8 +49,9 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     //for new button
     @IBAction func unableScoreButtonClicked(sender: AnyObject)
     {
-        let lightBlur = UIBlurEffect(style: UIBlurEffectStyle.Light)
-        blurView = UIVisualEffectView(effect: lightBlur)
+        //let lightBlur = UIBlurEffect(style: UIBlurEffectStyle.Light)
+        let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        blurView = UIVisualEffectView(effect: darkBlur)
         
         //always fill the view
         blurView.frame = gradientLayerView.bounds
@@ -70,7 +71,12 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
 
     @IBAction func confirmCheckButton(sender: AnyObject)
     {
+        //comment the unwind for now. It is not working.
+        //self.performSegueWithIdentifier("unwindToPhasesFromConfirm", sender: self)
         markScoreObjectFromDatabase(self.subphaseScoreForDatabase!, sessionDatabaseName: self.verbalInstructionObjectFromSegue.phaseDatabaseName)
+//        unwindToPhasesFromConfirm
+        //self.performSegueWithIdentifier("unwindToPhasesFromConfirm", sender: self)
+        
     }
     
     func markScoreObjectFromDatabase(descriptionIdInput:String, sessionDatabaseName: String)
@@ -201,6 +207,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         
         //MARK: New confirm score view. No need to move through index so we show what was
         //passed from previous view
+        //TODO: Pull this out as a function
         if self.subPhaseArrayIndex < self.subPhaseArray.count - 1
         {
             self.subphaseScoreForDatabase = self.subPhaseArray[subPhaseArrayIndex - 1].descriptionId

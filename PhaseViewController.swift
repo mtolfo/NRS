@@ -481,10 +481,13 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(animated: Bool)
+    {
         super.viewDidAppear(animated)
         navigationController?.hidesBarsOnSwipe = true
         self.navBarView.backgroundColor = UIColor().UIColorFromRGB(0xA30B1D)
+        //self.do_table_refresh()
+        self.getScoreObjectFromDatabase(self.scoreId!)
     }
     
     
@@ -545,7 +548,18 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
     {
         if let sourceVc = sender.sourceViewController as? LagginAndScoresViewController
         {
-           self.scoreId = sourceVc.scoreIdLagAndScore
+           //self.scoreId = sourceVc.scoreIdLagAndScore
+        }
+    }
+    
+    @IBAction func unwindToPhaseTableViewFromConfirmScore(sender: UIStoryboardSegue)
+    {
+        if let sourceVc = sender.sourceViewController as? SubPhaseDetailViewController
+        {
+            //get scoreId from SubphaseDetailViewController
+            //self.phaseScore = sourceVc.scoreObjectFromDatabase
+//            self.scoreId = sourceVc.scoreObjectFromDatabase.scoreId
+            self.scoreId = sourceVc.sessionIdFromSegue
         }
     }
 }
