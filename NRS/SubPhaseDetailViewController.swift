@@ -30,10 +30,75 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     @IBOutlet weak var subPhaseId: UILabel!
     @IBOutlet weak var confirmScoreView: UIView!
     
+    //MARK: New confirm score view attributes
+    @IBOutlet weak var confirmScoreMessage: UILabel!
+    @IBOutlet weak var confirmScoreDescription: UILabel!
+    
 
     
     
+    
     //keep this
+//    @IBAction func infoButtonClicked(sender: AnyObject)
+//    {
+//       performSegueWithIdentifier("showInstructionManualVc", sender: self)
+//    }
+    
+//MARK: New confirm popover section
+    //for new button
+    @IBAction func unableScoreButtonClicked(sender: AnyObject)
+    {
+        let lightBlur = UIBlurEffect(style: UIBlurEffectStyle.Light)
+        blurView = UIVisualEffectView(effect: lightBlur)
+        
+        //always fill the view
+        blurView.frame = gradientLayerView.bounds
+        blurView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        
+        gradientLayerView.addSubview(blurView)
+        gradientLayerView.addSubview(self.confirmScoreView)
+        self.confirmScoreView.hidden = false
+        
+    }
+    
+    @IBAction func doNotConfirmXbutton(sender: AnyObject)
+    {
+        self.confirmScoreView.removeFromSuperview()
+        self.blurView.removeFromSuperview()
+    }
+
+    @IBAction func confirmCheckButton(sender: AnyObject)
+    {
+        markScoreObjectFromDatabase(self.subPhaseFromSegue.descriptionId, sessionDatabaseName: self.verbalInstructionObjectFromSegue.phaseDatabaseName)
+    }
+    
+    func markScoreObjectFromDatabase(descriptionIdInput:String, sessionDatabaseName: String)
+    {
+        let query = PFQuery(className: "Scores")
+        query.whereKey("objectId", equalTo: self.sessionIdFromSegue!)
+        query.getFirstObjectInBackgroundWithBlock {
+            (object: PFObject?, error: NSError?) -> Void in
+            if error != nil || object == nil {
+                print("The getFirstObject request failed.")
+            }
+            else
+            {
+                // The find succeeded.
+                print("Successfully retrieved the object.")
+                object![self.verbalInstructionObjectFromSegue.phaseDatabaseName] = descriptionIdInput
+                object!.saveInBackground()
+                //self.scoreObjectFromDatabase = Score(pfObject: object!)
+                //object![self.verbalInstructionObjectFromSegue.phaseDatabaseName] = descriptionIdInput
+                //print ("scoreObject.scoreId from getScoreObjectFromDatabase \(self.scoreObjectFromDatabase.scoreId)")
+                print ("MARKING \(sessionDatabaseName) as \(object![self.verbalInstructionObjectFromSegue.phaseDatabaseName])")
+            }
+        }
+    }
+
+
+//MARK: Old confirm popover section
+    
+    //keep this. This needs to be fixed. Index does not reset
     @IBAction func ableCheckClicked(sender: AnyObject)
     {
         // self.subPhaseArrayIndex = 0 to initialize
@@ -46,18 +111,9 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
             self.navigationItem.title = self.subPhaseArray[self.subPhaseArrayIndex].descriptionId
             print (self.subPhaseId.text)
         }
-
+        
     }
 
-    //keep this
-//    @IBAction func infoButtonClicked(sender: AnyObject)
-//    {
-//       performSegueWithIdentifier("showInstructionManualVc", sender: self)
-//    }
-    
-    
-    
-    //keep this
     @IBAction func scoresButtonClicked(sender: AnyObject)
     {
         performSegueWithIdentifier("showScoresTableView", sender: self)
@@ -85,22 +141,6 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         }
     }
     
-    //for new button
-    @IBAction func unableScoreButtonClicked(sender: AnyObject)
-    {
-        let lightBlur = UIBlurEffect(style: UIBlurEffectStyle.Light)
-        blurView = UIVisualEffectView(effect: lightBlur)
-        
-        //always fill the view
-        blurView.frame = gradientLayerView.bounds
-        blurView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        
-        gradientLayerView.addSubview(blurView)
-        gradientLayerView.addSubview(self.confirmScoreView)
-        self.confirmScoreView.hidden = false
-        
-    }
-    
     @IBAction func manualButonClicked(sender: AnyObject)
     {
         performSegueWithIdentifier("showManualVc", sender: self)
@@ -111,17 +151,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         performSegueWithIdentifier("showTestVc", sender: self)
     }
     
-    @IBAction func doNotConfirmXbutton(sender: AnyObject)
-    {
-        self.confirmScoreView.removeFromSuperview()
-        self.blurView.removeFromSuperview()
-        
-        //remove gradient layter view
-//        for subviews in self.gradientLayerView.subviews
-//        {
-//        }
-    }
-        //new delegate stuff
+            //new delegate stuff
 //    func userDidEnterInformation(phaseDatabaseName: String) {
 //        self.phaseDatabaseNameFromSegue = phaseDatabaseName
 //    }
@@ -182,26 +212,26 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         self.gradientLayerView.drawRect(rect)
     }
     
-    func markScoreObjectFromDatabase(descriptionIdInput:String, sessionDatabaseName: String)
-    {
-        let query = PFQuery(className: "Scores")
-        query.whereKey("objectId", equalTo: self.sessionIdFromSegue!)
-        query.getFirstObjectInBackgroundWithBlock {
-            (object: PFObject?, error: NSError?) -> Void in
-            if error != nil || object == nil {
-                print("The getFirstObject request failed.")
-            }
-            else
-            {
-                // The find succeeded.
-                print("Successfully retrieved the object.")
-                object![self.verbalInstructionObjectFromSegue.phaseDatabaseName] = descriptionIdInput
-                object!.saveInBackground()
-                print ("Marked \(sessionDatabaseName) as \(object![self.verbalInstructionObjectFromSegue.phaseDatabaseName])")
-            }
-        }
-        
-    }
+//    func markScoreObjectFromDatabase(descriptionIdInput:String, sessionDatabaseName: String)
+//    {
+//        let query = PFQuery(className: "Scores")
+//        query.whereKey("objectId", equalTo: self.sessionIdFromSegue!)
+//        query.getFirstObjectInBackgroundWithBlock {
+//            (object: PFObject?, error: NSError?) -> Void in
+//            if error != nil || object == nil {
+//                print("The getFirstObject request failed.")
+//            }
+//            else
+//            {
+//                // The find succeeded.
+//                print("Successfully retrieved the object.")
+//                object![self.verbalInstructionObjectFromSegue.phaseDatabaseName] = descriptionIdInput
+//                object!.saveInBackground()
+//                print ("Marked \(sessionDatabaseName) as \(object![self.verbalInstructionObjectFromSegue.phaseDatabaseName])")
+//            }
+//        }
+//        
+//    }
     
     func getScoreObject(sessionIdInput: String)
     {

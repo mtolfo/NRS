@@ -16,9 +16,9 @@
 		A820A6EC1CCF0C34005246CB /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A820A6EA1CCF0C34005246CB /* Bolts.framework */; };
 		A820A6ED1CCF0C34005246CB /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A820A6EB1CCF0C34005246CB /* Parse.framework */; };
 		A82B16151C725D980095CE2B /* VerbalInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82B16141C725D980095CE2B /* VerbalInstruction.swift */; };
-		A82BF7AF1CEAA4F400A1C3D1 /* ConfirmScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82BF7AE1CEAA4F400A1C3D1 /* ConfirmScoreViewController.swift */; };
 		A82BF7B11CEAC1E500A1C3D1 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82BF7B01CEAC1E500A1C3D1 /* TestViewController.swift */; };
 		A82BF7B71CEAD83200A1C3D1 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82BF7B61CEAD83200A1C3D1 /* BlurView.swift */; };
+		A82BF7B91CEB62F600A1C3D1 /* ConfirmScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82BF7B81CEB62F600A1C3D1 /* ConfirmScoreView.swift */; };
 		A83556921CCF0DF1008D0770 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A83556901CCF0DF1008D0770 /* Parse.framework */; };
 		A84C3EBE1CE593C900CD212F /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84C3EBC1CE593C900CD212F /* Bolts.framework */; };
 		A84C3EBF1CE593C900CD212F /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A84C3EBD1CE593C900CD212F /* Parse.framework */; };
@@ -93,9 +93,9 @@
 		A820A6EA1CCF0C34005246CB /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A820A6EB1CCF0C34005246CB /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A82B16141C725D980095CE2B /* VerbalInstruction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerbalInstruction.swift; sourceTree = "<group>"; };
-		A82BF7AE1CEAA4F400A1C3D1 /* ConfirmScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmScoreViewController.swift; sourceTree = "<group>"; };
 		A82BF7B01CEAC1E500A1C3D1 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		A82BF7B61CEAD83200A1C3D1 /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		A82BF7B81CEB62F600A1C3D1 /* ConfirmScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmScoreView.swift; sourceTree = "<group>"; };
 		A83556901CCF0DF1008D0770 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A84C3EBC1CE593C900CD212F /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		A84C3EBD1CE593C900CD212F /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -230,7 +230,6 @@
 				A86F697D1C4AF25400C402AB /* SubphaseViewController.swift */,
 				A89EF5F31C6997A30098CDBB /* SubPhaseDetailViewController.swift */,
 				A8DC3F5C1C86940B009B3774 /* ConfirmViewController.swift */,
-				A82BF7AE1CEAA4F400A1C3D1 /* ConfirmScoreViewController.swift */,
 			);
 			name = Subphase;
 			sourceTree = "<group>";
@@ -290,6 +289,7 @@
 				A820A6EB1CCF0C34005246CB /* Parse.framework */,
 				A8CEEE261CB33FC100C0C939 /* Avenir Next.ttc */,
 				A85F40E51C8219DC0093F7C5 /* Main.storyboard */,
+				A82BF7B81CEB62F600A1C3D1 /* ConfirmScoreView.swift */,
 				A82BF7B01CEAC1E500A1C3D1 /* TestViewController.swift */,
 				A8873D9B1CE63D3C006FD8DD /* Utility.swift */,
 				A886CEAB1CE6037C00C2B761 /* LagginAndScoresViewController.swift */,
@@ -468,6 +468,7 @@
 			files = (
 				A86F69801C4DAA0000C402AB /* SubPhaseCollectionViewCell.swift in Sources */,
 				A899524B1C3CADAB0023373D /* NewEvalSelectSessionViewController.swift in Sources */,
+				A82BF7B91CEB62F600A1C3D1 /* ConfirmScoreView.swift in Sources */,
 				A8CC55661CD853AC00A735A9 /* CalculateScore.swift in Sources */,
 				A8D392881C3CCCC1000B4125 /* NewEvalViewController.swift in Sources */,
 				A86F697C1C49400F00C402AB /* SessionInputViewController.swift in Sources */,
@@ -490,7 +491,6 @@
 				A814B8D11C66868300E20A35 /* PhaseTableViewCell.swift in Sources */,
 				A8873D9C1CE63D3C006FD8DD /* Utility.swift in Sources */,
 				A80D5B1A1C5875F4004EE98C /* Score.swift in Sources */,
-				A82BF7AF1CEAA4F400A1C3D1 /* ConfirmScoreViewController.swift in Sources */,
 				A8DC3F5F1C86AB4B009B3774 /* InstructionManualViewController.swift in Sources */,
 				A8DC3F5D1C86940B009B3774 /* ConfirmViewController.swift in Sources */,
 				A89EF5F41C6997A30098CDBB /* SubPhaseDetailViewController.swift in Sources */,
