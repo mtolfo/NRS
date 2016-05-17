@@ -57,6 +57,27 @@ class SessionInputViewController: UIViewController
         }
     }
     
+    func isScoreInDatabase(scoreToSearch: String) -> Bool
+    {
+        var isScoreInDatabase = false
+        let query = PFQuery(className: "Scores")
+        query.getObjectInBackgroundWithId(scoreToSearch){
+            (score:PFObject?, error: NSError?) -> Void in
+            if error == nil && score != nil
+            {
+                print ("ANSWER")
+                print (score)
+                isScoreInDatabase = true
+            }
+            else
+            {
+                print(error)
+            }
+        }
+        return isScoreInDatabase
+    }
+    
+    
 //    func printScores()
 //    {
 //        for element in self.scoreArray
@@ -111,6 +132,7 @@ class SessionInputViewController: UIViewController
         
         //loadSessionFromParse()
         loadScoresFromDatabase()
+        //print(self.isScoreInDatabase(sessionTextField.text!))
 
         // Do any additional setup after loading the view.
     }

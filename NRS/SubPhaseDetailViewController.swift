@@ -33,6 +33,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     //MARK: New confirm score view attributes
     @IBOutlet weak var confirmScoreMessage: UILabel!
     @IBOutlet weak var confirmScoreDescription: UILabel!
+    var subphaseScoreForDatabase: String?
     
 
     
@@ -69,7 +70,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
 
     @IBAction func confirmCheckButton(sender: AnyObject)
     {
-        markScoreObjectFromDatabase(self.subPhaseFromSegue.descriptionId, sessionDatabaseName: self.verbalInstructionObjectFromSegue.phaseDatabaseName)
+        markScoreObjectFromDatabase(self.subphaseScoreForDatabase!, sessionDatabaseName: self.verbalInstructionObjectFromSegue.phaseDatabaseName)
     }
     
     func markScoreObjectFromDatabase(descriptionIdInput:String, sessionDatabaseName: String)
@@ -83,13 +84,9 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
             }
             else
             {
-                // The find succeeded.
                 print("Successfully retrieved the object.")
                 object![self.verbalInstructionObjectFromSegue.phaseDatabaseName] = descriptionIdInput
                 object!.saveInBackground()
-                //self.scoreObjectFromDatabase = Score(pfObject: object!)
-                //object![self.verbalInstructionObjectFromSegue.phaseDatabaseName] = descriptionIdInput
-                //print ("scoreObject.scoreId from getScoreObjectFromDatabase \(self.scoreObjectFromDatabase.scoreId)")
                 print ("MARKING \(sessionDatabaseName) as \(object![self.verbalInstructionObjectFromSegue.phaseDatabaseName])")
             }
         }
@@ -110,6 +107,12 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
             self.subPhaseId.text = self.subPhaseArray[self.subPhaseArrayIndex].descriptionId
             self.navigationItem.title = self.subPhaseArray[self.subPhaseArrayIndex].descriptionId
             print (self.subPhaseId.text)
+            
+            
+            //MARK: for description in new confirm score
+            self.subphaseScoreForDatabase = self.subPhaseArray[subPhaseArrayIndex - 1].descriptionId
+            self.confirmScoreMessage.text = "Confirm score\n \(self.verbalInstructionObjectFromSegue.phaseItem) as \(self.subPhaseArray[subPhaseArrayIndex - 1].descriptionId)"
+            self.confirmScoreDescription.text = self.subPhaseArray[self.subPhaseArrayIndex - 1].description
         }
         
     }
@@ -129,14 +132,14 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         // shouldPerform is a validation check
         if (shouldPerformSegueWithIdentifier("showConfirmView", sender: self))
         {
-            let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-            blurView = UIVisualEffectView(effect: darkBlur)
-            
-            //always fill the view
-            blurView.frame = gradientLayerView.bounds
-            blurView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-            
-            gradientLayerView.addSubview(blurView)
+//            let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+//            blurView = UIVisualEffectView(effect: darkBlur)
+//            
+//            //always fill the view
+//            blurView.frame = gradientLayerView.bounds
+//            blurView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+//            
+//            gradientLayerView.addSubview(blurView)
             performSegueWithIdentifier("showConfirmView", sender: self)
         }
     }
@@ -188,7 +191,6 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         self.phaseName.text = self.verbalInstructionObjectFromSegue.phaseItem
         self.subPhaseId.text = self.subPhaseFromSegue.descriptionId
         
-        
         // if the session id is not coming from the in progress screen the use the singleton for the session id
         if (self.sessionIdFromSegue ==  nil)
         {
@@ -196,6 +198,17 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         }
 
         self.subPhaseArrayIndex = getStartingIndex(self.subPhaseFromSegue.descriptionId, subPhaseArrayInput: self.subPhaseArray)!
+        
+        //MARK: New confirm score view. No need to move through index so we show what was
+        //passed from previous view
+        if self.subPhaseArrayIndex < self.subPhaseArray.count - 1
+        {
+            self.subphaseScoreForDatabase = self.subPhaseArray[subPhaseArrayIndex - 1].descriptionId
+            self.confirmScoreMessage.text = "Confirm score\n \(self.verbalInstructionObjectFromSegue.phaseItem) as \(self.subPhaseArray[subPhaseArrayIndex - 1].descriptionId)"
+            self.confirmScoreDescription.text = self.subPhaseArray[self.subPhaseArrayIndex - 1].description
+        }
+        
+        
         self.getScoreObject(self.sessionIdFromSegue!)
         
         self.confirmScoreView.hidden = true
@@ -211,27 +224,6 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         let rect = CGRect.zero
         self.gradientLayerView.drawRect(rect)
     }
-    
-//    func markScoreObjectFromDatabase(descriptionIdInput:String, sessionDatabaseName: String)
-//    {
-//        let query = PFQuery(className: "Scores")
-//        query.whereKey("objectId", equalTo: self.sessionIdFromSegue!)
-//        query.getFirstObjectInBackgroundWithBlock {
-//            (object: PFObject?, error: NSError?) -> Void in
-//            if error != nil || object == nil {
-//                print("The getFirstObject request failed.")
-//            }
-//            else
-//            {
-//                // The find succeeded.
-//                print("Successfully retrieved the object.")
-//                object![self.verbalInstructionObjectFromSegue.phaseDatabaseName] = descriptionIdInput
-//                object!.saveInBackground()
-//                print ("Marked \(sessionDatabaseName) as \(object![self.verbalInstructionObjectFromSegue.phaseDatabaseName])")
-//            }
-//        }
-//        
-//    }
     
     func getScoreObject(sessionIdInput: String)
     {
