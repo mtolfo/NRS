@@ -74,7 +74,12 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         //comment the unwind for now. It is not working.
         //self.performSegueWithIdentifier("unwindToPhasesFromConfirm", sender: self)
         markScoreObjectFromDatabase(self.subphaseScoreForDatabase!, sessionDatabaseName: self.verbalInstructionObjectFromSegue.phaseDatabaseName)
-//        unwindToPhasesFromConfirm
+        self.confirmScoreView.removeFromSuperview()
+        self.blurView.removeFromSuperview()
+
+        performSegueWithIdentifier("showPhasesFromConfirm", sender: self)
+
+        //        unwindToPhasesFromConfirm
         //self.performSegueWithIdentifier("unwindToPhasesFromConfirm", sender: self)
         
     }
@@ -332,6 +337,12 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         
         //this goes back to table view and refreshes the scores
         if segue.identifier ==  "showScoresTableView"
+        {
+            let targetVc = segue.destinationViewController as! PhaseViewController
+            targetVc.phaseScore = self.scoreObjectFromDatabase
+        }
+        
+        if segue.identifier == "showPhasesFromConfirm"
         {
             let targetVc = segue.destinationViewController as! PhaseViewController
             targetVc.phaseScore = self.scoreObjectFromDatabase

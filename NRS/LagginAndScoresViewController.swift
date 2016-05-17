@@ -18,9 +18,14 @@ class LagginAndScoresViewController: UIViewController, MFMailComposeViewControll
     var laggingPhasesFinalArray: [PhaseViewController.Phase] = []
     var overallPhaseValue: String?
     
-    @IBOutlet weak var overallScoreLabel: UILabel!
+    
     @IBOutlet weak var gradientLayerView: GradientView!
-
+    @IBOutlet weak var overallPhaseScoreTextView: UITextView!
+    
+    
+    @IBOutlet weak var scoreAndLagTextView: UITextView!
+    @IBOutlet weak var evaluationIdTextView: UITextView!
+    
     @IBAction func backToPhasesButtonClicked(sender: AnyObject)
     {
         self.performSegueWithIdentifier("unwindToPhaseTableView", sender: self)
@@ -37,7 +42,7 @@ class LagginAndScoresViewController: UIViewController, MFMailComposeViewControll
             mailComposer.mailComposeDelegate = self
         
             mailComposer.setSubject("NRS Score and Lagging Items")
-            mailComposer.setMessageBody("Evaluation Identifier: \(self.scoreIdLagAndScore!)\n" + "\nOverall score: \(self.overallPhaseValue!)\n" + "\nLagging items:\n" + Utility().printLaggingItems(self.laggingPhasesFinalArray), isHTML: false)
+            mailComposer.setMessageBody("Evaluation Identifier: \(self.scoreIdLagAndScore!)\n" + "\nOverall score: \(self.overallPhaseValue!)\n" + Utility().printScores(self.phaseStructArray) + Utility().printLaggingItems(self.laggingPhasesFinalArray), isHTML: false)
         
             self.presentViewController(mailComposer, animated: true, completion: nil)
             
@@ -51,8 +56,7 @@ class LagginAndScoresViewController: UIViewController, MFMailComposeViewControll
     
 
     
-    @IBOutlet weak var testTextLabel: UILabel!
-    @IBOutlet weak var scoreAndLagLabel: UILabel!
+    
     
     override func viewDidLayoutSubviews()
     {
@@ -65,7 +69,7 @@ class LagginAndScoresViewController: UIViewController, MFMailComposeViewControll
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        testTextLabel.text = self.scoreIdLagAndScore
+        
         let allPhasesWithScores = phaseStructArray.filter({$0.phaseScore != ""})
         var laggingScoresString: String = "There are no lagging scores."
         var phaseScoresString: String = "There are no phase scores."
@@ -86,8 +90,10 @@ class LagginAndScoresViewController: UIViewController, MFMailComposeViewControll
             laggingScoresString = Utility().printLaggingItems(self.laggingPhasesFinalArray)
             phaseScoresString = Utility().printScores(allPhasesWithScores)
         }
-        self.scoreAndLagLabel.text = phaseScoresString + "\n\n" + laggingScoresString
-        self.overallScoreLabel.text = self.overallPhaseValue
+        
+        self.evaluationIdTextView.text = self.scoreIdLagAndScore
+        self.overallPhaseScoreTextView.text = self.overallPhaseValue
+        self.scoreAndLagTextView.text = phaseScoresString + "\n" + laggingScoresString
 
     }
     

@@ -72,7 +72,7 @@ class Utility
         
         for element in finalLaggingItemsArray
         {
-            laggingItemsString = element.phaseName! + " " + element.phaseScore! + "\n"
+            laggingItemsString = element.phaseScore! + " " + element.phaseName! + "\n"
             finalLaggingItemsString.appendContentsOf(laggingItemsString)
         }
         return "Lagging Items\n" + finalLaggingItemsString
@@ -85,7 +85,7 @@ class Utility
         
         for element in phaseStructArray
         {
-            phaseScoresString = element.phaseName! + " " + element.phaseScore! + "\n"
+            phaseScoresString = element.phaseScore! + " " + element.phaseName! + "\n"
             finalPhaseScoreString.appendContentsOf(phaseScoresString)
         }
         return "Phase Scores\n" + finalPhaseScoreString

@@ -487,7 +487,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
         navigationController?.hidesBarsOnSwipe = true
         self.navBarView.backgroundColor = UIColor().UIColorFromRGB(0xA30B1D)
         //self.do_table_refresh()
-        self.getScoreObjectFromDatabase(self.scoreId!)
+        //self.getScoreObjectFromDatabase(self.scoreId!)
     }
     
     
