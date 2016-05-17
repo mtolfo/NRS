@@ -54,28 +54,36 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
             self.currentVersionLabel.hidden = false
             getCurrentVersionFromArray()
             let formattedStartDate = formatDates(self.currentVersionArray[0].startDate, endDate: self.currentVersionArray[0].endDate)
-
             self.currentVersionLabel.text = "\(self.currentVersionArray[0].version): \(formattedStartDate.startDateString)-Today"
+            self.newEvalDoneButton.hidden = false
         case 1:
             self.versionPicker.hidden = false
             self.currentVersionLabel.hidden = true
             getPreviousVersionsFromArray()
+            self.selectedPreviousVersion = self.previousVersionArray[0].version
+            
+            //hides the done button if there are no previous versions
+            if (self.previousVersionArray[0].version == "No previous versions")
+            {
+                self.newEvalDoneButton.hidden = true
+            }
+            else
+            {
+                self.newEvalDoneButton.hidden = false
+            }
             
             //this is to initialize picker default in case no selection is made in the picker
-            self.selectedPreviousVersion = self.previousVersionArray[0].version
             
             versionPicker.reloadAllComponents()
         default:
             break
         }
-        self.newEvalDoneButton.hidden = false
     }
     
     @IBAction func doneButtonClicked(sender: AnyObject)
     {
         self.selectedVersionAfterDoneButtonClick = getSelectedVersion()
         self.startingPhaseItemName = getStartingPhaseItem()
-        print ("In NewEvalViewController self.startingPhaseitemName \(self.startingPhaseItemName)")
         self.createNewEvalScoreSession()
     }
     
@@ -112,17 +120,6 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         })
     }
     
-//    func tempCreateNewEvalScoreSession()
-//    {
-//        
-//        let noScore = ""
-//        let scoreSession = Score(/*scoreIdInit: noScore, */sitInit: noScore, reverseSitUpInit: noScore, sitUpInit: noScore, trunkExtensionInSittingInit: noScore, overheadPressInit: noScore, forwardReachAndGraspInit: noScore, doorPullAndOpenInit: noScore, canOpenAndManipulationInit: noScore, sitToStandInit: noScore, standInit: noScore, walkingInit: noScore, standAdaptabilityInit: noScore, stepRetrainingInit: noScore, stepAdaptabilityInit: noScore, versionInit: self.selectedVersionAfterDoneButtonClick)
-//        
-//        self.newEvalScoreSessionPfObject = scoreSession.toPfObject()
-//        
-//        
-//    }
-    
     override func viewDidLayoutSubviews()
     {
         //set up text attributes for segmented control
@@ -139,7 +136,6 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         self.gradientLayerView.drawRect(rect)
     }
 
-    
     
     //to fix the label size use label.adjustsFontSizeToFitWidth
     
@@ -168,9 +164,6 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         self.navigationItem.leftBarButtonItem = nil;
         
     }
-    
-    
-    
     
     func getCurrentVersionFromArray()
     {
@@ -314,9 +307,14 @@ class NewEvalViewController: UIViewController, UIPickerViewDataSource ,UIPickerV
         var pickerLabel = view as! UILabel!
         if view == nil {  //if no label there yet
             pickerLabel = UILabel()}
-        let formattedDate = formatDates(self.previousVersionArray[row].startDate, endDate:self.previousVersionArray[row].endDate)
         
-        let titleData = "\(self.previousVersionArray[row].version): \(formattedDate.startDateString)-\(formattedDate.endDateString)"
+        //use if there are previous versions
+        //let formattedDate = formatDates(self.previousVersionArray[row].startDate, endDate:self.previousVersionArray[row].endDate)
+        //let titleData = "\(self.previousVersionArray[row].version): \(formattedDate.startDateString)-\(formattedDate.endDateString)"
+        
+        //use if there are no previous versions
+        let titleData = "\(self.previousVersionArray[row].version)"//: \(formattedDate.startDateString)-\(formattedDate.endDateString)"
+        
         let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "AvenirNext-Regular", size: 16.0)!,NSForegroundColorAttributeName:UIColor.whiteColor()])
         pickerLabel!.attributedText = myTitle
         pickerLabel!.textAlignment = .Center

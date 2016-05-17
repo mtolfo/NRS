@@ -38,11 +38,11 @@ class ConfirmViewController: UIViewController
         
         if (subPhaseObject.descriptionId == "1A")
         {
-            self.confirmationMessageLabel.text = "Confirm \(self.verbalInstructionObject.phaseItem) \(self.subPhaseObject.descriptionId) as ABLE"
+            self.confirmationMessageLabel.text = "Confirm score\n \(self.verbalInstructionObject.phaseItem) as \(self.subPhaseObject.descriptionId)."
         }
         else
         {
-            self.confirmationMessageLabel.text = "Confirm previous task \(self.verbalInstructionObject.phaseItem) \(self.subPhaseObject.descriptionId) as ABLE."
+            self.confirmationMessageLabel.text = "Confirm score\n \(self.verbalInstructionObject.phaseItem) as \(self.subPhaseObject.descriptionId)."
         }
         
 

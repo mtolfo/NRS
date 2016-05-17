@@ -694,8 +694,7 @@
                                         <include reference="hE1-PU-ZtD"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="85" y="477" width="60" height="21"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="C4A-RM-gOA"/>
                                         <exclude reference="Cle-sz-L6X"/>
@@ -733,8 +732,7 @@
                                         <include reference="pTH-St-Tdc"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="85" y="505" width="100" height="25"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="7lS-hm-Oan"/>
                                         <include reference="LHg-GM-yZc"/>
@@ -765,8 +763,7 @@
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="175.5" y="479" width="105" height="21"/>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="163" y="479" width="43" height="21"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="AZD-1W-mT0"/>
                                         <include reference="KZS-82-t1P"/>
@@ -795,8 +792,7 @@
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="288.5" y="479" width="103" height="21"/>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="226" y="479" width="54" height="21"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="Ghv-l2-AzP"/>
                                         <include reference="Ryj-RD-oft"/>
@@ -822,8 +818,7 @@
                                         <exclude reference="moh-c2-8dy"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="177" y="509" width="38" height="21"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="F6A-Gi-MIZ"/>
                                         <exclude reference="Mln-mY-vts"/>
@@ -851,8 +846,7 @@
                                         <exclude reference="jd4-uI-xJT"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="240" y="507" width="54" height="21"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="Bk2-Kc-Dpt"/>
                                         <include reference="P3Q-Cw-dTa"/>
@@ -998,7 +992,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ND8-iC-w3c" userLabel="Phase Item Collection View">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ND8-iC-w3c" userLabel="Phase Item Collection View">
                                 <rect key="frame" x="0.0" y="82" width="600" height="518"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="0.0" id="Nu1-hk-hhh">
@@ -1648,7 +1642,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="520" y="532" width="60" height="60"/>
+                                    <rect key="frame" x="520" y="732" width="60" height="60"/>
                                     <mask key="constraints">
                                         <include reference="9oE-tM-e12"/>
                                         <include reference="FwR-ZN-xIB"/>
@@ -1704,7 +1698,7 @@ With arms hanging down, able to initiate thoracic spine extension.</string>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="374" width="560" height="150"/>
+                                    <rect key="frame" x="20" y="374" width="560" height="350"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4m-Zk-k6F" userLabel="Able Button">
@@ -1760,8 +1754,7 @@ With arms hanging down, able to initiate thoracic spine extension.</string>
                                         <exclude reference="tmz-c2-gek"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="532" width="60" height="60"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="8WP-HT-v28"/>
                                         <include reference="E6j-vf-Igc"/>
@@ -2599,6 +2592,9 @@ This tip will help remind you of what to do in this sub phase.</string>
                                     <constraint firstAttribute="width" constant="44" id="y1G-v6-g6q"/>
                                 </constraints>
                                 <state key="normal" image="ShareButton"/>
+                                <connections>
+                                    <action selector="emailLagAndScoresClicked:" destination="Xme-Ut-zm7" eventType="touchUpInside" id="jv4-gz-hRD"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scores and Lagging Items Values" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywO-E6-iRL">
                                 <rect key="frame" x="20" y="188" width="560" height="392"/>
@@ -2760,6 +2756,9 @@ This tip will help remind you of what to do in this sub phase.</string>
                             <mask key="constraints">
                                 <exclude reference="gzj-Nf-Teu"/>
                                 <exclude reference="oyp-jz-Fdc"/>
+                                <exclude reference="Bke-Qq-VE3"/>
+                                <exclude reference="qY9-zc-ypN"/>
+                                <exclude reference="tVo-Ed-IZo"/>
                                 <exclude reference="3yA-Gl-JMa"/>
                                 <exclude reference="7gk-mI-AGB"/>
                                 <exclude reference="FjQ-pN-xtJ"/>
@@ -2771,9 +2770,6 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 <exclude reference="QRM-Fi-4BJ"/>
                                 <exclude reference="XLE-2r-lOE"/>
                                 <exclude reference="rBX-LB-tGr"/>
-                                <exclude reference="Bke-Qq-VE3"/>
-                                <exclude reference="qY9-zc-ypN"/>
-                                <exclude reference="tVo-Ed-IZo"/>
                                 <exclude reference="usG-ek-qJR"/>
                                 <exclude reference="wFG-bK-Lyd"/>
                             </mask>
@@ -2786,6 +2782,9 @@ This tip will help remind you of what to do in this sub phase.</string>
                             <mask key="constraints">
                                 <include reference="gzj-Nf-Teu"/>
                                 <include reference="oyp-jz-Fdc"/>
+                                <include reference="Bke-Qq-VE3"/>
+                                <include reference="qY9-zc-ypN"/>
+                                <include reference="tVo-Ed-IZo"/>
                                 <include reference="3yA-Gl-JMa"/>
                                 <exclude reference="eYx-5r-kHy"/>
                                 <include reference="hOK-Bb-oif"/>
@@ -2795,9 +2794,6 @@ This tip will help remind you of what to do in this sub phase.</string>
                                 <exclude reference="dy1-Hj-iHi"/>
                                 <exclude reference="fzr-HO-b2v"/>
                                 <include reference="rBX-LB-tGr"/>
-                                <include reference="Bke-Qq-VE3"/>
-                                <include reference="qY9-zc-ypN"/>
-                                <include reference="tVo-Ed-IZo"/>
                                 <include reference="wFG-bK-Lyd"/>
                             </mask>
                         </variation>
@@ -2830,7 +2826,7 @@ This tip will help remind you of what to do in this sub phase.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AIj-Rk-uMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="euo-4e-agS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1272" y="645"/>
+            <point key="canvasLocation" x="-1154" y="675"/>
         </scene>
         <!--Confirm View Controller-->
         <scene sceneID="zeI-rs-jLi">
@@ -2993,7 +2989,7 @@ This tip will help remind you of what to do in this sub phase.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SAr-Mo-tSO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="676" y="462"/>
+            <point key="canvasLocation" x="700" y="584"/>
         </scene>
         <!--New Evaluation-->
         <scene sceneID="cRN-jv-YPw">
@@ -3359,7 +3355,7 @@ This tip will help remind you of what to do in this sub phase.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mvk-hT-ple" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1077" y="-987"/>
+            <point key="canvasLocation" x="-1033" y="-995"/>
         </scene>
     </scenes>
     <resources>
@@ -3375,9 +3371,9 @@ This tip will help remind you of what to do in this sub phase.</string>
         <image name="ShareButton" width="46" height="46"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="upe-EF-Pqf"/>
-        <segue reference="SZW-FV-s8R"/>
         <segue reference="TGc-n3-7N9"/>
-        <segue reference="Dhf-FT-onD"/>
+        <segue reference="QrH-FV-f4S"/>
+        <segue reference="xCI-E7-eTL"/>
+        <segue reference="upe-EF-Pqf"/>
     </inferredMetricsTieBreakers>
 </document>

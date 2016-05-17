@@ -29,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //var vc = NewEvalViewController
         UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: .Default)
         UINavigationBar.appearance().shadowImage = UIImage()
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+        
         
 //        UINavigationBar.appearance().barTintColor = UIColor(red: 242.0/255.0, green:
 //            116.0/255.0, blue: 119.0/255.0, alpha: 1.0)

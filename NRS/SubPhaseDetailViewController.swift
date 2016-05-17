@@ -31,6 +31,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     //keep this
     @IBAction func ableCheckClicked(sender: AnyObject)
     {
+        // self.subPhaseArrayIndex = 0 to initialize
         //TODO: Create check to not go beyond array
         if self.subPhaseArrayIndex < self.subPhaseArray.count - 1
         {
@@ -273,6 +274,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
             let targetVc = segue.destinationViewController as! SubphaseViewController
             targetVc.phaseNameFromSegue = self.phaseDatabaseNameFromSegue
             targetVc.phaseName = self.phaseName.text
+            targetVc.phaseScoreObject = self.scoreObjectFromDatabase
         }
         
         if segue.identifier == "showManualVc"

@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class LagginAndScoresViewController: UIViewController
+class LagginAndScoresViewController: UIViewController, MFMailComposeViewControllerDelegate
 {
     var scoreIdLagAndScore: String?
     var phaseStructArray: [PhaseViewController.Phase] = []
@@ -25,6 +26,31 @@ class LagginAndScoresViewController: UIViewController
         self.performSegueWithIdentifier("unwindToPhaseTableView", sender: self)
     }
     
+    
+    @IBAction func emailLagAndScoresClicked(sender: AnyObject)
+    {
+            if MFMailComposeViewController.canSendMail()
+            {
+            print("Can send email")
+        
+            let mailComposer = MFMailComposeViewController()
+            mailComposer.mailComposeDelegate = self
+        
+            mailComposer.setSubject("NRS Score and Lagging Items")
+            mailComposer.setMessageBody("Evaluation Identifier: \(self.scoreIdLagAndScore!)\n" + "\nOverall score: \(self.overallPhaseValue!)\n" + "\nLagging items:\n" + Utility().printLaggingItems(self.laggingPhasesFinalArray), isHTML: false)
+        
+            self.presentViewController(mailComposer, animated: true, completion: nil)
+            
+            }
+
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+
+    
     @IBOutlet weak var testTextLabel: UILabel!
     @IBOutlet weak var scoreAndLagLabel: UILabel!
     
@@ -40,40 +66,9 @@ class LagginAndScoresViewController: UIViewController
     {
         super.viewDidLoad()
         testTextLabel.text = self.scoreIdLagAndScore
-        self.laggingPhasesFinalArray = self.getLaggingItems(phaseStructArray)
-        print ("\nFINAL LAGGING: \(self.laggingPhasesFinalArray)")
-
-        self.scoreAndLagLabel.text = self.printLaggingItems(self.laggingPhasesFinalArray)
-        self.overallScoreLabel.text = self.overallPhaseValue
-
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-     func printLaggingItems (finalLaggingItemsArray: [PhaseViewController.Phase]) -> String
-    {
-        var laggingItemsString: String = ""
-        var finalLaggingItemsString: String = ""
-        
-        for element in finalLaggingItemsArray
-        {
-            laggingItemsString = element.phaseName! + " " + element.phaseScore! + "\n"
-            print ("IN LOOP: \(laggingItemsString)")
-            finalLaggingItemsString.appendContentsOf(laggingItemsString)
-        }
-        print ("FINAL IN FUNC: \(finalLaggingItemsString)")
-        return finalLaggingItemsString
-    }
-    
-    func getLaggingItems (phaseStructArray: [PhaseViewController.Phase]) -> [PhaseViewController.Phase]
-    {
         let allPhasesWithScores = phaseStructArray.filter({$0.phaseScore != ""})
-        var minPhaseScore: String = ""
-        var allAppendedLaggingPhasesArray: [PhaseViewController.Phase] = []
-        var lowestScoresArray: [String] = []
-        var mutablePhaseStructArray:[PhaseViewController.Phase] = []
+        var laggingScoresString: String = "There are no lagging scores."
+        var phaseScoresString: String = "There are no phase scores."
         
         if (allPhasesWithScores.isEmpty)
         {
@@ -87,34 +82,19 @@ class LagginAndScoresViewController: UIViewController
         }
         else
         {
-            
-        
-        mutablePhaseStructArray = allPhasesWithScores
-        //TODO: Create condition when are no more items in mutable array
-        for count in 0...2
-        {
-            if (mutablePhaseStructArray.isEmpty)
-            {
-                return allPhasesWithScores
-            }
-            else
-            {
-                minPhaseScore = Utility().getMinPhaseScore(mutablePhaseStructArray)
-                lowestScoresArray.append(minPhaseScore) //place all of the lowest scores in the array
-                
-                allAppendedLaggingPhasesArray += Utility().getLaggingPhasesArray(mutablePhaseStructArray, lowestScore: minPhaseScore)
-                
-                mutablePhaseStructArray = Utility().filterOutLowestScoreArray(mutablePhaseStructArray, lowestScore: minPhaseScore)
-            }
-            
-            print ("COUNT: \(count)")
+            self.laggingPhasesFinalArray = Utility().getLaggingItems(phaseStructArray)
+            laggingScoresString = Utility().printLaggingItems(self.laggingPhasesFinalArray)
+            phaseScoresString = Utility().printScores(allPhasesWithScores)
         }
-        }
-        
-        //print ("\nFINAL LAGGING: \(allAppendedLaggingPhasesArray)")
-        return allAppendedLaggingPhasesArray
+        self.scoreAndLagLabel.text = phaseScoresString + "\n\n" + laggingScoresString
+        self.overallScoreLabel.text = self.overallPhaseValue
+
     }
     
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
     // MARK: - Unwind to Phase Table View
     
@@ -129,26 +109,6 @@ class LagginAndScoresViewController: UIViewController
     }
     */
     
-    
-    /*
-     for element in allPhasesWithScores
-     {
-     if (self.rightLeftPhasesArray.contains(element.phaseName!))
-     {
-     numberOfPhases += 0.5
-     }
-     else
-     {
-     numberOfPhases += 1.0
-     }
-     }
-     
-     //    var a = [1, 2, 3]
-     //    var b = [2, 3, 4]
-     //    a.filter { element in
-     //    !contains(b, element)
-     //    }
-     */
-
+   
 
 }

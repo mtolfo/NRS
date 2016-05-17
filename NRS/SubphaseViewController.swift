@@ -44,6 +44,7 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
     {
         super.viewDidLoad()
         
+        //TODO: Phase name is always sit when back button from detail view is clicked
         // Do any additional setup after loading the view.
         loadPhaseItemsFromDatabase()
         loadVerbalInstructionsFromDatabase()
