@@ -167,6 +167,12 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
         {
             cell.backgroundColor = UIColor().UIColorFromRGB(0xFFFFFF)
         }
+        
+        if (phaseItemArray[indexPath.row].isAble)
+        {
+            cell.backgroundColor = UIColor().UIColorFromRGB(0xB6B6B6)
+            cell.userInteractionEnabled = false
+        }
 
         //configure text -- indent first line of lable text
         //let paragraphStyle = NSMutableParagraphStyle()
@@ -203,6 +209,14 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
             {
                 
                 let destinationViewController = segue.destinationViewController as! SubPhaseDetailViewController
+//                if (phaseItemArray[indexPaths[0].row].descriptionId != "1A")
+//                {
+//                    destinationViewController.subPhaseFromSegue = phaseItemArray[indexPaths[0].row]
+//                }
+//                else
+//                {
+//                    print ("SCORING 1A")
+//                }
                 destinationViewController.subPhaseFromSegue = phaseItemArray[indexPaths[0].row]
                 destinationViewController.phaseDatabaseNameFromSegue = self.phaseNameFromSegue
                 destinationViewController.sessionIdFromSegue = self.sessionIdFromSegue
