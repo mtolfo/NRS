@@ -397,7 +397,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
                 self.scoreLabel.text = String(self.getNumberTotal())
                 self.numScoredItemsLabel.text = String(self.getNumberOfPhasesWithScores())
                 self.overallPhaseScore = self.getOverallPhase(self.grandTotal)
-                self.overallPhaseScoreLabel.text = self.overallPhaseScore
+                self.overallPhaseScoreLabel.text = self.overallPhaseScore! + " (raw score \(String(format:"%.2f", self.grandTotal)))"
                 self.do_table_refresh()
             }
         }

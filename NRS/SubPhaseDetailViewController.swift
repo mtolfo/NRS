@@ -59,6 +59,13 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         
         gradientLayerView.addSubview(blurView)
         gradientLayerView.addSubview(self.confirmScoreView)
+        print (self.confirmScoreMessage.text)
+        print ("INDEX: \(self.subPhaseArrayIndex)")
+        self.subPhaseArrayIndex -= 1
+        self.subphaseScoreForDatabase = self.subPhaseArray[subPhaseArrayIndex].descriptionId
+        self.confirmScoreMessage.text = "Confirm score\n \(self.verbalInstructionObjectFromSegue.phaseItem) as \(self.subPhaseArray[subPhaseArrayIndex].descriptionId)"
+        self.confirmScoreDescription.text = self.subPhaseArray[self.subPhaseArrayIndex].description
+        
         self.confirmScoreView.hidden = false
         
     }
@@ -66,6 +73,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     @IBAction func doNotConfirmXbutton(sender: AnyObject)
     {
         //self.confirmScoreView.removeFromSuperview()
+        print (self.confirmScoreMessage.text)
         self.confirmScoreView.hidden = true
         self.blurView.removeFromSuperview()
     }
@@ -111,7 +119,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     //keep this. This needs to be fixed. Index does not reset
     @IBAction func ableCheckClicked(sender: AnyObject)
     {
-        // self.subPhaseArrayIndex = 0 to initialize
+         //self.subPhaseArrayIndex = 0 to initialize
         //TODO: Create check to not go beyond array
         if self.subPhaseArrayIndex < self.subPhaseArray.count - 1
         {
@@ -123,9 +131,10 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
             
             
             //MARK: for description in new confirm score
-            self.subphaseScoreForDatabase = self.subPhaseArray[subPhaseArrayIndex - 1].descriptionId
-            self.confirmScoreMessage.text = "Confirm score\n \(self.verbalInstructionObjectFromSegue.phaseItem) as \(self.subPhaseArray[subPhaseArrayIndex - 1].descriptionId)"
-            self.confirmScoreDescription.text = self.subPhaseArray[self.subPhaseArrayIndex - 1].description
+            //self.subPhaseArrayIndex -= 1
+//            self.subphaseScoreForDatabase = self.subPhaseArray[subPhaseArrayIndex - 1].descriptionId
+//            self.confirmScoreMessage.text = "Confirm score\n \(self.verbalInstructionObjectFromSegue.phaseItem) as \(self.subPhaseArray[subPhaseArrayIndex - 1].descriptionId)"
+//            self.confirmScoreDescription.text = self.subPhaseArray[self.subPhaseArrayIndex - 1].description
         }
         
     }
