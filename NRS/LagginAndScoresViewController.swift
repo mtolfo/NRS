@@ -34,6 +34,7 @@ class LagginAndScoresViewController: UIViewController, MFMailComposeViewControll
     
     @IBAction func emailLagAndScoresClicked(sender: AnyObject)
     {
+        let allPhasesWithScores = phaseStructArray.filter({$0.phaseScore != ""})
             if MFMailComposeViewController.canSendMail()
             {
             print("Can send email")
@@ -42,7 +43,7 @@ class LagginAndScoresViewController: UIViewController, MFMailComposeViewControll
             mailComposer.mailComposeDelegate = self
         
             mailComposer.setSubject("NRS Score and Lagging Items")
-            mailComposer.setMessageBody("Evaluation Identifier: \(self.scoreIdLagAndScore!)\n" + "\nOverall score: \(self.overallPhaseValue!)\n" + Utility().printScores(self.phaseStructArray) + Utility().printLaggingItems(self.laggingPhasesFinalArray), isHTML: false)
+            mailComposer.setMessageBody("Evaluation Identifier: \(self.scoreIdLagAndScore!)\n" + "\nOverall score: \(self.overallPhaseValue!)\n" + Utility().printScores(allPhasesWithScores) + "\n" + Utility().printLaggingItems(self.laggingPhasesFinalArray), isHTML: false)
         
             self.presentViewController(mailComposer, animated: true, completion: nil)
             

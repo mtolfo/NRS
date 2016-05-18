@@ -20,6 +20,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     var verbalInstructionObjectFromSegue:VerbalInstruction!
     var subPhaseArray = [Subphase]()
     var subPhaseArrayIndex:Int = 0
+    //var subPhaseArrayIndexCopy: Int = 0
     var phaseInstruction = ""
     var blurView: UIVisualEffectView!
     
@@ -49,6 +50,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     //for new button
     @IBAction func unableScoreButtonClicked(sender: AnyObject)
     {
+        let subphaseArrayIndexCopy = self.subPhaseArrayIndex
         //let lightBlur = UIBlurEffect(style: UIBlurEffectStyle.Light)
         let darkBlur = UIBlurEffect(style: UIBlurEffectStyle.Dark)
         blurView = UIVisualEffectView(effect: darkBlur)
@@ -61,12 +63,14 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         gradientLayerView.addSubview(self.confirmScoreView)
         print (self.confirmScoreMessage.text)
         print ("INDEX: \(self.subPhaseArrayIndex)")
+        
         self.subPhaseArrayIndex -= 1
         self.subphaseScoreForDatabase = self.subPhaseArray[subPhaseArrayIndex].descriptionId
         self.confirmScoreMessage.text = "Confirm score\n \(self.verbalInstructionObjectFromSegue.phaseItem) as \(self.subPhaseArray[subPhaseArrayIndex].descriptionId)"
         self.confirmScoreDescription.text = self.subPhaseArray[self.subPhaseArrayIndex].description
-        
+
         self.confirmScoreView.hidden = false
+        self.subPhaseArrayIndex = subphaseArrayIndexCopy
         
     }
     
