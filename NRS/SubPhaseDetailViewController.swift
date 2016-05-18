@@ -65,7 +65,8 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     
     @IBAction func doNotConfirmXbutton(sender: AnyObject)
     {
-        self.confirmScoreView.removeFromSuperview()
+        //self.confirmScoreView.removeFromSuperview()
+        self.confirmScoreView.hidden = true
         self.blurView.removeFromSuperview()
     }
 
