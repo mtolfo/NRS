@@ -323,9 +323,6 @@
                                         <exclude reference="juj-Tw-EAJ"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="81" y="34" width="502" height="36"/>
-                                </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Video" translatesAutoresizingMaskIntoConstraints="NO" id="gzR-qu-Mb6">
                                 <rect key="frame" x="80" y="159" width="440" height="264"/>
@@ -1727,7 +1724,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijd-Sh-Bs6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="824" y="9"/>
+            <point key="canvasLocation" x="1003.5" y="-17"/>
         </scene>
         <!--Subphase Detail-->
         <scene sceneID="5lM-em-4I9">
@@ -3404,6 +3401,12 @@ We are going to assess trunk extension. Please return to an upright sitting posi
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="2vC-Ax-YFc"/>
+                                        <exclude reference="CQY-60-LF7"/>
+                                    </mask>
+                                </variation>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0j-ib-021">
                                 <rect key="frame" x="189" y="53" width="222" height="41"/>
@@ -3415,7 +3418,7 @@ We are going to assess trunk extension. Please return to an upright sitting posi
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trunk Extension in Sitting" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bsf-cd-koy">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trunk Extension in Sitting" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Bsf-cd-koy">
                                 <rect key="frame" x="132.5" y="102" width="335" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="335" id="Sqc-ye-u5u"/>
@@ -3443,12 +3446,34 @@ We are going to assess trunk extension. Please return to an upright sitting posi
                             <constraint firstItem="Gz7-IY-m8u" firstAttribute="centerX" secondItem="C1a-DW-fDf" secondAttribute="centerX" id="8eP-of-ZAQ"/>
                             <constraint firstItem="Bsf-cd-koy" firstAttribute="top" secondItem="W0j-ib-021" secondAttribute="bottom" constant="8" id="Ao2-yL-jT7"/>
                             <constraint firstItem="JMY-1T-RqX" firstAttribute="leading" secondItem="C1a-DW-fDf" secondAttribute="leading" constant="20" id="P4e-11-hR7"/>
+                            <constraint firstItem="Gz7-IY-m8u" firstAttribute="top" secondItem="Bsf-cd-koy" secondAttribute="bottom" constant="8" id="PP7-9X-r6c"/>
                             <constraint firstItem="Gz7-IY-m8u" firstAttribute="top" secondItem="Bsf-cd-koy" secondAttribute="bottom" constant="8" id="YMg-KX-f2T"/>
+                            <constraint firstItem="ygg-EL-5gp" firstAttribute="top" secondItem="Gz7-IY-m8u" secondAttribute="bottom" constant="20" id="ZWe-d1-ZrC"/>
                             <constraint firstItem="Bsf-cd-koy" firstAttribute="centerX" secondItem="C1a-DW-fDf" secondAttribute="centerX" id="azP-tx-m3l"/>
+                            <constraint firstAttribute="trailing" secondItem="Gz7-IY-m8u" secondAttribute="trailing" constant="32.5" id="btw-1e-Gdj"/>
+                            <constraint firstItem="Gz7-IY-m8u" firstAttribute="leading" secondItem="C1a-DW-fDf" secondAttribute="leading" constant="32.5" id="dMi-vd-iBy"/>
                             <constraint firstItem="JMY-1T-RqX" firstAttribute="top" secondItem="uFC-8C-l4G" secondAttribute="bottom" constant="10" id="kGt-ne-Md2"/>
                             <constraint firstItem="W0j-ib-021" firstAttribute="centerX" secondItem="C1a-DW-fDf" secondAttribute="centerX" id="lde-bR-zT6"/>
                             <constraint firstItem="W0j-ib-021" firstAttribute="top" secondItem="uFC-8C-l4G" secondAttribute="bottom" constant="33" id="wr5-UI-KLl"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="PP7-9X-r6c"/>
+                                <exclude reference="btw-1e-Gdj"/>
+                                <exclude reference="dMi-vd-iBy"/>
+                                <exclude reference="ZWe-d1-ZrC"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="8eP-of-ZAQ"/>
+                                <include reference="PP7-9X-r6c"/>
+                                <exclude reference="YMg-KX-f2T"/>
+                                <include reference="btw-1e-Gdj"/>
+                                <include reference="dMi-vd-iBy"/>
+                                <include reference="ZWe-d1-ZrC"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="gradientLayerView" destination="C1a-DW-fDf" id="Qox-9s-Pme"/>
@@ -3664,7 +3689,7 @@ We are going to assess trunk extension. Please return to an upright sitting posi
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AIj-Rk-uMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="euo-4e-agS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-862.5" y="867"/>
+            <point key="canvasLocation" x="-1183" y="977"/>
         </scene>
         <!--Confirm View Controller-->
         <scene sceneID="zeI-rs-jLi">
@@ -4210,8 +4235,8 @@ We are going to assess trunk extension. Please return to an upright sitting posi
         <image name="Video" width="667" height="375"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="upe-EF-Pqf"/>
         <segue reference="rWq-gQ-i6a"/>
+        <segue reference="TuH-tc-x7x"/>
         <segue reference="TAU-PR-Cy6"/>
         <segue reference="jFt-WV-u4L"/>
     </inferredMetricsTieBreakers>
