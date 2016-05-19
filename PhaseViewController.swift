@@ -507,7 +507,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
 //            mailComposer.setMessageBody("These are your scores", isHTML: false)
             
             mailComposer.setSubject("NRS Score and Lagging Items")
-            mailComposer.setMessageBody("Evaluation Identifier: \(self.scoreId!)\n" + "\nOverall score: \(self.overallPhaseScore!)\n" + Utility().printScores(allPhasesWithScores) + "\n" + Utility().printLaggingItems(self.laggingPhasesFinalArray), isHTML: false)
+            mailComposer.setMessageBody("Evaluation Identifier: \(self.scoreId!)\n" + "\nOverall score: \(self.overallPhaseScore!) (raw score \(String(format:"%.2f", self.grandTotal)))\n" + Utility().printScores(allPhasesWithScores) + "\n" + Utility().printLaggingItems(self.laggingPhasesFinalArray), isHTML: false)
         
             self.presentViewController(mailComposer, animated: true, completion: nil)
                     
@@ -564,16 +564,16 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
             destinationController.scoreIdLagAndScore = self.phaseScore.scoreId
             destinationController.phaseStructArray = self.phaseStructArray
             destinationController.overallPhaseValue = self.overallPhaseScore
-        
+            destinationController.grandTotal = (String(format:"%.2f", self.grandTotal))
         }
     }
     
     @IBAction func unwindToPhaseTableView(sender: UIStoryboardSegue)
     {
-        if let sourceVc = sender.sourceViewController as? LagginAndScoresViewController
-        {
-           //self.scoreId = sourceVc.scoreIdLagAndScore
-        }
+//        if let sourceVc = sender.sourceViewController as? LagginAndScoresViewController
+//        {
+//           //self.scoreId = sourceVc.scoreIdLagAndScore
+//        }
     }
     
     @IBAction func unwindToPhaseTableViewFromConfirmScore(sender: UIStoryboardSegue)

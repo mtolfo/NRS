@@ -17,6 +17,7 @@ class LagginAndScoresViewController: UIViewController, MFMailComposeViewControll
     var filteredPhaseStructArray: [PhaseViewController.Phase] = []
     var laggingPhasesFinalArray: [PhaseViewController.Phase] = []
     var overallPhaseValue: String?
+    var grandTotal: String?
     
     
     @IBOutlet weak var gradientLayerView: GradientView!
@@ -43,21 +44,16 @@ class LagginAndScoresViewController: UIViewController, MFMailComposeViewControll
             mailComposer.mailComposeDelegate = self
         
             mailComposer.setSubject("NRS Score and Lagging Items")
-            mailComposer.setMessageBody("Evaluation Identifier: \(self.scoreIdLagAndScore!)\n" + "\nOverall score: \(self.overallPhaseValue!)\n" + Utility().printScores(allPhasesWithScores) + "\n" + Utility().printLaggingItems(self.laggingPhasesFinalArray), isHTML: false)
+            mailComposer.setMessageBody("Evaluation Identifier: \(self.scoreIdLagAndScore!)\n" + "\nOverall score: \(self.overallPhaseValue!) (raw score \(self.grandTotal!))\n" + Utility().printScores(allPhasesWithScores) + "\n" + Utility().printLaggingItems(self.laggingPhasesFinalArray), isHTML: false)
         
             self.presentViewController(mailComposer, animated: true, completion: nil)
             
             }
-
     }
     
     func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
-
-    
-    
     
     override func viewDidLayoutSubviews()
     {
