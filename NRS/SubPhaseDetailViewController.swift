@@ -170,6 +170,10 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         }
     }
     
+    @IBAction func videoButtonClicked(sender: AnyObject)
+    {
+        performSegueWithIdentifier("showVideoVc", sender: self)
+    }
     @IBAction func manualButonClicked(sender: AnyObject)
     {
         performSegueWithIdentifier("showManualVc", sender: self)

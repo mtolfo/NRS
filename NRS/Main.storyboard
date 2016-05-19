@@ -278,6 +278,156 @@
             </objects>
             <point key="canvasLocation" x="-311" y="-1017"/>
         </scene>
+        <!--Instructional Video View Controller-->
+        <scene sceneID="SU8-fw-BZh">
+            <objects>
+                <viewController id="6Ak-YN-Hdf" customClass="InstructionalVideoViewController" customModule="NRS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WbX-GG-GwB"/>
+                        <viewControllerLayoutGuide type="bottom" id="O66-qU-WHi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hcZ-dR-fd4" customClass="GradientView" customModule="NRS" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KvD-kZ-sF3">
+                                <rect key="frame" x="20" y="30" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="b5c-7H-NBz"/>
+                                    <constraint firstAttribute="height" constant="44" id="z4m-2p-aTc"/>
+                                </constraints>
+                                <state key="normal" image="BackButton"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructional Video" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="NJL-fP-NKd">
+                                <rect key="frame" x="80" y="28" width="500" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="P6M-PM-cPy"/>
+                                    <constraint firstAttribute="height" constant="36" id="SI4-rV-QF4"/>
+                                    <constraint firstAttribute="width" constant="500" id="juj-Tw-EAJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="SI4-rV-QF4"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="P6M-PM-cPy"/>
+                                        <include reference="SI4-rV-QF4"/>
+                                        <exclude reference="juj-Tw-EAJ"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Video" translatesAutoresizingMaskIntoConstraints="NO" id="gzR-qu-Mb6">
+                                <rect key="frame" x="80" y="159" width="440" height="264"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="440" id="9ZX-1t-Vg7"/>
+                                    <constraint firstAttribute="height" constant="203" id="EDU-qd-rWc"/>
+                                    <constraint firstAttribute="height" constant="203" id="TqZ-4w-ZZq"/>
+                                    <constraint firstAttribute="width" constant="360" id="fw4-lW-4rv"/>
+                                    <constraint firstAttribute="height" constant="264" id="sTU-Ca-QAo"/>
+                                    <constraint firstAttribute="width" constant="360" id="zGt-Np-eAV"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="EDU-qd-rWc"/>
+                                        <exclude reference="TqZ-4w-ZZq"/>
+                                        <exclude reference="fw4-lW-4rv"/>
+                                        <exclude reference="zGt-Np-eAV"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="9ZX-1t-Vg7"/>
+                                        <include reference="TqZ-4w-ZZq"/>
+                                        <exclude reference="sTU-Ca-QAo"/>
+                                        <include reference="zGt-Np-eAV"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="EDU-qd-rWc"/>
+                                        <exclude reference="TqZ-4w-ZZq"/>
+                                        <include reference="fw4-lW-4rv"/>
+                                        <exclude reference="zGt-Np-eAV"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="NJL-fP-NKd" secondAttribute="trailing" constant="82" id="48k-Ix-fyb">
+                                <variation key="widthClass=compact" constant="20"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="17"/>
+                            </constraint>
+                            <constraint firstItem="gzR-qu-Mb6" firstAttribute="centerX" secondItem="hcZ-dR-fd4" secondAttribute="centerX" id="5sw-Qh-7T7"/>
+                            <constraint firstItem="NJL-fP-NKd" firstAttribute="top" secondItem="WbX-GG-GwB" secondAttribute="bottom" constant="14" id="8yC-IN-NPj"/>
+                            <constraint firstItem="gzR-qu-Mb6" firstAttribute="centerY" secondItem="hcZ-dR-fd4" secondAttribute="centerY" id="DSY-Lp-0PO"/>
+                            <constraint firstItem="KvD-kZ-sF3" firstAttribute="top" secondItem="WbX-GG-GwB" secondAttribute="bottom" constant="10" id="JQu-f7-Qbp"/>
+                            <constraint firstItem="gzR-qu-Mb6" firstAttribute="centerY" secondItem="hcZ-dR-fd4" secondAttribute="centerY" id="KKc-9p-kMS"/>
+                            <constraint firstItem="NJL-fP-NKd" firstAttribute="leading" secondItem="KvD-kZ-sF3" secondAttribute="trailing" constant="19" id="PBY-US-n1T">
+                                <variation key="heightClass=regular-widthClass=compact" constant="17"/>
+                            </constraint>
+                            <constraint firstItem="NJL-fP-NKd" firstAttribute="centerX" secondItem="hcZ-dR-fd4" secondAttribute="centerX" constant="30" id="RZG-EG-QVW"/>
+                            <constraint firstAttribute="trailing" secondItem="gzR-qu-Mb6" secondAttribute="trailing" constant="80" id="UKz-WG-JAW"/>
+                            <constraint firstItem="NJL-fP-NKd" firstAttribute="top" secondItem="WbX-GG-GwB" secondAttribute="bottom" constant="8" id="USY-bX-54r"/>
+                            <constraint firstItem="gzR-qu-Mb6" firstAttribute="centerX" secondItem="hcZ-dR-fd4" secondAttribute="centerX" id="abn-iu-wc9"/>
+                            <constraint firstItem="gzR-qu-Mb6" firstAttribute="leading" secondItem="hcZ-dR-fd4" secondAttribute="leading" constant="80" id="wfJ-Wa-OkS"/>
+                            <constraint firstItem="NJL-fP-NKd" firstAttribute="centerX" secondItem="hcZ-dR-fd4" secondAttribute="centerX" id="xGr-tb-hNV">
+                                <variation key="widthClass=compact" constant="31.5"/>
+                            </constraint>
+                            <constraint firstItem="KvD-kZ-sF3" firstAttribute="leading" secondItem="hcZ-dR-fd4" secondAttribute="leading" constant="20" id="xUx-gQ-ove"/>
+                            <constraint firstItem="gzR-qu-Mb6" firstAttribute="centerX" secondItem="hcZ-dR-fd4" secondAttribute="centerX" id="xvQ-eT-9ld"/>
+                            <constraint firstItem="gzR-qu-Mb6" firstAttribute="top" secondItem="NJL-fP-NKd" secondAttribute="bottom" constant="95" id="ya6-Vt-5dC"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="48k-Ix-fyb"/>
+                                <exclude reference="8yC-IN-NPj"/>
+                                <exclude reference="PBY-US-n1T"/>
+                                <exclude reference="xGr-tb-hNV"/>
+                                <exclude reference="DSY-Lp-0PO"/>
+                                <exclude reference="KKc-9p-kMS"/>
+                                <exclude reference="abn-iu-wc9"/>
+                                <exclude reference="xvQ-eT-9ld"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="48k-Ix-fyb"/>
+                                <include reference="8yC-IN-NPj"/>
+                                <include reference="PBY-US-n1T"/>
+                                <exclude reference="RZG-EG-QVW"/>
+                                <exclude reference="USY-bX-54r"/>
+                                <include reference="xGr-tb-hNV"/>
+                                <exclude reference="5sw-Qh-7T7"/>
+                                <include reference="KKc-9p-kMS"/>
+                                <exclude reference="UKz-WG-JAW"/>
+                                <include reference="abn-iu-wc9"/>
+                                <exclude reference="wfJ-Wa-OkS"/>
+                                <exclude reference="ya6-Vt-5dC"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="DSY-Lp-0PO"/>
+                                <exclude reference="KKc-9p-kMS"/>
+                                <exclude reference="abn-iu-wc9"/>
+                                <include reference="xvQ-eT-9ld"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="gradientLayerView" destination="hcZ-dR-fd4" id="8ZC-pi-ufv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MhB-g4-qh0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="276" y="-330"/>
+        </scene>
         <!--In Progress Phase Items-->
         <scene sceneID="ssn-t6-Hnc">
             <objects>
@@ -1569,7 +1719,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijd-Sh-Bs6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="552" y="-233"/>
+            <point key="canvasLocation" x="824" y="9"/>
         </scene>
         <!--Subphase Detail-->
         <scene sceneID="5lM-em-4I9">
@@ -1635,7 +1785,8 @@
                                         <exclude reference="mBU-0u-Qg7"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="265" y="130" width="70" height="44"/>
                                     <mask key="constraints">
                                         <include reference="D7Z-bh-FMd"/>
                                         <exclude reference="OXm-FE-iSz"/>
@@ -1653,7 +1804,8 @@
                                 <state key="normal" title="UnableScoreButton" image="Button Unable X">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="520" y="532" width="60" height="60"/>
                                     <mask key="constraints">
                                         <exclude reference="3Nf-eC-iEB"/>
                                         <exclude reference="Mkf-sX-ZoV"/>
@@ -1722,6 +1874,10 @@
                                         <exclude reference="lgs-nF-p4U"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="videoButtonClicked:" destination="97W-j7-dPd" eventType="touchUpInside" id="zL5-9x-b4N"/>
+                                    <segue destination="6Ak-YN-Hdf" kind="show" identifier="showVideoVc" animates="NO" id="w2n-TR-Hy3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWJ-lM-i78" userLabel="Info Button">
                                 <rect key="frame" x="472" y="30" width="44" height="44"/>
@@ -1961,7 +2117,8 @@ With arms hanging down, able to initiate thoracic spine extension.</string>
                                         <exclude reference="TeI-Wo-ihT"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="374" width="560" height="150"/>
                                     <mask key="constraints">
                                         <exclude reference="F7v-9x-7E5"/>
                                         <exclude reference="i93-Fc-Avd"/>
@@ -2019,7 +2176,8 @@ With arms hanging down, able to initiate thoracic spine extension.</string>
                                         <exclude reference="tmz-c2-gek"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="532" width="60" height="60"/>
                                     <mask key="constraints">
                                         <exclude reference="C84-nd-IwA"/>
                                         <include reference="P6P-mx-iru"/>
@@ -2237,7 +2395,8 @@ We are going to assess trunk extension. Please return to an upright sitting posi
                                         <include reference="xfv-1W-mCH"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="170" y="532" width="260" height="60"/>
                                     <mask key="constraints">
                                         <exclude reference="ueV-3p-wft"/>
                                     </mask>
@@ -2279,7 +2438,8 @@ We are going to assess trunk extension. Please return to an upright sitting posi
                                                 <include reference="tYF-Ea-Hj6"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact">
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="8" y="266" width="44" height="44"/>
                                             <mask key="constraints">
                                                 <exclude reference="4Tp-gv-xbm"/>
                                                 <exclude reference="576-hQ-eoG"/>
@@ -2316,7 +2476,8 @@ We are going to assess trunk extension. Please return to an upright sitting posi
                                                 <include reference="W8U-3p-NBZ"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact">
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="8" y="8" width="484" height="78"/>
                                             <mask key="constraints">
                                                 <include reference="DLY-Sj-Kba"/>
                                                 <exclude reference="VIW-3n-W7L"/>
@@ -2351,7 +2512,8 @@ We are going to assess trunk extension. Please return to an upright sitting posi
                                                 <exclude reference="lo0-lS-syE"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact">
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="8" y="94" width="484" height="155"/>
                                             <mask key="constraints">
                                                 <exclude reference="2Vk-tL-xez"/>
                                                 <include reference="Yon-gt-Itp"/>
@@ -2387,7 +2549,8 @@ We are going to assess trunk extension. Please return to an upright sitting posi
                                                 <exclude reference="vQ7-iU-2zc"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact">
+                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="448" y="262" width="44" height="44"/>
                                             <mask key="constraints">
                                                 <include reference="OUB-wH-dZL"/>
                                                 <exclude reference="Ujq-HC-wYS"/>
@@ -2503,7 +2666,8 @@ We are going to assess trunk extension. Please return to an upright sitting posi
                                         <include reference="oti-U3-csa"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="50" y="188" width="500" height="314"/>
                                     <mask key="constraints">
                                         <exclude reference="1LF-Fr-K6g"/>
                                         <exclude reference="LSy-90-BzU"/>
@@ -3179,7 +3343,7 @@ We are going to assess trunk extension. Please return to an upright sitting posi
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gd-7r-8Dj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="buA-qL-mXO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-105" y="115"/>
+            <point key="canvasLocation" x="-427" y="91"/>
         </scene>
         <!--Test View Controller-->
         <scene sceneID="egg-kO-G92">
@@ -4045,11 +4209,12 @@ We are going to assess trunk extension. Please return to an upright sitting posi
         <image name="Button Unable X" width="76" height="76"/>
         <image name="ButtonCheckMark" width="76" height="76"/>
         <image name="ShareButton" width="46" height="46"/>
+        <image name="Video" width="667" height="375"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jFt-WV-u4L"/>
-        <segue reference="TAU-PR-Cy6"/>
         <segue reference="upe-EF-Pqf"/>
-        <segue reference="SZW-FV-s8R"/>
+        <segue reference="rWq-gQ-i6a"/>
+        <segue reference="TAU-PR-Cy6"/>
+        <segue reference="jFt-WV-u4L"/>
     </inferredMetricsTieBreakers>
 </document>

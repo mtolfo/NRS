@@ -57,6 +57,7 @@
 		A8A194D81CB53FD300859970 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8A194D61CB53FD300859970 /* Parse.framework */; };
 		A8A194DA1CB5CCF700859970 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A194D91CB5CCF700859970 /* GradientView.swift */; };
 		A8A5E62B1C3FF653002D7A10 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A5E62A1C3FF653002D7A10 /* Version.swift */; };
+		A8AA09961CED4752006DA16A /* InstructionalVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AA09951CED4752006DA16A /* InstructionalVideoViewController.swift */; };
 		A8CC55661CD853AC00A735A9 /* CalculateScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CC55651CD853AC00A735A9 /* CalculateScore.swift */; };
 		A8CEEE241CB1653D00C0C939 /* CAGradientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8CEEE231CB1653D00C0C939 /* CAGradientExtension.swift */; };
 		A8CEEE271CB33FC100C0C939 /* Avenir Next.ttc in Resources */ = {isa = PBXBuildFile; fileRef = A8CEEE261CB33FC100C0C939 /* Avenir Next.ttc */; };
@@ -141,6 +142,7 @@
 		A8A194D61CB53FD300859970 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		A8A194D91CB5CCF700859970 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		A8A5E62A1C3FF653002D7A10 /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		A8AA09951CED4752006DA16A /* InstructionalVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionalVideoViewController.swift; sourceTree = "<group>"; };
 		A8CC55651CD853AC00A735A9 /* CalculateScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculateScore.swift; sourceTree = "<group>"; };
 		A8CEEE231CB1653D00C0C939 /* CAGradientExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CAGradientExtension.swift; path = ../CAGradientExtension.swift; sourceTree = "<group>"; };
 		A8CEEE261CB33FC100C0C939 /* Avenir Next.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Avenir Next.ttc"; path = "/System/Library/Fonts/Avenir Next.ttc"; sourceTree = "<absolute>"; };
@@ -289,6 +291,7 @@
 				A820A6EB1CCF0C34005246CB /* Parse.framework */,
 				A8CEEE261CB33FC100C0C939 /* Avenir Next.ttc */,
 				A85F40E51C8219DC0093F7C5 /* Main.storyboard */,
+				A8AA09951CED4752006DA16A /* InstructionalVideoViewController.swift */,
 				A82BF7B81CEB62F600A1C3D1 /* ConfirmScoreView.swift */,
 				A82BF7B01CEAC1E500A1C3D1 /* TestViewController.swift */,
 				A8873D9B1CE63D3C006FD8DD /* Utility.swift */,
@@ -494,6 +497,7 @@
 				A8DC3F5F1C86AB4B009B3774 /* InstructionManualViewController.swift in Sources */,
 				A8DC3F5D1C86940B009B3774 /* ConfirmViewController.swift in Sources */,
 				A89EF5F41C6997A30098CDBB /* SubPhaseDetailViewController.swift in Sources */,
+				A8AA09961CED4752006DA16A /* InstructionalVideoViewController.swift in Sources */,
 				A80D5B151C572B6B004EE98C /* Session.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
