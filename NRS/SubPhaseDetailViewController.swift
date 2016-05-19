@@ -184,6 +184,10 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
         performSegueWithIdentifier("showTestVc", sender: self)
     }
     
+    @IBAction func unwindToSubPhaseDetailVcFromVideos (sender: UIStoryboardSegue)
+    {
+    }
+    
             //new delegate stuff
 //    func userDidEnterInformation(phaseDatabaseName: String) {
 //        self.phaseDatabaseNameFromSegue = phaseDatabaseName
@@ -406,6 +410,7 @@ class SubPhaseDetailViewController: UIViewController, UIPopoverPresentationContr
     {
         return UIModalPresentationStyle.None
     }
+    
     
     
     }

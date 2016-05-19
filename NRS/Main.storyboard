@@ -297,6 +297,9 @@
                                     <constraint firstAttribute="height" constant="44" id="z4m-2p-aTc"/>
                                 </constraints>
                                 <state key="normal" image="BackButton"/>
+                                <connections>
+                                    <action selector="videosBackButtonClicked:" destination="6Ak-YN-Hdf" eventType="touchUpInside" id="hW4-Hl-hOu"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructional Video" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="NJL-fP-NKd">
                                 <rect key="frame" x="80" y="28" width="500" height="36"/>
@@ -319,6 +322,9 @@
                                         <include reference="SI4-rV-QF4"/>
                                         <exclude reference="juj-Tw-EAJ"/>
                                     </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="81" y="34" width="502" height="36"/>
                                 </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Video" translatesAutoresizingMaskIntoConstraints="NO" id="gzR-qu-Mb6">
@@ -422,9 +428,11 @@
                     </view>
                     <connections>
                         <outlet property="gradientLayerView" destination="hcZ-dR-fd4" id="8ZC-pi-ufv"/>
+                        <segue destination="IKW-kr-eCf" kind="unwind" identifier="unwindToSubphaseDetailFromVideo" unwindAction="unwindToSubPhaseDetailVcFromVideos:" id="CNZ-U8-XpS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MhB-g4-qh0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="IKW-kr-eCf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="276" y="-330"/>
         </scene>
@@ -1785,8 +1793,7 @@
                                         <exclude reference="mBU-0u-Qg7"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="265" y="130" width="70" height="44"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="D7Z-bh-FMd"/>
                                         <exclude reference="OXm-FE-iSz"/>
@@ -1804,8 +1811,7 @@
                                 <state key="normal" title="UnableScoreButton" image="Button Unable X">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="520" y="532" width="60" height="60"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="3Nf-eC-iEB"/>
                                         <exclude reference="Mkf-sX-ZoV"/>
@@ -2117,8 +2123,7 @@ With arms hanging down, able to initiate thoracic spine extension.</string>
                                         <exclude reference="TeI-Wo-ihT"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="374" width="560" height="150"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="F7v-9x-7E5"/>
                                         <exclude reference="i93-Fc-Avd"/>
@@ -2176,8 +2181,7 @@ With arms hanging down, able to initiate thoracic spine extension.</string>
                                         <exclude reference="tmz-c2-gek"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="532" width="60" height="60"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="C84-nd-IwA"/>
                                         <include reference="P6P-mx-iru"/>
@@ -2243,7 +2247,7 @@ This tip will help remind you of what to do in this sub phase.</string>
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="lNF-Oz-BM2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="lNF-Oz-BM2">
                                 <rect key="frame" x="20" y="268" width="560" height="98"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46.5" id="0ap-3S-YoK"/>
@@ -2395,8 +2399,7 @@ We are going to assess trunk extension. Please return to an upright sitting posi
                                         <include reference="xfv-1W-mCH"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="170" y="532" width="260" height="60"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="ueV-3p-wft"/>
                                     </mask>
@@ -2438,8 +2441,7 @@ We are going to assess trunk extension. Please return to an upright sitting posi
                                                 <include reference="tYF-Ea-Hj6"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="8" y="266" width="44" height="44"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <exclude reference="4Tp-gv-xbm"/>
                                                 <exclude reference="576-hQ-eoG"/>
@@ -2476,8 +2478,7 @@ We are going to assess trunk extension. Please return to an upright sitting posi
                                                 <include reference="W8U-3p-NBZ"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="8" y="8" width="484" height="78"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="DLY-Sj-Kba"/>
                                                 <exclude reference="VIW-3n-W7L"/>
@@ -2512,8 +2513,7 @@ We are going to assess trunk extension. Please return to an upright sitting posi
                                                 <exclude reference="lo0-lS-syE"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="8" y="94" width="484" height="155"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <exclude reference="2Vk-tL-xez"/>
                                                 <include reference="Yon-gt-Itp"/>
@@ -2549,8 +2549,7 @@ We are going to assess trunk extension. Please return to an upright sitting posi
                                                 <exclude reference="vQ7-iU-2zc"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="448" y="262" width="44" height="44"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="OUB-wH-dZL"/>
                                                 <exclude reference="Ujq-HC-wYS"/>
@@ -2666,8 +2665,7 @@ We are going to assess trunk extension. Please return to an upright sitting posi
                                         <include reference="oti-U3-csa"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="50" y="188" width="500" height="314"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="1LF-Fr-K6g"/>
                                         <exclude reference="LSy-90-BzU"/>

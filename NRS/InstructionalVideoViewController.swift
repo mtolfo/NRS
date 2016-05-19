@@ -11,6 +11,10 @@ import UIKit
 class InstructionalVideoViewController: UIViewController {
 
     @IBOutlet weak var gradientLayerView: GradientView!
+    @IBAction func videosBackButtonClicked(sender: AnyObject)
+    {
+        self.performSegueWithIdentifier("unwindToSubphaseDetailFromVideo", sender: self)
+    }
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -31,6 +35,7 @@ class InstructionalVideoViewController: UIViewController {
         self.gradientLayerView.drawRect(rect)
         
     }
+    
     
     
     
