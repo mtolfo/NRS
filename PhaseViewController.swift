@@ -503,8 +503,7 @@ class PhaseViewController: UIViewController, UITableViewDataSource, UITableViewD
             let mailComposer = MFMailComposeViewController()
             mailComposer.mailComposeDelegate = self
         
-//            mailComposer.setSubject("NRS Score")
-//            mailComposer.setMessageBody("These are your scores", isHTML: false)
+
             
             mailComposer.setSubject("NRS Score and Lagging Items")
             mailComposer.setMessageBody("Evaluation Identifier: \(self.scoreId!)\n" + "\nOverall score: \(self.overallPhaseScore!) (raw score \(String(format:"%.2f", self.grandTotal)))\n" + Utility().printScores(allPhasesWithScores) + "\n" + Utility().printLaggingItems(self.laggingPhasesFinalArray), isHTML: false)
