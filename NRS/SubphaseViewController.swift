@@ -18,7 +18,6 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
     var phaseScoreObject:Score!
     var phaseName: String?
     
-    //var sessionIdToPass:String?
     private var phaseItemArray = [Subphase]() //TODO: rename this model to PhaseItem.swift
     private var verbalInstructionArray = [VerbalInstruction]()
     private var verbalInstructionString = ""
@@ -173,6 +172,23 @@ class SubphaseViewController: UIViewController, UICollectionViewDelegate, UIColl
             cell.backgroundColor = UIColor().UIColorFromRGB(0xB6B6B6)
             cell.userInteractionEnabled = false
         }
+        
+        if (phaseItemArray[indexPath.row].descriptionId == "1A")
+        {
+            cell.userInteractionEnabled = false
+        }
+        if (phaseItemArray[indexPath.row].descriptionId == "2B")
+        {
+            cell.userInteractionEnabled = true
+        }
+        
+        
+        
+        //this is a band aid. Need special logic for subphaseIndexArray "1A"
+//        if (phaseItemArray[indexPath.row].descriptionId == "1A")
+//        {
+//            cell.userInteractionEnabled = false
+//        }
 
         //configure text -- indent first line of lable text
         //let paragraphStyle = NSMutableParagraphStyle()

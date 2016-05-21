@@ -17,7 +17,7 @@ class LagginAndScoresViewController: UIViewController, MFMailComposeViewControll
     var filteredPhaseStructArray: [PhaseViewController.Phase] = []
     var laggingPhasesFinalArray: [PhaseViewController.Phase] = []
     var overallPhaseValue: String?
-    var grandTotal: String?
+    var grandTotal: String? //the conversion from double to a string with two decimal points has been made in previous screen
     
     
     @IBOutlet weak var gradientLayerView: GradientView!
@@ -89,7 +89,7 @@ class LagginAndScoresViewController: UIViewController, MFMailComposeViewControll
         }
         
         self.evaluationIdTextView.text = self.scoreIdLagAndScore
-        self.overallPhaseScoreTextView.text = self.overallPhaseValue
+        self.overallPhaseScoreTextView.text = self.overallPhaseValue! + " (\(self.grandTotal!))"
         self.scoreAndLagTextView.text = phaseScoresString + "\n" + laggingScoresString
 
     }
